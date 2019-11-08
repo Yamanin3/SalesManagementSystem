@@ -85,7 +85,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 312);
+            this.groupBox1.Size = new System.Drawing.Size(293, 312);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
@@ -187,9 +187,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "---",
+            "男",
+            "女",
+            "不明"});
             this.comboBox1.Location = new System.Drawing.Point(116, 93);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(100, 20);
             this.comboBox1.TabIndex = 12;
             // 
             // label4
@@ -253,9 +258,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(355, 28);
+            this.groupBox2.Location = new System.Drawing.Point(311, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(624, 312);
+            this.groupBox2.Size = new System.Drawing.Size(668, 312);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "顧客一覧";
@@ -277,7 +282,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(618, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 294);
             this.dataGridView1.TabIndex = 0;
             // 
             // toolStrip1
