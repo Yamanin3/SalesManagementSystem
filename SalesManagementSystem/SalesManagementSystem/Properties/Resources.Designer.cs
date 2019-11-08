@@ -63,6 +63,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap _20181020_122243691_iOS {
+            get {
+                object obj = ResourceManager.GetObject("20181020_122243691_iOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap _220 {
             get {
                 object obj = ResourceManager.GetObject("220", resourceCulture);
@@ -73,9 +83,29 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap _290 {
+            get {
+                object obj = ResourceManager.GetObject("290", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap _48 {
             get {
                 object obj = ResourceManager.GetObject("48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap key_padlock_1 {
+            get {
+                object obj = ResourceManager.GetObject("key_padlock-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap Plus_321 {
             get {
                 object obj = ResourceManager.GetObject("Plus-321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Previous_32 {
+            get {
+                object obj = ResourceManager.GetObject("Previous-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

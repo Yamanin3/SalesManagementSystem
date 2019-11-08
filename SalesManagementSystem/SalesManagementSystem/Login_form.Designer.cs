@@ -79,23 +79,23 @@
             // button2
             // 
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(303, 128);
+            this.button2.Location = new System.Drawing.Point(309, 127);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 35);
+            this.button2.Size = new System.Drawing.Size(64, 35);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Cancel";
+            this.button2.Text = "キャンセル";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources._48;
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.key_padlock_1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(204, 128);
+            this.button1.Location = new System.Drawing.Point(211, 127);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 35);
+            this.button1.Size = new System.Drawing.Size(64, 35);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Login";
+            this.button1.Text = "ログイン";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
