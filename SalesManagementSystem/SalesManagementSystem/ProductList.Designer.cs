@@ -62,7 +62,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(886, 25);
-            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // groupBox1
@@ -79,7 +79,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 231);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
             // 
@@ -88,7 +88,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(89, 196);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 23;
+            this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +97,7 @@
             this.buttonNext.Location = new System.Drawing.Point(141, 156);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 22;
+            this.buttonNext.TabIndex = 4;
             this.buttonNext.Text = "次へ";
             this.buttonNext.UseVisualStyleBackColor = true;
             // 
@@ -106,7 +106,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(37, 156);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrevious.TabIndex = 21;
+            this.buttonPrevious.TabIndex = 3;
             this.buttonPrevious.Text = "前へ";
             this.buttonPrevious.UseVisualStyleBackColor = true;
             // 
@@ -235,7 +235,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductList";
-            this.Text = "ProductList";
+            this.Text = "商品一覧";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
