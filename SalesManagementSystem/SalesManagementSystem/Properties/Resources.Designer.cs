@@ -153,6 +153,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap monitor_windows {
+            get {
+                object obj = ResourceManager.GetObject("monitor_windows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Padlocks_32 {
             get {
                 object obj = ResourceManager.GetObject("Padlocks_32", resourceCulture);
@@ -236,6 +246,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap Stop_32 {
             get {
                 object obj = ResourceManager.GetObject("Stop-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap windows_95_computer_icons_operating_systems_windows_10_window {
+            get {
+                object obj = ResourceManager.GetObject("windows-95-computer-icons-operating-systems-windows-10-window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

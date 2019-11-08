@@ -58,6 +58,12 @@
     <Compile Include="Login_form.Designer.cs">
       <DependentUpon>Login_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberList.resx">
       <DependentUpon>MemberList.cs</DependentUpon>
@@ -183,6 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\key_padlock-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

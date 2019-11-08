@@ -117,65 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Padlocks_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Padlocks_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Keychain-Access-2561" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keychain-Access-2561.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stop-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stop-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Plus-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Keychain-Access-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keychain-Access-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="20181020_122243691_iOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20181020_122243691_iOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Keychain-Access-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keychain-Access-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\48.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Keychain-Access-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keychain-Access-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="220" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\220.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Remove-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Remove-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="290" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\290.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Plus-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="monitor_windows" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\monitor_windows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Previous-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Previous-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key_padlock-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key_padlock-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="windows-95-computer-icons-operating-systems-windows-10-window" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAIAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAB///////eIgAAAAAAAAAj/93d3d3d3iIiAAAAAAAAI//d3
+        d3d3eIiIAAAAAAAAAIj/93d3d4iIAAAAAAAAAAAAiIh3d3iAAAAAAAAAAAAAAACIiIiAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAiIiIiIiIiIiIiIiIiAAAAI93d3d3d3d3d3d3d3iAAACPf/////////////94
+        iAAAj3RERERERERERERPeIgAAI9wZmZmZmZmBmZmT3iIAACPcGZmZmZmAAZmZk94iAAAj3BmZmZmAAMw
+        ZmZPeIgAAI9wZmZmAEA7sGZmT3iIAACPcGaAAATMC7AGZk94iAAAj3BoBmYEzEACBmZPeIgAAI9wYGbM
+        wEAAqiBmT3iIAACPcGaMZmAZkCqgZk94iAAAj3BoxmERCZEKIGZPeIgAAI9wbGgWZgGZAAZmT3iIAACP
+        cGaBZgABEAZmZk94iAAAj3BmFoBmZmZmZmZPeIgAAI9wZmgGZmZmZmZmT3iIAACPcAAAAAAAAAAAAE94
+        iAAAj3iIiIiIiIiIiIiPeIgAAI93d3d3d3d3d3d3d3iIAAAI///////////////4iAAAAId3d3d3d3d3
+        d3d3f4gAAAAId3d3d3d3d3d3d3f4AAAAAIiIiIiIiIiIiIiIiAD/AAH//AAAf/gAAD/4AAA//AAAf/8A
+        Af//wAf/4AAAD8AAAAfAAAADwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAA
+        AAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAAB4AAAAfAAAAH4AAAB/AAAAw==
+</value>
   </data>
 </root>
