@@ -85,8 +85,7 @@ namespace SalesManagementSystem
                 this.textBox2.Text = string.Empty;
 
                 this.Hide();
-
-              // TODO
+                // TODO :)
 
                 
             }
