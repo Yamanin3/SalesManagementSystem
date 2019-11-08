@@ -59,6 +59,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMSdatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Static_Classes\AccessDb_Connection.cs" />
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
@@ -93,6 +98,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SMSdatabaseDataSet.xsc">
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SMSdatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SMSdatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SMSdatabaseDataSet.xss">
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -117,12 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\48.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\学習\datagridview\WindowsFormsApp1\WindowsFormsApp1.csproj">
-      <Project>{19495ede-fb90-4335-b8f6-7d6213612cfb}</Project>
-      <Name>WindowsFormsApp1</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

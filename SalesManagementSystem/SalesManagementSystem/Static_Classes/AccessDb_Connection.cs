@@ -21,9 +21,8 @@ namespace Login_form.Static_Classes
 
         public static string getConnectionString()
         {
-            // Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Yamanin3\Desktop\学習\DB\Login_DB.mdb
-
-            string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + Application.StartupPath + "\\Login_DB.mdb;";
+            // Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\bin\Debug\SMSdatabase.mdb
+            string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + Application.StartupPath + "\\SMSdatabase.mdb;";
 
             return connectionString;
 

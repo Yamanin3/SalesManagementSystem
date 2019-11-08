@@ -49,7 +49,7 @@ namespace SalesManagementSystem
             {
                 
 
-                MessageBox.Show("ユーザー名とパスワードを入力してください", "会員ログイン : データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員名とパスワードを入力してください", "会員ログイン : データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -63,7 +63,7 @@ namespace SalesManagementSystem
 
                }
 
-            AC.sql = "select ユーザー名, パスワード from table1 where ユーザー名 = @us and パスワード = @pa;";
+            AC.sql = "select 会員名, パスワード from 会員マスタ where 会員名 = @us and パスワード = @pa;";
             AC.cmd.Parameters.Clear();
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
@@ -92,7 +92,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                MessageBox.Show("ユーザー名かパスワードが違います。もう一度やり直してください。", "会員ログイン : ログイン失敗", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員名かパスワードが違います。もう一度やり直してください。", "会員ログイン : ログイン失敗", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
