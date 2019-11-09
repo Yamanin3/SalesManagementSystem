@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrivalList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArrivalList.Designer.cs">
+      <DependentUpon>ArrivalList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Static_Classes\AccessDb_Connection.cs" />
+    <EmbeddedResource Include="ArrivalList.resx">
+      <DependentUpon>ArrivalList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\computer_explorer_2k-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
