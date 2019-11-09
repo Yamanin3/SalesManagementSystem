@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SalesManagementSystem
 {
-    public partial class LoadListForm : Form
+    public partial class LoadedListForm : Form
     {
-        public LoadListForm()
+        public LoadedListForm()
         {
             InitializeComponent();
         }
@@ -20,14 +20,8 @@ namespace SalesManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form loadedlistForm = new LoadedListForm();
-            loadedlistForm.Show();
+            Form loadlistForm = new LoadListForm();
+            loadlistForm.Show();
         }
     }
 }

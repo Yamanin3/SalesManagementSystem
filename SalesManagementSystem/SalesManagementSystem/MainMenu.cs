@@ -75,5 +75,12 @@ namespace SalesManagementSystem
             Form stocklistForm = new StockListForm();
             stocklistForm.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form loadlistForm = new LoadListForm();
+            loadlistForm.Show();
+        }
     }
 }

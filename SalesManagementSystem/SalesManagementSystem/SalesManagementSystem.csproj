@@ -58,6 +58,12 @@
     <Compile Include="CustomerList.Designer.cs">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadedList.Designer.cs">
+      <DependentUpon>LoadedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadedList.resx">
+      <DependentUpon>LoadedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadList.resx">
       <DependentUpon>LoadList.cs</DependentUpon>
@@ -285,6 +294,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\msagent-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
