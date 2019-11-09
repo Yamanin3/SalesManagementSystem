@@ -86,7 +86,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 24);
             this.label1.TabIndex = 32;
-            this.label1.Text = "入荷予定一覧";
+            this.label1.Text = "入荷済み一覧";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
