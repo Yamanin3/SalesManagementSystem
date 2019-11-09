@@ -21,5 +21,18 @@ namespace SalesManagementSystem
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form stocklistForm = new StockListForm();
+            stocklistForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form menu = new MainMenuForm();
+            menu.Show();
+        }
     }
 }

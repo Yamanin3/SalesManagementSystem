@@ -19,24 +19,28 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form customerlistForm = new CustomerListForm();
             customerlistForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form memberlistForm = new MemberListForm();
             memberlistForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form orderlistForm = new OrderListForm();
             orderlistForm.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form productlistForm = new ProductListForm();
             productlistForm.Show();
         }
@@ -44,6 +48,18 @@ namespace SalesManagementSystem
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form arrivallistForm = new ArrivalListForm();
+            arrivallistForm.Show();
+        }
+
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace SalesManagementSystem
 {
-    public partial class ProductListForm : Form
+    public partial class StockListForm : Form
     {
-        public ProductListForm()
+        public StockListForm()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
         }
     }
 }

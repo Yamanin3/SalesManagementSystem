@@ -123,6 +123,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap document_0 {
+            get {
+                object obj = ResourceManager.GetObject("document-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap key_padlock_1 {
             get {
                 object obj = ResourceManager.GetObject("key_padlock-1", resourceCulture);
@@ -173,9 +183,39 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap media_player_stream_no {
+            get {
+                object obj = ResourceManager.GetObject("media_player_stream_no", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap media_player_stream_no1 {
+            get {
+                object obj = ResourceManager.GetObject("media_player_stream_no1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap monitor_windows {
             get {
                 object obj = ResourceManager.GetObject("monitor_windows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap no_1 {
+            get {
+                object obj = ResourceManager.GetObject("no-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

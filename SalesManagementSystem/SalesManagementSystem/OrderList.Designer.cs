@@ -32,9 +32,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
@@ -54,6 +51,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -102,30 +102,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(991, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonNew
-            // 
-            this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
-            this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
-            this.toolStripButtonNew.Text = "新規作成";
-            // 
-            // toolStripButtonRefresh
-            // 
-            this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
-            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButtonRefresh.Text = "更新";
-            // 
-            // toolStripButtonRemove
-            // 
-            this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
-            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButtonRemove.Text = "削除";
             // 
             // groupBox1
             // 
@@ -303,6 +279,31 @@
             this.button1.Text = "戻る";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // toolStripButtonNew
+            // 
+            this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
+            this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonNew.Name = "toolStripButtonNew";
+            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Text = "新規作成";
+            // 
+            // toolStripButtonRefresh
+            // 
+            this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
+            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Text = "更新";
+            // 
+            // toolStripButtonRemove
+            // 
+            this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
+            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Text = "削除";
             // 
             // OrderListForm
             // 
@@ -315,6 +316,7 @@
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注文一覧";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

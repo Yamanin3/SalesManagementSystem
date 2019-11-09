@@ -36,5 +36,17 @@ namespace SalesManagementSystem
         {
 
         }
+
+        private void CustomerListForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form menu = new MainMenuForm();
+            menu.Show();
+        }
     }
 }

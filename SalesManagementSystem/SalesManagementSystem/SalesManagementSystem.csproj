@@ -96,6 +96,12 @@
       <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Static_Classes\AccessDb_Connection.cs" />
+    <Compile Include="StockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockList.Designer.cs">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ArrivalList.resx">
       <DependentUpon>ArrivalList.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StockList.resx">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -213,6 +222,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_player_stream_no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_player_stream_no1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

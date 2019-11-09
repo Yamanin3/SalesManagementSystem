@@ -53,3 +53,5 @@ C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManag
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.exe
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.pdb
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ArrivalListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.StockListForm.resources
