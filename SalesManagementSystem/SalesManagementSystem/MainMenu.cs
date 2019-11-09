@@ -87,5 +87,12 @@ namespace SalesManagementSystem
         {
             Application.Exit();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form issuedlistForm = new IssuedListForm();
+            issuedlistForm.Show();
+        }
     }
 }
