@@ -57,3 +57,6 @@ C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManag
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.On_orderListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.OrderedListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.RequestListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.LoadedListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.LoadListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.In_stockListForm.resources

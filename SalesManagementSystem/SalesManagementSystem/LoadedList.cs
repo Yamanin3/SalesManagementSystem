@@ -20,8 +20,7 @@ namespace SalesManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form loadlistForm = new LoadListForm();
-            loadlistForm.Show();
+            
         }
     }
 }
