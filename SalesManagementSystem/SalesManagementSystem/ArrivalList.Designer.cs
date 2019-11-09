@@ -46,9 +46,9 @@
             this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(72, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "入荷予定一覧";
+            this.label1.Text = "入荷予定リスト";
             // 
             // dataGridView1
             // 
@@ -138,7 +138,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ArrivalListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "入荷予定リスト";
+            this.Text = "入荷待ち一覧";
             this.Load += new System.EventHandler(this.ArrivalListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
