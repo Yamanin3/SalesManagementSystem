@@ -108,11 +108,11 @@
       <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Static_Classes\AccessDb_Connection.cs" />
-    <Compile Include="StockList.cs">
+    <Compile Include="In_stockList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockList.Designer.cs">
-      <DependentUpon>StockList.cs</DependentUpon>
+    <Compile Include="In_stockList.Designer.cs">
+      <DependentUpon>In_stockList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ArrivalList.resx">
       <DependentUpon>ArrivalList.cs</DependentUpon>
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="RequestList.resx">
       <DependentUpon>RequestList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockList.resx">
-      <DependentUpon>StockList.cs</DependentUpon>
+    <EmbeddedResource Include="In_stockList.resx">
+      <DependentUpon>In_stockList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

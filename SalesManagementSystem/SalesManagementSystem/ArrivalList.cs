@@ -24,8 +24,8 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form stocklistForm = new StockListForm();
-            stocklistForm.Show();
+            Form in_stocklistForm = new In_stockListForm();
+            in_stocklistForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
