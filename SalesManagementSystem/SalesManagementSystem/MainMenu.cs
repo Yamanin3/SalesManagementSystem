@@ -10,11 +10,40 @@ using System.Windows.Forms;
 
 namespace SalesManagementSystem
 {
-    public partial class MainMenu : Form
+    public partial class MainMenuForm : Form
     {
-        public MainMenu()
+        public MainMenuForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form customerlistForm = new CustomerListForm();
+            customerlistForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form memberlistForm = new MemberListForm();
+            memberlistForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form orderlistForm = new OrderListForm();
+            orderlistForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form productlistForm = new ProductListForm();
+            productlistForm.Show();
+        }
+
+        private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

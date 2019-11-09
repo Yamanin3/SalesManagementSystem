@@ -199,5 +199,8 @@
   <ItemGroup>
     <None Include="Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_explorer_2k-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

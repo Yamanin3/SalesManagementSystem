@@ -85,9 +85,9 @@ namespace SalesManagementSystem
                 this.textBox2.Text = string.Empty;
 
                 this.Hide();
-                Form customerlistForm = new CustomerListForm();
-                Form memberlistForm = new MemberListForm();
-                memberlistForm.Show();
+   
+                Form menuForm = new MainMenuForm();
+                menuForm.Show();
 
                 
             }

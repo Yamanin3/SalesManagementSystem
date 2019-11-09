@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SalesManagementSystem
 {
-    public partial class OrderList : Form
+    public partial class OrderListForm : Form
     {
-        public OrderList()
+        public OrderListForm()
         {
             InitializeComponent();
         }
