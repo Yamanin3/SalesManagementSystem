@@ -114,6 +114,12 @@
     <Compile Include="In_stockList.Designer.cs">
       <DependentUpon>In_stockList.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockList.Designer.cs">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ArrivalList.resx">
       <DependentUpon>ArrivalList.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="In_stockList.resx">
       <DependentUpon>In_stockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockList.resx">
+      <DependentUpon>StockList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\note-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msinfo32-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -223,6 +223,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap msinfo32_1 {
+            get {
+                object obj = ResourceManager.GetObject("msinfo32-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap no_1 {
             get {
                 object obj = ResourceManager.GetObject("no-1", resourceCulture);
