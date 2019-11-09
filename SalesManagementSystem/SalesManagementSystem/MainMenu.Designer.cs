@@ -37,12 +37,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
@@ -109,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(318, 32);
+            this.label1.Location = new System.Drawing.Point(308, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 61);
             this.label1.TabIndex = 2;
@@ -121,12 +123,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.computer_explorer_2k_2;
-            this.pictureBox1.Location = new System.Drawing.Point(261, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(251, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(174, 178);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(371, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "発注リスト";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // MainMenuForm
             // 
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

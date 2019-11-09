@@ -203,6 +203,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap modem_5 {
+            get {
+                object obj = ResourceManager.GetObject("modem-5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap monitor_windows {
             get {
                 object obj = ResourceManager.GetObject("monitor_windows", resourceCulture);
