@@ -1,6 +1,6 @@
 ﻿namespace SalesManagementSystem
 {
-    partial class OrderListForm
+    partial class On_orderListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(On_orderListForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -305,7 +305,7 @@
             this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRemove.Text = "削除";
             // 
-            // OrderListForm
+            // On_orderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,9 +315,10 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "OrderListForm";
+            this.Name = "On_orderListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注文一覧";
+            this.Load += new System.EventHandler(this.On_orderListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

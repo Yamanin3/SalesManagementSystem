@@ -76,11 +76,17 @@
     <Compile Include="MemberList.Designer.cs">
       <DependentUpon>MemberList.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderList.cs">
+    <Compile Include="OrderedList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderList.Designer.cs">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <Compile Include="OrderedList.Designer.cs">
+      <DependentUpon>OrderedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="On_orderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="On_orderList.Designer.cs">
+      <DependentUpon>On_orderList.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductList.cs">
       <SubType>Form</SubType>
@@ -123,8 +129,11 @@
     <EmbeddedResource Include="MemberList.resx">
       <DependentUpon>MemberList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderList.resx">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <EmbeddedResource Include="On_orderList.resx">
+      <DependentUpon>On_orderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderedList.resx">
+      <DependentUpon>OrderedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
@@ -246,6 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\modem-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

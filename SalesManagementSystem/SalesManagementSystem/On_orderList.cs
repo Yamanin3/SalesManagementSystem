@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SalesManagementSystem
 {
-    public partial class OrderListForm : Form
+    public partial class On_orderListForm : Form
     {
-        public OrderListForm()
+        public On_orderListForm()
         {
             InitializeComponent();
         }
@@ -22,6 +22,11 @@ namespace SalesManagementSystem
             this.Hide();
             Form menu = new MainMenuForm();
             menu.Show();
+        }
+
+        private void On_orderListForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

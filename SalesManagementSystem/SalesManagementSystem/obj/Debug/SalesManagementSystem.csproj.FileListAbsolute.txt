@@ -46,7 +46,6 @@ C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManag
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.Login_Form.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.MainMenuForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.MemberListForm.resources
-C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.OrderListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ProductListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.Properties.Resources.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csproj.GenerateResource.cache
@@ -55,3 +54,6 @@ C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManag
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.pdb
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ArrivalListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.StockListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.On_orderListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.OrderedListForm.resources
+C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.RequestListForm.resources

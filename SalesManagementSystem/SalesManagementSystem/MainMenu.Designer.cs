@@ -36,8 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Main menu";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(174, 178);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(371, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "発注依頼リスト";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -129,15 +139,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(174, 178);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(371, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "発注リスト";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // MainMenuForm
             // 

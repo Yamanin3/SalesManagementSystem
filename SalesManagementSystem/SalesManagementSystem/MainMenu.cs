@@ -34,8 +34,8 @@ namespace SalesManagementSystem
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form orderlistForm = new OrderListForm();
-            orderlistForm.Show();
+            Form on_orderlistForm = new On_orderListForm();
+            on_orderlistForm.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -60,6 +60,13 @@ namespace SalesManagementSystem
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form requestlistForm = new RequestListForm();
+            requestlistForm.Show();
         }
     }
 }
