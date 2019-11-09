@@ -82,5 +82,10 @@ namespace SalesManagementSystem
             Form loadlistForm = new LoadListForm();
             loadlistForm.Show();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
