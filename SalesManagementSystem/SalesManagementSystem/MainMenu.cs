@@ -94,5 +94,12 @@ namespace SalesManagementSystem
             Form issuelistForm = new IssueListForm();
             issuelistForm.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form shiplistForm = new ShipListForm();
+            shiplistForm.Show();
+        }
     }
 }
