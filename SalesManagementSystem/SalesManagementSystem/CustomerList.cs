@@ -43,7 +43,6 @@ namespace SalesManagementSystem
 
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
-            
 
             AC.openConnection();
             AC.sql = "select * from 顧客マスタ";

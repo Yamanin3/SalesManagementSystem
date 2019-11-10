@@ -62,8 +62,8 @@
             this.sMSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.sMSdatabaseDataSet1 = new SalesManagementSystem.SMSdatabaseDataSet();
-            this.顧客マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.顧客マスタTableAdapter1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter();
+            this.顧客マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -403,14 +403,14 @@
             this.sMSdatabaseDataSet1.DataSetName = "SMSdatabaseDataSet";
             this.sMSdatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // 顧客マスタTableAdapter1
+            // 
+            this.顧客マスタTableAdapter1.ClearBeforeFill = true;
+            // 
             // 顧客マスタBindingSource1
             // 
             this.顧客マスタBindingSource1.DataMember = "顧客マスタ";
             this.顧客マスタBindingSource1.DataSource = this.sMSdatabaseDataSet1;
-            // 
-            // 顧客マスタTableAdapter1
-            // 
-            this.顧客マスタTableAdapter1.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -568,8 +568,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話番号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn メールアドレスDataGridViewTextBoxColumn;
         private SMSdatabaseDataSet sMSdatabaseDataSet1;
-        private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
         private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter1;
+        private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
