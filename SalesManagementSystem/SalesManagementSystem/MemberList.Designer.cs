@@ -62,11 +62,6 @@
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.会員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
-            this.会員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.会員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.会員マスタTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,13 +74,18 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.パスワードDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.会員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
+            this.会員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.会員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.会員マスタTableAdapter();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -420,37 +420,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // 会員マスタBindingSource
-            // 
-            this.会員マスタBindingSource.DataMember = "会員マスタ";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 455);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 39);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "戻る";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // sMSdatabaseDataSet
-            // 
-            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
-            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 会員マスタBindingSource1
-            // 
-            this.会員マスタBindingSource1.DataMember = "会員マスタ";
-            this.会員マスタBindingSource1.DataSource = this.sMSdatabaseDataSet;
-            // 
-            // 会員マスタTableAdapter
-            // 
-            this.会員マスタTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "会員ID";
@@ -547,6 +516,37 @@
             this.パスワードDataGridViewTextBoxColumn.ReadOnly = true;
             this.パスワードDataGridViewTextBoxColumn.Width = 77;
             // 
+            // 会員マスタBindingSource1
+            // 
+            this.会員マスタBindingSource1.DataMember = "会員マスタ";
+            this.会員マスタBindingSource1.DataSource = this.sMSdatabaseDataSet;
+            // 
+            // sMSdatabaseDataSet
+            // 
+            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
+            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 会員マスタBindingSource
+            // 
+            this.会員マスタBindingSource.DataMember = "会員マスタ";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 39);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "戻る";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // 会員マスタTableAdapter
+            // 
+            this.会員マスタTableAdapter.ClearBeforeFill = true;
+            // 
             // MemberListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -568,9 +568,9 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
