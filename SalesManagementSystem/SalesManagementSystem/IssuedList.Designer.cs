@@ -33,10 +33,10 @@
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,19 +91,6 @@
             this.label1.Text = "出庫済みリスト";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
-            // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(14, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 39);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "戻る";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.briefcase_4;
@@ -130,16 +117,29 @@
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 52;
             // 
+            // button1
+            // 
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(14, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "閉じる";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // IssuedListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 357);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrevious);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -148,6 +148,7 @@
             this.Name = "IssuedListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出庫済み一覧";
+            this.Load += new System.EventHandler(this.IssuedListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -158,11 +159,11 @@
         #endregion
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox SearchTextbox;
+        private System.Windows.Forms.Button button1;
     }
 }
