@@ -44,16 +44,6 @@ namespace SalesManagementSystem
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
 
-            AC.openConnection();
-            AC.sql = "select * from 顧客マスタ";
-            AC.cmd.CommandText = AC.sql;
-            AC.da = new OleDbDataAdapter(AC.cmd);
-            AC.dt = new DataTable();
-
-            AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            AC.closeConnection();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,27 +60,9 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dataGridView1.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
+           
 
-                DataGridViewRow row = cell.OwningRow;
-                textBox1.Text = row.Cells[1].Value.ToString();
-                textBox2.Text = row.Cells[2].Value.ToString();
-                textBox3.Text = row.Cells[3].Value.ToString();
-                comboBox1.Text = row.Cells[4].Value.ToString();
-                dateTimePicker1.Text = row.Cells[5].Value.ToString();
-                textBox4.Text = row.Cells[6].Value.ToString();
-                textBox5.Text = row.Cells[7].Value.ToString();
-                textBox6.Text = row.Cells[8].Value.ToString();
-                textBox7.Text = row.Cells[9].Value.ToString();
-
-            }
+            
         }
     }
 }
