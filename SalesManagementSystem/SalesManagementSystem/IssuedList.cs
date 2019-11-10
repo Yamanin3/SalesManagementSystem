@@ -25,8 +25,8 @@ namespace SalesManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
+            Form issuelistForm = new IssueListForm();
+            issuelistForm.Show();
         }
     }
 }

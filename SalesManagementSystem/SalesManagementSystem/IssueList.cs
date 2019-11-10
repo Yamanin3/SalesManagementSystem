@@ -16,5 +16,23 @@ namespace SalesManagementSystem
         {
             InitializeComponent();
         }
+
+        private void IssueListForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form issuedlistForm = new IssuedListForm();
+            issuedlistForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form menu = new MainMenuForm();
+            menu.Show();
+        }
     }
 }
