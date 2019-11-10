@@ -36,7 +36,6 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -152,15 +152,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(89, 273);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 10;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
@@ -305,6 +296,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(87, 267);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
             // On_orderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -340,7 +344,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.TextBox textBox7;
@@ -358,5 +361,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

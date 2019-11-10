@@ -24,6 +24,8 @@ namespace SalesManagementSystem {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class SMSdatabaseDataSet : global::System.Data.DataSet {
         
+        private 営業所マスタDataTable table営業所マスタ;
+        
         private 会員マスタDataTable table会員マスタ;
         
         private 顧客マスタDataTable table顧客マスタ;
@@ -34,13 +36,15 @@ namespace SalesManagementSystem {
         
         private 出荷テーブルDataTable table出荷テーブル;
         
+        private 出庫テーブルDataTable table出庫テーブル;
+        
         private 商品マスタDataTable table商品マスタ;
         
         private 注文テーブルDataTable table注文テーブル;
         
         private 入荷テーブルDataTable table入荷テーブル;
         
-        private 納品テーブルDataTable table納品テーブル;
+        private 入庫テーブルDataTable table入庫テーブル;
         
         private 売上テーブルDataTable table売上テーブル;
         
@@ -94,6 +98,9 @@ namespace SalesManagementSystem {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["営業所マスタ"] != null)) {
+                    base.Tables.Add(new 営業所マスタDataTable(ds.Tables["営業所マスタ"]));
+                }
                 if ((ds.Tables["会員マスタ"] != null)) {
                     base.Tables.Add(new 会員マスタDataTable(ds.Tables["会員マスタ"]));
                 }
@@ -109,6 +116,9 @@ namespace SalesManagementSystem {
                 if ((ds.Tables["出荷テーブル"] != null)) {
                     base.Tables.Add(new 出荷テーブルDataTable(ds.Tables["出荷テーブル"]));
                 }
+                if ((ds.Tables["出庫テーブル"] != null)) {
+                    base.Tables.Add(new 出庫テーブルDataTable(ds.Tables["出庫テーブル"]));
+                }
                 if ((ds.Tables["商品マスタ"] != null)) {
                     base.Tables.Add(new 商品マスタDataTable(ds.Tables["商品マスタ"]));
                 }
@@ -118,8 +128,8 @@ namespace SalesManagementSystem {
                 if ((ds.Tables["入荷テーブル"] != null)) {
                     base.Tables.Add(new 入荷テーブルDataTable(ds.Tables["入荷テーブル"]));
                 }
-                if ((ds.Tables["納品テーブル"] != null)) {
-                    base.Tables.Add(new 納品テーブルDataTable(ds.Tables["納品テーブル"]));
+                if ((ds.Tables["入庫テーブル"] != null)) {
+                    base.Tables.Add(new 入庫テーブルDataTable(ds.Tables["入庫テーブル"]));
                 }
                 if ((ds.Tables["売上テーブル"] != null)) {
                     base.Tables.Add(new 売上テーブルDataTable(ds.Tables["売上テーブル"]));
@@ -143,6 +153,16 @@ namespace SalesManagementSystem {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public 営業所マスタDataTable 営業所マスタ {
+            get {
+                return this.table営業所マスタ;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -199,6 +219,16 @@ namespace SalesManagementSystem {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public 出庫テーブルDataTable 出庫テーブル {
+            get {
+                return this.table出庫テーブル;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public 商品マスタDataTable 商品マスタ {
             get {
                 return this.table商品マスタ;
@@ -229,9 +259,9 @@ namespace SalesManagementSystem {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public 納品テーブルDataTable 納品テーブル {
+        public 入庫テーブルDataTable 入庫テーブル {
             get {
-                return this.table納品テーブル;
+                return this.table入庫テーブル;
             }
         }
         
@@ -322,6 +352,9 @@ namespace SalesManagementSystem {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["営業所マスタ"] != null)) {
+                    base.Tables.Add(new 営業所マスタDataTable(ds.Tables["営業所マスタ"]));
+                }
                 if ((ds.Tables["会員マスタ"] != null)) {
                     base.Tables.Add(new 会員マスタDataTable(ds.Tables["会員マスタ"]));
                 }
@@ -337,6 +370,9 @@ namespace SalesManagementSystem {
                 if ((ds.Tables["出荷テーブル"] != null)) {
                     base.Tables.Add(new 出荷テーブルDataTable(ds.Tables["出荷テーブル"]));
                 }
+                if ((ds.Tables["出庫テーブル"] != null)) {
+                    base.Tables.Add(new 出庫テーブルDataTable(ds.Tables["出庫テーブル"]));
+                }
                 if ((ds.Tables["商品マスタ"] != null)) {
                     base.Tables.Add(new 商品マスタDataTable(ds.Tables["商品マスタ"]));
                 }
@@ -346,8 +382,8 @@ namespace SalesManagementSystem {
                 if ((ds.Tables["入荷テーブル"] != null)) {
                     base.Tables.Add(new 入荷テーブルDataTable(ds.Tables["入荷テーブル"]));
                 }
-                if ((ds.Tables["納品テーブル"] != null)) {
-                    base.Tables.Add(new 納品テーブルDataTable(ds.Tables["納品テーブル"]));
+                if ((ds.Tables["入庫テーブル"] != null)) {
+                    base.Tables.Add(new 入庫テーブルDataTable(ds.Tables["入庫テーブル"]));
                 }
                 if ((ds.Tables["売上テーブル"] != null)) {
                     base.Tables.Add(new 売上テーブルDataTable(ds.Tables["売上テーブル"]));
@@ -388,6 +424,12 @@ namespace SalesManagementSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.table営業所マスタ = ((営業所マスタDataTable)(base.Tables["営業所マスタ"]));
+            if ((initTable == true)) {
+                if ((this.table営業所マスタ != null)) {
+                    this.table営業所マスタ.InitVars();
+                }
+            }
             this.table会員マスタ = ((会員マスタDataTable)(base.Tables["会員マスタ"]));
             if ((initTable == true)) {
                 if ((this.table会員マスタ != null)) {
@@ -418,6 +460,12 @@ namespace SalesManagementSystem {
                     this.table出荷テーブル.InitVars();
                 }
             }
+            this.table出庫テーブル = ((出庫テーブルDataTable)(base.Tables["出庫テーブル"]));
+            if ((initTable == true)) {
+                if ((this.table出庫テーブル != null)) {
+                    this.table出庫テーブル.InitVars();
+                }
+            }
             this.table商品マスタ = ((商品マスタDataTable)(base.Tables["商品マスタ"]));
             if ((initTable == true)) {
                 if ((this.table商品マスタ != null)) {
@@ -436,10 +484,10 @@ namespace SalesManagementSystem {
                     this.table入荷テーブル.InitVars();
                 }
             }
-            this.table納品テーブル = ((納品テーブルDataTable)(base.Tables["納品テーブル"]));
+            this.table入庫テーブル = ((入庫テーブルDataTable)(base.Tables["入庫テーブル"]));
             if ((initTable == true)) {
-                if ((this.table納品テーブル != null)) {
-                    this.table納品テーブル.InitVars();
+                if ((this.table入庫テーブル != null)) {
+                    this.table入庫テーブル.InitVars();
                 }
             }
             this.table売上テーブル = ((売上テーブルDataTable)(base.Tables["売上テーブル"]));
@@ -474,6 +522,8 @@ namespace SalesManagementSystem {
             this.Namespace = "http://tempuri.org/SMSdatabaseDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.table営業所マスタ = new 営業所マスタDataTable();
+            base.Tables.Add(this.table営業所マスタ);
             this.table会員マスタ = new 会員マスタDataTable();
             base.Tables.Add(this.table会員マスタ);
             this.table顧客マスタ = new 顧客マスタDataTable();
@@ -484,14 +534,16 @@ namespace SalesManagementSystem {
             base.Tables.Add(this.table仕入先マスタ);
             this.table出荷テーブル = new 出荷テーブルDataTable();
             base.Tables.Add(this.table出荷テーブル);
+            this.table出庫テーブル = new 出庫テーブルDataTable();
+            base.Tables.Add(this.table出庫テーブル);
             this.table商品マスタ = new 商品マスタDataTable();
             base.Tables.Add(this.table商品マスタ);
             this.table注文テーブル = new 注文テーブルDataTable();
             base.Tables.Add(this.table注文テーブル);
             this.table入荷テーブル = new 入荷テーブルDataTable();
             base.Tables.Add(this.table入荷テーブル);
-            this.table納品テーブル = new 納品テーブルDataTable();
-            base.Tables.Add(this.table納品テーブル);
+            this.table入庫テーブル = new 入庫テーブルDataTable();
+            base.Tables.Add(this.table入庫テーブル);
             this.table売上テーブル = new 売上テーブルDataTable();
             base.Tables.Add(this.table売上テーブル);
             this.table発注テーブル = new 発注テーブルDataTable();
@@ -526,7 +578,7 @@ namespace SalesManagementSystem {
             this.Relations.Add(this.relation商品マスタ入荷テーブル);
             this.relation商品マスタ納品テーブル = new global::System.Data.DataRelation("商品マスタ納品テーブル", new global::System.Data.DataColumn[] {
                         this.table商品マスタ.商品IDColumn}, new global::System.Data.DataColumn[] {
-                        this.table納品テーブル.商品IDColumn}, false);
+                        this.table入庫テーブル.商品IDColumn}, false);
             this.Relations.Add(this.relation商品マスタ納品テーブル);
             this.relation会員マスタ発注テーブル = new global::System.Data.DataRelation("会員マスタ発注テーブル", new global::System.Data.DataColumn[] {
                         this.table会員マスタ.会員IDColumn}, new global::System.Data.DataColumn[] {
@@ -536,6 +588,12 @@ namespace SalesManagementSystem {
                         this.table商品マスタ.商品IDColumn}, new global::System.Data.DataColumn[] {
                         this.table発注テーブル.商品IDColumn}, false);
             this.Relations.Add(this.relation商品マスタ発注テーブル);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerialize営業所マスタ() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -570,6 +628,12 @@ namespace SalesManagementSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerialize出庫テーブル() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerialize商品マスタ() {
             return false;
         }
@@ -588,7 +652,7 @@ namespace SalesManagementSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerialize納品テーブル() {
+        private bool ShouldSerialize入庫テーブル() {
             return false;
         }
         
@@ -660,6 +724,9 @@ namespace SalesManagementSystem {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void 営業所マスタRowChangeEventHandler(object sender, 営業所マスタRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void 会員マスタRowChangeEventHandler(object sender, 会員マスタRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -675,6 +742,9 @@ namespace SalesManagementSystem {
         public delegate void 出荷テーブルRowChangeEventHandler(object sender, 出荷テーブルRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void 出庫テーブルRowChangeEventHandler(object sender, 出庫テーブルRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void 商品マスタRowChangeEventHandler(object sender, 商品マスタRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -684,13 +754,349 @@ namespace SalesManagementSystem {
         public delegate void 入荷テーブルRowChangeEventHandler(object sender, 入荷テーブルRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void 納品テーブルRowChangeEventHandler(object sender, 納品テーブルRowChangeEvent e);
+        public delegate void 入庫テーブルRowChangeEventHandler(object sender, 入庫テーブルRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void 売上テーブルRowChangeEventHandler(object sender, 売上テーブルRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void 発注テーブルRowChangeEventHandler(object sender, 発注テーブルRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class 営業所マスタDataTable : global::System.Data.TypedTableBase<営業所マスタRow> {
+            
+            private global::System.Data.DataColumn column営業所ID;
+            
+            private global::System.Data.DataColumn column営業所名;
+            
+            private global::System.Data.DataColumn column住所;
+            
+            private global::System.Data.DataColumn column電話番号;
+            
+            private global::System.Data.DataColumn columnメールアドレス;
+            
+            private global::System.Data.DataColumn column郵便番号;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタDataTable() {
+                this.TableName = "営業所マスタ";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal 営業所マスタDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected 営業所マスタDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 営業所IDColumn {
+                get {
+                    return this.column営業所ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 営業所名Column {
+                get {
+                    return this.column営業所名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 住所Column {
+                get {
+                    return this.column住所;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 電話番号Column {
+                get {
+                    return this.column電話番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn メールアドレスColumn {
+                get {
+                    return this.columnメールアドレス;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 郵便番号Column {
+                get {
+                    return this.column郵便番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRow this[int index] {
+                get {
+                    return ((営業所マスタRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 営業所マスタRowChangeEventHandler 営業所マスタRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 営業所マスタRowChangeEventHandler 営業所マスタRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 営業所マスタRowChangeEventHandler 営業所マスタRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 営業所マスタRowChangeEventHandler 営業所マスタRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Add営業所マスタRow(営業所マスタRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRow Add営業所マスタRow(string 営業所名, string 住所, string 電話番号, string メールアドレス, string 郵便番号) {
+                営業所マスタRow row営業所マスタRow = ((営業所マスタRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        営業所名,
+                        住所,
+                        電話番号,
+                        メールアドレス,
+                        郵便番号};
+                row営業所マスタRow.ItemArray = columnValuesArray;
+                this.Rows.Add(row営業所マスタRow);
+                return row営業所マスタRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRow FindBy営業所ID(int 営業所ID) {
+                return ((営業所マスタRow)(this.Rows.Find(new object[] {
+                            営業所ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                営業所マスタDataTable cln = ((営業所マスタDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new 営業所マスタDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.column営業所ID = base.Columns["営業所ID"];
+                this.column営業所名 = base.Columns["営業所名"];
+                this.column住所 = base.Columns["住所"];
+                this.column電話番号 = base.Columns["電話番号"];
+                this.columnメールアドレス = base.Columns["メールアドレス"];
+                this.column郵便番号 = base.Columns["郵便番号"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.column営業所ID = new global::System.Data.DataColumn("営業所ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column営業所ID);
+                this.column営業所名 = new global::System.Data.DataColumn("営業所名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column営業所名);
+                this.column住所 = new global::System.Data.DataColumn("住所", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column住所);
+                this.column電話番号 = new global::System.Data.DataColumn("電話番号", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column電話番号);
+                this.columnメールアドレス = new global::System.Data.DataColumn("メールアドレス", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnメールアドレス);
+                this.column郵便番号 = new global::System.Data.DataColumn("郵便番号", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column郵便番号);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.column営業所ID}, true));
+                this.column営業所ID.AutoIncrement = true;
+                this.column営業所ID.AutoIncrementSeed = -1;
+                this.column営業所ID.AutoIncrementStep = -1;
+                this.column営業所ID.AllowDBNull = false;
+                this.column営業所ID.Unique = true;
+                this.column営業所名.MaxLength = 30;
+                this.column住所.MaxLength = 50;
+                this.column電話番号.MaxLength = 14;
+                this.columnメールアドレス.MaxLength = 50;
+                this.column郵便番号.MaxLength = 8;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRow New営業所マスタRow() {
+                return ((営業所マスタRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new 営業所マスタRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(営業所マスタRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.営業所マスタRowChanged != null)) {
+                    this.営業所マスタRowChanged(this, new 営業所マスタRowChangeEvent(((営業所マスタRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.営業所マスタRowChanging != null)) {
+                    this.営業所マスタRowChanging(this, new 営業所マスタRowChangeEvent(((営業所マスタRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.営業所マスタRowDeleted != null)) {
+                    this.営業所マスタRowDeleted(this, new 営業所マスタRowChangeEvent(((営業所マスタRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.営業所マスタRowDeleting != null)) {
+                    this.営業所マスタRowDeleting(this, new 営業所マスタRowChangeEvent(((営業所マスタRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Remove営業所マスタRow(営業所マスタRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SMSdatabaseDataSet ds = new SMSdatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "営業所マスタDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -720,6 +1126,8 @@ namespace SalesManagementSystem {
             private global::System.Data.DataColumn column会員番号;
             
             private global::System.Data.DataColumn column入会日;
+            
+            private global::System.Data.DataColumn columnパスワード;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -844,6 +1252,14 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn パスワードColumn {
+                get {
+                    return this.columnパスワード;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -879,7 +1295,7 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 会員マスタRow Add会員マスタRow(string 会員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, System.DateTime 生年月日, int 会員番号, System.DateTime 入会日) {
+            public 会員マスタRow Add会員マスタRow(string 会員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, System.DateTime 生年月日, int 会員番号, System.DateTime 入会日, string パスワード) {
                 会員マスタRow row会員マスタRow = ((会員マスタRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -892,7 +1308,8 @@ namespace SalesManagementSystem {
                         性別,
                         生年月日,
                         会員番号,
-                        入会日};
+                        入会日,
+                        パスワード};
                 row会員マスタRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row会員マスタRow);
                 return row会員マスタRow;
@@ -933,6 +1350,7 @@ namespace SalesManagementSystem {
                 this.column生年月日 = base.Columns["生年月日"];
                 this.column会員番号 = base.Columns["会員番号"];
                 this.column入会日 = base.Columns["入会日"];
+                this.columnパスワード = base.Columns["パスワード"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -960,6 +1378,8 @@ namespace SalesManagementSystem {
                 base.Columns.Add(this.column会員番号);
                 this.column入会日 = new global::System.Data.DataColumn("入会日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column入会日);
+                this.columnパスワード = new global::System.Data.DataColumn("パスワード", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnパスワード);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column会員ID}, true));
                 this.column会員ID.AutoIncrement = true;
@@ -974,6 +1394,7 @@ namespace SalesManagementSystem {
                 this.columnメールアドレス.MaxLength = 50;
                 this.column郵便番号.MaxLength = 8;
                 this.column性別.MaxLength = 2;
+                this.columnパスワード.MaxLength = 40;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2479,6 +2900,309 @@ namespace SalesManagementSystem {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class 出庫テーブルDataTable : global::System.Data.TypedTableBase<出庫テーブルRow> {
+            
+            private global::System.Data.DataColumn column出庫ID;
+            
+            private global::System.Data.DataColumn column出庫番号;
+            
+            private global::System.Data.DataColumn column営業所ID;
+            
+            private global::System.Data.DataColumn column商品ID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルDataTable() {
+                this.TableName = "出庫テーブル";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal 出庫テーブルDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected 出庫テーブルDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 出庫IDColumn {
+                get {
+                    return this.column出庫ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 出庫番号Column {
+                get {
+                    return this.column出庫番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 営業所IDColumn {
+                get {
+                    return this.column営業所ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 商品IDColumn {
+                get {
+                    return this.column商品ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRow this[int index] {
+                get {
+                    return ((出庫テーブルRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 出庫テーブルRowChangeEventHandler 出庫テーブルRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 出庫テーブルRowChangeEventHandler 出庫テーブルRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 出庫テーブルRowChangeEventHandler 出庫テーブルRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event 出庫テーブルRowChangeEventHandler 出庫テーブルRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Add出庫テーブルRow(出庫テーブルRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRow Add出庫テーブルRow(int 出庫番号, int 営業所ID, int 商品ID) {
+                出庫テーブルRow row出庫テーブルRow = ((出庫テーブルRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        出庫番号,
+                        営業所ID,
+                        商品ID};
+                row出庫テーブルRow.ItemArray = columnValuesArray;
+                this.Rows.Add(row出庫テーブルRow);
+                return row出庫テーブルRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRow FindBy出庫ID(int 出庫ID) {
+                return ((出庫テーブルRow)(this.Rows.Find(new object[] {
+                            出庫ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                出庫テーブルDataTable cln = ((出庫テーブルDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new 出庫テーブルDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.column出庫ID = base.Columns["出庫ID"];
+                this.column出庫番号 = base.Columns["出庫番号"];
+                this.column営業所ID = base.Columns["営業所ID"];
+                this.column商品ID = base.Columns["商品ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.column出庫ID = new global::System.Data.DataColumn("出庫ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column出庫ID);
+                this.column出庫番号 = new global::System.Data.DataColumn("出庫番号", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column出庫番号);
+                this.column営業所ID = new global::System.Data.DataColumn("営業所ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column営業所ID);
+                this.column商品ID = new global::System.Data.DataColumn("商品ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column商品ID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.column出庫ID}, true));
+                this.column出庫ID.AutoIncrement = true;
+                this.column出庫ID.AutoIncrementSeed = -1;
+                this.column出庫ID.AutoIncrementStep = -1;
+                this.column出庫ID.AllowDBNull = false;
+                this.column出庫ID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRow New出庫テーブルRow() {
+                return ((出庫テーブルRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new 出庫テーブルRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(出庫テーブルRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.出庫テーブルRowChanged != null)) {
+                    this.出庫テーブルRowChanged(this, new 出庫テーブルRowChangeEvent(((出庫テーブルRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.出庫テーブルRowChanging != null)) {
+                    this.出庫テーブルRowChanging(this, new 出庫テーブルRowChangeEvent(((出庫テーブルRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.出庫テーブルRowDeleted != null)) {
+                    this.出庫テーブルRowDeleted(this, new 出庫テーブルRowChangeEvent(((出庫テーブルRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.出庫テーブルRowDeleting != null)) {
+                    this.出庫テーブルRowDeleting(this, new 出庫テーブルRowChangeEvent(((出庫テーブルRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Remove出庫テーブルRow(出庫テーブルRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SMSdatabaseDataSet ds = new SMSdatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "出庫テーブルDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class 商品マスタDataTable : global::System.Data.TypedTableBase<商品マスタRow> {
             
             private global::System.Data.DataColumn column商品ID;
@@ -2488,6 +3212,14 @@ namespace SalesManagementSystem {
             private global::System.Data.DataColumn column商品価格;
             
             private global::System.Data.DataColumn column商品番号;
+            
+            private global::System.Data.DataColumn column重量;
+            
+            private global::System.Data.DataColumn column幅;
+            
+            private global::System.Data.DataColumn column奥行;
+            
+            private global::System.Data.DataColumn column高さ;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -2556,6 +3288,38 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 重量Column {
+                get {
+                    return this.column重量;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 幅Column {
+                get {
+                    return this.column幅;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 奥行Column {
+                get {
+                    return this.column奥行;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn 高さColumn {
+                get {
+                    return this.column高さ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2591,13 +3355,17 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 商品マスタRow Add商品マスタRow(string 商品名, int 商品価格, int 商品番号) {
+            public 商品マスタRow Add商品マスタRow(string 商品名, int 商品価格, int 商品番号, int 重量, int 幅, int 奥行, int 高さ) {
                 商品マスタRow row商品マスタRow = ((商品マスタRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         商品名,
                         商品価格,
-                        商品番号};
+                        商品番号,
+                        重量,
+                        幅,
+                        奥行,
+                        高さ};
                 row商品マスタRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row商品マスタRow);
                 return row商品マスタRow;
@@ -2631,6 +3399,10 @@ namespace SalesManagementSystem {
                 this.column商品名 = base.Columns["商品名"];
                 this.column商品価格 = base.Columns["商品価格"];
                 this.column商品番号 = base.Columns["商品番号"];
+                this.column重量 = base.Columns["重量"];
+                this.column幅 = base.Columns["幅"];
+                this.column奥行 = base.Columns["奥行"];
+                this.column高さ = base.Columns["高さ"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2644,6 +3416,14 @@ namespace SalesManagementSystem {
                 base.Columns.Add(this.column商品価格);
                 this.column商品番号 = new global::System.Data.DataColumn("商品番号", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column商品番号);
+                this.column重量 = new global::System.Data.DataColumn("重量", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column重量);
+                this.column幅 = new global::System.Data.DataColumn("幅", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column幅);
+                this.column奥行 = new global::System.Data.DataColumn("奥行", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column奥行);
+                this.column高さ = new global::System.Data.DataColumn("高さ", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column高さ);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column商品ID}, true));
                 this.column商品ID.AutoIncrement = true;
@@ -3142,15 +3922,11 @@ namespace SalesManagementSystem {
             
             private global::System.Data.DataColumn column入荷予定日;
             
-            private global::System.Data.DataColumn column入荷予定物;
-            
             private global::System.Data.DataColumn column商品ID;
             
             private global::System.Data.DataColumn columnメーカーID;
             
             private global::System.Data.DataColumn column入荷数;
-            
-            private global::System.Data.DataColumn column入荷物;
             
             private global::System.Data.DataColumn column入荷予定数;
             
@@ -3213,14 +3989,6 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 入荷予定物Column {
-                get {
-                    return this.column入荷予定物;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn 商品IDColumn {
                 get {
                     return this.column商品ID;
@@ -3240,14 +4008,6 @@ namespace SalesManagementSystem {
             public global::System.Data.DataColumn 入荷数Column {
                 get {
                     return this.column入荷数;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 入荷物Column {
-                get {
-                    return this.column入荷物;
                 }
             }
             
@@ -3296,23 +4056,21 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 入荷テーブルRow Add入荷テーブルRow(System.DateTime 入荷日, System.DateTime 入荷予定日, string 入荷予定物, 商品マスタRow parent商品マスタRowBy商品マスタ入荷テーブル, 仕入先マスタRow parent仕入先マスタRowBy仕入先マスタ入荷テーブル, int 入荷数, string 入荷物, int 入荷予定数) {
+            public 入荷テーブルRow Add入荷テーブルRow(System.DateTime 入荷日, System.DateTime 入荷予定日, 商品マスタRow parent商品マスタRowBy商品マスタ入荷テーブル, 仕入先マスタRow parent仕入先マスタRowBy仕入先マスタ入荷テーブル, int 入荷数, int 入荷予定数) {
                 入荷テーブルRow row入荷テーブルRow = ((入荷テーブルRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         入荷日,
                         入荷予定日,
-                        入荷予定物,
                         null,
                         null,
                         入荷数,
-                        入荷物,
                         入荷予定数};
                 if ((parent商品マスタRowBy商品マスタ入荷テーブル != null)) {
-                    columnValuesArray[4] = parent商品マスタRowBy商品マスタ入荷テーブル[0];
+                    columnValuesArray[3] = parent商品マスタRowBy商品マスタ入荷テーブル[0];
                 }
                 if ((parent仕入先マスタRowBy仕入先マスタ入荷テーブル != null)) {
-                    columnValuesArray[5] = parent仕入先マスタRowBy仕入先マスタ入荷テーブル[0];
+                    columnValuesArray[4] = parent仕入先マスタRowBy仕入先マスタ入荷テーブル[0];
                 }
                 row入荷テーブルRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row入荷テーブルRow);
@@ -3346,11 +4104,9 @@ namespace SalesManagementSystem {
                 this.column入荷ID = base.Columns["入荷ID"];
                 this.column入荷日 = base.Columns["入荷日"];
                 this.column入荷予定日 = base.Columns["入荷予定日"];
-                this.column入荷予定物 = base.Columns["入荷予定物"];
                 this.column商品ID = base.Columns["商品ID"];
                 this.columnメーカーID = base.Columns["メーカーID"];
                 this.column入荷数 = base.Columns["入荷数"];
-                this.column入荷物 = base.Columns["入荷物"];
                 this.column入荷予定数 = base.Columns["入荷予定数"];
             }
             
@@ -3363,16 +4119,12 @@ namespace SalesManagementSystem {
                 base.Columns.Add(this.column入荷日);
                 this.column入荷予定日 = new global::System.Data.DataColumn("入荷予定日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column入荷予定日);
-                this.column入荷予定物 = new global::System.Data.DataColumn("入荷予定物", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column入荷予定物);
                 this.column商品ID = new global::System.Data.DataColumn("商品ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column商品ID);
                 this.columnメーカーID = new global::System.Data.DataColumn("メーカーID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnメーカーID);
                 this.column入荷数 = new global::System.Data.DataColumn("入荷数", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column入荷数);
-                this.column入荷物 = new global::System.Data.DataColumn("入荷物", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column入荷物);
                 this.column入荷予定数 = new global::System.Data.DataColumn("入荷予定数", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column入荷予定数);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -3382,8 +4134,6 @@ namespace SalesManagementSystem {
                 this.column入荷ID.AutoIncrementStep = -1;
                 this.column入荷ID.AllowDBNull = false;
                 this.column入荷ID.Unique = true;
-                this.column入荷予定物.MaxLength = 50;
-                this.column入荷物.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3515,28 +4265,24 @@ namespace SalesManagementSystem {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class 納品テーブルDataTable : global::System.Data.TypedTableBase<納品テーブルRow> {
+        public partial class 入庫テーブルDataTable : global::System.Data.TypedTableBase<入庫テーブルRow> {
             
-            private global::System.Data.DataColumn column納品ID;
+            private global::System.Data.DataColumn column入庫ID;
             
-            private global::System.Data.DataColumn column納品日;
+            private global::System.Data.DataColumn column入庫日;
             
-            private global::System.Data.DataColumn column納品予定日;
-            
-            private global::System.Data.DataColumn column納品予定物;
+            private global::System.Data.DataColumn column入庫予定日;
             
             private global::System.Data.DataColumn column商品ID;
             
-            private global::System.Data.DataColumn column納品数;
+            private global::System.Data.DataColumn column入庫数;
             
-            private global::System.Data.DataColumn column納品物;
-            
-            private global::System.Data.DataColumn column納品予定数;
+            private global::System.Data.DataColumn column入庫予定数;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルDataTable() {
-                this.TableName = "納品テーブル";
+            public 入庫テーブルDataTable() {
+                this.TableName = "入庫テーブル";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3544,7 +4290,7 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal 納品テーブルDataTable(global::System.Data.DataTable table) {
+            internal 入庫テーブルDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3561,40 +4307,32 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected 納品テーブルDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected 入庫テーブルDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品IDColumn {
+            public global::System.Data.DataColumn 入庫IDColumn {
                 get {
-                    return this.column納品ID;
+                    return this.column入庫ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品日Column {
+            public global::System.Data.DataColumn 入庫日Column {
                 get {
-                    return this.column納品日;
+                    return this.column入庫日;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品予定日Column {
+            public global::System.Data.DataColumn 入庫予定日Column {
                 get {
-                    return this.column納品予定日;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品予定物Column {
-                get {
-                    return this.column納品予定物;
+                    return this.column入庫予定日;
                 }
             }
             
@@ -3608,25 +4346,17 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品数Column {
+            public global::System.Data.DataColumn 入庫数Column {
                 get {
-                    return this.column納品数;
+                    return this.column入庫数;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品物Column {
+            public global::System.Data.DataColumn 入庫予定数Column {
                 get {
-                    return this.column納品物;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn 納品予定数Column {
-                get {
-                    return this.column納品予定数;
+                    return this.column入庫予定数;
                 }
             }
             
@@ -3641,62 +4371,60 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow this[int index] {
+            public 入庫テーブルRow this[int index] {
                 get {
-                    return ((納品テーブルRow)(this.Rows[index]));
+                    return ((入庫テーブルRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event 納品テーブルRowChangeEventHandler 納品テーブルRowChanging;
+            public event 入庫テーブルRowChangeEventHandler 入庫テーブルRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event 納品テーブルRowChangeEventHandler 納品テーブルRowChanged;
+            public event 入庫テーブルRowChangeEventHandler 入庫テーブルRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event 納品テーブルRowChangeEventHandler 納品テーブルRowDeleting;
+            public event 入庫テーブルRowChangeEventHandler 入庫テーブルRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event 納品テーブルRowChangeEventHandler 納品テーブルRowDeleted;
+            public event 入庫テーブルRowChangeEventHandler 入庫テーブルRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Add納品テーブルRow(納品テーブルRow row) {
+            public void Add入庫テーブルRow(入庫テーブルRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow Add納品テーブルRow(System.DateTime 納品日, System.DateTime 納品予定日, string 納品予定物, 商品マスタRow parent商品マスタRowBy商品マスタ納品テーブル, int 納品数, string 納品物, int 納品予定数) {
-                納品テーブルRow row納品テーブルRow = ((納品テーブルRow)(this.NewRow()));
+            public 入庫テーブルRow Add入庫テーブルRow(System.DateTime 入庫日, System.DateTime 入庫予定日, 商品マスタRow parent商品マスタRowBy商品マスタ納品テーブル, int 入庫数, int 入庫予定数) {
+                入庫テーブルRow row入庫テーブルRow = ((入庫テーブルRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        納品日,
-                        納品予定日,
-                        納品予定物,
+                        入庫日,
+                        入庫予定日,
                         null,
-                        納品数,
-                        納品物,
-                        納品予定数};
+                        入庫数,
+                        入庫予定数};
                 if ((parent商品マスタRowBy商品マスタ納品テーブル != null)) {
-                    columnValuesArray[4] = parent商品マスタRowBy商品マスタ納品テーブル[0];
+                    columnValuesArray[3] = parent商品マスタRowBy商品マスタ納品テーブル[0];
                 }
-                row納品テーブルRow.ItemArray = columnValuesArray;
-                this.Rows.Add(row納品テーブルRow);
-                return row納品テーブルRow;
+                row入庫テーブルRow.ItemArray = columnValuesArray;
+                this.Rows.Add(row入庫テーブルRow);
+                return row入庫テーブルRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow FindBy納品ID(int 納品ID) {
-                return ((納品テーブルRow)(this.Rows.Find(new object[] {
-                            納品ID})));
+            public 入庫テーブルRow FindBy入庫ID(int 入庫ID) {
+                return ((入庫テーブルRow)(this.Rows.Find(new object[] {
+                            入庫ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                納品テーブルDataTable cln = ((納品テーブルDataTable)(base.Clone()));
+                入庫テーブルDataTable cln = ((入庫テーブルDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3704,76 +4432,68 @@ namespace SalesManagementSystem {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new 納品テーブルDataTable();
+                return new 入庫テーブルDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.column納品ID = base.Columns["納品ID"];
-                this.column納品日 = base.Columns["納品日"];
-                this.column納品予定日 = base.Columns["納品予定日"];
-                this.column納品予定物 = base.Columns["納品予定物"];
+                this.column入庫ID = base.Columns["入庫ID"];
+                this.column入庫日 = base.Columns["入庫日"];
+                this.column入庫予定日 = base.Columns["入庫予定日"];
                 this.column商品ID = base.Columns["商品ID"];
-                this.column納品数 = base.Columns["納品数"];
-                this.column納品物 = base.Columns["納品物"];
-                this.column納品予定数 = base.Columns["納品予定数"];
+                this.column入庫数 = base.Columns["入庫数"];
+                this.column入庫予定数 = base.Columns["入庫予定数"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.column納品ID = new global::System.Data.DataColumn("納品ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品ID);
-                this.column納品日 = new global::System.Data.DataColumn("納品日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品日);
-                this.column納品予定日 = new global::System.Data.DataColumn("納品予定日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品予定日);
-                this.column納品予定物 = new global::System.Data.DataColumn("納品予定物", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品予定物);
+                this.column入庫ID = new global::System.Data.DataColumn("入庫ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入庫ID);
+                this.column入庫日 = new global::System.Data.DataColumn("入庫日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入庫日);
+                this.column入庫予定日 = new global::System.Data.DataColumn("入庫予定日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入庫予定日);
                 this.column商品ID = new global::System.Data.DataColumn("商品ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column商品ID);
-                this.column納品数 = new global::System.Data.DataColumn("納品数", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品数);
-                this.column納品物 = new global::System.Data.DataColumn("納品物", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品物);
-                this.column納品予定数 = new global::System.Data.DataColumn("納品予定数", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column納品予定数);
+                this.column入庫数 = new global::System.Data.DataColumn("入庫数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入庫数);
+                this.column入庫予定数 = new global::System.Data.DataColumn("入庫予定数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入庫予定数);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.column納品ID}, true));
-                this.column納品ID.AutoIncrement = true;
-                this.column納品ID.AutoIncrementSeed = -1;
-                this.column納品ID.AutoIncrementStep = -1;
-                this.column納品ID.AllowDBNull = false;
-                this.column納品ID.Unique = true;
-                this.column納品予定物.MaxLength = 50;
-                this.column納品物.MaxLength = 50;
+                                this.column入庫ID}, true));
+                this.column入庫ID.AutoIncrement = true;
+                this.column入庫ID.AutoIncrementSeed = -1;
+                this.column入庫ID.AutoIncrementStep = -1;
+                this.column入庫ID.AllowDBNull = false;
+                this.column入庫ID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow New納品テーブルRow() {
-                return ((納品テーブルRow)(this.NewRow()));
+            public 入庫テーブルRow New入庫テーブルRow() {
+                return ((入庫テーブルRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new 納品テーブルRow(builder);
+                return new 入庫テーブルRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(納品テーブルRow);
+                return typeof(入庫テーブルRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.納品テーブルRowChanged != null)) {
-                    this.納品テーブルRowChanged(this, new 納品テーブルRowChangeEvent(((納品テーブルRow)(e.Row)), e.Action));
+                if ((this.入庫テーブルRowChanged != null)) {
+                    this.入庫テーブルRowChanged(this, new 入庫テーブルRowChangeEvent(((入庫テーブルRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3781,8 +4501,8 @@ namespace SalesManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.納品テーブルRowChanging != null)) {
-                    this.納品テーブルRowChanging(this, new 納品テーブルRowChangeEvent(((納品テーブルRow)(e.Row)), e.Action));
+                if ((this.入庫テーブルRowChanging != null)) {
+                    this.入庫テーブルRowChanging(this, new 入庫テーブルRowChangeEvent(((入庫テーブルRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3790,8 +4510,8 @@ namespace SalesManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.納品テーブルRowDeleted != null)) {
-                    this.納品テーブルRowDeleted(this, new 納品テーブルRowChangeEvent(((納品テーブルRow)(e.Row)), e.Action));
+                if ((this.入庫テーブルRowDeleted != null)) {
+                    this.入庫テーブルRowDeleted(this, new 入庫テーブルRowChangeEvent(((入庫テーブルRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3799,14 +4519,14 @@ namespace SalesManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.納品テーブルRowDeleting != null)) {
-                    this.納品テーブルRowDeleting(this, new 納品テーブルRowChangeEvent(((納品テーブルRow)(e.Row)), e.Action));
+                if ((this.入庫テーブルRowDeleting != null)) {
+                    this.入庫テーブルRowDeleting(this, new 入庫テーブルRowChangeEvent(((入庫テーブルRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Remove納品テーブルRow(納品テーブルRow row) {
+            public void Remove入庫テーブルRow(入庫テーブルRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3833,7 +4553,7 @@ namespace SalesManagementSystem {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "納品テーブルDataTable";
+                attribute2.FixedValue = "入庫テーブルDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4489,6 +5209,172 @@ namespace SalesManagementSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class 営業所マスタRow : global::System.Data.DataRow {
+            
+            private 営業所マスタDataTable table営業所マスタ;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal 営業所マスタRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.table営業所マスタ = ((営業所マスタDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 営業所ID {
+                get {
+                    return ((int)(this[this.table営業所マスタ.営業所IDColumn]));
+                }
+                set {
+                    this[this.table営業所マスタ.営業所IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string 営業所名 {
+                get {
+                    try {
+                        return ((string)(this[this.table営業所マスタ.営業所名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'営業所マスタ\' にある列 \'営業所名\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table営業所マスタ.営業所名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string 住所 {
+                get {
+                    try {
+                        return ((string)(this[this.table営業所マスタ.住所Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'営業所マスタ\' にある列 \'住所\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table営業所マスタ.住所Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string 電話番号 {
+                get {
+                    try {
+                        return ((string)(this[this.table営業所マスタ.電話番号Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'営業所マスタ\' にある列 \'電話番号\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table営業所マスタ.電話番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string メールアドレス {
+                get {
+                    try {
+                        return ((string)(this[this.table営業所マスタ.メールアドレスColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'営業所マスタ\' にある列 \'メールアドレス\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table営業所マスタ.メールアドレスColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string 郵便番号 {
+                get {
+                    try {
+                        return ((string)(this[this.table営業所マスタ.郵便番号Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'営業所マスタ\' にある列 \'郵便番号\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table営業所マスタ.郵便番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is営業所名Null() {
+                return this.IsNull(this.table営業所マスタ.営業所名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set営業所名Null() {
+                this[this.table営業所マスタ.営業所名Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is住所Null() {
+                return this.IsNull(this.table営業所マスタ.住所Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set住所Null() {
+                this[this.table営業所マスタ.住所Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is電話番号Null() {
+                return this.IsNull(this.table営業所マスタ.電話番号Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set電話番号Null() {
+                this[this.table営業所マスタ.電話番号Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsメールアドレスNull() {
+                return this.IsNull(this.table営業所マスタ.メールアドレスColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetメールアドレスNull() {
+                this[this.table営業所マスタ.メールアドレスColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is郵便番号Null() {
+                return this.IsNull(this.table営業所マスタ.郵便番号Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set郵便番号Null() {
+                this[this.table営業所マスタ.郵便番号Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class 会員マスタRow : global::System.Data.DataRow {
             
             private 会員マスタDataTable table会員マスタ;
@@ -4673,6 +5559,22 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string パスワード {
+                get {
+                    try {
+                        return ((string)(this[this.table会員マスタ.パスワードColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'会員マスタ\' にある列 \'パスワード\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table会員マスタ.パスワードColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is会員名Null() {
                 return this.IsNull(this.table会員マスタ.会員名Column);
             }
@@ -4789,6 +5691,18 @@ namespace SalesManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Set入会日Null() {
                 this[this.table会員マスタ.入会日Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsパスワードNull() {
+                return this.IsNull(this.table会員マスタ.パスワードColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetパスワードNull() {
+                this[this.table会員マスタ.パスワードColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5592,6 +6506,116 @@ namespace SalesManagementSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class 出庫テーブルRow : global::System.Data.DataRow {
+            
+            private 出庫テーブルDataTable table出庫テーブル;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal 出庫テーブルRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.table出庫テーブル = ((出庫テーブルDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 出庫ID {
+                get {
+                    return ((int)(this[this.table出庫テーブル.出庫IDColumn]));
+                }
+                set {
+                    this[this.table出庫テーブル.出庫IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 出庫番号 {
+                get {
+                    try {
+                        return ((int)(this[this.table出庫テーブル.出庫番号Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'出庫テーブル\' にある列 \'出庫番号\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table出庫テーブル.出庫番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 営業所ID {
+                get {
+                    try {
+                        return ((int)(this[this.table出庫テーブル.営業所IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'出庫テーブル\' にある列 \'営業所ID\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table出庫テーブル.営業所IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 商品ID {
+                get {
+                    try {
+                        return ((int)(this[this.table出庫テーブル.商品IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'出庫テーブル\' にある列 \'商品ID\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table出庫テーブル.商品IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is出庫番号Null() {
+                return this.IsNull(this.table出庫テーブル.出庫番号Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set出庫番号Null() {
+                this[this.table出庫テーブル.出庫番号Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is営業所IDNull() {
+                return this.IsNull(this.table出庫テーブル.営業所IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set営業所IDNull() {
+                this[this.table出庫テーブル.営業所IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is商品IDNull() {
+                return this.IsNull(this.table出庫テーブル.商品IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set商品IDNull() {
+                this[this.table出庫テーブル.商品IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class 商品マスタRow : global::System.Data.DataRow {
             
             private 商品マスタDataTable table商品マスタ;
@@ -5664,6 +6688,70 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 重量 {
+                get {
+                    try {
+                        return ((int)(this[this.table商品マスタ.重量Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'商品マスタ\' にある列 \'重量\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table商品マスタ.重量Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 幅 {
+                get {
+                    try {
+                        return ((int)(this[this.table商品マスタ.幅Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'商品マスタ\' にある列 \'幅\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table商品マスタ.幅Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 奥行 {
+                get {
+                    try {
+                        return ((int)(this[this.table商品マスタ.奥行Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'商品マスタ\' にある列 \'奥行\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table商品マスタ.奥行Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int 高さ {
+                get {
+                    try {
+                        return ((int)(this[this.table商品マスタ.高さColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'商品マスタ\' にある列 \'高さ\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table商品マスタ.高さColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is商品名Null() {
                 return this.IsNull(this.table商品マスタ.商品名Column);
             }
@@ -5696,6 +6784,54 @@ namespace SalesManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Set商品番号Null() {
                 this[this.table商品マスタ.商品番号Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is重量Null() {
+                return this.IsNull(this.table商品マスタ.重量Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set重量Null() {
+                this[this.table商品マスタ.重量Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is幅Null() {
+                return this.IsNull(this.table商品マスタ.幅Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set幅Null() {
+                this[this.table商品マスタ.幅Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is奥行Null() {
+                return this.IsNull(this.table商品マスタ.奥行Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set奥行Null() {
+                this[this.table商品マスタ.奥行Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is高さNull() {
+                return this.IsNull(this.table商品マスタ.高さColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set高さNull() {
+                this[this.table商品マスタ.高さColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5733,12 +6869,12 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow[] Get納品テーブルRows() {
+            public 入庫テーブルRow[] Get入庫テーブルRows() {
                 if ((this.Table.ChildRelations["商品マスタ納品テーブル"] == null)) {
-                    return new 納品テーブルRow[0];
+                    return new 入庫テーブルRow[0];
                 }
                 else {
-                    return ((納品テーブルRow[])(base.GetChildRows(this.Table.ChildRelations["商品マスタ納品テーブル"])));
+                    return ((入庫テーブルRow[])(base.GetChildRows(this.Table.ChildRelations["商品マスタ納品テーブル"])));
                 }
             }
             
@@ -6029,22 +7165,6 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string 入荷予定物 {
-                get {
-                    try {
-                        return ((string)(this[this.table入荷テーブル.入荷予定物Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'入荷テーブル\' にある列 \'入荷予定物\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.table入荷テーブル.入荷予定物Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int 商品ID {
                 get {
                     try {
@@ -6088,22 +7208,6 @@ namespace SalesManagementSystem {
                 }
                 set {
                     this[this.table入荷テーブル.入荷数Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string 入荷物 {
-                get {
-                    try {
-                        return ((string)(this[this.table入荷テーブル.入荷物Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'入荷テーブル\' にある列 \'入荷物\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.table入荷テーブル.入荷物Column] = value;
                 }
             }
             
@@ -6171,18 +7275,6 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is入荷予定物Null() {
-                return this.IsNull(this.table入荷テーブル.入荷予定物Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set入荷予定物Null() {
-                this[this.table入荷テーブル.入荷予定物Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is商品IDNull() {
                 return this.IsNull(this.table入荷テーブル.商品IDColumn);
             }
@@ -6219,18 +7311,6 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is入荷物Null() {
-                return this.IsNull(this.table入荷テーブル.入荷物Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set入荷物Null() {
-                this[this.table入荷テーブル.入荷物Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is入荷予定数Null() {
                 return this.IsNull(this.table入荷テーブル.入荷予定数Column);
             }
@@ -6245,73 +7325,57 @@ namespace SalesManagementSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class 納品テーブルRow : global::System.Data.DataRow {
+        public partial class 入庫テーブルRow : global::System.Data.DataRow {
             
-            private 納品テーブルDataTable table納品テーブル;
+            private 入庫テーブルDataTable table入庫テーブル;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal 納品テーブルRow(global::System.Data.DataRowBuilder rb) : 
+            internal 入庫テーブルRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.table納品テーブル = ((納品テーブルDataTable)(this.Table));
+                this.table入庫テーブル = ((入庫テーブルDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int 納品ID {
+            public int 入庫ID {
                 get {
-                    return ((int)(this[this.table納品テーブル.納品IDColumn]));
+                    return ((int)(this[this.table入庫テーブル.入庫IDColumn]));
                 }
                 set {
-                    this[this.table納品テーブル.納品IDColumn] = value;
+                    this[this.table入庫テーブル.入庫IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime 納品日 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.table納品テーブル.納品日Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品日\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.table納品テーブル.納品日Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime 納品予定日 {
+            public System.DateTime 入庫日 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.table納品テーブル.納品予定日Column]));
+                        return ((global::System.DateTime)(this[this.table入庫テーブル.入庫日Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品予定日\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'入庫テーブル\' にある列 \'入庫日\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table納品テーブル.納品予定日Column] = value;
+                    this[this.table入庫テーブル.入庫日Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string 納品予定物 {
+            public System.DateTime 入庫予定日 {
                 get {
                     try {
-                        return ((string)(this[this.table納品テーブル.納品予定物Column]));
+                        return ((global::System.DateTime)(this[this.table入庫テーブル.入庫予定日Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品予定物\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'入庫テーブル\' にある列 \'入庫予定日\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table納品テーブル.納品予定物Column] = value;
+                    this[this.table入庫テーブル.入庫予定日Column] = value;
                 }
             }
             
@@ -6320,62 +7384,46 @@ namespace SalesManagementSystem {
             public int 商品ID {
                 get {
                     try {
-                        return ((int)(this[this.table納品テーブル.商品IDColumn]));
+                        return ((int)(this[this.table入庫テーブル.商品IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'商品ID\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'入庫テーブル\' にある列 \'商品ID\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table納品テーブル.商品IDColumn] = value;
+                    this[this.table入庫テーブル.商品IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int 納品数 {
+            public int 入庫数 {
                 get {
                     try {
-                        return ((int)(this[this.table納品テーブル.納品数Column]));
+                        return ((int)(this[this.table入庫テーブル.入庫数Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品数\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'入庫テーブル\' にある列 \'入庫数\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table納品テーブル.納品数Column] = value;
+                    this[this.table入庫テーブル.入庫数Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string 納品物 {
+            public int 入庫予定数 {
                 get {
                     try {
-                        return ((string)(this[this.table納品テーブル.納品物Column]));
+                        return ((int)(this[this.table入庫テーブル.入庫予定数Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品物\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'入庫テーブル\' にある列 \'入庫予定数\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table納品テーブル.納品物Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int 納品予定数 {
-                get {
-                    try {
-                        return ((int)(this[this.table納品テーブル.納品予定数Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'納品テーブル\' にある列 \'納品予定数\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.table納品テーブル.納品予定数Column] = value;
+                    this[this.table入庫テーブル.入庫予定数Column] = value;
                 }
             }
             
@@ -6392,86 +7440,62 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品日Null() {
-                return this.IsNull(this.table納品テーブル.納品日Column);
+            public bool Is入庫日Null() {
+                return this.IsNull(this.table入庫テーブル.入庫日Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品日Null() {
-                this[this.table納品テーブル.納品日Column] = global::System.Convert.DBNull;
+            public void Set入庫日Null() {
+                this[this.table入庫テーブル.入庫日Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品予定日Null() {
-                return this.IsNull(this.table納品テーブル.納品予定日Column);
+            public bool Is入庫予定日Null() {
+                return this.IsNull(this.table入庫テーブル.入庫予定日Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品予定日Null() {
-                this[this.table納品テーブル.納品予定日Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品予定物Null() {
-                return this.IsNull(this.table納品テーブル.納品予定物Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品予定物Null() {
-                this[this.table納品テーブル.納品予定物Column] = global::System.Convert.DBNull;
+            public void Set入庫予定日Null() {
+                this[this.table入庫テーブル.入庫予定日Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is商品IDNull() {
-                return this.IsNull(this.table納品テーブル.商品IDColumn);
+                return this.IsNull(this.table入庫テーブル.商品IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Set商品IDNull() {
-                this[this.table納品テーブル.商品IDColumn] = global::System.Convert.DBNull;
+                this[this.table入庫テーブル.商品IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品数Null() {
-                return this.IsNull(this.table納品テーブル.納品数Column);
+            public bool Is入庫数Null() {
+                return this.IsNull(this.table入庫テーブル.入庫数Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品数Null() {
-                this[this.table納品テーブル.納品数Column] = global::System.Convert.DBNull;
+            public void Set入庫数Null() {
+                this[this.table入庫テーブル.入庫数Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品物Null() {
-                return this.IsNull(this.table納品テーブル.納品物Column);
+            public bool Is入庫予定数Null() {
+                return this.IsNull(this.table入庫テーブル.入庫予定数Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品物Null() {
-                this[this.table納品テーブル.納品物Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is納品予定数Null() {
-                return this.IsNull(this.table納品テーブル.納品予定数Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set納品予定数Null() {
-                this[this.table納品テーブル.納品予定数Column] = global::System.Convert.DBNull;
+            public void Set入庫予定数Null() {
+                this[this.table入庫テーブル.入庫予定数Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -6732,6 +7756,40 @@ namespace SalesManagementSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class 営業所マスタRowChangeEvent : global::System.EventArgs {
+            
+            private 営業所マスタRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRowChangeEvent(営業所マスタRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 営業所マスタRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public class 会員マスタRowChangeEvent : global::System.EventArgs {
             
             private 会員マスタRow eventRow;
@@ -6902,6 +7960,40 @@ namespace SalesManagementSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class 出庫テーブルRowChangeEvent : global::System.EventArgs {
+            
+            private 出庫テーブルRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRowChangeEvent(出庫テーブルRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public 出庫テーブルRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public class 商品マスタRowChangeEvent : global::System.EventArgs {
             
             private 商品マスタRow eventRow;
@@ -7004,22 +8096,22 @@ namespace SalesManagementSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class 納品テーブルRowChangeEvent : global::System.EventArgs {
+        public class 入庫テーブルRowChangeEvent : global::System.EventArgs {
             
-            private 納品テーブルRow eventRow;
+            private 入庫テーブルRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRowChangeEvent(納品テーブルRow row, global::System.Data.DataRowAction action) {
+            public 入庫テーブルRowChangeEvent(入庫テーブルRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public 納品テーブルRow Row {
+            public 入庫テーブルRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7105,6 +8197,457 @@ namespace SalesManagementSystem {
 }
 namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class 営業所マスタTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public 営業所マスタTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "営業所マスタ";
+            tableMapping.ColumnMappings.Add("営業所ID", "営業所ID");
+            tableMapping.ColumnMappings.Add("営業所名", "営業所名");
+            tableMapping.ColumnMappings.Add("住所", "住所");
+            tableMapping.ColumnMappings.Add("電話番号", "電話番号");
+            tableMapping.ColumnMappings.Add("メールアドレス", "メールアドレス");
+            tableMapping.ColumnMappings.Add("郵便番号", "郵便番号");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `営業所マスタ` WHERE ((`営業所ID` = ?) AND ((? = 1 AND `営業所名` IS NULL) OR (`営業所名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_営業所名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_住所", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_電話番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_電話番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_メールアドレス", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_メールアドレス", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_郵便番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_郵便番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `営業所マスタ` (`営業所名`, `住所`, `電話番号`, `メールアドレス`, `郵便番号`) VALUES (?, ?, ?, ?" +
+                ", ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("営業所名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("電話番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("メールアドレス", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("郵便番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `営業所マスタ` SET `営業所名` = ?, `住所` = ?, `電話番号` = ?, `メールアドレス` = ?, `郵便番号` = ? WHERE ((`営業所ID` = ?) AND ((? = 1 AND `営業所名` IS NULL) OR (`営業所名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("営業所名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("電話番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("メールアドレス", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("郵便番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_営業所名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所名", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_住所", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_電話番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_電話番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "電話番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_メールアドレス", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_メールアドレス", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メールアドレス", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_郵便番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_郵便番号", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "郵便番号", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::SalesManagementSystem.Properties.Settings.Default.SMSdatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT 営業所ID, 営業所名, 住所, 電話番号, メールアドレス, 郵便番号 FROM 営業所マスタ";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SMSdatabaseDataSet.営業所マスタDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SMSdatabaseDataSet.営業所マスタDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            SMSdatabaseDataSet.営業所マスタDataTable dataTable = new SMSdatabaseDataSet.営業所マスタDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SMSdatabaseDataSet.営業所マスタDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SMSdatabaseDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "営業所マスタ");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_営業所ID, string Original_営業所名, string Original_住所, string Original_電話番号, string Original_メールアドレス, string Original_郵便番号) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_営業所ID));
+            if ((Original_営業所名 == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_営業所名));
+            }
+            if ((Original_住所 == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_住所));
+            }
+            if ((Original_電話番号 == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_電話番号));
+            }
+            if ((Original_メールアドレス == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_メールアドレス));
+            }
+            if ((Original_郵便番号 == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_郵便番号));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string 営業所名, string 住所, string 電話番号, string メールアドレス, string 郵便番号) {
+            if ((営業所名 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(営業所名));
+            }
+            if ((住所 == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(住所));
+            }
+            if ((電話番号 == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(電話番号));
+            }
+            if ((メールアドレス == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(メールアドレス));
+            }
+            if ((郵便番号 == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(郵便番号));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string 営業所名, string 住所, string 電話番号, string メールアドレス, string 郵便番号, int Original_営業所ID, string Original_営業所名, string Original_住所, string Original_電話番号, string Original_メールアドレス, string Original_郵便番号) {
+            if ((営業所名 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(営業所名));
+            }
+            if ((住所 == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(住所));
+            }
+            if ((電話番号 == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(電話番号));
+            }
+            if ((メールアドレス == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(メールアドレス));
+            }
+            if ((郵便番号 == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(郵便番号));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_営業所ID));
+            if ((Original_営業所名 == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_営業所名));
+            }
+            if ((Original_住所 == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_住所));
+            }
+            if ((Original_電話番号 == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_電話番号));
+            }
+            if ((Original_メールアドレス == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_メールアドレス));
+            }
+            if ((Original_郵便番号 == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_郵便番号));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -7238,10 +8781,11 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("生年月日", "生年月日");
             tableMapping.ColumnMappings.Add("会員番号", "会員番号");
             tableMapping.ColumnMappings.Add("入会日", "入会日");
+            tableMapping.ColumnMappings.Add("パスワード", "パスワード");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `会員マスタ` WHERE ((`会員ID` = ?) AND ((? = 1 AND `会員名` IS NULL) OR (`会員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `会員番号` IS NULL) OR (`会員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `会員マスタ` WHERE ((`会員ID` = ?) AND ((? = 1 AND `会員名` IS NULL) OR (`会員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `会員番号` IS NULL) OR (`会員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_会員ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_会員名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員名", global::System.Data.DataRowVersion.Original, true, null));
@@ -7264,10 +8808,12 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_会員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員番号", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入会日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_パスワード", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `会員マスタ` (`会員名`, `住所`, `電話番号`, `ふりがな`, `メールアドレス`, `郵便番号`, `性別`, `生年月日`" +
-                ", `会員番号`, `入会日`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                ", `会員番号`, `入会日`, `パスワード`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("会員名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
@@ -7279,9 +8825,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("会員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員番号", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `会員マスタ` SET `会員名` = ?, `住所` = ?, `電話番号` = ?, `ふりがな` = ?, `メールアドレス` = ?, `郵便番号` = ?, `性別` = ?, `生年月日` = ?, `会員番号` = ?, `入会日` = ? WHERE ((`会員ID` = ?) AND ((? = 1 AND `会員名` IS NULL) OR (`会員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `会員番号` IS NULL) OR (`会員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `会員マスタ` SET `会員名` = ?, `住所` = ?, `電話番号` = ?, `ふりがな` = ?, `メールアドレス` = ?, `郵便番号` = ?, `性別` = ?, `生年月日` = ?, `会員番号` = ?, `入会日` = ?, `パスワード` = ? WHERE ((`会員ID` = ?) AND ((? = 1 AND `会員名` IS NULL) OR (`会員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `会員番号` IS NULL) OR (`会員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("会員名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
@@ -7293,6 +8840,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("会員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員番号", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_会員ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_会員名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員名", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_会員名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員名", global::System.Data.DataRowVersion.Original, false, null));
@@ -7314,6 +8862,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_会員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "会員番号", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入会日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_パスワード", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7329,7 +8879,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 会員ID, 会員名, 住所, 電話番号, ふりがな, メールアドレス, 郵便番号, 性別, 生年月日, 会員番号, 入会日 FROM 会員マスタ";
+            this._commandCollection[0].CommandText = "SELECT 会員ID, 会員名, 住所, 電話番号, ふりがな, メールアドレス, 郵便番号, 性別, 生年月日, 会員番号, 入会日, パスワード FROM " +
+                "会員マスタ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7390,7 +8941,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_会員ID, string Original_会員名, string Original_住所, string Original_電話番号, string Original_ふりがな, string Original_メールアドレス, string Original_郵便番号, string Original_性別, global::System.Nullable<global::System.DateTime> Original_生年月日, global::System.Nullable<int> Original_会員番号, global::System.Nullable<global::System.DateTime> Original_入会日) {
+        public virtual int Delete(int Original_会員ID, string Original_会員名, string Original_住所, string Original_電話番号, string Original_ふりがな, string Original_メールアドレス, string Original_郵便番号, string Original_性別, global::System.Nullable<global::System.DateTime> Original_生年月日, global::System.Nullable<int> Original_会員番号, global::System.Nullable<global::System.DateTime> Original_入会日, string Original_パスワード) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_会員ID));
             if ((Original_会員名 == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -7472,6 +9023,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
+            if ((Original_パスワード == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_パスワード));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7492,7 +9051,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string 会員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, global::System.Nullable<global::System.DateTime> 生年月日, global::System.Nullable<int> 会員番号, global::System.Nullable<global::System.DateTime> 入会日) {
+        public virtual int Insert(string 会員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, global::System.Nullable<global::System.DateTime> 生年月日, global::System.Nullable<int> 会員番号, global::System.Nullable<global::System.DateTime> 入会日, string パスワード) {
             if ((会員名 == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7553,6 +9112,12 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((パスワード == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(パスワード));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7584,6 +9149,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> 生年月日, 
                     global::System.Nullable<int> 会員番号, 
                     global::System.Nullable<global::System.DateTime> 入会日, 
+                    string パスワード, 
                     int Original_会員ID, 
                     string Original_会員名, 
                     string Original_住所, 
@@ -7594,7 +9160,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     string Original_性別, 
                     global::System.Nullable<global::System.DateTime> Original_生年月日, 
                     global::System.Nullable<int> Original_会員番号, 
-                    global::System.Nullable<global::System.DateTime> Original_入会日) {
+                    global::System.Nullable<global::System.DateTime> Original_入会日, 
+                    string Original_パスワード) {
             if ((会員名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7655,86 +9222,100 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_会員ID));
-            if ((Original_会員名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            if ((パスワード == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_会員名));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(パスワード));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_会員ID));
+            if ((Original_会員名 == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_会員名));
             }
             if ((Original_住所 == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_住所));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_住所));
             }
             if ((Original_電話番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_電話番号));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_電話番号));
             }
             if ((Original_ふりがな == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ふりがな));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ふりがな));
             }
             if ((Original_メールアドレス == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_メールアドレス));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_メールアドレス));
             }
             if ((Original_郵便番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_郵便番号));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_郵便番号));
             }
             if ((Original_性別 == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_性別));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_性別));
             }
             if ((Original_生年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_生年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_生年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_会員番号.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_会員番号.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_会員番号.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_入会日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_入会日.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_入会日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Original_パスワード == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_パスワード));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9658,6 +11239,390 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class 出庫テーブルTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public 出庫テーブルTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "出庫テーブル";
+            tableMapping.ColumnMappings.Add("出庫ID", "出庫ID");
+            tableMapping.ColumnMappings.Add("出庫番号", "出庫番号");
+            tableMapping.ColumnMappings.Add("営業所ID", "営業所ID");
+            tableMapping.ColumnMappings.Add("商品ID", "商品ID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `出庫テーブル` WHERE ((`出庫ID` = ?) AND ((? = 1 AND `出庫番号` IS NULL) OR (`出庫番" +
+                "号` = ?)) AND ((? = 1 AND `営業所ID` IS NULL) OR (`営業所ID` = ?)) AND ((? = 1 AND `商品I" +
+                "D` IS NULL) OR (`商品ID` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_出庫ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `出庫テーブル` (`出庫番号`, `営業所ID`, `商品ID`) VALUES (?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `出庫テーブル` SET `出庫番号` = ?, `営業所ID` = ?, `商品ID` = ? WHERE ((`出庫ID` = ?) AND (" +
+                "(? = 1 AND `出庫番号` IS NULL) OR (`出庫番号` = ?)) AND ((? = 1 AND `営業所ID` IS NULL) OR " +
+                "(`営業所ID` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_出庫ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_出庫番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "出庫番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_営業所ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "営業所ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::SalesManagementSystem.Properties.Settings.Default.SMSdatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT 出庫ID, 出庫番号, 営業所ID, 商品ID FROM 出庫テーブル";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SMSdatabaseDataSet.出庫テーブルDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SMSdatabaseDataSet.出庫テーブルDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            SMSdatabaseDataSet.出庫テーブルDataTable dataTable = new SMSdatabaseDataSet.出庫テーブルDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SMSdatabaseDataSet.出庫テーブルDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SMSdatabaseDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "出庫テーブル");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_出庫ID, global::System.Nullable<int> Original_出庫番号, global::System.Nullable<int> Original_営業所ID, global::System.Nullable<int> Original_商品ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_出庫ID));
+            if ((Original_出庫番号.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_出庫番号.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_営業所ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_営業所ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_商品ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_商品ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> 出庫番号, global::System.Nullable<int> 営業所ID, global::System.Nullable<int> 商品ID) {
+            if ((出庫番号.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(出庫番号.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((営業所ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(営業所ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(商品ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> 出庫番号, global::System.Nullable<int> 営業所ID, global::System.Nullable<int> 商品ID, int Original_出庫ID, global::System.Nullable<int> Original_出庫番号, global::System.Nullable<int> Original_営業所ID, global::System.Nullable<int> Original_商品ID) {
+            if ((出庫番号.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(出庫番号.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((営業所ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(営業所ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(商品ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_出庫ID));
+            if ((Original_出庫番号.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_出庫番号.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_営業所ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_営業所ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_商品ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_商品ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class 商品マスタTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
@@ -9774,12 +11739,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("商品名", "商品名");
             tableMapping.ColumnMappings.Add("商品価格", "商品価格");
             tableMapping.ColumnMappings.Add("商品番号", "商品番号");
+            tableMapping.ColumnMappings.Add("重量", "重量");
+            tableMapping.ColumnMappings.Add("幅", "幅");
+            tableMapping.ColumnMappings.Add("奥行", "奥行");
+            tableMapping.ColumnMappings.Add("高さ", "高さ");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `商品マスタ` WHERE ((`商品ID` = ?) AND ((? = 1 AND `商品名` IS NULL) OR (`商品名` " +
-                "= ?)) AND ((? = 1 AND `商品価格` IS NULL) OR (`商品価格` = ?)) AND ((? = 1 AND `商品番号` IS" +
-                " NULL) OR (`商品番号` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `商品マスタ` WHERE ((`商品ID` = ?) AND ((? = 1 AND `商品名` IS NULL) OR (`商品名` = ?)) AND ((? = 1 AND `商品価格` IS NULL) OR (`商品価格` = ?)) AND ((? = 1 AND `商品番号` IS NULL) OR (`商品番号` = ?)) AND ((? = 1 AND `重量` IS NULL) OR (`重量` = ?)) AND ((? = 1 AND `幅` IS NULL) OR (`幅` = ?)) AND ((? = 1 AND `奥行` IS NULL) OR (`奥行` = ?)) AND ((? = 1 AND `高さ` IS NULL) OR (`高さ` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品名", global::System.Data.DataRowVersion.Original, true, null));
@@ -9788,22 +11755,37 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品価格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品価格", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `商品マスタ` (`商品名`, `商品価格`, `商品番号`) VALUES (?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `商品マスタ` (`商品名`, `商品価格`, `商品番号`, `重量`, `幅`, `奥行`, `高さ`) VALUES (?, ?, " +
+                "?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品価格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品価格", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `商品マスタ` SET `商品名` = ?, `商品価格` = ?, `商品番号` = ? WHERE ((`商品ID` = ?) AND ((? " +
-                "= 1 AND `商品名` IS NULL) OR (`商品名` = ?)) AND ((? = 1 AND `商品価格` IS NULL) OR (`商品価格" +
-                "` = ?)) AND ((? = 1 AND `商品番号` IS NULL) OR (`商品番号` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `商品マスタ` SET `商品名` = ?, `商品価格` = ?, `商品番号` = ?, `重量` = ?, `幅` = ?, `奥行` = ?, `高さ` = ? WHERE ((`商品ID` = ?) AND ((? = 1 AND `商品名` IS NULL) OR (`商品名` = ?)) AND ((? = 1 AND `商品価格` IS NULL) OR (`商品価格` = ?)) AND ((? = 1 AND `商品番号` IS NULL) OR (`商品番号` = ?)) AND ((? = 1 AND `重量` IS NULL) OR (`重量` = ?)) AND ((? = 1 AND `幅` IS NULL) OR (`幅` = ?)) AND ((? = 1 AND `奥行` IS NULL) OR (`奥行` = ?)) AND ((? = 1 AND `高さ` IS NULL) OR (`高さ` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品価格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品価格", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品名", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品名", global::System.Data.DataRowVersion.Original, false, null));
@@ -9811,6 +11793,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品価格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品価格", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品番号", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_重量", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "重量", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_幅", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "幅", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_奥行", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "奥行", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_高さ", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "高さ", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9826,7 +11816,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 商品ID, 商品名, 商品価格, 商品番号 FROM 商品マスタ";
+            this._commandCollection[0].CommandText = "SELECT 商品ID, 商品名, 商品価格, 商品番号, 重量, 幅, 奥行, 高さ FROM 商品マスタ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9887,7 +11877,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_商品ID, string Original_商品名, global::System.Nullable<int> Original_商品価格, global::System.Nullable<int> Original_商品番号) {
+        public virtual int Delete(int Original_商品ID, string Original_商品名, global::System.Nullable<int> Original_商品価格, global::System.Nullable<int> Original_商品番号, global::System.Nullable<int> Original_重量, global::System.Nullable<int> Original_幅, global::System.Nullable<int> Original_奥行, global::System.Nullable<int> Original_高さ) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_商品ID));
             if ((Original_商品名 == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -9913,6 +11903,38 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_重量.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_重量.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_幅.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_幅.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_奥行.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_奥行.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_高さ.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_高さ.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9933,7 +11955,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string 商品名, global::System.Nullable<int> 商品価格, global::System.Nullable<int> 商品番号) {
+        public virtual int Insert(string 商品名, global::System.Nullable<int> 商品価格, global::System.Nullable<int> 商品番号, global::System.Nullable<int> 重量, global::System.Nullable<int> 幅, global::System.Nullable<int> 奥行, global::System.Nullable<int> 高さ) {
             if ((商品名 == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9951,6 +11973,30 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((重量.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(重量.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((幅.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(幅.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((奥行.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(奥行.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((高さ.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(高さ.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9972,7 +12018,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string 商品名, global::System.Nullable<int> 商品価格, global::System.Nullable<int> 商品番号, int Original_商品ID, string Original_商品名, global::System.Nullable<int> Original_商品価格, global::System.Nullable<int> Original_商品番号) {
+        public virtual int Update(string 商品名, global::System.Nullable<int> 商品価格, global::System.Nullable<int> 商品番号, global::System.Nullable<int> 重量, global::System.Nullable<int> 幅, global::System.Nullable<int> 奥行, global::System.Nullable<int> 高さ, int Original_商品ID, string Original_商品名, global::System.Nullable<int> Original_商品価格, global::System.Nullable<int> Original_商品番号, global::System.Nullable<int> Original_重量, global::System.Nullable<int> Original_幅, global::System.Nullable<int> Original_奥行, global::System.Nullable<int> Original_高さ) {
             if ((商品名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9991,30 +12037,86 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_商品ID));
-            if ((Original_商品名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+            if ((重量.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(重量.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((幅.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(幅.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((奥行.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(奥行.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_商品名));
-            }
-            if ((Original_商品価格.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_商品価格.Value));
+            if ((高さ.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(高さ.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_商品番号.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_商品番号.Value));
-            }
-            else {
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_商品ID));
+            if ((Original_商品名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_商品名));
+            }
+            if ((Original_商品価格.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_商品価格.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_商品番号.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_商品番号.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_重量.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_重量.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_幅.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_幅.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_奥行.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_奥行.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_高さ.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_高さ.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10643,74 +12745,60 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("入荷ID", "入荷ID");
             tableMapping.ColumnMappings.Add("入荷日", "入荷日");
             tableMapping.ColumnMappings.Add("入荷予定日", "入荷予定日");
-            tableMapping.ColumnMappings.Add("入荷予定物", "入荷予定物");
             tableMapping.ColumnMappings.Add("商品ID", "商品ID");
             tableMapping.ColumnMappings.Add("メーカーID", "メーカーID");
             tableMapping.ColumnMappings.Add("入荷数", "入荷数");
-            tableMapping.ColumnMappings.Add("入荷物", "入荷物");
             tableMapping.ColumnMappings.Add("入荷予定数", "入荷予定数");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `入荷テーブル` WHERE ((`入荷ID` = ?) AND ((? = 1 AND `入荷日` IS NULL) OR (`入荷日` = ?)) AND ((? = 1 AND `入荷予定日` IS NULL) OR (`入荷予定日` = ?)) AND ((? = 1 AND `入荷予定物` IS NULL) OR (`入荷予定物` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `メーカーID` IS NULL) OR (`メーカーID` = ?)) AND ((? = 1 AND `入荷数` IS NULL) OR (`入荷数` = ?)) AND ((? = 1 AND `入荷物` IS NULL) OR (`入荷物` = ?)) AND ((? = 1 AND `入荷予定数` IS NULL) OR (`入荷予定数` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `入荷テーブル` WHERE ((`入荷ID` = ?) AND ((? = 1 AND `入荷日` IS NULL) OR (`入荷日` = ?)) AND ((? = 1 AND `入荷予定日` IS NULL) OR (`入荷予定日` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `メーカーID` IS NULL) OR (`メーカーID` = ?)) AND ((? = 1 AND `入荷数` IS NULL) OR (`入荷数` = ?)) AND ((? = 1 AND `入荷予定数` IS NULL) OR (`入荷予定数` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `入荷テーブル` (`入荷日`, `入荷予定日`, `入荷予定物`, `商品ID`, `メーカーID`, `入荷数`, `入荷物`, `入" +
-                "荷予定数`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `入荷テーブル` (`入荷日`, `入荷予定日`, `商品ID`, `メーカーID`, `入荷数`, `入荷予定数`) VALUES (?" +
+                ", ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `入荷テーブル` SET `入荷日` = ?, `入荷予定日` = ?, `入荷予定物` = ?, `商品ID` = ?, `メーカーID` = ?, `入荷数` = ?, `入荷物` = ?, `入荷予定数` = ? WHERE ((`入荷ID` = ?) AND ((? = 1 AND `入荷日` IS NULL) OR (`入荷日` = ?)) AND ((? = 1 AND `入荷予定日` IS NULL) OR (`入荷予定日` = ?)) AND ((? = 1 AND `入荷予定物` IS NULL) OR (`入荷予定物` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `メーカーID` IS NULL) OR (`メーカーID` = ?)) AND ((? = 1 AND `入荷数` IS NULL) OR (`入荷数` = ?)) AND ((? = 1 AND `入荷物` IS NULL) OR (`入荷物` = ?)) AND ((? = 1 AND `入荷予定数` IS NULL) OR (`入荷予定数` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `入荷テーブル` SET `入荷日` = ?, `入荷予定日` = ?, `商品ID` = ?, `メーカーID` = ?, `入荷数` = ?, `入荷予定数` = ? WHERE ((`入荷ID` = ?) AND ((? = 1 AND `入荷日` IS NULL) OR (`入荷日` = ?)) AND ((? = 1 AND `入荷予定日` IS NULL) OR (`入荷予定日` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `メーカーID` IS NULL) OR (`メーカーID` = ?)) AND ((? = 1 AND `入荷数` IS NULL) OR (`入荷数` = ?)) AND ((? = 1 AND `入荷予定数` IS NULL) OR (`入荷予定数` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定物", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_メーカーID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "メーカーID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷数", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷物", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入荷予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入荷予定数", global::System.Data.DataRowVersion.Original, false, null));
         }
@@ -10728,7 +12816,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 入荷ID, 入荷日, 入荷予定日, 入荷予定物, 商品ID, メーカーID, 入荷数, 入荷物, 入荷予定数 FROM 入荷テーブル";
+            this._commandCollection[0].CommandText = "SELECT 入荷ID, 入荷日, 入荷予定日, 商品ID, メーカーID, 入荷数, 入荷予定数 FROM 入荷テーブル";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10789,7 +12877,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_入荷ID, global::System.Nullable<global::System.DateTime> Original_入荷日, global::System.Nullable<global::System.DateTime> Original_入荷予定日, string Original_入荷予定物, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_メーカーID, global::System.Nullable<int> Original_入荷数, string Original_入荷物, global::System.Nullable<int> Original_入荷予定数) {
+        public virtual int Delete(int Original_入荷ID, global::System.Nullable<global::System.DateTime> Original_入荷日, global::System.Nullable<global::System.DateTime> Original_入荷予定日, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_メーカーID, global::System.Nullable<int> Original_入荷数, global::System.Nullable<int> Original_入荷予定数) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_入荷ID));
             if ((Original_入荷日.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -10807,53 +12895,37 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_入荷予定物 == null)) {
+            if ((Original_商品ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_商品ID.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_入荷予定物));
-            }
-            if ((Original_商品ID.HasValue == true)) {
+            if ((Original_メーカーID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_商品ID.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_メーカーID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_メーカーID.HasValue == true)) {
+            if ((Original_入荷数.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_メーカーID.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_入荷数.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_入荷数.HasValue == true)) {
+            if ((Original_入荷予定数.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_入荷数.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_入荷予定数.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_入荷物 == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_入荷物));
-            }
-            if ((Original_入荷予定数.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_入荷予定数.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10875,7 +12947,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> 入荷日, global::System.Nullable<global::System.DateTime> 入荷予定日, string 入荷予定物, global::System.Nullable<int> 商品ID, global::System.Nullable<int> メーカーID, global::System.Nullable<int> 入荷数, string 入荷物, global::System.Nullable<int> 入荷予定数) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> 入荷日, global::System.Nullable<global::System.DateTime> 入荷予定日, global::System.Nullable<int> 商品ID, global::System.Nullable<int> メーカーID, global::System.Nullable<int> 入荷数, global::System.Nullable<int> 入荷予定数) {
             if ((入荷日.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(入荷日.Value));
             }
@@ -10888,41 +12960,29 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((入荷予定物 == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(商品ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(入荷予定物));
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((商品ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(商品ID.Value));
+            if ((メーカーID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(メーカーID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((メーカーID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(メーカーID.Value));
+            if ((入荷数.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(入荷数.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((入荷数.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(入荷数.Value));
+            if ((入荷予定数.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(入荷予定数.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((入荷物 == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(入荷物));
-            }
-            if ((入荷予定数.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(入荷予定数.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10944,24 +13004,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.DateTime> 入荷日, 
-                    global::System.Nullable<global::System.DateTime> 入荷予定日, 
-                    string 入荷予定物, 
-                    global::System.Nullable<int> 商品ID, 
-                    global::System.Nullable<int> メーカーID, 
-                    global::System.Nullable<int> 入荷数, 
-                    string 入荷物, 
-                    global::System.Nullable<int> 入荷予定数, 
-                    int Original_入荷ID, 
-                    global::System.Nullable<global::System.DateTime> Original_入荷日, 
-                    global::System.Nullable<global::System.DateTime> Original_入荷予定日, 
-                    string Original_入荷予定物, 
-                    global::System.Nullable<int> Original_商品ID, 
-                    global::System.Nullable<int> Original_メーカーID, 
-                    global::System.Nullable<int> Original_入荷数, 
-                    string Original_入荷物, 
-                    global::System.Nullable<int> Original_入荷予定数) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> 入荷日, global::System.Nullable<global::System.DateTime> 入荷予定日, global::System.Nullable<int> 商品ID, global::System.Nullable<int> メーカーID, global::System.Nullable<int> 入荷数, global::System.Nullable<int> 入荷予定数, int Original_入荷ID, global::System.Nullable<global::System.DateTime> Original_入荷日, global::System.Nullable<global::System.DateTime> Original_入荷予定日, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_メーカーID, global::System.Nullable<int> Original_入荷数, global::System.Nullable<int> Original_入荷予定数) {
             if ((入荷日.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(入荷日.Value));
             }
@@ -10974,106 +13017,78 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((入荷予定物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(商品ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(入荷予定物));
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((商品ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(商品ID.Value));
+            if ((メーカーID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(メーカーID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((メーカーID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(メーカーID.Value));
+            if ((入荷数.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(入荷数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((入荷数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(入荷数.Value));
+            if ((入荷予定数.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(入荷予定数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((入荷物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(入荷物));
-            }
-            if ((入荷予定数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(入荷予定数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_入荷ID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_入荷ID));
             if ((Original_入荷日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_入荷日.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_入荷予定日.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_入荷日.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_入荷予定日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_入荷予定日.HasValue == true)) {
+            if ((Original_商品ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_入荷予定日.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_商品ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_入荷予定物 == null)) {
+            if ((Original_メーカーID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_メーカーID.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_入荷予定物));
-            }
-            if ((Original_商品ID.HasValue == true)) {
+            if ((Original_入荷数.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_商品ID.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_入荷数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_メーカーID.HasValue == true)) {
+            if ((Original_入荷予定数.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_メーカーID.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_入荷予定数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_入荷数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_入荷数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Original_入荷物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_入荷物));
-            }
-            if ((Original_入荷予定数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_入荷予定数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11101,7 +13116,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class 納品テーブルTableAdapter : global::System.ComponentModel.Component {
+    public partial class 入庫テーブルTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -11115,7 +13130,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public 納品テーブルTableAdapter() {
+        public 入庫テーブルTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -11212,73 +13227,59 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "納品テーブル";
-            tableMapping.ColumnMappings.Add("納品ID", "納品ID");
-            tableMapping.ColumnMappings.Add("納品日", "納品日");
-            tableMapping.ColumnMappings.Add("納品予定日", "納品予定日");
-            tableMapping.ColumnMappings.Add("納品予定物", "納品予定物");
+            tableMapping.DataSetTable = "入庫テーブル";
+            tableMapping.ColumnMappings.Add("入庫ID", "入庫ID");
+            tableMapping.ColumnMappings.Add("入庫日", "入庫日");
+            tableMapping.ColumnMappings.Add("入庫予定日", "入庫予定日");
             tableMapping.ColumnMappings.Add("商品ID", "商品ID");
-            tableMapping.ColumnMappings.Add("納品数", "納品数");
-            tableMapping.ColumnMappings.Add("納品物", "納品物");
-            tableMapping.ColumnMappings.Add("納品予定数", "納品予定数");
+            tableMapping.ColumnMappings.Add("入庫数", "入庫数");
+            tableMapping.ColumnMappings.Add("入庫予定数", "入庫予定数");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `納品テーブル` WHERE ((`納品ID` = ?) AND ((? = 1 AND `納品日` IS NULL) OR (`納品日` = ?)) AND ((? = 1 AND `納品予定日` IS NULL) OR (`納品予定日` = ?)) AND ((? = 1 AND `納品予定物` IS NULL) OR (`納品予定物` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `納品数` IS NULL) OR (`納品数` = ?)) AND ((? = 1 AND `納品物` IS NULL) OR (`納品物` = ?)) AND ((? = 1 AND `納品予定数` IS NULL) OR (`納品予定数` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `入庫テーブル` WHERE ((`入庫ID` = ?) AND ((? = 1 AND `入庫日` IS NULL) OR (`入庫日` = ?)) AND ((? = 1 AND `入庫予定日` IS NULL) OR (`入庫予定日` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `入庫数` IS NULL) OR (`入庫数` = ?)) AND ((? = 1 AND `入庫予定数` IS NULL) OR (`入庫予定数` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `納品テーブル` (`納品日`, `納品予定日`, `納品予定物`, `商品ID`, `納品数`, `納品物`, `納品予定数`) VAL" +
-                "UES (?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `入庫テーブル` (`入庫日`, `入庫予定日`, `商品ID`, `入庫数`, `入庫予定数`) VALUES (?, ?, ?, ?," +
+                " ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `納品テーブル` SET `納品日` = ?, `納品予定日` = ?, `納品予定物` = ?, `商品ID` = ?, `納品数` = ?, `納品物` = ?, `納品予定数` = ? WHERE ((`納品ID` = ?) AND ((? = 1 AND `納品日` IS NULL) OR (`納品日` = ?)) AND ((? = 1 AND `納品予定日` IS NULL) OR (`納品予定日` = ?)) AND ((? = 1 AND `納品予定物` IS NULL) OR (`納品予定物` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `納品数` IS NULL) OR (`納品数` = ?)) AND ((? = 1 AND `納品物` IS NULL) OR (`納品物` = ?)) AND ((? = 1 AND `納品予定数` IS NULL) OR (`納品予定数` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `入庫テーブル` SET `入庫日` = ?, `入庫予定日` = ?, `商品ID` = ?, `入庫数` = ?, `入庫予定数` = ? WHERE ((`入庫ID` = ?) AND ((? = 1 AND `入庫日` IS NULL) OR (`入庫日` = ?)) AND ((? = 1 AND `入庫予定日` IS NULL) OR (`入庫予定日` = ?)) AND ((? = 1 AND `商品ID` IS NULL) OR (`商品ID` = ?)) AND ((? = 1 AND `入庫数` IS NULL) OR (`入庫数` = ?)) AND ((? = 1 AND `入庫予定数` IS NULL) OR (`入庫予定数` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定日", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定物", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫予定日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫予定日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_商品ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "商品ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品数", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品物", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品物", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品物", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_納品予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "納品予定数", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫数", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入庫予定数", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入庫予定数", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11294,7 +13295,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 納品ID, 納品日, 納品予定日, 納品予定物, 商品ID, 納品数, 納品物, 納品予定数 FROM 納品テーブル";
+            this._commandCollection[0].CommandText = "SELECT 入庫ID, 入庫日, 入庫予定日, 商品ID, 入庫数, 入庫予定数 FROM 入庫テーブル";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11302,7 +13303,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SMSdatabaseDataSet.納品テーブルDataTable dataTable) {
+        public virtual int Fill(SMSdatabaseDataSet.入庫テーブルDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11315,9 +13316,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SMSdatabaseDataSet.納品テーブルDataTable GetData() {
+        public virtual SMSdatabaseDataSet.入庫テーブルDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SMSdatabaseDataSet.納品テーブルDataTable dataTable = new SMSdatabaseDataSet.納品テーブルDataTable();
+            SMSdatabaseDataSet.入庫テーブルDataTable dataTable = new SMSdatabaseDataSet.入庫テーブルDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11325,7 +13326,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SMSdatabaseDataSet.納品テーブルDataTable dataTable) {
+        public virtual int Update(SMSdatabaseDataSet.入庫テーブルDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -11333,7 +13334,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(SMSdatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "納品テーブル");
+            return this.Adapter.Update(dataSet, "入庫テーブル");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11355,63 +13356,47 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_納品ID, global::System.Nullable<global::System.DateTime> Original_納品日, global::System.Nullable<global::System.DateTime> Original_納品予定日, string Original_納品予定物, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_納品数, string Original_納品物, global::System.Nullable<int> Original_納品予定数) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_納品ID));
-            if ((Original_納品日.HasValue == true)) {
+        public virtual int Delete(int Original_入庫ID, global::System.Nullable<global::System.DateTime> Original_入庫日, global::System.Nullable<global::System.DateTime> Original_入庫予定日, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_入庫数, global::System.Nullable<int> Original_入庫予定数) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_入庫ID));
+            if ((Original_入庫日.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_納品日.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_入庫日.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_納品予定日.HasValue == true)) {
+            if ((Original_入庫予定日.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_納品予定日.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_入庫予定日.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_納品予定物 == null)) {
+            if ((Original_商品ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_商品ID.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_納品予定物));
-            }
-            if ((Original_商品ID.HasValue == true)) {
+            if ((Original_入庫数.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_商品ID.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_入庫数.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_納品数.HasValue == true)) {
+            if ((Original_入庫予定数.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_納品数.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_入庫予定数.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_納品物 == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_納品物));
-            }
-            if ((Original_納品予定数.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_納品予定数.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11433,48 +13418,36 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> 納品日, global::System.Nullable<global::System.DateTime> 納品予定日, string 納品予定物, global::System.Nullable<int> 商品ID, global::System.Nullable<int> 納品数, string 納品物, global::System.Nullable<int> 納品予定数) {
-            if ((納品日.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(納品日.Value));
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> 入庫日, global::System.Nullable<global::System.DateTime> 入庫予定日, global::System.Nullable<int> 商品ID, global::System.Nullable<int> 入庫数, global::System.Nullable<int> 入庫予定数) {
+            if ((入庫日.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(入庫日.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((納品予定日.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(納品予定日.Value));
+            if ((入庫予定日.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(入庫予定日.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((納品予定物 == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(商品ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(納品予定物));
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((商品ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(商品ID.Value));
+            if ((入庫数.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(入庫数.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((納品数.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(納品数.Value));
+            if ((入庫予定数.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(入庫予定数.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((納品物 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(納品物));
-            }
-            if ((納品予定数.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(納品予定数.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11496,105 +13469,77 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> 納品日, global::System.Nullable<global::System.DateTime> 納品予定日, string 納品予定物, global::System.Nullable<int> 商品ID, global::System.Nullable<int> 納品数, string 納品物, global::System.Nullable<int> 納品予定数, int Original_納品ID, global::System.Nullable<global::System.DateTime> Original_納品日, global::System.Nullable<global::System.DateTime> Original_納品予定日, string Original_納品予定物, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_納品数, string Original_納品物, global::System.Nullable<int> Original_納品予定数) {
-            if ((納品日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(納品日.Value));
+        public virtual int Update(global::System.Nullable<global::System.DateTime> 入庫日, global::System.Nullable<global::System.DateTime> 入庫予定日, global::System.Nullable<int> 商品ID, global::System.Nullable<int> 入庫数, global::System.Nullable<int> 入庫予定数, int Original_入庫ID, global::System.Nullable<global::System.DateTime> Original_入庫日, global::System.Nullable<global::System.DateTime> Original_入庫予定日, global::System.Nullable<int> Original_商品ID, global::System.Nullable<int> Original_入庫数, global::System.Nullable<int> Original_入庫予定数) {
+            if ((入庫日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(入庫日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((納品予定日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(納品予定日.Value));
+            if ((入庫予定日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(入庫予定日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((納品予定物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((商品ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(商品ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(納品予定物));
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((商品ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(商品ID.Value));
+            if ((入庫数.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(入庫数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((納品数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(納品数.Value));
+            if ((入庫予定数.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(入庫予定数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((納品物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_入庫ID));
+            if ((Original_入庫日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_入庫日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(納品物));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((納品予定数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(納品予定数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_納品ID));
-            if ((Original_納品日.HasValue == true)) {
+            if ((Original_入庫予定日.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_納品日.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_入庫予定日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_納品予定日.HasValue == true)) {
+            if ((Original_商品ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_納品予定日.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_商品ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_納品予定物 == null)) {
+            if ((Original_入庫数.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_入庫数.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_納品予定物));
-            }
-            if ((Original_商品ID.HasValue == true)) {
+            if ((Original_入庫予定数.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_商品ID.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_入庫予定数.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_納品数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_納品数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_納品物 == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_納品物));
-            }
-            if ((Original_納品予定数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_納品予定数.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12388,6 +14333,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private 営業所マスタTableAdapter _営業所マスタTableAdapter;
+        
         private 会員マスタTableAdapter _会員マスタTableAdapter;
         
         private 顧客マスタTableAdapter _顧客マスタTableAdapter;
@@ -12398,13 +14345,15 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         
         private 出荷テーブルTableAdapter _出荷テーブルTableAdapter;
         
+        private 出庫テーブルTableAdapter _出庫テーブルTableAdapter;
+        
         private 商品マスタTableAdapter _商品マスタTableAdapter;
         
         private 注文テーブルTableAdapter _注文テーブルTableAdapter;
         
         private 入荷テーブルTableAdapter _入荷テーブルTableAdapter;
         
-        private 納品テーブルTableAdapter _納品テーブルTableAdapter;
+        private 入庫テーブルTableAdapter _入庫テーブルTableAdapter;
         
         private 売上テーブルTableAdapter _売上テーブルTableAdapter;
         
@@ -12422,6 +14371,20 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public 営業所マスタTableAdapter 営業所マスタTableAdapter {
+            get {
+                return this._営業所マスタTableAdapter;
+            }
+            set {
+                this._営業所マスタTableAdapter = value;
             }
         }
         
@@ -12500,6 +14463,20 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public 出庫テーブルTableAdapter 出庫テーブルTableAdapter {
+            get {
+                return this._出庫テーブルTableAdapter;
+            }
+            set {
+                this._出庫テーブルTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public 商品マスタTableAdapter 商品マスタTableAdapter {
             get {
                 return this._商品マスタTableAdapter;
@@ -12542,12 +14519,12 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public 納品テーブルTableAdapter 納品テーブルTableAdapter {
+        public 入庫テーブルTableAdapter 入庫テーブルTableAdapter {
             get {
-                return this._納品テーブルTableAdapter;
+                return this._入庫テーブルTableAdapter;
             }
             set {
-                this._納品テーブルTableAdapter = value;
+                this._入庫テーブルTableAdapter = value;
             }
         }
         
@@ -12598,6 +14575,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._営業所マスタTableAdapter != null) 
+                            && (this._営業所マスタTableAdapter.Connection != null))) {
+                    return this._営業所マスタTableAdapter.Connection;
+                }
                 if (((this._会員マスタTableAdapter != null) 
                             && (this._会員マスタTableAdapter.Connection != null))) {
                     return this._会員マスタTableAdapter.Connection;
@@ -12618,6 +14599,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                             && (this._出荷テーブルTableAdapter.Connection != null))) {
                     return this._出荷テーブルTableAdapter.Connection;
                 }
+                if (((this._出庫テーブルTableAdapter != null) 
+                            && (this._出庫テーブルTableAdapter.Connection != null))) {
+                    return this._出庫テーブルTableAdapter.Connection;
+                }
                 if (((this._商品マスタTableAdapter != null) 
                             && (this._商品マスタTableAdapter.Connection != null))) {
                     return this._商品マスタTableAdapter.Connection;
@@ -12630,9 +14615,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                             && (this._入荷テーブルTableAdapter.Connection != null))) {
                     return this._入荷テーブルTableAdapter.Connection;
                 }
-                if (((this._納品テーブルTableAdapter != null) 
-                            && (this._納品テーブルTableAdapter.Connection != null))) {
-                    return this._納品テーブルTableAdapter.Connection;
+                if (((this._入庫テーブルTableAdapter != null) 
+                            && (this._入庫テーブルTableAdapter.Connection != null))) {
+                    return this._入庫テーブルTableAdapter.Connection;
                 }
                 if (((this._売上テーブルTableAdapter != null) 
                             && (this._売上テーブルTableAdapter.Connection != null))) {
@@ -12655,6 +14640,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._営業所マスタTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._会員マスタTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -12670,6 +14658,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if ((this._出荷テーブルTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._出庫テーブルTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._商品マスタTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -12679,7 +14670,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if ((this._入荷テーブルTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._納品テーブルTableAdapter != null)) {
+                if ((this._入庫テーブルTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._売上テーブルTableAdapter != null)) {
@@ -12744,6 +14735,15 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._営業所マスタTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.営業所マスタ.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._営業所マスタTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._在庫テーブルTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.在庫テーブル.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12759,6 +14759,15 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._出荷テーブルTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._出庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.出庫テーブル.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._出庫テーブルTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -12780,12 +14789,12 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._納品テーブルTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.納品テーブル.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._入庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.入庫テーブル.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._納品テーブルTableAdapter.Update(updatedRows));
+                    result = (result + this._入庫テーブルTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -12848,6 +14857,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._営業所マスタTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.営業所マスタ.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._営業所マスタTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._在庫テーブルTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.在庫テーブル.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12861,6 +14878,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._出荷テーブルTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._出庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.出庫テーブル.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._出庫テーブルTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -12880,11 +14905,11 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._納品テーブルTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.納品テーブル.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._入庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.入庫テーブル.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._納品テーブルTableAdapter.Update(addedRows));
+                    result = (result + this._入庫テーブルTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -12914,11 +14939,11 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._納品テーブルTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.納品テーブル.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._入庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.入庫テーブル.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._納品テーブルTableAdapter.Update(deletedRows));
+                    result = (result + this._入庫テーブルTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12938,6 +14963,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._出庫テーブルTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.出庫テーブル.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._出庫テーブルTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._出荷テーブルTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.出荷テーブル.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -12951,6 +14984,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._在庫テーブルTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._営業所マスタTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.営業所マスタ.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._営業所マスタTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13033,6 +15074,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._営業所マスタTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._営業所マスタTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
+            }
             if (((this._会員マスタTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._会員マスタTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
@@ -13053,6 +15098,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                         && (this.MatchTableAdapterConnection(this._出荷テーブルTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
+            if (((this._出庫テーブルTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._出庫テーブルTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
+            }
             if (((this._商品マスタTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._商品マスタTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
@@ -13065,8 +15114,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                         && (this.MatchTableAdapterConnection(this._入荷テーブルTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
-            if (((this._納品テーブルTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._納品テーブルTableAdapter.Connection) == false))) {
+            if (((this._入庫テーブルTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._入庫テーブルTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
             if (((this._売上テーブルTableAdapter != null) 
@@ -13108,6 +15157,15 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._営業所マスタTableAdapter != null)) {
+                    revertConnections.Add(this._営業所マスタTableAdapter, this._営業所マスタTableAdapter.Connection);
+                    this._営業所マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._営業所マスタTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._営業所マスタTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._営業所マスタTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._営業所マスタTableAdapter.Adapter);
+                    }
+                }
                 if ((this._会員マスタTableAdapter != null)) {
                     revertConnections.Add(this._会員マスタTableAdapter, this._会員マスタTableAdapter.Connection);
                     this._会員マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
@@ -13153,6 +15211,15 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._出荷テーブルTableAdapter.Adapter);
                     }
                 }
+                if ((this._出庫テーブルTableAdapter != null)) {
+                    revertConnections.Add(this._出庫テーブルTableAdapter, this._出庫テーブルTableAdapter.Connection);
+                    this._出庫テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._出庫テーブルTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._出庫テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._出庫テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._出庫テーブルTableAdapter.Adapter);
+                    }
+                }
                 if ((this._商品マスタTableAdapter != null)) {
                     revertConnections.Add(this._商品マスタTableAdapter, this._商品マスタTableAdapter.Connection);
                     this._商品マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
@@ -13180,13 +15247,13 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._入荷テーブルTableAdapter.Adapter);
                     }
                 }
-                if ((this._納品テーブルTableAdapter != null)) {
-                    revertConnections.Add(this._納品テーブルTableAdapter, this._納品テーブルTableAdapter.Connection);
-                    this._納品テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._納品テーブルTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._納品テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._納品テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._納品テーブルTableAdapter.Adapter);
+                if ((this._入庫テーブルTableAdapter != null)) {
+                    revertConnections.Add(this._入庫テーブルTableAdapter, this._入庫テーブルTableAdapter.Connection);
+                    this._入庫テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._入庫テーブルTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._入庫テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._入庫テーブルTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._入庫テーブルTableAdapter.Adapter);
                     }
                 }
                 if ((this._売上テーブルTableAdapter != null)) {
@@ -13265,6 +15332,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
+                if ((this._営業所マスタTableAdapter != null)) {
+                    this._営業所マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._営業所マスタTableAdapter]));
+                    this._営業所マスタTableAdapter.Transaction = null;
+                }
                 if ((this._会員マスタTableAdapter != null)) {
                     this._会員マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._会員マスタTableAdapter]));
                     this._会員マスタTableAdapter.Transaction = null;
@@ -13285,6 +15356,10 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     this._出荷テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._出荷テーブルTableAdapter]));
                     this._出荷テーブルTableAdapter.Transaction = null;
                 }
+                if ((this._出庫テーブルTableAdapter != null)) {
+                    this._出庫テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._出庫テーブルTableAdapter]));
+                    this._出庫テーブルTableAdapter.Transaction = null;
+                }
                 if ((this._商品マスタTableAdapter != null)) {
                     this._商品マスタTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._商品マスタTableAdapter]));
                     this._商品マスタTableAdapter.Transaction = null;
@@ -13297,9 +15372,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     this._入荷テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._入荷テーブルTableAdapter]));
                     this._入荷テーブルTableAdapter.Transaction = null;
                 }
-                if ((this._納品テーブルTableAdapter != null)) {
-                    this._納品テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._納品テーブルTableAdapter]));
-                    this._納品テーブルTableAdapter.Transaction = null;
+                if ((this._入庫テーブルTableAdapter != null)) {
+                    this._入庫テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._入庫テーブルTableAdapter]));
+                    this._入庫テーブルTableAdapter.Transaction = null;
                 }
                 if ((this._売上テーブルTableAdapter != null)) {
                     this._売上テーブルTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._売上テーブルTableAdapter]));

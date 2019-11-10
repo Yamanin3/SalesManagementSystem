@@ -33,13 +33,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,8 +54,7 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,6 +106,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.label6);
@@ -114,7 +115,6 @@
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Controls.Add(this.label3);
@@ -129,6 +129,22 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 12);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "出庫先営業所:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(118, 182);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 19);
+            this.textBox7.TabIndex = 17;
             // 
             // label6
             // 
@@ -177,15 +193,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 11;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(86, 267);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 5;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
@@ -302,21 +309,18 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label7
+            // buttonAdd
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 12);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "出庫先営業所:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(118, 182);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 19);
-            this.textBox7.TabIndex = 17;
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(79, 266);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // IssueListForm
             // 
@@ -356,7 +360,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Label label3;
@@ -372,5 +375,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

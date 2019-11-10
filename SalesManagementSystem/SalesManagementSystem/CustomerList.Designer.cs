@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
@@ -51,19 +54,40 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.顧客マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
+            this.sMSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.sMSdatabaseDataSet1 = new SalesManagementSystem.SMSdatabaseDataSet();
+            this.顧客マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.顧客マスタTableAdapter1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonPrevious);
@@ -85,24 +109,44 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 312);
+            this.groupBox1.Size = new System.Drawing.Size(293, 371);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 119);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(124, 19);
+            this.dateTimePicker1.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(41, 222);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 12);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "メールアドレス:";
+            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(89, 273);
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(87, 313);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
             this.buttonAdd.TabIndex = 23;
             this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(141, 233);
+            this.buttonNext.Location = new System.Drawing.Point(141, 274);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 22;
@@ -111,7 +155,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(37, 233);
+            this.buttonPrevious.Location = new System.Drawing.Point(37, 274);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 21;
@@ -121,14 +165,14 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 194);
+            this.textBox7.Location = new System.Drawing.Point(116, 219);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 19);
             this.textBox7.TabIndex = 20;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 169);
+            this.textBox6.Location = new System.Drawing.Point(116, 194);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 19);
             this.textBox6.TabIndex = 19;
@@ -136,7 +180,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(116, 144);
+            this.textBox5.Location = new System.Drawing.Point(116, 169);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 19);
             this.textBox5.TabIndex = 18;
@@ -144,7 +188,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 119);
+            this.textBox4.Location = new System.Drawing.Point(116, 144);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 17;
@@ -154,27 +198,27 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(41, 197);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 12);
+            this.label8.Size = new System.Drawing.Size(55, 12);
             this.label8.TabIndex = 16;
-            this.label8.Text = "メールアドレス:";
+            this.label8.Text = "電話番号:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 12);
+            this.label7.Size = new System.Drawing.Size(31, 12);
             this.label7.TabIndex = 15;
-            this.label7.Text = "電話番号:";
+            this.label7.Text = "住所:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(41, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 12);
+            this.label6.Size = new System.Drawing.Size(55, 12);
             this.label6.TabIndex = 14;
-            this.label6.Text = "住所:";
+            this.label6.Text = "郵便番号:";
             // 
             // label5
             // 
@@ -183,7 +227,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 12);
             this.label5.TabIndex = 13;
-            this.label5.Text = "郵便番号:";
+            this.label5.Text = "生年月日:";
             // 
             // comboBox1
             // 
@@ -261,7 +305,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(311, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(668, 312);
+            this.groupBox2.Size = new System.Drawing.Size(668, 371);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "顧客一覧";
@@ -271,11 +315,24 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6});
+            this.dataGridView1.DataSource = this.顧客マスタBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 15);
             this.dataGridView1.MultiSelect = false;
@@ -283,8 +340,13 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 353);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // 顧客マスタBindingSource
+            // 
+            this.顧客マスタBindingSource.DataMember = "顧客マスタ";
             // 
             // toolStrip1
             // 
@@ -327,7 +389,7 @@
             // 
             this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 346);
+            this.button1.Location = new System.Drawing.Point(12, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 39);
             this.button1.TabIndex = 25;
@@ -336,11 +398,105 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // sMSdatabaseDataSet1
+            // 
+            this.sMSdatabaseDataSet1.DataSetName = "SMSdatabaseDataSet";
+            this.sMSdatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 顧客マスタBindingSource1
+            // 
+            this.顧客マスタBindingSource1.DataMember = "顧客マスタ";
+            this.顧客マスタBindingSource1.DataSource = this.sMSdatabaseDataSet1;
+            // 
+            // 顧客マスタTableAdapter1
+            // 
+            this.顧客マスタTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "顧客ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "顧客ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "顧客番号";
+            this.dataGridViewTextBoxColumn10.HeaderText = "顧客番号";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "顧客名";
+            this.dataGridViewTextBoxColumn2.HeaderText = "顧客名";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 66;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ふりがな";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ふりがな";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 68;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "性別";
+            this.dataGridViewTextBoxColumn8.HeaderText = "性別";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "生年月日";
+            this.dataGridViewTextBoxColumn9.HeaderText = "生年月日";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "郵便番号";
+            this.dataGridViewTextBoxColumn7.HeaderText = "郵便番号";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "住所";
+            this.dataGridViewTextBoxColumn3.HeaderText = "住所";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "電話番号";
+            this.dataGridViewTextBoxColumn4.HeaderText = "電話番号";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "メールアドレス";
+            this.dataGridViewTextBoxColumn6.HeaderText = "メールアドレス";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 94;
+            // 
             // CustomerListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 392);
+            this.ClientSize = new System.Drawing.Size(991, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
@@ -355,8 +511,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +551,34 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource sMSdatabaseDataSetBindingSource;
+        private SMSdatabaseDataSet sMSdatabaseDataSet;
+        private System.Windows.Forms.BindingSource 顧客マスタBindingSource;
+        private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 顧客IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 顧客番号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 顧客名DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ふりがなDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 性別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 生年月日DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 郵便番号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 住所DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 電話番号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn メールアドレスDataGridViewTextBoxColumn;
+        private SMSdatabaseDataSet sMSdatabaseDataSet1;
+        private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
+        private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

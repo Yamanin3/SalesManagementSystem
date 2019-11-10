@@ -36,6 +36,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,7 +52,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,14 +62,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -138,6 +138,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.label10);
@@ -154,7 +155,6 @@
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Controls.Add(this.label3);
@@ -169,6 +169,70 @@
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(33, 285);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 12);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "電話番号:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(118, 282);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 19);
+            this.textBox11.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(33, 260);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 12);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "住所:";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(118, 257);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 19);
+            this.textBox10.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 235);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 12);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "郵便番号:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(118, 232);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 19);
+            this.textBox9.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(33, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 12);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "ふりがな:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(118, 207);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 19);
+            this.textBox8.TabIndex = 19;
             // 
             // label7
             // 
@@ -233,15 +297,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 11;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(91, 371);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 5;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
@@ -334,69 +389,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
+            // buttonAdd
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 12);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "ふりがな:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(118, 207);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 19);
-            this.textBox8.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 235);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 12);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "郵便番号:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(118, 232);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 19);
-            this.textBox9.TabIndex = 21;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 260);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 12);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "住所:";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(118, 257);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 19);
-            this.textBox10.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(33, 285);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 12);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "電話番号:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(118, 282);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 19);
-            this.textBox11.TabIndex = 25;
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(88, 363);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.TabIndex = 27;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // ShipListForm
             // 
@@ -441,7 +445,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Label label3;
@@ -460,5 +463,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

@@ -44,7 +44,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -101,6 +101,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label7);
@@ -111,7 +112,6 @@
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Controls.Add(this.label3);
@@ -206,15 +206,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 11;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(89, 299);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 5;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
@@ -325,6 +316,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(86, 294);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
             // ProductListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -357,7 +361,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Label label3;
@@ -379,5 +382,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
