@@ -120,6 +120,12 @@
     <Compile Include="RequestList.Designer.cs">
       <DependentUpon>RequestList.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesList.Designer.cs">
+      <DependentUpon>SalesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShipList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="In_stockList.resx">
       <DependentUpon>In_stockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesList.resx">
+      <DependentUpon>SalesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShipList.resx">
       <DependentUpon>ShipList.cs</DependentUpon>
@@ -348,6 +357,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_world-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write_yellow-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

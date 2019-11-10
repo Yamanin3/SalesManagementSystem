@@ -101,5 +101,11 @@ namespace SalesManagementSystem
             Form shiplistForm = new ShipListForm();
             shiplistForm.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form saleslistForm = new SalesListForm();
+            saleslistForm.Show();
+        }
     }
 }
