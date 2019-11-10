@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Login_form.Static_Classes;
+using System.Data.OleDb;
 
 namespace SalesManagementSystem
 {
@@ -40,6 +42,16 @@ namespace SalesManagementSystem
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
 
+            AC.openConnection();
+            AC.sql = "select * from 顧客マスタ";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+            AC.closeConnection();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +59,11 @@ namespace SalesManagementSystem
             this.Hide();
             Form menu = new MainMenuForm();
             menu.Show();
+        }
+
+        private void buttonPrevious_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

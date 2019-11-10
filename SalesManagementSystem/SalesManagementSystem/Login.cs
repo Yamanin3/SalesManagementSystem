@@ -43,7 +43,7 @@ namespace SalesManagementSystem
         {
             button1.Focus();
 
-            Login_form.Static_Classes.AC.openConnection();
+            AC.openConnection();
 
             if ((string.IsNullOrEmpty(this.textBox1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())))
             {

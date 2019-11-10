@@ -117,6 +117,7 @@
             this.buttonPrevious.TabIndex = 21;
             this.buttonPrevious.Text = "前へ";
             this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // textBox7
             // 

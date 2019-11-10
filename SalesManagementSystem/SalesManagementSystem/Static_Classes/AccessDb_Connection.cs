@@ -15,6 +15,8 @@ namespace Login_form.Static_Classes
         public static OleDbConnection con = new OleDbConnection();
         public static OleDbCommand cmd = new OleDbCommand("", con);
         public static OleDbDataReader rd;
+        public static OleDbDataAdapter da;
+        public static DataTable dt;
 
         public static string currentFullName;
         public static string sql;
