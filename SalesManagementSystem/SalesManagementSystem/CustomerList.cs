@@ -81,7 +81,7 @@ namespace SalesManagementSystem
 
                 DataGridViewRow row = cell.OwningRow;
                 textBox1.Text = row.Cells[1].Value.ToString();
-                textBox2.Text = row.Cells[2].Value.ToString();
+                顧客textBox.Text = row.Cells[2].Value.ToString();
                 textBox3.Text = row.Cells[3].Value.ToString();
                 comboBox1.Text = row.Cells[4].Value.ToString();
                 dateTimePicker1.Text = row.Cells[5].Value.ToString();
@@ -92,5 +92,21 @@ namespace SalesManagementSystem
 
             }
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            AC.openConnection();
+            AC.sql = "update 顧客マスタ set 顧客名 = " + 顧客textBox.Text + " where 顧客ID = 1";
+            AC.cmd.CommandText = AC.sql;
+            AC.cmd.ExecuteNonQuery();
+            AC.closeConnection();
+
+        }
+
     }
 }
