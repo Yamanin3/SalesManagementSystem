@@ -54,6 +54,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
+=======
+            this.顧客マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
+            this.sMSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.顧客マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+>>>>>>> 600d9f2a652efe2e65641edfc251cd2978edc4fd
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSetBindingSource)).BeginInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource1)).BeginInit();
+>>>>>>> 600d9f2a652efe2e65641edfc251cd2978edc4fd
             this.SuspendLayout();
             // 
             // groupBox1
@@ -345,6 +360,63 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
+<<<<<<< HEAD
+=======
+            // 顧客マスタBindingSource
+            // 
+            this.顧客マスタBindingSource.DataMember = "顧客マスタ";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonNew,
+            this.toolStripButtonRefresh,
+            this.toolStripButtonRemove});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(991, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonNew
+            // 
+            this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
+            this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonNew.Name = "toolStripButtonNew";
+            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Text = "新規作成";
+            // 
+            // toolStripButtonRefresh
+            // 
+            this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
+            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Text = "更新";
+            // 
+            // toolStripButtonRemove
+            // 
+            this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
+            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Text = "削除";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 39);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "戻る";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+>>>>>>> 600d9f2a652efe2e65641edfc251cd2978edc4fd
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "顧客ID";
@@ -519,6 +591,10 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSetBindingSource)).EndInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.顧客マスタBindingSource1)).EndInit();
+>>>>>>> 600d9f2a652efe2e65641edfc251cd2978edc4fd
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,9 +630,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource sMSdatabaseDataSetBindingSource;
-        private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 顧客マスタBindingSource;
-        private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顧客IDDataGridViewTextBoxColumn;
@@ -569,8 +643,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 住所DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話番号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn メールアドレスDataGridViewTextBoxColumn;
-        private SMSdatabaseDataSet sMSdatabaseDataSet1;
-        private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter1;
         private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
