@@ -44,16 +44,6 @@ namespace SalesManagementSystem
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
 
-            AC.openConnection();
-            AC.sql = "select * from 顧客マスタ";
-            AC.cmd.CommandText = AC.sql;
-            AC.da = new OleDbDataAdapter(AC.cmd);
-            AC.dt = new DataTable();
-
-            AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            AC.closeConnection();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,15 +60,9 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dataGridView1.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
+           
 
+<<<<<<< HEAD
                 DataGridViewRow row = cell.OwningRow;
                 textBox1.Text = row.Cells[1].Value.ToString();
                 顧客textBox.Text = row.Cells[2].Value.ToString();
@@ -91,6 +75,9 @@ namespace SalesManagementSystem
                 textBox7.Text = row.Cells[9].Value.ToString();
 
             }
+=======
+            
+>>>>>>> 600d9f2a652efe2e65641edfc251cd2978edc4fd
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
