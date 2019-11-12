@@ -97,7 +97,6 @@ namespace SalesManagementSystem
                             {
 
                                 RefreshLoad();
-                                MessageBox.Show("データの追加が完了しました");
 
                             }
                         }
@@ -157,8 +156,8 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
+
                                 RefreshLoad();
-                                MessageBox.Show("データの編集が完了しました");
 
                             }
                         }
@@ -224,8 +223,8 @@ namespace SalesManagementSystem
 
                         if (rows >= 1)
                         {
+
                             RefreshLoad();
-                            MessageBox.Show("データの削除が完了しました");
 
                         }
                     }
