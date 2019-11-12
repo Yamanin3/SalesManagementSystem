@@ -36,8 +36,7 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -53,7 +52,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -108,7 +106,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
             // 
             // toolStripButtonRefresh
@@ -116,7 +114,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
             // 
             // toolStripButtonRemove
@@ -124,14 +122,12 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.buttonNext);
-            this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -153,23 +149,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
             // 
-            // buttonNext
+            // buttonAdd
             // 
-            this.buttonNext.Location = new System.Drawing.Point(141, 233);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 9;
-            this.buttonNext.Text = "次へ";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(37, 233);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrevious.TabIndex = 8;
-            this.buttonPrevious.Text = "前へ";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(87, 267);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
@@ -296,19 +287,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(87, 267);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
-            this.buttonAdd.TabIndex = 24;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
             // On_orderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -344,8 +322,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;

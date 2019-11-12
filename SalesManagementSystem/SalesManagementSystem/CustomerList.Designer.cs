@@ -34,8 +34,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -89,8 +87,6 @@
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.buttonNext);
-            this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -144,25 +140,6 @@
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(141, 274);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 22;
-            this.buttonNext.Text = "次へ";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(37, 274);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrevious.TabIndex = 21;
-            this.buttonPrevious.Text = "前へ";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // textBox7
             // 
@@ -458,7 +435,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
             // 
             // toolStripButtonRefresh
@@ -466,7 +443,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
             // 
             // toolStripButtonRemove
@@ -474,7 +451,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
             // 
             // button1
@@ -544,8 +521,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;

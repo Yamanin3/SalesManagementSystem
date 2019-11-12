@@ -63,34 +63,20 @@ namespace SalesManagementSystem
             menu.Show();
         }
 
-        private void buttonPrevious_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dataGridView1.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
 
-                DataGridViewRow row = cell.OwningRow;
-                textBox1.Text = row.Cells[1].Value.ToString();
-                textBox2.Text = row.Cells[2].Value.ToString();
-                textBox3.Text = row.Cells[3].Value.ToString();
-                comboBox1.Text = row.Cells[4].Value.ToString();
-                dateTimePicker1.Text = row.Cells[5].Value.ToString();
-                textBox4.Text = row.Cells[6].Value.ToString();
-                textBox5.Text = row.Cells[7].Value.ToString();
-                textBox6.Text = row.Cells[8].Value.ToString();
-                textBox7.Text = row.Cells[9].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            comboBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
 
-            }
+        
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -103,7 +89,8 @@ namespace SalesManagementSystem
             AC.openConnection();
             string cid = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             
-            AC.sql = "update 顧客マスタ set 顧客名 = " + cname + " where 顧客ID = " + cid;
+
+            AC.sql = "update 顧客マスタ set 顧客名 = " + textBox2.Text + " where 顧客ID = " + cid;
             AC.cmd.CommandText = AC.sql;
             AC.cmd.ExecuteNonQuery();
             AC.closeConnection();
