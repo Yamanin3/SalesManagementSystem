@@ -58,71 +58,120 @@ namespace SalesManagementSystem
             // 行が選択されていないかどうか or 選択された行idが存在するかどうか
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-
-                try
+                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
                 {
-                    MessageBox.Show("データを追加しますか？");
-                    AC.sql = "insert into 顧客マスタ(顧客番号, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cnumber, @cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
-                    AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
-                    AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
-                    AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
-                    AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
-                    AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
-                    AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
-                    AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
-                    AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
-
-                    AC.cmd.CommandText = AC.sql;
-                    int rows = AC.cmd.ExecuteNonQuery();
-                    if (rows >= 1)
-                    {
-
-                        RefreshLoad();
-                        MessageBox.Show("データの追加が完了しました");
-
-                    }
-
+                    MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
 
+                    try
+                    {
+                        string msg = "レコードを追加しますか？";
+                        string caption = "レコードの追加";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        MessageBoxIcon ico = MessageBoxIcon.Question;
+
+                        DialogResult result;
+
+                        result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            AC.sql = "insert into 顧客マスタ(顧客番号, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cnumber, @cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
+                            AC.cmd.Parameters.Clear();
+                            AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
+                            AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
+
+                            AC.cmd.CommandText = AC.sql;
+                            int rows = AC.cmd.ExecuteNonQuery();
+                            if (rows >= 1)
+                            {
+
+                                RefreshLoad();
+                                MessageBox.Show("データの追加が完了しました");
+
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                        MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    
+                
                 }
             }
             else
             {
-                try
+                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
                 {
-                    MessageBox.Show("この内容でデータを編集しますか？");
-                    int cid = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                    AC.sql = "update 顧客マスタ set 顧客番号 = @cnumber, 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
-                    AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
-                    AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
-                    AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
-                    AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
-                    AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
-                    AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
-                    AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
-                    AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
-                    AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = cid;
-
-                    AC.cmd.CommandText = AC.sql;
-                    int rows = AC.cmd.ExecuteNonQuery();
-                    if (rows >= 1)
-                    {
-                        RefreshLoad();
-                        MessageBox.Show("データの編集が完了しました");
-                    
-                    }
-
+                    MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+                        string msg = "レコードの編集を反映しますか？";
+                        string caption = "レコードの編集";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        MessageBoxIcon ico = MessageBoxIcon.Question;
+
+                        DialogResult result;
+
+                        result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            int cid = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            AC.sql = "update 顧客マスタ set 顧客番号 = @cnumber, 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
+                            AC.cmd.Parameters.Clear();
+                            AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
+                            AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = cid;
+
+                            AC.cmd.CommandText = AC.sql;
+                            int rows = AC.cmd.ExecuteNonQuery();
+                            if (rows >= 1)
+                            {
+                                RefreshLoad();
+                                MessageBox.Show("データの編集が完了しました");
+
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("データの編集に失敗しました: " + ex.Message.ToString(), "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
             }
@@ -155,23 +204,40 @@ namespace SalesManagementSystem
             {
                 try
                 {
-                    MessageBox.Show("データを削除しますか?");
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @cid;";
-                    AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                    int rows = AC.cmd.ExecuteNonQuery();
+                    string msg = "レコードを削除しますか？";
+                    string caption = "レコードの削除";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    MessageBoxIcon ico = MessageBoxIcon.Question;
 
-                    if (rows >= 1)
+                    DialogResult result;
+
+                    result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                    if (result == DialogResult.Yes)
                     {
-                        RefreshLoad();
-                        MessageBox.Show("データの削除が完了しました");
-                        
+
+
+                        AC.cmd.Parameters.Clear();
+                        AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @cid;";
+                        AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        int rows = AC.cmd.ExecuteNonQuery();
+
+                        if (rows >= 1)
+                        {
+                            RefreshLoad();
+                            MessageBox.Show("データの削除が完了しました");
+
+                        }
+                    }
+                    else
+                    {
+                        return;
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("データの削除に失敗しました : " + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -194,5 +260,6 @@ namespace SalesManagementSystem
             AC.closeConnection();
             Application.Exit();
         }
+
     }
 }
