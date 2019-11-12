@@ -519,7 +519,7 @@ namespace SalesManagementSystem {
         private void InitClass() {
             this.DataSetName = "SMSdatabaseDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SMSdatabaseDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/SMSdatabaseDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.table営業所マスタ = new 営業所マスタDataTable();
