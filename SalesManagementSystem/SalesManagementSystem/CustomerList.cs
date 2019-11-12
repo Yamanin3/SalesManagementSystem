@@ -44,15 +44,7 @@ namespace SalesManagementSystem
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
 
-            AC.openConnection();
-            AC.sql = "select * from 顧客マスタ";
-            AC.cmd.CommandText = AC.sql;
-            AC.da = new OleDbDataAdapter(AC.cmd);
-            AC.dt = new DataTable();
-
-            AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            AC.closeConnection();
+            RefreshLoad();
 
         }
 
@@ -65,7 +57,7 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-
+            
             textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -87,25 +79,148 @@ namespace SalesManagementSystem
         private void buttonAdd_Click(object sender, EventArgs e)
         {
 
-            AC.openConnection();
-            string cid = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            AC.sql = "update 顧客マスタ set 顧客番号 = @cnumber, 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
-            AC.cmd.Parameters.Clear();
-            AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = cid;
-            AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
-            AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
-            AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
-            AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
-            AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
-            AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
-            AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
-            AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
-            // 日付の場合: AC.cmd.Parameters.Add("@date", OleDbType.Date).Value = new DateTime(2017, 1, 1);
-            AC.cmd.CommandText = AC.sql;
-            AC.cmd.ExecuteNonQuery();
-            AC.closeConnection();
+            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "" || dataGridView1.SelectedRows.Count <= 0)
+            {
+
+                try
+                {
+                    MessageBox.Show("データを追加しますか？");
+                    AC.sql = "insert into 顧客マスタ(顧客番号, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cnumber, @cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
+                    AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
+                    AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
+                    AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
+                    AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
+                    AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
+                    AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
+                    AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
+                    AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
+
+                    AC.cmd.CommandText = AC.sql;
+                    int rows = AC.cmd.ExecuteNonQuery();
+                    if (rows >= 1)
+                    {
+
+                        RefreshLoad();
+                        MessageBox.Show("データの追加が完了しました");
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+            }
+            else
+            {
+                try
+                {
+                    MessageBox.Show("この内容でデータを編集しますか？");
+                    int cid = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    AC.sql = "update 顧客マスタ set 顧客番号 = @cnumber, 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
+                    AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
+                    AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
+                    AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
+                    AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
+                    AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
+                    AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
+                    AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
+                    AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
+                    AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = cid;
+
+                    AC.cmd.CommandText = AC.sql;
+                    int rows = AC.cmd.ExecuteNonQuery();
+                    if (rows >= 1)
+                    {
+                        RefreshLoad();
+                        MessageBox.Show("データの編集が完了しました");
+                    
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            
 
         }
 
+        private void toolStripButtonNew_Click(object sender, EventArgs e)
+        {
+            AC.dt.Rows.Add();
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
+            dataGridView1_SelectionChanged(this,EventArgs.Empty);
+            
+        }
+
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshLoad();
+        }
+
+        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            {
+                AC.dt.Rows.RemoveAt(dataGridView1.Rows.Count - 1);
+                RefreshLoad();
+            }
+            else
+            {
+                try
+                {
+                    MessageBox.Show("データを削除しますか?");
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @cid;";
+                    AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    int rows = AC.cmd.ExecuteNonQuery();
+
+                    if (rows >= 1)
+                    {
+                        RefreshLoad();
+                        MessageBox.Show("データの削除が完了しました");
+                        
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void RefreshLoad()
+        {
+            AC.openConnection();
+            AC.sql = "select * from 顧客マスタ";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+
+        }
+
+        private void CustomerListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AC.closeConnection();
+            Application.Exit();
+        }
     }
 }
