@@ -78,8 +78,8 @@ namespace SalesManagementSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "" || dataGridView1.SelectedRows.Count <= 0)
+            // 行が選択されていないかどうか or 選択された行idが存在するかどうか
+            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
 
                 try
@@ -174,7 +174,7 @@ namespace SalesManagementSystem
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 AC.dt.Rows.RemoveAt(dataGridView1.Rows.Count - 1);
                 RefreshLoad();
