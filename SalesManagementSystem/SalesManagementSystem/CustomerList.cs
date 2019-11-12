@@ -21,25 +21,6 @@ namespace SalesManagementSystem
             this.dataGridView1.Columns[0].Visible = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
@@ -71,10 +52,6 @@ namespace SalesManagementSystem
         
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -159,11 +136,6 @@ namespace SalesManagementSystem
             dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
             dataGridView1_SelectionChanged(this,EventArgs.Empty);
             
-        }
-
-        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripButtonRefresh_Click(object sender, EventArgs e)
