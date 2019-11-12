@@ -252,6 +252,19 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
 
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Text = "";
+                dateTimePicker1.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+            }
+
         }
 
         private void CustomerListForm_FormClosed(object sender, FormClosedEventArgs e)
