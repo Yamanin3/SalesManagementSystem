@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArrivalListForm));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -68,26 +66,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(668, 224);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonPrevious.Location = new System.Drawing.Point(250, 316);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(89, 32);
-            this.buttonPrevious.TabIndex = 28;
-            this.buttonPrevious.Text = "前へ";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonNext.Location = new System.Drawing.Point(362, 316);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(89, 32);
-            this.buttonNext.TabIndex = 29;
-            this.buttonNext.Text = "次へ";
-            this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -129,8 +107,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 362);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -154,8 +130,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonPrevious;
-        private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button button2;
     }
 }

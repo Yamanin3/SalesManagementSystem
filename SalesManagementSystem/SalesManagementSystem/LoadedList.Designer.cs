@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadedListForm));
             this.buttonSearch = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,26 +54,6 @@
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 50;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonNext.Location = new System.Drawing.Point(361, 310);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(89, 32);
-            this.buttonNext.TabIndex = 49;
-            this.buttonNext.Text = "次へ";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonPrevious.Location = new System.Drawing.Point(249, 310);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(89, 32);
-            this.buttonPrevious.TabIndex = 48;
-            this.buttonPrevious.Text = "前へ";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -136,8 +114,6 @@
             this.ClientSize = new System.Drawing.Size(690, 362);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -158,8 +134,6 @@
 
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox SearchTextbox;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
