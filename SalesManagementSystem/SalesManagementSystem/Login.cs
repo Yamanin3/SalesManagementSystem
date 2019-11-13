@@ -78,7 +78,7 @@ namespace SalesManagementSystem
                 while (AC.rd.Read())
                 {
                     AC.currentFullName = AC.rd[0].ToString();
-                    MessageBox.Show("ようこそ " + AC.currentFullName, "会員ログイン : ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "会員ログイン : ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.textBox1.Text = string.Empty;
