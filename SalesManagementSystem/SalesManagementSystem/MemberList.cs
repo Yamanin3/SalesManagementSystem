@@ -17,7 +17,6 @@ namespace SalesManagementSystem
         public MemberListForm()
         {
             InitializeComponent();
-            this.dataGridView1.Columns[0].Visible = false;
         }
 
         private void MemberList_Load(object sender, EventArgs e)
@@ -29,6 +28,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
+            this.dataGridView1.Columns[0].Visible = false;
             AC.openConnection();
             AC.sql = "select * from 会員マスタ";
             AC.cmd.CommandText = AC.sql;

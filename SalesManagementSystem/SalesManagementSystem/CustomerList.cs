@@ -17,8 +17,6 @@ namespace SalesManagementSystem
         public CustomerListForm()
         {
             InitializeComponent();
-            // IDカラムを隠す
-            this.dataGridView1.Columns[0].Visible = false;
         }
 
 
@@ -248,6 +246,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
+            this.dataGridView1.Columns[0].Visible = false;
             AC.openConnection();
             AC.sql = "select * from 顧客マスタ";
             AC.cmd.CommandText = AC.sql;
