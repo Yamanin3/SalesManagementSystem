@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueListForm));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,10 +54,19 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
+            this.出庫テーブルBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.出庫テーブルTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter();
+            this.出庫IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.出庫番号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.営業所IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -87,11 +97,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.出庫IDDataGridViewTextBoxColumn,
+            this.出庫番号DataGridViewTextBoxColumn,
+            this.営業所IDDataGridViewTextBoxColumn,
+            this.商品IDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.出庫テーブルBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 15);
             this.dataGridView1.MultiSelect = false;
@@ -101,6 +118,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(591, 302);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -138,6 +156,7 @@
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label7
             // 
@@ -271,6 +290,7 @@
             this.toolStripButtonNew.Name = "toolStripButtonNew";
             this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
+            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonRefresh
             // 
@@ -279,6 +299,7 @@
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
             this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
+            this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
             // toolStripButtonRemove
             // 
@@ -287,6 +308,7 @@
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
             this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
+            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
             // button2
             // 
@@ -299,6 +321,52 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // sMSdatabaseDataSet
+            // 
+            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
+            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 出庫テーブルBindingSource
+            // 
+            this.出庫テーブルBindingSource.DataMember = "出庫テーブル";
+            this.出庫テーブルBindingSource.DataSource = this.sMSdatabaseDataSet;
+            // 
+            // 出庫テーブルTableAdapter
+            // 
+            this.出庫テーブルTableAdapter.ClearBeforeFill = true;
+            // 
+            // 出庫IDDataGridViewTextBoxColumn
+            // 
+            this.出庫IDDataGridViewTextBoxColumn.DataPropertyName = "出庫ID";
+            this.出庫IDDataGridViewTextBoxColumn.HeaderText = "出庫ID";
+            this.出庫IDDataGridViewTextBoxColumn.Name = "出庫IDDataGridViewTextBoxColumn";
+            this.出庫IDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.出庫IDDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // 出庫番号DataGridViewTextBoxColumn
+            // 
+            this.出庫番号DataGridViewTextBoxColumn.DataPropertyName = "出庫番号";
+            this.出庫番号DataGridViewTextBoxColumn.HeaderText = "出庫番号";
+            this.出庫番号DataGridViewTextBoxColumn.Name = "出庫番号DataGridViewTextBoxColumn";
+            this.出庫番号DataGridViewTextBoxColumn.ReadOnly = true;
+            this.出庫番号DataGridViewTextBoxColumn.Width = 78;
+            // 
+            // 営業所IDDataGridViewTextBoxColumn
+            // 
+            this.営業所IDDataGridViewTextBoxColumn.DataPropertyName = "営業所ID";
+            this.営業所IDDataGridViewTextBoxColumn.HeaderText = "営業所ID";
+            this.営業所IDDataGridViewTextBoxColumn.Name = "営業所IDDataGridViewTextBoxColumn";
+            this.営業所IDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.営業所IDDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // 商品IDDataGridViewTextBoxColumn
+            // 
+            this.商品IDDataGridViewTextBoxColumn.DataPropertyName = "商品ID";
+            this.商品IDDataGridViewTextBoxColumn.HeaderText = "商品ID";
+            this.商品IDDataGridViewTextBoxColumn.Name = "商品IDDataGridViewTextBoxColumn";
+            this.商品IDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.商品IDDataGridViewTextBoxColumn.Width = 65;
             // 
             // IssueListForm
             // 
@@ -315,6 +383,7 @@
             this.Name = "IssueListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出庫予定一覧";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IssueListForm_FormClosed);
             this.Load += new System.EventHandler(this.IssueListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -322,6 +391,8 @@
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +423,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button buttonAdd;
+        private SMSdatabaseDataSet sMSdatabaseDataSet;
+        private System.Windows.Forms.BindingSource 出庫テーブルBindingSource;
+        private SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter 出庫テーブルTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 出庫IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 出庫番号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 営業所IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 商品IDDataGridViewTextBoxColumn;
     }
 }

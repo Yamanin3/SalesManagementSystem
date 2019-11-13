@@ -38,17 +38,22 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            
-            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            comboBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-
+            if (dataGridView1.CurrentCell == null)
+            {
+                return;
+            }
+            else
+            {
+                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            }
         
         }
 
