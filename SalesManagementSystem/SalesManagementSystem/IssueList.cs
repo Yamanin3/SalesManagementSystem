@@ -22,8 +22,6 @@ namespace SalesManagementSystem
 
         private void IssueListForm_Load(object sender, EventArgs e)
         {
-            // TODO: このコード行はデータを 'sMSdatabaseDataSet.出庫テーブル' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.出庫テーブルTableAdapter.Fill(this.sMSdatabaseDataSet.出庫テーブル);
             RefreshLoad();
         }
 
@@ -76,7 +74,7 @@ namespace SalesManagementSystem
                 textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
