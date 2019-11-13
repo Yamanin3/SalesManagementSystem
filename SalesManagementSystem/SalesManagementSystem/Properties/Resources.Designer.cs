@@ -213,6 +213,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Logout_32 {
+            get {
+                object obj = ResourceManager.GetObject("Logout-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap media_player_stream_no {
             get {
                 object obj = ResourceManager.GetObject("media_player_stream_no", resourceCulture);

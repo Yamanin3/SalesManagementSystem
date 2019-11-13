@@ -107,5 +107,12 @@ namespace SalesManagementSystem
             Form saleslistForm = new SalesListForm();
             saleslistForm.Show();
         }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form loginForm = new Login_Form();
+            loginForm.Show();
+        }
     }
 }

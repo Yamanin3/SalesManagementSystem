@@ -85,7 +85,7 @@ namespace SalesManagementSystem
                 this.textBox2.Text = string.Empty;
 
                 this.Hide();
-   
+
                 Form menuForm = new MainMenuForm();
                 menuForm.Show();
 
