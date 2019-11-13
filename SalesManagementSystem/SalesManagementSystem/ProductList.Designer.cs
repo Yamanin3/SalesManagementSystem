@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductListForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
@@ -54,10 +55,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
+            this.商品マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.商品マスタTableAdapter();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品マスタBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -80,6 +86,7 @@
             this.toolStripButtonNew.Name = "toolStripButtonNew";
             this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
+            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonRefresh
             // 
@@ -88,6 +95,7 @@
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
             this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
+            this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
             // toolStripButtonRemove
             // 
@@ -96,6 +104,7 @@
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
             this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
+            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
             // groupBox1
             // 
@@ -135,6 +144,7 @@
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label8
             // 
@@ -221,9 +231,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 12);
+            this.label3.Size = new System.Drawing.Size(45, 12);
             this.label3.TabIndex = 10;
-            this.label3.Text = "重量:";
+            this.label3.Text = "重量(g):";
             // 
             // label2
             // 
@@ -293,6 +303,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(591, 330);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // button1
             // 
@@ -306,6 +317,20 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // sMSdatabaseDataSet
+            // 
+            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
+            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 商品マスタBindingSource
+            // 
+            this.商品マスタBindingSource.DataMember = "商品マスタ";
+            this.商品マスタBindingSource.DataSource = this.sMSdatabaseDataSet;
+            // 
+            // 商品マスタTableAdapter
+            // 
+            this.商品マスタTableAdapter.ClearBeforeFill = true;
             // 
             // ProductListForm
             // 
@@ -321,12 +346,16 @@
             this.Name = "ProductListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductListForm_FormClosed);
+            this.Load += new System.EventHandler(this.ProductListForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品マスタBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +388,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button buttonAdd;
+        private SMSdatabaseDataSet sMSdatabaseDataSet;
+        private System.Windows.Forms.BindingSource 商品マスタBindingSource;
+        private SMSdatabaseDataSetTableAdapters.商品マスタTableAdapter 商品マスタTableAdapter;
     }
 }
