@@ -28,7 +28,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            this.dataGridView1.Columns[0].Visible = false;
+            
             AC.openConnection();
             AC.sql = "select * from 会員マスタ";
             AC.cmd.CommandText = AC.sql;
@@ -37,6 +37,7 @@ namespace SalesManagementSystem
 
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
+            this.dataGridView1.Columns[0].Visible = false;
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -51,6 +52,10 @@ namespace SalesManagementSystem
                 textBox7.Text = "";
                 dateTimePicker2.Text = "";
                 textBox8.Text = "";
+            }
+            else
+            {
+                dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - dataGridView1.Rows.Count].Cells[2];
             }
         }
 

@@ -35,7 +35,6 @@ C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\Sa
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\bin\Debug\SalesManagementSystem.exe
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\bin\Debug\SalesManagementSystem.pdb
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.Properties.Resources.resources
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.CustomerListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\bin\Debug\SalesManagementSystem.exe.config
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\bin\Debug\SalesManagementSystem.exe
