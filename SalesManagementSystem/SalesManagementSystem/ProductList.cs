@@ -41,10 +41,10 @@ namespace SalesManagementSystem
 
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
-            this.dataGridView1.Columns[0].Visible = false;
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
+                textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
@@ -58,29 +58,35 @@ namespace SalesManagementSystem
             else
             {
                 // datagridview1の最上段にカーソルを当てる
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[2];
+                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            try
             {
-                return;
-            }
-            else
+                if (dataGridView1.CurrentCell == null)
+                {
+                    return;
+                }
+                else
+                {
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    comboBox2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBox8.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+
+                }
+            }catch(Exception ex)
             {
-
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                comboBox2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox8.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-
+                MessageBox.Show("データの取得に失敗しました : " + ex.Message.ToString(), "データの取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

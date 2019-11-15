@@ -52,16 +52,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顧客マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sMSdatabaseDataSet1 = new SalesManagementSystem.SMSdatabaseDataSet();
             this.顧客マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -248,9 +238,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 12);
+            this.label1.Size = new System.Drawing.Size(42, 12);
             this.label1.TabIndex = 8;
-            this.label1.Text = "顧客番号:";
+            this.label1.Text = "顧客ID:";
             // 
             // textBox3
             // 
@@ -268,6 +258,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(116, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 19);
@@ -288,24 +279,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridView1.DataSource = this.顧客マスタBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 15);
             this.dataGridView1.MultiSelect = false;
@@ -316,86 +294,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(662, 353);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "顧客ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "顧客ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "顧客番号";
-            this.dataGridViewTextBoxColumn10.HeaderText = "顧客番号";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "顧客名";
-            this.dataGridViewTextBoxColumn2.HeaderText = "顧客名";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 66;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ふりがな";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ふりがな";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 68;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "性別";
-            this.dataGridViewTextBoxColumn8.HeaderText = "性別";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 54;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "生年月日";
-            this.dataGridViewTextBoxColumn9.HeaderText = "生年月日";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "郵便番号";
-            this.dataGridViewTextBoxColumn7.HeaderText = "郵便番号";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "住所";
-            this.dataGridViewTextBoxColumn3.HeaderText = "住所";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 54;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "電話番号";
-            this.dataGridViewTextBoxColumn4.HeaderText = "電話番号";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "メールアドレス";
-            this.dataGridViewTextBoxColumn6.HeaderText = "メールアドレス";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 94;
             // 
             // 顧客マスタBindingSource1
             // 
@@ -429,7 +327,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -438,7 +336,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -447,7 +345,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
@@ -545,15 +443,5 @@
         private SMSdatabaseDataSet sMSdatabaseDataSet1;
         private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter1;
         private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

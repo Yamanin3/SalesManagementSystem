@@ -36,21 +36,27 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            try
             {
-                return;
-            }
-            else
+                if (dataGridView1.CurrentCell == null)
+                {
+                    return;
+                }
+                else
+                {
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                }
+            }catch(Exception ex)
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                MessageBox.Show("データの取得に失敗しました : " + ex.Message.ToString(), "データの取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
         }
@@ -61,7 +67,7 @@ namespace SalesManagementSystem
             // 行が選択されていないかどうか or 選択された行idが存在するかどうか
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -82,9 +88,8 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 顧客マスタ(顧客番号, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cnumber, @cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
+                            AC.sql = "insert into 顧客マスタ(顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
                             AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
                             AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
@@ -121,7 +126,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -142,9 +147,8 @@ namespace SalesManagementSystem
                         {
 
                             int cid = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 顧客マスタ set 顧客番号 = @cnumber, 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
+                            AC.sql = "update 顧客マスタ set 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@cnumber", OleDbType.Integer).Value = textBox1.Text;
                             AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
                             AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
@@ -184,7 +188,7 @@ namespace SalesManagementSystem
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
             dataGridView1_SelectionChanged(this,EventArgs.Empty);
             
         }
@@ -246,8 +250,6 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            this.dataGridView1.Columns[0].Visible = false;
-            AC.openConnection();
             AC.sql = "select * from 顧客マスタ";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
@@ -268,13 +270,16 @@ namespace SalesManagementSystem
                 textBox6.Text = "";
                 textBox7.Text = "";
             }
+            else
+            {
+                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+            }
 
         }
 
         private void CustomerListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AC.closeConnection();
-            Application.Exit();
+            button1.PerformClick();
         }
 
     }
