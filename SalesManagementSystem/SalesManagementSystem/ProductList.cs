@@ -34,7 +34,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
             AC.openConnection();
-            AC.sql = "select * from 商品マスタ";
+            AC.sql = "select pd.商品ID, pd.商品番号, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格 from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -42,7 +42,6 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
             this.dataGridView1.Columns[0].Visible = false;
-            this.dataGridView1.Columns[1].Visible = false;
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -72,16 +71,16 @@ namespace SalesManagementSystem
             else
             {
 
-                textBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                comboBox2.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                textBox8.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                comboBox2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
 
             }
         }
@@ -276,6 +275,7 @@ namespace SalesManagementSystem
             AC.closeConnection();
             Application.Exit();
         }
+
 
     }
 }
