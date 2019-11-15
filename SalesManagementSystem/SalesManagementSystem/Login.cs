@@ -30,12 +30,8 @@ namespace SalesManagementSystem
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
-            
-            // 接続をオープンにする
-            // Login_form.Static_Classes.AC.openConnection();
 
-            // 接続をクローズする
-            // Login_form.Static_Classes.AC.closeConnection();
+            AC.openConnection();
 
         }
 
@@ -89,7 +85,7 @@ namespace SalesManagementSystem
                 Form menuForm = new MainMenuForm();
                 menuForm.Show();
 
-                
+
             }
             else
             {
@@ -104,7 +100,6 @@ namespace SalesManagementSystem
             this.textBox2.Text = string.Empty;
 
             AC.rd.Close();
-            AC.closeConnection();
 
         }
 

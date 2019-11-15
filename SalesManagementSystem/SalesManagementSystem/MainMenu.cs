@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login_form.Static_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,7 +60,7 @@ namespace SalesManagementSystem
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button6_Click(object sender, EventArgs e)
