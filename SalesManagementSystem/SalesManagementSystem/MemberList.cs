@@ -28,8 +28,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            
-            AC.openConnection();
+
             AC.sql = "select * from 会員マスタ";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
@@ -37,7 +36,6 @@ namespace SalesManagementSystem
 
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
-            this.dataGridView1.Columns[0].Visible = false;
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -55,7 +53,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - dataGridView1.Rows.Count].Cells[2];
+                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
         }
 
@@ -68,23 +66,30 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            try
             {
-                return;
-            }
-            else { 
+                if (dataGridView1.CurrentCell == null)
+                {
+                    return;
+                }
+                else
+                {
 
-                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                textBox8.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("データの取得に失敗しました : " + ex.Message.ToString(), "データの取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -92,7 +97,7 @@ namespace SalesManagementSystem
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
@@ -155,7 +160,7 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -176,19 +181,18 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 会員マスタ(会員番号, 会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード) Values(@number, @name, @hurigana, @sex, @date, @post, @address, @phone, @mail, @joindate, @pass)";
+                            AC.sql = "insert into 会員マスタ(会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@number", OleDbType.Integer).Value = textBox1.Text;
-                            AC.cmd.Parameters.Add("@name", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("@hurigana", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("@sex", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("@date", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("@post", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("@address", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("@phone", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("@mail", OleDbType.VarWChar).Value = textBox7.Text;
-                            AC.cmd.Parameters.Add("@joindate", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("@pass", OleDbType.VarWChar).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox8.Text;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -217,7 +221,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -238,20 +242,19 @@ namespace SalesManagementSystem
                         {
 
                             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 会員マスタ set 会員番号 = @number, 会員名 = @name, ふりがな = @hurigana, 性別 = @sex, 生年月日 = @date, 郵便番号 = @post, 住所 = @address, 電話番号 = @phone, メールアドレス = @mail where 会員ID = @id;";
+                            AC.sql = "update 会員マスタ set 会員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ?, パスワード = ? where 会員ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@number", OleDbType.Integer).Value = textBox1.Text;
-                            AC.cmd.Parameters.Add("@name", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("@hurigana", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("@sex", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("@date", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("@post", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("@address", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("@phone", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("@mail", OleDbType.VarWChar).Value = textBox7.Text;
-                            AC.cmd.Parameters.Add("@joindate", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("@pass", OleDbType.VarWChar).Value = textBox8.Text;
-                            AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -279,8 +282,7 @@ namespace SalesManagementSystem
 
         private void MemberListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AC.closeConnection();
-            Application.Exit();
+            button1.PerformClick();
         }
 
     }

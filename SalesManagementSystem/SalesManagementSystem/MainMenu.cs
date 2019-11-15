@@ -86,6 +86,7 @@ namespace SalesManagementSystem
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            AC.closeConnection();
             Application.Exit();
         }
 

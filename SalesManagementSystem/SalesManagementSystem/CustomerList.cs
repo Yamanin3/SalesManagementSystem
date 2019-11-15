@@ -88,16 +88,16 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 顧客マスタ(顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(@cname, @churigana, @csex, @cdate, @cpost, @caddress, @cphone, @cmail)";
+                            AC.sql = "insert into 顧客マスタ(顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -146,18 +146,18 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            int cid = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 顧客マスタ set 顧客名 = @cname, ふりがな = @churigana, 性別 = @csex, 生年月日 = @cdate, 郵便番号 = @cpost, 住所 = @caddress, 電話番号 = @cphone, メールアドレス = @cmail where 顧客ID = @cid;";
+                            int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            AC.sql = "update 顧客マスタ set 顧客名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ? where 顧客ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("@cname", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("@churigana", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("@csex", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("@cdate", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("@cpost", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("@caddress", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("@cphone", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("@cmail", OleDbType.VarWChar).Value = textBox7.Text;
-                            AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = cid;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -224,8 +224,8 @@ namespace SalesManagementSystem
 
 
                         AC.cmd.Parameters.Clear();
-                        AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @cid;";
-                        AC.cmd.Parameters.Add("@cid", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @id;";
+                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                         int rows = AC.cmd.ExecuteNonQuery();
 
                         if (rows >= 1)
