@@ -106,8 +106,7 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                AC.dt.Rows.RemoveAt(dataGridView1.Rows.Count - 1);
-                RefreshLoad();
+                return;
             }
             else
             {

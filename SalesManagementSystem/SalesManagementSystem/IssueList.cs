@@ -17,7 +17,6 @@ namespace SalesManagementSystem
         public IssueListForm()
         {
             InitializeComponent();
-            this.dataGridView1.Columns[0].Visible = false;
         }
 
         private void IssueListForm_Load(object sender, EventArgs e)
@@ -27,8 +26,8 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            AC.openConnection();
-            AC.sql = "select * from 出庫テーブル";
+
+            AC.sql = "select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格 from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -52,7 +51,7 @@ namespace SalesManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
             Form issuedlistForm = new IssuedListForm();
-            issuedlistForm.Show();
+            issuedlistForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,13 +70,13 @@ namespace SalesManagementSystem
             else
             {
 
-                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
             }
         }
@@ -263,8 +262,7 @@ namespace SalesManagementSystem
 
         private void IssueListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AC.closeConnection();
-            Application.Exit();
+            button1.PerformClick();
         }
     }
 }

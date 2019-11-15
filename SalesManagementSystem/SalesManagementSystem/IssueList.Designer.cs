@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.出庫テーブルBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,19 +56,13 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.button2 = new System.Windows.Forms.Button();
-            this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
-            this.出庫テーブルBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.出庫テーブルTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter();
-            this.出庫IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.出庫番号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.営業所IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -76,7 +72,7 @@
             this.button1.Location = new System.Drawing.Point(12, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 39);
-            this.button1.TabIndex = 34;
+            this.button1.TabIndex = 1;
             this.button1.Text = "戻る";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -97,18 +93,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.出庫IDDataGridViewTextBoxColumn,
-            this.出庫番号DataGridViewTextBoxColumn,
-            this.営業所IDDataGridViewTextBoxColumn,
-            this.商品IDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.出庫テーブルBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 15);
             this.dataGridView1.MultiSelect = false;
@@ -119,6 +108,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(591, 302);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // 出庫テーブルBindingSource
+            // 
+            this.出庫テーブルBindingSource.DataMember = "出庫テーブル";
+            this.出庫テーブルBindingSource.DataSource = this.sMSdatabaseDataSet;
+            // 
+            // sMSdatabaseDataSet
+            // 
+            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
+            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -152,7 +151,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(79, 266);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(79, 39);
-            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.TabIndex = 7;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -172,7 +171,7 @@
             this.textBox7.Location = new System.Drawing.Point(118, 182);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 19);
-            this.textBox7.TabIndex = 17;
+            this.textBox7.TabIndex = 6;
             // 
             // label6
             // 
@@ -188,7 +187,7 @@
             this.textBox6.Location = new System.Drawing.Point(118, 157);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 19);
-            this.textBox6.TabIndex = 15;
+            this.textBox6.TabIndex = 5;
             // 
             // label5
             // 
@@ -204,7 +203,7 @@
             this.textBox5.Location = new System.Drawing.Point(118, 132);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 19);
-            this.textBox5.TabIndex = 13;
+            this.textBox5.TabIndex = 4;
             // 
             // label4
             // 
@@ -220,7 +219,7 @@
             this.textBox4.Location = new System.Drawing.Point(118, 107);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
-            this.textBox4.TabIndex = 11;
+            this.textBox4.TabIndex = 3;
             // 
             // label3
             // 
@@ -236,18 +235,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 12);
+            this.label2.Size = new System.Drawing.Size(42, 12);
             this.label2.TabIndex = 9;
-            this.label2.Text = "商品番号:";
+            this.label2.Text = "商品ID:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(33, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 12);
+            this.label1.Size = new System.Drawing.Size(42, 12);
             this.label1.TabIndex = 8;
-            this.label1.Text = "出庫番号:";
+            this.label1.Text = "出庫ID:";
             // 
             // textBox3
             // 
@@ -288,7 +287,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -297,7 +296,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -306,7 +305,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRemove.Text = "削除";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
@@ -316,57 +315,15 @@
             this.button2.Location = new System.Drawing.Point(756, 354);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 39);
-            this.button2.TabIndex = 38;
+            this.button2.TabIndex = 0;
             this.button2.Text = "出庫済み一覧を表示";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // sMSdatabaseDataSet
-            // 
-            this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
-            this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 出庫テーブルBindingSource
-            // 
-            this.出庫テーブルBindingSource.DataMember = "出庫テーブル";
-            this.出庫テーブルBindingSource.DataSource = this.sMSdatabaseDataSet;
-            // 
             // 出庫テーブルTableAdapter
             // 
             this.出庫テーブルTableAdapter.ClearBeforeFill = true;
-            // 
-            // 出庫IDDataGridViewTextBoxColumn
-            // 
-            this.出庫IDDataGridViewTextBoxColumn.DataPropertyName = "出庫ID";
-            this.出庫IDDataGridViewTextBoxColumn.HeaderText = "出庫ID";
-            this.出庫IDDataGridViewTextBoxColumn.Name = "出庫IDDataGridViewTextBoxColumn";
-            this.出庫IDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.出庫IDDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // 出庫番号DataGridViewTextBoxColumn
-            // 
-            this.出庫番号DataGridViewTextBoxColumn.DataPropertyName = "出庫番号";
-            this.出庫番号DataGridViewTextBoxColumn.HeaderText = "出庫番号";
-            this.出庫番号DataGridViewTextBoxColumn.Name = "出庫番号DataGridViewTextBoxColumn";
-            this.出庫番号DataGridViewTextBoxColumn.ReadOnly = true;
-            this.出庫番号DataGridViewTextBoxColumn.Width = 78;
-            // 
-            // 営業所IDDataGridViewTextBoxColumn
-            // 
-            this.営業所IDDataGridViewTextBoxColumn.DataPropertyName = "営業所ID";
-            this.営業所IDDataGridViewTextBoxColumn.HeaderText = "営業所ID";
-            this.営業所IDDataGridViewTextBoxColumn.Name = "営業所IDDataGridViewTextBoxColumn";
-            this.営業所IDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.営業所IDDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // 商品IDDataGridViewTextBoxColumn
-            // 
-            this.商品IDDataGridViewTextBoxColumn.DataPropertyName = "商品ID";
-            this.商品IDDataGridViewTextBoxColumn.HeaderText = "商品ID";
-            this.商品IDDataGridViewTextBoxColumn.Name = "商品IDDataGridViewTextBoxColumn";
-            this.商品IDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.商品IDDataGridViewTextBoxColumn.Width = 65;
             // 
             // IssueListForm
             // 
@@ -387,12 +344,12 @@
             this.Load += new System.EventHandler(this.IssueListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,9 +383,5 @@
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 出庫テーブルBindingSource;
         private SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter 出庫テーブルTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 出庫IDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 出庫番号DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 営業所IDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品IDDataGridViewTextBoxColumn;
     }
 }

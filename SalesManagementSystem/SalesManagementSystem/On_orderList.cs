@@ -21,18 +21,15 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            AC.openConnection();
-            AC.sql = "select * from 注文テーブル";
+
+            AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
-            this.dataGridView1.Columns[0].Visible = false;
-            this.dataGridView1.Columns[1].Visible = false;
-            this.dataGridView1.Columns[2].Visible = false;
-            this.dataGridView1.Columns[3].Visible = false;
+
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -43,7 +40,13 @@ namespace SalesManagementSystem
                 dateTimePicker1.Text = "";
                 textBox5.Text = "";
                 textBox6.Text = "";
+                textBox7.Text = "";
 
+            }
+            else
+            {
+                // datagridview1の最上段にカーソルを当てる
+                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
 
         }
@@ -68,13 +71,14 @@ namespace SalesManagementSystem
             }
             else
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 
             }
         }
@@ -83,7 +87,7 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -104,15 +108,18 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 注文テーブル(注文番号, 顧客名, 商品名, 注文数量, 注文日, 商品価格, 会員名) Values(?, ?, ?, ?, ?, ?, ?)";
+                            AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 顧客名, 商品名, 注文数量, 注文日, 商品価格, 合計額, 会員名) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox4.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -141,7 +148,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(this.textBox1.Text.Trim()) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -162,15 +169,18 @@ namespace SalesManagementSystem
                         {
 
                             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 注文テーブル set 注文番号 = ?, 顧客名 = ?, 商品名 = ?, 注文数量 = ?, 注文日 = ?, 商品価格 = ?, 会員名 = ? where 注文ID = @id;";
+                            AC.sql = "update 注文テーブル set 商品ID = ?, 顧客ID = ?, 会員ID = ?, 顧客名 = ?, 商品名 = ?, 注文数量 = ?, 注文日 = ?, 商品価格 = ?, 合計額 = ?, 会員名 = ? where 注文ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox1.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox4.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox4.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox5.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
                             AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
@@ -200,7 +210,7 @@ namespace SalesManagementSystem
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4]; // 非可視セルがどうのこうの言われたらCells[]の値に非表示にしてるIDの数を入れるといい
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0]; // 非可視セルがどうのこうの言われたらCells[]の値に非表示にしてるIDの数を入れるといい
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
@@ -213,8 +223,7 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                AC.dt.Rows.RemoveAt(dataGridView1.Rows.Count - 1);
-                RefreshLoad();
+                return;
             }
             else
             {
@@ -260,8 +269,109 @@ namespace SalesManagementSystem
 
         private void On_orderListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AC.closeConnection();
-            Application.Exit();
+            button1.PerformClick();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var GridForm = new GridForm("顧客マスタ", "顧客選択");
+            if (GridForm.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    var id = GridForm.result;
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.CommandText = "select 顧客名 from 顧客マスタ where 顧客ID = @id";
+                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
+                    AC.rd = AC.cmd.ExecuteReader();
+
+                    if (AC.rd.Read())
+                    {
+                        textBox2.Text = AC.rd.GetString(0);
+                        textBox2.Tag = id;
+                    }
+
+                    else
+                    {
+                        return;
+                    }
+                    AC.rd.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("顧客名の取得に失敗しました : " + ex.Message.ToString(), "顧客名の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var GridForm = new GridForm("商品マスタ", "商品選択");
+            if (GridForm.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    var id = GridForm.result;
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.CommandText = "select 商品名 from 商品マスタ where 商品ID = @id";
+                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
+                    AC.rd = AC.cmd.ExecuteReader();
+
+                    if (AC.rd.Read())
+                    {
+                        textBox3.Text = AC.rd.GetString(0);
+                        textBox3.Tag = id;
+                    }
+
+                    else
+                    {
+                        return;
+                    }
+                    AC.rd.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("商品名の取得に失敗しました : " + ex.Message.ToString(), "商品名の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var GridForm = new GridForm("会員マスタ", "担当者選択");
+            if (GridForm.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    var id = GridForm.result;
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.CommandText = "select 会員名 from 会員マスタ where 会員ID = @id";
+                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
+                    AC.rd = AC.cmd.ExecuteReader();
+
+                    if (AC.rd.Read())
+                    {
+                        textBox7.Text = AC.rd.GetString(0);
+                        textBox7.Tag = id;
+                    }
+
+                    else
+                    {
+                        return;
+                    }
+                    AC.rd.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("担当者の取得に失敗しました : " + ex.Message.ToString(), "担当者の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
