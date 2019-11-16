@@ -202,5 +202,10 @@ namespace SalesManagementSystem
         {
             RefreshLoad();
         }
+
+        private void StockListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            button1.PerformClick();
+        }
     }
 }
