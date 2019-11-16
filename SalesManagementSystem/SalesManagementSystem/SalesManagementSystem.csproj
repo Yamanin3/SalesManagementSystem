@@ -382,5 +382,29 @@
   <ItemGroup>
     <None Include="Resources\gears_tweakui_a-1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winrep-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write_card_phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_computer-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book_pad.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

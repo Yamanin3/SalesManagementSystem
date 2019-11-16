@@ -103,6 +103,36 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap address_book_0 {
+            get {
+                object obj = ResourceManager.GetObject("address_book-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap address_book_home {
+            get {
+                object obj = ResourceManager.GetObject("address_book_home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap address_book_pad {
+            get {
+                object obj = ResourceManager.GetObject("address_book_pad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap briefcase_4 {
             get {
                 object obj = ResourceManager.GetObject("briefcase-4", resourceCulture);
@@ -116,6 +146,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap calendar_0 {
             get {
                 object obj = ResourceManager.GetObject("calendar-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_2 {
+            get {
+                object obj = ResourceManager.GetObject("calendar-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +473,29 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap search_computer_0 {
+            get {
+                object obj = ResourceManager.GetObject("search_computer-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Stop_32 {
             get {
                 object obj = ResourceManager.GetObject("Stop-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap user_card {
+            get {
+                object obj = ResourceManager.GetObject("user_card", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +516,26 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap windows_95_computer_icons_operating_systems_windows_10_window {
             get {
                 object obj = ResourceManager.GetObject("windows-95-computer-icons-operating-systems-windows-10-window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap winrep_1 {
+            get {
+                object obj = ResourceManager.GetObject("winrep-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap write_card_phone {
+            get {
+                object obj = ResourceManager.GetObject("write_card_phone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
