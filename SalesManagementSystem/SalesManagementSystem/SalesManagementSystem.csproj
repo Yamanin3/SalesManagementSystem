@@ -379,5 +379,8 @@
   <ItemGroup>
     <None Include="Resources\Logout-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gears_tweakui_a-1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
