@@ -369,16 +369,14 @@ namespace SalesManagementSystem
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "---")
-            {
+            if (textBox5.Text != "") {
 
-                double n = double.Parse(comboBox1.Text);
-                double s = double.Parse(textBox5.Text);
+                int n = int.Parse(comboBox1.Text);
+                int s = int.Parse(textBox5.Text);
 
                 textBox6.Text = (s * n).ToString();
             }
-            else
-            {
+            else {
                 return;
             }
 
