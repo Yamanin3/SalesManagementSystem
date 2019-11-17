@@ -118,7 +118,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RequestListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RequestList";
+            this.Text = "発注リスト";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RequestListForm_FormClosed);
             this.Load += new System.EventHandler(this.RequestListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

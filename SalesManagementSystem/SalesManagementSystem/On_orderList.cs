@@ -17,6 +17,9 @@ namespace SalesManagementSystem
         private int stock;
         private int dstock;
         private int PID;
+        private int MID;
+        private int answer;
+        private int order_quantity = 50;
 
         public On_orderListForm()
         {
@@ -86,7 +89,9 @@ namespace SalesManagementSystem
 
             }
         }
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 追加ボタンクリック後の処理////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
@@ -169,26 +174,55 @@ namespace SalesManagementSystem
                             }
                             else
                             {
-                                MessageBox.Show("在庫数が少ないため注文できません", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("在庫数不足のため注文できません", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                AC.cmd.Parameters.Clear();
+                                AC.cmd.CommandText = "select count(*) from 発注テーブル where 商品ID = @id";
+                                AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
+                                AC.rd = AC.cmd.ExecuteReader();
+
+                                if (AC.rd.Read())
+                                {
+                                    answer = int.Parse(AC.rd.GetValue(0).ToString());
+
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                                AC.rd.Close();
+
+                                if (answer >= 1)
+                                {
+                                    MessageBox.Show("この商品は既に発注リストに追加済みです、入荷までしばらくお待ちください。", "商品の発注", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    AC.sql = "insert into 発注テーブル(メーカーID, 商品ID, 発注数量, 発注日) Values(?, ?, ?, ?)";
+                                    AC.cmd.Parameters.Clear();
+                                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = MID;
+                                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
+                                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = order_quantity;
+                                    AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+
+                                    AC.cmd.CommandText = AC.sql;
+                                    int rows = AC.cmd.ExecuteNonQuery();
+                                    if (rows >= 1)
+                                    {
+                                        MessageBox.Show("商品を発注リストに追加しました", "商品の発注", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        RefreshLoad();
+                                    }
+                                }
+
                             }
-
-
-
                         }
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
-        
-
-
-                
-            
             else
             {
                 
@@ -196,6 +230,9 @@ namespace SalesManagementSystem
 
             }
         }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
@@ -306,7 +343,7 @@ namespace SalesManagementSystem
 
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 商品名, 商品価格 from 商品マスタ where 商品ID = @id";
+                    AC.cmd.CommandText = "select 商品名, 商品価格, メーカーID from 商品マスタ where 商品ID = @id";
                     AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
@@ -314,6 +351,7 @@ namespace SalesManagementSystem
                     {
                         textBox3.Text = AC.rd.GetString(0);
                         textBox5.Text = AC.rd.GetValue(1).ToString();
+                        MID = int.Parse(AC.rd.GetValue(2).ToString());
                         textBox3.Tag = id;
                         PID = id;
                     }
