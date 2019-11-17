@@ -20,6 +20,7 @@ namespace SalesManagementSystem
         private int MID;
         private int answer;
         private int order_quantity = 50;
+        private int order_point;
 
         public On_orderListForm()
         {
@@ -117,13 +118,14 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.CommandText = "select 在庫数 from 在庫テーブル where 商品ID = @id";
+                            AC.cmd.CommandText = "select 在庫数, 発注点 from 在庫テーブル where 商品ID = @id";
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
                             AC.rd = AC.cmd.ExecuteReader();
 
                             if (AC.rd.Read())
                             {
                                 stock = int.Parse(AC.rd.GetValue(0).ToString());
+                                order_point = int.Parse(AC.rd.GetValue(1).ToString());
 
                             }
                             else
@@ -160,22 +162,15 @@ namespace SalesManagementSystem
                                     {
                                         RefreshLoad();
                                     }
-                                    else
-                                    {
-                                        return;
-                                    }
-
-                                }
-
-                                else
-                                {
-                                    return;
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("在庫数不足のため注文できません", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("在庫数不足のため注文できません、再入荷までしばらくお待ちください。", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
 
+                            if (stock <= order_point)
+                            {
                                 AC.cmd.Parameters.Clear();
                                 AC.cmd.CommandText = "select count(*) from 発注テーブル where 商品ID = @id";
                                 AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
@@ -186,15 +181,11 @@ namespace SalesManagementSystem
                                     answer = int.Parse(AC.rd.GetValue(0).ToString());
 
                                 }
-                                else
-                                {
-                                    return;
-                                }
                                 AC.rd.Close();
 
                                 if (answer >= 1)
                                 {
-                                    MessageBox.Show("この商品は既に発注リストに追加済みです、入荷までしばらくお待ちください。", "商品の発注", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    return;
                                 }
                                 else
                                 {
@@ -206,14 +197,8 @@ namespace SalesManagementSystem
                                     AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
 
                                     AC.cmd.CommandText = AC.sql;
-                                    int rows = AC.cmd.ExecuteNonQuery();
-                                    if (rows >= 1)
-                                    {
-                                        MessageBox.Show("商品を発注リストに追加しました", "商品の発注", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        RefreshLoad();
-                                    }
+                                    AC.cmd.ExecuteNonQuery();
                                 }
-
                             }
                         }
                     }
