@@ -166,7 +166,7 @@ namespace SalesManagementSystem
                             }
                             else
                             {
-                                MessageBox.Show("在庫数不足のため注文できません、再入荷までしばらくお待ちください。", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("在庫数不足のため注文できません、再入荷までしばらくお待ちください。", "在庫不足", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
 
                             if (stock <= order_point)
@@ -232,7 +232,7 @@ namespace SalesManagementSystem
         }
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
-        {
+        {// 在庫数を増やす処理を行うTODO:)
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 return;

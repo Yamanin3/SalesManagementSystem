@@ -191,7 +191,13 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
-
+                                AC.sql = "insert into 在庫テーブル(商品ID, 在庫数, 発注点) Values(?, ?, ?)";
+                                AC.cmd.Parameters.Clear();
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox1.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = 0;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 40;
+                                AC.cmd.CommandText = AC.sql;
+                                AC.cmd.ExecuteNonQuery();
                                 RefreshLoad();
 
                             }
