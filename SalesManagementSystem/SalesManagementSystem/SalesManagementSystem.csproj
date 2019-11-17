@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrivalList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArrivalList.Designer.cs">
-      <DependentUpon>ArrivalList.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,12 +69,6 @@
     </Compile>
     <Compile Include="LoadedList.Designer.cs">
       <DependentUpon>LoadedList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoadList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoadList.Designer.cs">
-      <DependentUpon>LoadList.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -168,9 +156,6 @@
     <Compile Include="IssuedList.Designer.cs">
       <DependentUpon>IssuedList.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ArrivalList.resx">
-      <DependentUpon>ArrivalList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadedList.resx">
       <DependentUpon>LoadedList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoadList.resx">
-      <DependentUpon>LoadList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

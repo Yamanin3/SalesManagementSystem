@@ -54,8 +54,8 @@ namespace SalesManagementSystem
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form arrivallistForm = new ArrivalListForm();
-            arrivallistForm.Show();
+            Form in_stockForm = new In_stockListForm();
+            in_stockForm.ShowDialog();
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)
@@ -80,8 +80,8 @@ namespace SalesManagementSystem
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form loadlistForm = new LoadListForm();
-            loadlistForm.Show();
+            Form loadedlistForm = new LoadedListForm();
+            loadedlistForm.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

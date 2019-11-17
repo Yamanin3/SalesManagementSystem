@@ -51,7 +51,7 @@
             // 
             this.button9.Image = global::SalesManagementSystem.Properties.Resources.address_book_pad;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.Location = new System.Drawing.Point(415, 293);
+            this.button9.Location = new System.Drawing.Point(424, 293);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(138, 47);
             this.button9.TabIndex = 9;
@@ -63,7 +63,7 @@
             // 
             this.button11.Image = global::SalesManagementSystem.Properties.Resources.write_yellow_1;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.Location = new System.Drawing.Point(601, 134);
+            this.button11.Location = new System.Drawing.Point(611, 134);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(138, 47);
             this.button11.TabIndex = 10;
@@ -75,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 32);
+            this.label1.Location = new System.Drawing.Point(303, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 61);
             this.label1.TabIndex = 2;
@@ -110,7 +110,7 @@
             // 
             this.button8.Image = global::SalesManagementSystem.Properties.Resources.msagent_3;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(415, 240);
+            this.button8.Location = new System.Drawing.Point(424, 240);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(138, 47);
             this.button8.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             this.button7.Image = global::SalesManagementSystem.Properties.Resources.search_computer_0;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(252, 293);
+            this.button7.Location = new System.Drawing.Point(261, 293);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(138, 47);
             this.button7.TabIndex = 5;
@@ -134,7 +134,7 @@
             // 
             this.button6.Image = global::SalesManagementSystem.Properties.Resources.write_card_phone;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(252, 240);
+            this.button6.Location = new System.Drawing.Point(261, 240);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(138, 47);
             this.button6.TabIndex = 4;
@@ -146,7 +146,7 @@
             // 
             this.button5.Image = global::SalesManagementSystem.Properties.Resources.calendar_2;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(415, 134);
+            this.button5.Location = new System.Drawing.Point(424, 134);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(138, 47);
             this.button5.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             this.button4.Image = global::SalesManagementSystem.Properties.Resources.address_book_0;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(252, 187);
+            this.button4.Location = new System.Drawing.Point(261, 187);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 47);
             this.button4.TabIndex = 3;
@@ -170,7 +170,7 @@
             // 
             this.button10.Image = global::SalesManagementSystem.Properties.Resources.address_book_home;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.Location = new System.Drawing.Point(415, 187);
+            this.button10.Location = new System.Drawing.Point(424, 187);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(138, 47);
             this.button10.TabIndex = 7;
@@ -182,7 +182,7 @@
             // 
             this.button3.Image = global::SalesManagementSystem.Properties.Resources.winrep_1;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(252, 134);
+            this.button3.Location = new System.Drawing.Point(261, 134);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 47);
             this.button3.TabIndex = 2;
@@ -220,7 +220,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.computer_explorer_2k_2;
-            this.pictureBox1.Location = new System.Drawing.Point(240, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

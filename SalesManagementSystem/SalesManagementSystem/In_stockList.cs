@@ -24,7 +24,12 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
+        }
+
+        private void In_stockListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            button1.PerformClick();
         }
     }
 }

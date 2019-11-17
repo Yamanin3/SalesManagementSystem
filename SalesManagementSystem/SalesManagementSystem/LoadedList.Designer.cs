@@ -41,7 +41,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(415, 51);
+            this.buttonSearch.Location = new System.Drawing.Point(473, 49);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 51;
@@ -50,7 +50,7 @@
             // 
             // SearchTextbox
             // 
-            this.SearchTextbox.Location = new System.Drawing.Point(249, 53);
+            this.SearchTextbox.Location = new System.Drawing.Point(307, 51);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 50;
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(55, 27);
+            this.label1.Location = new System.Drawing.Point(85, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 45;
@@ -88,7 +88,7 @@
             // 
             this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(11, 312);
+            this.button1.Location = new System.Drawing.Point(12, 319);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 31);
             this.button1.TabIndex = 47;
@@ -99,12 +99,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.notepad_4;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 20);
+            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.msagent_4;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(59, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
             // LoadedListForm
@@ -112,17 +112,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 362);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadedListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入庫済み一覧";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoadedListForm_FormClosed);
+            this.Load += new System.EventHandler(this.LoadedListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

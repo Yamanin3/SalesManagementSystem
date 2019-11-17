@@ -84,7 +84,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.document_0;
+            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.calendar_2;
             this.pictureBox1.Location = new System.Drawing.Point(19, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 39);
@@ -124,6 +124,7 @@
             this.Name = "In_stockListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入荷済みリスト";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.In_stockListForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

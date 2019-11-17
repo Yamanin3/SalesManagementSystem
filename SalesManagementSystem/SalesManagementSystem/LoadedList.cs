@@ -19,8 +19,18 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             
+        }
+
+        private void LoadedListForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadedListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            button1.PerformClick();
         }
     }
 }
