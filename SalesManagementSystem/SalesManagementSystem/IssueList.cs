@@ -26,7 +26,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-
+            AC.cmd.Parameters.Clear();
             AC.sql = "select is.出庫ID, pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格 from ((出庫テーブル as is inner join 発注テーブル as pd on is.商品ID = pd.商品ID) inner join 仕入れ先マスタ as mk on is.メーカーID = mk.メーカーID) inner join 営業所マスタ as off on is.営業所ID = off.営業所ID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
