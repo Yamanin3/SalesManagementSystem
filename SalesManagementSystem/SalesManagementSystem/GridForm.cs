@@ -40,7 +40,7 @@ namespace SalesManagementSystem
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell == null || e.RowIndex <= -1)// e.RowIndexが-1以上かどうかでヘッダー部ダブルクリック時のエラーを回避
+            if (dataGridView1.CurrentCell == null || e.RowIndex <= -1)// e.RowIndexが-1以下かどうかでヘッダー部ダブルクリック時のエラーを回避
             {
                 return;
             }

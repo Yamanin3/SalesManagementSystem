@@ -14,6 +14,10 @@ namespace SalesManagementSystem
 {
     public partial class On_orderListForm : Form
     {
+        private int stock;
+        private int dstock;
+        private int PID;
+
         public On_orderListForm()
         {
             InitializeComponent();
@@ -107,94 +111,88 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-
-                            AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 注文数量, 注文日, 合計額) Values(?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+                            AC.cmd.CommandText = "select 在庫数 from 在庫テーブル where 商品ID = @id";
+                            AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
+                            AC.rd = AC.cmd.ExecuteReader();
 
-                            AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
-                            if (rows >= 1)
+                            if (AC.rd.Read())
                             {
-
-                                RefreshLoad();
+                                stock = int.Parse(AC.rd.GetValue(0).ToString());
 
                             }
-                        }
-                        else
-                        {
-                            return;
-                        }
+                            else
+                            {
+                                return;
+                            }
+                            AC.rd.Close();
+
+                            if (stock >= int.Parse(comboBox1.Text))
+                            {
+
+                                AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 注文数量, 注文日, 合計額) Values(?, ?, ?, ?, ?, ?)";
+                                AC.cmd.Parameters.Clear();
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+
+                                AC.cmd.CommandText = AC.sql;
+                                int rows = AC.cmd.ExecuteNonQuery();
+                                if (rows >= 1)
+                                {
+                                    RefreshLoad();
+                                    dstock = stock - int.Parse(comboBox1.Text);
+                                    AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id;";
+                                    AC.cmd.Parameters.Clear();
+                                    AC.cmd.Parameters.Add("id", OleDbType.Integer).Value = dstock;
+                                    AC.cmd.Parameters.Add("id", OleDbType.BigInt).Value = PID;
+                                    AC.cmd.CommandText = AC.sql;
+                                    int row = AC.cmd.ExecuteNonQuery();
+                                    if (row >= 1)
+                                    {
+                                        RefreshLoad();
+                                    }
+                                    else
+                                    {
+                                        return;
+                                    }
+
+                                }
+
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("在庫数が少ないため注文できません", "注文登録", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
 
 
+
+                        }
                     }
                     catch (Exception ex)
                     {
+
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
-
 
                 }
             }
+        
+
+
+                
+            
             else
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())))
-                {
-                    MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    try
-                    {
-                        string msg = "レコードの編集を反映しますか？";
-                        string caption = "レコードの編集";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        MessageBoxIcon ico = MessageBoxIcon.Question;
-
-                        DialogResult result;
-
-                        result = MessageBox.Show(this, msg, caption, buttons, ico);
-
-                        if (result == DialogResult.Yes)
-                        {
-
-                            int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 注文テーブル set 商品ID = ?, 顧客ID = ?, 会員ID = ?, 注文数量 = ?, 注文日 = ?, 合計額 = ? where 注文ID = @id;";
-                            AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
-
-                            AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
-                            if (rows >= 1)
-                            {
-
-                                RefreshLoad();
-
-                            }
-                        }
-                        else
-                        {
-                            return;
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("データの編集に失敗しました: " + ex.Message.ToString(), "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                
+                MessageBox.Show("注文内容は編集できません", "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -317,6 +315,7 @@ namespace SalesManagementSystem
                         textBox3.Text = AC.rd.GetString(0);
                         textBox5.Text = AC.rd.GetValue(1).ToString();
                         textBox3.Tag = id;
+                        PID = id;
                     }
 
                     else
