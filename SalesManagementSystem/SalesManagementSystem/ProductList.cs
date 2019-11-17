@@ -14,6 +14,7 @@ namespace SalesManagementSystem
 {
     public partial class ProductListForm : Form
     {
+        private int PID;
         public ProductListForm()
         {
             InitializeComponent();
@@ -191,10 +192,20 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
+                                AC.sql = "select top 1 商品ID from 商品マスタ order by 商品ID desc";
+                                AC.cmd.CommandText = AC.sql;
+                                AC.cmd.Parameters.Clear();
+                                AC.rd = AC.cmd.ExecuteReader();
+                                if (AC.rd.Read())
+                                {
+                                    PID = int.Parse(AC.rd.GetValue(0).ToString());
+                                }
+                                AC.rd.Close();
+
                                 AC.sql = "insert into 在庫テーブル(商品ID, 在庫数, 発注点) Values(?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox1.Text;
-                                AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = 0;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 40;
                                 AC.cmd.CommandText = AC.sql;
                                 AC.cmd.ExecuteNonQuery();
