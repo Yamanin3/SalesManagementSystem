@@ -28,12 +28,6 @@ namespace SalesManagementSystem
             menu.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form shippedlistForm = new ShippedListForm();
-            shippedlistForm.ShowDialog();
-        }
-
         private void ShipListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();

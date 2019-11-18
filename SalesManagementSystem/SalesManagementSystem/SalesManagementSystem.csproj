@@ -126,12 +126,6 @@
     <Compile Include="ShipList.Designer.cs">
       <DependentUpon>ShipList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShippedList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShippedList.Designer.cs">
-      <DependentUpon>ShippedList.cs</DependentUpon>
-    </Compile>
     <Compile Include="SMSdatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,20 +144,11 @@
     <Compile Include="StockList.Designer.cs">
       <DependentUpon>StockList.cs</DependentUpon>
     </Compile>
-    <Compile Include="IssuedList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IssuedList.Designer.cs">
-      <DependentUpon>IssuedList.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GridForm.resx">
       <DependentUpon>GridForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IssuedList.resx">
-      <DependentUpon>IssuedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IssueList.resx">
       <DependentUpon>IssueList.cs</DependentUpon>
@@ -210,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShipList.resx">
       <DependentUpon>ShipList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShippedList.resx">
-      <DependentUpon>ShippedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockList.resx">
       <DependentUpon>StockList.cs</DependentUpon>

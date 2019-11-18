@@ -48,11 +48,6 @@ namespace SalesManagementSystem
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form issuedlistForm = new IssuedListForm();
-            issuedlistForm.ShowDialog();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
