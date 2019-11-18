@@ -53,7 +53,6 @@ namespace SalesManagementSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form in_stockForm = new In_stockListForm();
             in_stockForm.ShowDialog();
         }
@@ -79,7 +78,6 @@ namespace SalesManagementSystem
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form loadedlistForm = new LoadedListForm();
             loadedlistForm.ShowDialog();
         }

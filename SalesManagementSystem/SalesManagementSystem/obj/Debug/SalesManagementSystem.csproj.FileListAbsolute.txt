@@ -58,11 +58,8 @@ C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManag
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.IssueListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ShipListForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.SalesListForm.resources
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ArrivalListForm.resources
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.IssuedListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.IssueListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.LoadedListForm.resources
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.LoadListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.MainMenuForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.MemberListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.On_orderListForm.resources
@@ -72,7 +69,6 @@ C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\Sa
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.In_stockListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.SalesListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ShipListForm.resources
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.ShippedListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.StockListForm.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.GridForm.resources
 C:\Users\Yamanin3\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.GridForm.resources
