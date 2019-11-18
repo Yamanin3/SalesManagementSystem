@@ -37,10 +37,8 @@
             this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -96,7 +94,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -125,10 +123,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.buttonAdd);
@@ -159,14 +155,6 @@
             this.label8.TabIndex = 41;
             this.label8.Text = "商品ID:";
             // 
-            // textBox8
-            // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(118, 207);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 19);
-            this.textBox8.TabIndex = 40;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(224, 182);
@@ -175,6 +163,7 @@
             this.button3.TabIndex = 39;
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -184,15 +173,7 @@
             this.button2.TabIndex = 38;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 12);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "ステータス:";
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // textBox7
             // 
@@ -336,7 +317,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -345,7 +326,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -354,7 +335,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRemove.Text = "削除";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
@@ -416,11 +397,9 @@
         private System.Windows.Forms.BindingSource 出庫テーブルBindingSource;
         private SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter 出庫テーブルTableAdapter;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
     }
 }

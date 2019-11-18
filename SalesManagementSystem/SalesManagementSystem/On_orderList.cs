@@ -189,12 +189,13 @@ namespace SalesManagementSystem
                                 }
                                 else
                                 {
-                                    AC.sql = "insert into 発注テーブル(メーカーID, 商品ID, 発注数量, 発注日) Values(?, ?, ?, ?)";
+                                    AC.sql = "insert into 発注テーブル(メーカーID, 商品ID, 発注数量, 発注日, ステータス) Values(?, ?, ?, ?, ?)";
                                     AC.cmd.Parameters.Clear();
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = MID;
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = order_quantity;
                                     AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                                     AC.cmd.CommandText = AC.sql;
                                     AC.cmd.ExecuteNonQuery();
