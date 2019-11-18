@@ -27,7 +27,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
             AC.cmd.Parameters.Clear();
-            AC.sql = "select is.出庫ID, pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格 from ((出庫テーブル as is inner join 発注テーブル as pd on is.商品ID = pd.商品ID) inner join 仕入れ先マスタ as mk on is.メーカーID = mk.メーカーID) inner join 営業所マスタ as off on is.営業所ID = off.営業所ID";
+            AC.sql = "select syu.出庫ID, od.商品ID, od.発注数量 as 出庫数, mk.メーカー名, fc.営業所名, syu.ステータス from ((出庫テーブル as syu inner join 発注テーブル as od on syu.商品ID = od.商品ID) inner join 仕入先マスタ as mk on syu.メーカーID = mk.メーカーID) inner join 営業所マスタ as fc on syu.営業所ID = fc.営業所ID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -44,6 +44,7 @@ namespace SalesManagementSystem
                 textBox5.Text = "";
                 textBox6.Text = "";
                 textBox7.Text = "";
+                textBox8.Text = "";
 
             }
         }
@@ -258,6 +259,11 @@ namespace SalesManagementSystem
         private void IssueListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             button1.PerformClick();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
