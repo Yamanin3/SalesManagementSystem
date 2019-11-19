@@ -175,10 +175,12 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
-                                AC.sql = "update 発注テーブル set ステータス = ? where 発注ID = @id";
+                                AC.sql = "insert into 入荷テーブル(商品ID, 営業所ID, 入荷数, 入荷日) Values(?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 1;
-                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(textBox2.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox7.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now.ToString("d");
 
                                 AC.cmd.CommandText = AC.sql;
                                 AC.cmd.ExecuteNonQuery();
