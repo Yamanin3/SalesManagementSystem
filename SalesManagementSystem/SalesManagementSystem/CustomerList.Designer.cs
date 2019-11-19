@@ -60,8 +60,8 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.sMSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.顧客マスタTableAdapter1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -327,7 +327,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -336,7 +336,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -345,26 +345,26 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "戻る";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // 顧客マスタTableAdapter1
             // 
             this.顧客マスタTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "閉じる";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // CustomerListForm
             // 
@@ -423,7 +423,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource sMSdatabaseDataSetBindingSource;
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 顧客マスタBindingSource;
@@ -443,5 +442,6 @@
         private SMSdatabaseDataSet sMSdatabaseDataSet1;
         private SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter 顧客マスタTableAdapter1;
         private System.Windows.Forms.BindingSource 顧客マスタBindingSource1;
+        private System.Windows.Forms.Button button1;
     }
 }

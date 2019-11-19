@@ -29,9 +29,8 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form menu = new MainMenuForm();
-            menu.Show();
+            Close();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -281,5 +280,9 @@ namespace SalesManagementSystem
             button1.PerformClick();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

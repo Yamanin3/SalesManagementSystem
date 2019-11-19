@@ -33,6 +33,7 @@
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
@@ -106,22 +106,31 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(26, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 286);
+            this.groupBox1.Size = new System.Drawing.Size(260, 335);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "データベース操作";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 12);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "発注ID:";
+            // 
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(118, 157);
+            this.textBox6.Location = new System.Drawing.Point(118, 172);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 19);
             this.textBox6.TabIndex = 39;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(224, 57);
+            this.button2.Location = new System.Drawing.Point(224, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 19);
             this.button2.TabIndex = 38;
@@ -132,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 85);
+            this.label4.Location = new System.Drawing.Point(33, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 12);
             this.label4.TabIndex = 20;
@@ -143,7 +152,7 @@
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(80, 216);
+            this.buttonAdd.Location = new System.Drawing.Point(80, 267);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(79, 39);
             this.buttonAdd.TabIndex = 7;
@@ -155,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 160);
+            this.label6.Location = new System.Drawing.Point(33, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 12);
             this.label6.TabIndex = 16;
@@ -164,7 +173,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 135);
+            this.label5.Location = new System.Drawing.Point(33, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 12);
             this.label5.TabIndex = 14;
@@ -173,7 +182,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(118, 132);
+            this.textBox5.Location = new System.Drawing.Point(118, 147);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 19);
             this.textBox5.TabIndex = 4;
@@ -181,7 +190,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(118, 107);
+            this.textBox4.Location = new System.Drawing.Point(118, 122);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 3;
@@ -189,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 110);
+            this.label3.Location = new System.Drawing.Point(33, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 12);
             this.label3.TabIndex = 10;
@@ -198,7 +207,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 35);
+            this.label2.Location = new System.Drawing.Point(33, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 12);
             this.label2.TabIndex = 8;
@@ -207,7 +216,7 @@
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(118, 82);
+            this.textBox3.Location = new System.Drawing.Point(118, 97);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 19);
             this.textBox3.TabIndex = 2;
@@ -215,7 +224,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(118, 57);
+            this.textBox2.Location = new System.Drawing.Point(118, 72);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 1;
@@ -223,7 +232,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(118, 32);
+            this.textBox1.Location = new System.Drawing.Point(118, 47);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 19);
             this.textBox1.TabIndex = 0;
@@ -233,7 +242,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(292, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(576, 344);
+            this.groupBox2.Size = new System.Drawing.Size(576, 335);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "入庫済み一覧";
@@ -255,18 +264,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(570, 317);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 12);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "発注ID:";
             // 
             // toolStrip1
             // 

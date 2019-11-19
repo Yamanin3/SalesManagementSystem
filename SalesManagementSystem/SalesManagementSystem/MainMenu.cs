@@ -20,30 +20,26 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form customerlistForm = new CustomerListForm();
-            customerlistForm.Show();
+            customerlistForm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form memberlistForm = new MemberListForm();
-            memberlistForm.Show();
+            memberlistForm.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form on_orderlistForm = new On_orderListForm();
-            on_orderlistForm.Show();
+            on_orderlistForm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form productlistForm = new ProductListForm();
-            productlistForm.Show();
+            productlistForm.ShowDialog();
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -64,16 +60,14 @@ namespace SalesManagementSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form requestlistForm = new RequestListForm();
-            requestlistForm.Show();
+            requestlistForm.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form stocklistForm = new StockListForm();
-            stocklistForm.Show();
+            stocklistForm.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -90,16 +84,14 @@ namespace SalesManagementSystem
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form issuelistForm = new IssueListForm();
-            issuelistForm.Show();
+            issuelistForm.ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form shiplistForm = new ShipListForm();
-            shiplistForm.Show();
+            shiplistForm.ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -110,9 +102,8 @@ namespace SalesManagementSystem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form loginForm = new Login_Form();
-            loginForm.Show();
+            loginForm.ShowDialog();
         }
     }
 }

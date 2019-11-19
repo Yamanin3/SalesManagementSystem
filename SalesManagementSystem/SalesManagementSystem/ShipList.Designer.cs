@@ -83,7 +83,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -92,7 +92,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -101,7 +101,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonRemove.Text = "削除";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
@@ -363,16 +363,16 @@
             // 
             // button1
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.Previous_32;
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 442);
+            this.button1.Location = new System.Drawing.Point(12, 448);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "戻る";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "閉じる";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // ShipListForm
             // 
@@ -423,7 +423,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox10;
@@ -433,5 +432,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }
