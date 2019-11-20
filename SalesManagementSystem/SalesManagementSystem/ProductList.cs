@@ -35,7 +35,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
 
-            AC.sql = "select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格 from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID";
+            AC.sql = "select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格, mk.メーカーID from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -78,11 +78,12 @@ namespace SalesManagementSystem
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    comboBox2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    comboBox2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                     textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBox7.Tag = dataGridView1.CurrentRow.Cells[10].Value.ToString();
 
                 }
             }catch(Exception ex)
@@ -254,7 +255,7 @@ namespace SalesManagementSystem
                             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                             AC.sql = "update 商品マスタ set メーカーID = ?, 商品名 = ?, 重量 = ?, 口径 = ?, 全長 = ?, 弾薬 = ?, マガジンタイプ = ?, 装弾数 = ?, 商品価格 = ? where 商品ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = int.Parse(textBox7.Tag.ToString());
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
