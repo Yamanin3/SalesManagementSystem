@@ -29,32 +29,63 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-
-            AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 0";
-            AC.cmd.CommandText = AC.sql;
-            AC.da = new OleDbDataAdapter(AC.cmd);
-            AC.dt = new DataTable();
-
-            AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-
-
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (checkBox1.Checked == false)
             {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                comboBox1.Text = "";
-                dateTimePicker1.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 0";
+                AC.cmd.CommandText = AC.sql;
+                AC.da = new OleDbDataAdapter(AC.cmd);
+                AC.dt = new DataTable();
 
+                AC.da.Fill(AC.dt);
+                dataGridView1.DataSource = AC.dt;
+
+
+                if (dataGridView1.SelectedRows.Count <= 0)
+                {
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    comboBox1.Text = "";
+                    dateTimePicker1.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+
+                }
+                else
+                {
+                    // datagridview1の最上段にカーソルを当てる
+                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                }
             }
             else
             {
-                // datagridview1の最上段にカーソルを当てる
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 1";
+                AC.cmd.CommandText = AC.sql;
+                AC.da = new OleDbDataAdapter(AC.cmd);
+                AC.dt = new DataTable();
+
+                AC.da.Fill(AC.dt);
+                dataGridView1.DataSource = AC.dt;
+
+
+                if (dataGridView1.SelectedRows.Count <= 0)
+                {
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    comboBox1.Text = "";
+                    dateTimePicker1.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+
+                }
+                else
+                {
+                    // datagridview1の最上段にカーソルを当てる
+                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                }
             }
 
         }
@@ -409,6 +440,35 @@ namespace SalesManagementSystem
         private void button1_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                RefreshLoad();
+                
+                comboBox1.Enabled = false;
+                dateTimePicker1.Enabled = false;
+                toolStripButtonNew.Enabled = false;
+                toolStripButtonRemove.Enabled = false;
+                buttonAdd.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+            }
+            else
+            {
+                comboBox1.Enabled = true;
+                dateTimePicker1.Enabled = true;
+                toolStripButtonNew.Enabled = true;
+                toolStripButtonRemove.Enabled = true;
+                buttonAdd.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                RefreshLoad();
+            }
         }
     }
 }
