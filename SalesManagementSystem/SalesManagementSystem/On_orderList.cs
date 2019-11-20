@@ -30,7 +30,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
 
-            AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID";
+            AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -137,7 +137,7 @@ namespace SalesManagementSystem
                             if (stock >= int.Parse(comboBox1.Text))
                             {
 
-                                AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 注文数量, 注文日, 合計額) Values(?, ?, ?, ?, ?, ?)";
+                                AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
@@ -145,6 +145,7 @@ namespace SalesManagementSystem
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
                                 AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
                                 AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                                 AC.cmd.CommandText = AC.sql;
                                 int rows = AC.cmd.ExecuteNonQuery();

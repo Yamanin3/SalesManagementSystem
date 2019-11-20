@@ -16,6 +16,7 @@ namespace SalesManagementSystem
     {
         private int PID;
         private int CID;
+        private int OID;
         public ShipListForm()
         {
             InitializeComponent();
@@ -123,9 +124,13 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
+                                AC.cmd.Parameters.Clear();
+                                AC.cmd.CommandText = "update 注文テーブル set ステータス = ? where 注文ID = @id";
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 1;
+                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = OID;
+                                AC.cmd.ExecuteNonQuery();
 
                                 RefreshLoad();
-
                             }
                         }
                         else
@@ -138,66 +143,17 @@ namespace SalesManagementSystem
                     catch (Exception ex)
                     {
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
 
 
                 }
-            }
+            } 
             else
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())) || (string.IsNullOrEmpty(this.textBox9.Text.Trim())) || (string.IsNullOrEmpty(this.textBox10.Text.Trim())))
-                {
-                    MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    try
-                    {
-                        string msg = "レコードの編集を反映しますか？";
-                        string caption = "レコードの編集";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        MessageBoxIcon ico = MessageBoxIcon.Question;
-
-                        DialogResult result;
-
-                        result = MessageBox.Show(this, msg, caption, buttons, ico);
-
-                        if (result == DialogResult.Yes)
-                        {
-
-                            int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 出荷テーブル set 注文ID = ?, 商品ID = ?, 顧客ID = ? where 出荷ID = @id;";
-                            AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox3.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox6.Tag;
-                            AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
-
-                            AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
-                            if (rows >= 1)
-                            {
-
-                                RefreshLoad();
-
-                            }
-                        }
-                        else
-                        {
-                            return;
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("データの編集に失敗しました: " + ex.Message.ToString(), "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
+                MessageBox.Show("出荷済みのデータは編集できません", "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
 
+        }
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
@@ -231,8 +187,6 @@ namespace SalesManagementSystem
 
                     if (result == DialogResult.Yes)
                     {
-
-
                         AC.cmd.Parameters.Clear();
                         AC.cmd.CommandText = "delete from 出荷テーブル where 出荷ID = @id;";
                         AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -240,9 +194,7 @@ namespace SalesManagementSystem
 
                         if (rows >= 1)
                         {
-
                             RefreshLoad();
-
                         }
                     }
                     else
@@ -270,10 +222,9 @@ namespace SalesManagementSystem
             {
                 try
                 {
-
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 商品ID, 顧客ID, 注文数量, 合計額 from 注文テーブル where 注文ID = @id";
+                    AC.cmd.CommandText = "select 商品ID, 顧客ID, 注文数量, 合計額 from 注文テーブル where 注文ID = @id and ステータス = 0";
                     AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
@@ -286,6 +237,7 @@ namespace SalesManagementSystem
                         textBox4.Text = AC.rd.GetValue(2).ToString();
                         textBox5.Text = AC.rd.GetValue(3).ToString();
                         textBox2.Text = id.ToString();
+                        OID = id;
                     }
 
                     else
