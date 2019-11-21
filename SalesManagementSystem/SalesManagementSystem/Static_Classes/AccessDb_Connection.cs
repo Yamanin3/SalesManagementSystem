@@ -11,7 +11,6 @@ namespace Login_form.Static_Classes
 {
     class AC
     {
-
         public static OleDbConnection con = new OleDbConnection();
         public static OleDbCommand cmd = new OleDbCommand("", con);
         public static OleDbDataReader rd;

@@ -14,6 +14,10 @@ namespace SalesManagementSystem
 {
     public partial class MemberListForm : Form
     {
+        private int I;
+        private double D;
+        private long L;
+
         public MemberListForm()
         {
             InitializeComponent();
@@ -287,6 +291,25 @@ namespace SalesManagementSystem
         private void button1_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox4.Text) && int.TryParse(textBox4.Text, out I) != true)
+            {
+                textBox4.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            long L;
+            if (!string.IsNullOrEmpty(textBox6.Text) && long.TryParse(textBox6.Text, out L) != true)
+            {
+                textBox6.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

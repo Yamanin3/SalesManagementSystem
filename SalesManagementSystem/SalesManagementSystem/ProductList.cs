@@ -15,6 +15,9 @@ namespace SalesManagementSystem
     public partial class ProductListForm : Form
     {
         private int PID;
+        private int I;
+        private double D;
+        private long L;
         public ProductListForm()
         {
             InitializeComponent();
@@ -181,7 +184,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
@@ -218,16 +221,12 @@ namespace SalesManagementSystem
                         {
                             return;
                         }
-
-
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-
-
                 }
             }
             else
@@ -257,7 +256,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = int.Parse(textBox7.Tag.ToString());
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
@@ -332,6 +331,51 @@ namespace SalesManagementSystem
         private void button1_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox8.Text) && int.TryParse(textBox8.Text, out I) != true)
+            {
+                textBox8.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox6.Text) && int.TryParse(textBox6.Text, out I) != true)
+            {
+                textBox6.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox4.Text) && double.TryParse(textBox4.Text, out D) != true)
+            {
+                textBox4.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox3.Text) && double.TryParse(textBox3.Text, out D) != true)
+            {
+                textBox3.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox5.Text) && double.TryParse(textBox5.Text, out D) != true)
+            {
+                textBox5.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
