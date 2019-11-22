@@ -38,7 +38,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
 
-            AC.sql = "select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格, mk.メーカーID from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID";
+            AC.sql = "select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.弾薬, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格, mk.メーカーID from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID where ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -132,7 +132,7 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 商品マスタ(メーカーID, 商品名, 重量, 口径, 全長, 弾薬, マガジンタイプ, 装弾数, 商品価格) Values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            AC.sql = "insert into 商品マスタ(メーカーID, 商品名, 重量, 口径, 全長, 弾薬, マガジンタイプ, 装弾数, 商品価格, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
@@ -143,6 +143,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox6.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -327,6 +328,38 @@ namespace SalesManagementSystem
             {
                 textBox5.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string msg = "レコードを削除しますか？";
+                string caption = "レコードの削除";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                MessageBoxIcon ico = MessageBoxIcon.Question;
+
+                DialogResult result;
+
+                result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                if (result == DialogResult.Yes)
+                {
+                    AC.sql = "update 商品マスタ set ステータス = ? where 商品ID = @id";
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
+                    AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    AC.cmd.CommandText = AC.sql;
+                    AC.cmd.ExecuteNonQuery();
+                    RefreshLoad();
+
+                }
+                else { return; }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("データの削除に失敗しました" + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
