@@ -31,15 +31,14 @@ namespace SalesManagementSystem
         {
             if (checkBox1.Checked == false)
             {
-                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 0";
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
 
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
-
-
+                dataGridView1.Columns[8].Visible = false;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
                     textBox1.Text = "";
@@ -60,15 +59,14 @@ namespace SalesManagementSystem
             }
             else
             {
-                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名 from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where ステータス = 1";
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 1";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
 
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
-
-
+                dataGridView1.Columns[8].Visible = false;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
                     textBox1.Text = "";
@@ -255,7 +253,7 @@ namespace SalesManagementSystem
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0]; // 非可視セルがどうのこうの言われたらCells[]の値に非表示にしてるIDの数を入れるといい
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
@@ -265,17 +263,11 @@ namespace SalesManagementSystem
         }
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
-        {// 在庫数を増やす処理を行うTODO:)
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
-            {
-                return;
-            }
-            else
-            {
+        { 
                 try
                 {
-                    string msg = "レコードを削除しますか？";
-                    string caption = "レコードの削除";
+                    string msg = "選択された注文をキャンセルしますか？";
+                    string caption = "注文のキャンセル";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -285,31 +277,37 @@ namespace SalesManagementSystem
 
                     if (result == DialogResult.Yes)
                     {
-
-
+                        AC.sql = "update 注文テーブル set ステータス = ? where 注文ID = @id";
                         AC.cmd.Parameters.Clear();
-                        AC.cmd.CommandText = "delete from 注文テーブル where 注文ID = @id;";
+                        AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
                         AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                        int rows = AC.cmd.ExecuteNonQuery();
+                        AC.cmd.CommandText = AC.sql;
+                        AC.cmd.ExecuteNonQuery();
 
-                        if (rows >= 1)
-                        {
+                        AC.sql = "select 在庫数 from 在庫テーブル where 商品ID = @id";
+                        AC.cmd.Parameters.Clear();
+                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[8].Value.ToString());
+                        AC.cmd.CommandText = AC.sql;
+                        AC.rd = AC.cmd.ExecuteReader();
+                        if (AC.rd.Read())
+                        { stock = int.Parse(AC.rd.GetValue(0).ToString()); }
+                        AC.rd.Close(); 
 
-                            RefreshLoad();
+                        AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id";
+                        AC.cmd.Parameters.Clear();
+                        AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = (stock + int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()));
+                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[8].Value.ToString());
+                        AC.cmd.CommandText = AC.sql;
+                        AC.cmd.ExecuteNonQuery();
 
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
-
+                        RefreshLoad();
+                }
+                    else {return;}
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("データの削除に失敗しました : " + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("注文のキャンセルに失敗しました : " + ex.Message.ToString(), "注文のキャンセル", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
         }
 
         private void On_orderListForm_FormClosed(object sender, FormClosedEventArgs e)
