@@ -87,7 +87,7 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 顧客マスタ(顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス) Values(?, ?, ?, ?, ?, ?, ?, ?)";
+                            AC.sql = "insert into 顧客マスタ(顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -97,6 +97,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
@@ -199,56 +200,39 @@ namespace SalesManagementSystem
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            try
             {
-                return;
+                string msg = "選択された顧客を削除しますか？";
+                string caption = "顧客の削除";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                MessageBoxIcon ico = MessageBoxIcon.Question;
+
+                DialogResult result;
+
+                result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                if (result == DialogResult.Yes)
+                {
+                    AC.sql = "update 顧客マスタ set ステータス = ? where 顧客ID = @id";
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
+                    AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    AC.cmd.CommandText = AC.sql;
+                    AC.cmd.ExecuteNonQuery();
+
+                    RefreshLoad();
+                }
+                else { return; }
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    string msg = "レコードを削除しますか？";
-                    string caption = "レコードの削除";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    MessageBoxIcon ico = MessageBoxIcon.Question;
-
-                    DialogResult result;
-
-                    result = MessageBox.Show(this, msg, caption, buttons, ico);
-
-                    if (result == DialogResult.Yes)
-                    {
-
-
-                        AC.cmd.Parameters.Clear();
-                        AC.cmd.CommandText = "delete from 顧客マスタ where 顧客ID = @id;";
-                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                        int rows = AC.cmd.ExecuteNonQuery();
-
-                        if (rows >= 1)
-                        {
-
-                            RefreshLoad();
-
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("データの削除に失敗しました : " + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("顧客の削除に失敗しました : " + ex.Message.ToString(), "顧客の削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void RefreshLoad()
         {
-            AC.sql = "select * from 顧客マスタ";
+            AC.sql = "select 顧客ID, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス from 顧客マスタ where ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
