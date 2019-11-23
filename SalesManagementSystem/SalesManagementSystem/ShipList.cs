@@ -37,7 +37,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
             AC.cmd.Parameters.Clear();
-            AC.sql = "select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID";
+            AC.sql = "select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID where sh.ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -114,11 +114,12 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 出荷テーブル(注文ID, 商品ID, 顧客ID) Values(?, ?, ?)";
+                            AC.sql = "insert into 出荷テーブル(注文ID, 商品ID, 顧客ID, ステータス) Values(?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox3.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox6.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
                             int rows = AC.cmd.ExecuteNonQuery();
