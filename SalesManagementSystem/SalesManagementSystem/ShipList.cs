@@ -167,50 +167,6 @@ namespace SalesManagementSystem
             RefreshLoad();
         }
 
-        private void toolStripButtonRemove_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    string msg = "レコードを削除しますか？";
-                    string caption = "レコードの削除";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    MessageBoxIcon ico = MessageBoxIcon.Question;
-
-                    DialogResult result;
-
-                    result = MessageBox.Show(this, msg, caption, buttons, ico);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        AC.cmd.Parameters.Clear();
-                        AC.cmd.CommandText = "delete from 出荷テーブル where 出荷ID = @id;";
-                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                        int rows = AC.cmd.ExecuteNonQuery();
-
-                        if (rows >= 1)
-                        {
-                            RefreshLoad();
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("データの削除に失敗しました : " + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void ShipListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             button1.PerformClick();
