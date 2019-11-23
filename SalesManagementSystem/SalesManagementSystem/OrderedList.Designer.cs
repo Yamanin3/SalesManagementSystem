@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.SearchTextbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,11 +94,29 @@
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(450, 38);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 63;
+            this.buttonSearch.Text = "検索";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            // 
+            // SearchTextbox
+            // 
+            this.SearchTextbox.Location = new System.Drawing.Point(284, 40);
+            this.SearchTextbox.Name = "SearchTextbox";
+            this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
+            this.SearchTextbox.TabIndex = 62;
+            // 
             // OrderedListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 351);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -120,5 +140,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox SearchTextbox;
     }
 }
