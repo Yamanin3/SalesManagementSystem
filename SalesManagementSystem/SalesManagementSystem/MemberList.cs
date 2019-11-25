@@ -301,5 +301,10 @@ namespace SalesManagementSystem
         {
 
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
