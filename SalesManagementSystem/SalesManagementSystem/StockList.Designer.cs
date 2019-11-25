@@ -128,7 +128,7 @@
             this.groupBox1.Size = new System.Drawing.Size(238, 268);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "データベース操作";
+            this.groupBox1.Text = "発注点操作";
             // 
             // label5
             // 
