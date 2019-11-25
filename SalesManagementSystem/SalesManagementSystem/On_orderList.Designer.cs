@@ -187,13 +187,13 @@
             "10"});
             this.comboBox1.Location = new System.Drawing.Point(116, 103);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 20);
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 22;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(222, 203);
+            this.button4.Location = new System.Drawing.Point(243, 203);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(22, 19);
             this.button4.TabIndex = 21;
@@ -203,7 +203,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(222, 78);
+            this.button3.Location = new System.Drawing.Point(243, 78);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 19);
             this.button3.TabIndex = 20;
@@ -213,7 +213,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(222, 53);
+            this.button2.Location = new System.Drawing.Point(243, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 19);
             this.button2.TabIndex = 19;
@@ -226,7 +226,7 @@
             this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(116, 203);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 19);
+            this.textBox7.Size = new System.Drawing.Size(121, 19);
             this.textBox7.TabIndex = 17;
             // 
             // label4
@@ -248,7 +248,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.Location = new System.Drawing.Point(101, 248);
             this.buttonAdd.Name = "buttonAdd";
@@ -264,7 +264,7 @@
             this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(116, 178);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 19);
+            this.textBox6.Size = new System.Drawing.Size(121, 19);
             this.textBox6.TabIndex = 6;
             // 
             // textBox5
@@ -272,7 +272,7 @@
             this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(116, 153);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 19);
+            this.textBox5.Size = new System.Drawing.Size(121, 19);
             this.textBox5.TabIndex = 5;
             // 
             // label8
@@ -343,7 +343,7 @@
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(116, 78);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 19);
+            this.textBox3.Size = new System.Drawing.Size(121, 19);
             this.textBox3.TabIndex = 2;
             // 
             // textBox2
@@ -351,7 +351,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(116, 53);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 19);
+            this.textBox2.Size = new System.Drawing.Size(121, 19);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
@@ -359,7 +359,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(116, 28);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.Size = new System.Drawing.Size(121, 19);
             this.textBox1.TabIndex = 0;
             // 
             // button1

@@ -247,7 +247,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.Location = new System.Drawing.Point(86, 290);
             this.buttonAdd.Name = "buttonAdd";

@@ -118,7 +118,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.cd_drive_5;
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.Location = new System.Drawing.Point(87, 367);
             this.buttonAdd.Name = "buttonAdd";
@@ -153,7 +153,7 @@
             this.textBox8.MaxLength = 25;
             this.textBox8.Name = "textBox8";
             this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(100, 19);
+            this.textBox8.Size = new System.Drawing.Size(124, 19);
             this.textBox8.TabIndex = 10;
             // 
             // dateTimePicker1
@@ -176,14 +176,14 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(116, 232);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 19);
+            this.textBox7.Size = new System.Drawing.Size(124, 19);
             this.textBox7.TabIndex = 8;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(116, 207);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 19);
+            this.textBox6.Size = new System.Drawing.Size(124, 19);
             this.textBox6.TabIndex = 7;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
@@ -191,14 +191,14 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(116, 182);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 19);
+            this.textBox5.Size = new System.Drawing.Size(124, 19);
             this.textBox5.TabIndex = 6;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(116, 157);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 19);
+            this.textBox4.Size = new System.Drawing.Size(124, 19);
             this.textBox4.TabIndex = 5;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -249,7 +249,7 @@
             "不明"});
             this.comboBox1.Location = new System.Drawing.Point(116, 106);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 20);
+            this.comboBox1.Size = new System.Drawing.Size(124, 20);
             this.comboBox1.TabIndex = 3;
             // 
             // label4
@@ -292,14 +292,14 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(116, 81);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 19);
+            this.textBox3.Size = new System.Drawing.Size(124, 19);
             this.textBox3.TabIndex = 2;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(116, 56);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 19);
+            this.textBox2.Size = new System.Drawing.Size(124, 19);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
@@ -307,7 +307,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(116, 31);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.Size = new System.Drawing.Size(124, 19);
             this.textBox1.TabIndex = 0;
             // 
             // toolStrip1
