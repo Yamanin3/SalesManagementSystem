@@ -135,6 +135,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(116, 238);
+            this.textBox7.MaxLength = 60;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(111, 19);
             this.textBox7.TabIndex = 8;
@@ -151,6 +152,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(116, 188);
+            this.textBox5.MaxLength = 50;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(111, 19);
             this.textBox5.TabIndex = 6;
@@ -202,6 +204,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "男",
@@ -251,6 +254,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(116, 87);
+            this.textBox3.MaxLength = 40;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(111, 19);
             this.textBox3.TabIndex = 2;
@@ -258,6 +262,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(116, 62);
+            this.textBox2.MaxLength = 20;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(111, 19);
             this.textBox2.TabIndex = 1;
