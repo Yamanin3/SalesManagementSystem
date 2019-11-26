@@ -142,9 +142,11 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(116, 213);
+            this.textBox6.MaxLength = 12;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(111, 19);
             this.textBox6.TabIndex = 7;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox5
             // 
@@ -156,9 +158,11 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(116, 163);
+            this.textBox4.MaxLength = 7;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(111, 19);
             this.textBox4.TabIndex = 5;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
             // 

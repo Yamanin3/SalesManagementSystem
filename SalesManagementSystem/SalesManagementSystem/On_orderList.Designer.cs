@@ -173,6 +173,7 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
@@ -289,9 +290,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 156);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 12);
+            this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 15;
-            this.label7.Text = "価格(単):";
+            this.label7.Text = "商品価格";
             // 
             // label6
             // 

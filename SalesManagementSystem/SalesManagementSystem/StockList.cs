@@ -14,6 +14,8 @@ namespace SalesManagementSystem
 {
     public partial class StockListForm : Form
     {
+        private int I;
+
         public StockListForm()
         {
             InitializeComponent();
@@ -211,6 +213,15 @@ namespace SalesManagementSystem
         private void button1_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox4.Text) && int.TryParse(textBox4.Text, out I) != true)
+            {
+                textBox4.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

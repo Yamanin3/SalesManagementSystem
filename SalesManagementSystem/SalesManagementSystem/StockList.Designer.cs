@@ -142,9 +142,11 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(107, 120);
+            this.textBox4.MaxLength = 4;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 

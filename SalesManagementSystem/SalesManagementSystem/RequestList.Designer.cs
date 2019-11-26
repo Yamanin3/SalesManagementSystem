@@ -68,9 +68,9 @@
             this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(74, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 31;
-            this.label1.Text = "発注依頼一覧";
+            this.label1.Text = "発注一覧";
             // 
             // button2
             // 
