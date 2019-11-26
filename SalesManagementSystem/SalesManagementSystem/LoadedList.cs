@@ -169,7 +169,7 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("発注テーブル", "発注情報選択");
+            var GridForm = new GridForm("発注テーブル", "発注情報選択", "select * from 発注テーブル where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try

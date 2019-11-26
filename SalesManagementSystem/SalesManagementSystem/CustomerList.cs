@@ -76,15 +76,16 @@ namespace SalesManagementSystem
                 {
                     if(textBox7.Text.IndexOf('@') == -1)
                     {
-                        MessageBox.Show("これはメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     int index = textBox7.Text.IndexOf('@');
                     if(textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
-                        MessageBox.Show("これはメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
+
                     try
                     {
                         string msg = "レコードを追加しますか？";
@@ -144,6 +145,17 @@ namespace SalesManagementSystem
                 }
                 else
                 {
+                    if (textBox7.Text.IndexOf('@') == -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    int index = textBox7.Text.IndexOf('@');
+                    if (textBox7.Text.IndexOf('@', index + 1) != -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     try
                     {
                         string msg = "レコードの編集を反映しますか？";

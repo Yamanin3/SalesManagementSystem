@@ -153,6 +153,17 @@ namespace SalesManagementSystem
                 }
                 else
                 {
+                    if (textBox7.Text.IndexOf('@') == -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    int index = textBox7.Text.IndexOf('@');
+                    if (textBox7.Text.IndexOf('@', index + 1) != -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
 
                     try
                     {
@@ -215,6 +226,17 @@ namespace SalesManagementSystem
                 }
                 else
                 {
+                    if (textBox7.Text.IndexOf('@') == -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    int index = textBox7.Text.IndexOf('@');
+                    if (textBox7.Text.IndexOf('@', index + 1) != -1)
+                    {
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     try
                     {
                         string msg = "レコードの編集を反映しますか？";
@@ -298,16 +320,6 @@ namespace SalesManagementSystem
         }
 
         private void SearchTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
         }
