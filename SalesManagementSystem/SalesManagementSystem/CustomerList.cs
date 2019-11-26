@@ -66,7 +66,6 @@ namespace SalesManagementSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            // 行が選択されていないかどうか or 選択された行idが存在するかどうか
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())))
@@ -75,7 +74,17 @@ namespace SalesManagementSystem
                 }
                 else
                 {
-
+                    if(textBox7.Text.IndexOf('@') == -1)
+                    {
+                        MessageBox.Show("これはメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    int index = textBox7.Text.IndexOf('@');
+                    if(textBox7.Text.IndexOf('@', index + 1) != -1)
+                    {
+                        MessageBox.Show("これはメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     try
                     {
                         string msg = "レコードを追加しますか？";
@@ -291,6 +300,11 @@ namespace SalesManagementSystem
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
         }

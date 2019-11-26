@@ -174,7 +174,7 @@ namespace SalesManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("注文テーブル", "注文情報選択");
+            var GridForm = new GridForm("注文テーブル", "注文情報選択", "select * from 注文テーブル where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -246,9 +246,9 @@ namespace SalesManagementSystem
                     {
                         textBox6.Text = AC.rd.GetString(0);
                         textBox7.Text = AC.rd.GetString(1);
-                        textBox8.Text = AC.rd.GetString(2);
+                        textBox8.Text = AC.rd.GetInt32(2).ToString();
                         textBox9.Text = AC.rd.GetString(3);
-                        textBox10.Text = AC.rd.GetString(4);
+                        textBox10.Text = AC.rd.GetInt32(4).ToString();
                     }
 
                     else

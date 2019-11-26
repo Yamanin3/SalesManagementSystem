@@ -17,18 +17,23 @@ namespace SalesManagementSystem
         private string tblname;
         private string formname;
         public int result;
+        private string sql;
 
-        public GridForm(string tbl, string fname)
+        public GridForm(string tbl, string fname, string sql = null)
         {
             InitializeComponent();
             tblname = tbl;
             formname = fname;
+            this.sql = sql;
         }
 
         private void GridForm_Load(object sender, EventArgs e)
         {
+            if(sql == null) {
+                sql = $"select * from {tblname}";
+            }
             this.Text = formname;
-            AC.sql = $"select * from {tblname}";
+            AC.sql = sql;
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
