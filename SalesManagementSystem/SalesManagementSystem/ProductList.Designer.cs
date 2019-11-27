@@ -186,6 +186,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox8.Location = new System.Drawing.Point(102, 229);
             this.textBox8.MaxLength = 8;
             this.textBox8.Name = "textBox8";
@@ -203,6 +204,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox6.Location = new System.Drawing.Point(102, 179);
             this.textBox6.MaxLength = 4;
             this.textBox6.Name = "textBox6";
@@ -271,6 +273,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox5.Location = new System.Drawing.Point(102, 128);
             this.textBox5.MaxLength = 4;
             this.textBox5.Name = "textBox5";
@@ -289,6 +292,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox4.Location = new System.Drawing.Point(102, 103);
             this.textBox4.MaxLength = 6;
             this.textBox4.Name = "textBox4";
@@ -316,6 +320,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox3.Location = new System.Drawing.Point(102, 78);
             this.textBox3.MaxLength = 4;
             this.textBox3.Name = "textBox3";

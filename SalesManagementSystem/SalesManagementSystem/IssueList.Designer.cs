@@ -231,11 +231,13 @@
             // 
             // textBox5
             // 
-            this.textBox5.Enabled = false;
+            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox5.Location = new System.Drawing.Point(118, 132);
+            this.textBox5.MaxLength = 4;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 19);
             this.textBox5.TabIndex = 4;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 

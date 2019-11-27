@@ -143,6 +143,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox6.Location = new System.Drawing.Point(116, 213);
             this.textBox6.MaxLength = 12;
             this.textBox6.Name = "textBox6";
@@ -160,6 +161,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox4.Location = new System.Drawing.Point(116, 163);
             this.textBox4.MaxLength = 7;
             this.textBox4.Name = "textBox4";

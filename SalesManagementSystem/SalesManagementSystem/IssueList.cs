@@ -16,6 +16,9 @@ namespace SalesManagementSystem
     {
         private int PID;
         private int MID;
+        private int I;
+        private double D;
+        private long L;
 
         public IssueListForm()
         {
@@ -29,7 +32,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            AC.sql = "select ss.出庫ID, od.発注ID, pd.商品ID, pd.商品名, od.発注数量 as 出庫数, mk.メーカー名, ff.営業所名 from (((出庫テーブル as ss inner join 発注テーブル as od on ss.発注ID = od.発注ID) inner join 商品マスタ as pd on ss.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on od.メーカーID = mk.メーカーID) inner join 営業所マスタ as ff on ss.営業所ID = ff.営業所ID";
+            AC.sql = "select ss.出庫ID, od.発注ID, pd.商品ID, pd.商品名, ss.出庫数, mk.メーカー名, ff.営業所名 from (((出庫テーブル as ss inner join 発注テーブル as od on ss.発注ID = od.発注ID) inner join 商品マスタ as pd on ss.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on od.メーカーID = mk.メーカーID) inner join 営業所マスタ as ff on ss.営業所ID = ff.営業所ID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -173,7 +176,7 @@ namespace SalesManagementSystem
 
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select メーカーID, 商品ID, 発注数量 from 発注テーブル where 発注ID = @id";
+                    AC.cmd.CommandText = "select メーカーID, 商品ID from 発注テーブル where 発注ID = @id";
                     AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
@@ -183,7 +186,6 @@ namespace SalesManagementSystem
                         textBox6.Tag = MID.ToString();
                         PID = int.Parse(AC.rd.GetValue(1).ToString());
                         textBox3.Text = PID.ToString();
-                        textBox5.Text = AC.rd.GetValue(2).ToString();
                         textBox2.Text = id.ToString();
                     }
                     else {return;}
@@ -258,6 +260,15 @@ namespace SalesManagementSystem
         private void button1_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox5.Text) && int.TryParse(textBox5.Text, out I) != true)
+            {
+                textBox5.ResetText();
+                MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
