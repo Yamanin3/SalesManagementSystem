@@ -149,6 +149,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox8.Location = new System.Drawing.Point(116, 282);
             this.textBox8.MaxLength = 30;
             this.textBox8.Name = "textBox8";

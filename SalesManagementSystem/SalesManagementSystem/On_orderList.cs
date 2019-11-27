@@ -241,9 +241,8 @@ namespace SalesManagementSystem
             }
             else
             {
-                
                 MessageBox.Show("注文内容は編集できません", "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                RefreshLoad();
             }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
