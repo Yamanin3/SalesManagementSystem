@@ -133,8 +133,11 @@ namespace SalesManagementSystem
                                 AC.cmd.ExecuteNonQuery();
 
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.CommandText = "insert into 売上テーブル(売上額) Values(?)";
+                                AC.cmd.CommandText = "insert into 売上テーブル(商品ID, 注文ID, 売上額) Values(?, ?, ?)";
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = OID;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = total;
+                                AC.cmd.ExecuteNonQuery();
 
                                 RefreshLoad();
                             }
