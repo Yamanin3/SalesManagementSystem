@@ -17,6 +17,7 @@ namespace SalesManagementSystem
         private int PID;
         private int CID;
         private int OID;
+        private int total;
         public ShipListForm()
         {
             InitializeComponent();
@@ -131,6 +132,10 @@ namespace SalesManagementSystem
                                 AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = OID;
                                 AC.cmd.ExecuteNonQuery();
 
+                                AC.cmd.Parameters.Clear();
+                                AC.cmd.CommandText = "insert into 売上テーブル(売上額) Values(?)";
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = total;
+
                                 RefreshLoad();
                             }
                         }
@@ -192,7 +197,8 @@ namespace SalesManagementSystem
                         CID = int.Parse(AC.rd.GetValue(1).ToString());
                         textBox6.Tag = CID.ToString();
                         textBox4.Text = AC.rd.GetValue(2).ToString();
-                        textBox5.Text = AC.rd.GetValue(3).ToString();
+                        total = int.Parse(AC.rd.GetValue(3).ToString());
+                        textBox5.Text = total.ToString();
                         textBox2.Text = id.ToString();
                         OID = id;
                     }
@@ -246,9 +252,9 @@ namespace SalesManagementSystem
                     {
                         textBox6.Text = AC.rd.GetString(0);
                         textBox7.Text = AC.rd.GetString(1);
-                        textBox8.Text = AC.rd.GetInt32(2).ToString();
+                        textBox8.Text = AC.rd.GetValue(2).ToString();
                         textBox9.Text = AC.rd.GetString(3);
-                        textBox10.Text = AC.rd.GetInt32(4).ToString();
+                        textBox10.Text = AC.rd.GetValue(4).ToString();
                     }
 
                     else
