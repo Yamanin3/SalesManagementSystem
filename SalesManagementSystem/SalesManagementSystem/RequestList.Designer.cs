@@ -104,6 +104,7 @@
             this.button1.Text = "閉じる";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // buttonSearch
             // 
@@ -138,7 +139,6 @@
             this.Name = "RequestListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "発注リスト";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RequestListForm_FormClosed);
             this.Load += new System.EventHandler(this.RequestListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

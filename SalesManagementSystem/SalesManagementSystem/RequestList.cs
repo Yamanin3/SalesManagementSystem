@@ -20,13 +20,6 @@ namespace SalesManagementSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Form orderedlistForm = new OrderedListForm();
@@ -48,11 +41,9 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
         }
-
-        private void RequestListForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            button1.PerformClick();
+            Close();
         }
-
     }
 }
