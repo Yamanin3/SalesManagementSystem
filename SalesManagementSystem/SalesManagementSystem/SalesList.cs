@@ -19,9 +19,15 @@ namespace SalesManagementSystem
             InitializeComponent();
         }
 
+        int a = 0;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();　
+            if (a == 0)
+            {
+                a++;
+                Close();
+            }
         }
 
         private void SalesListForm_Load(object sender, EventArgs e)
