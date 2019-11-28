@@ -124,7 +124,6 @@
             this.Name = "In_stockListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入荷済みリスト";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.In_stockListForm_FormClosed);
             this.Load += new System.EventHandler(this.In_stockListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

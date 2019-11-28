@@ -397,7 +397,6 @@
             this.Name = "ShipListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出荷予定一覧";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShipListForm_FormClosed);
             this.Load += new System.EventHandler(this.ShipListForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

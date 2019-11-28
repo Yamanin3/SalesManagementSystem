@@ -175,11 +175,6 @@ namespace SalesManagementSystem
             RefreshLoad();
         }
 
-        private void ShipListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             var GridForm = new GridForm("注文テーブル", "注文情報選択", "select * from 注文テーブル where ステータス = 0");

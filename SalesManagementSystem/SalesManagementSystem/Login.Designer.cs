@@ -65,7 +65,6 @@
             this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 5;
             this.label1.Text = "ユーザー名";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -75,7 +74,6 @@
             this.label2.Size = new System.Drawing.Size(52, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "パスワード";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
@@ -130,6 +128,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員ログイン";
             this.Activated += new System.EventHandler(this.Login_Form_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_Form_FormClosed);
             this.Load += new System.EventHandler(this.Login_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -368,7 +368,6 @@
             this.Name = "IssueListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出庫管理";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IssueListForm_FormClosed);
             this.Load += new System.EventHandler(this.IssueListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

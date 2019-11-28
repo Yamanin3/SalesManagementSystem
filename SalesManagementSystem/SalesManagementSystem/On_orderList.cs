@@ -309,11 +309,6 @@ namespace SalesManagementSystem
                 }
         }
 
-        private void On_orderListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var GridForm = new GridForm("顧客マスタ", "顧客選択");

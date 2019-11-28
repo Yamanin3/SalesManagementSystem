@@ -238,11 +238,6 @@ namespace SalesManagementSystem
             }
         }
 
-        private void ProductListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var GridForm = new GridForm("仕入先マスタ", "メーカー選択");

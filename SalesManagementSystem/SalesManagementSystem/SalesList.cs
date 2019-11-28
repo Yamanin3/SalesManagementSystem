@@ -23,11 +23,7 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (a == 0)
-            {
-                a++;
-                Close();
-            }
+            Close();
         }
 
         private void SalesListForm_Load(object sender, EventArgs e)
@@ -46,9 +42,6 @@ namespace SalesManagementSystem
             dataGridView1.DataSource = AC.dt;
         }
 
-        private void SalesListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
+       
     }
 }

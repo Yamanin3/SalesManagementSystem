@@ -161,11 +161,6 @@ namespace SalesManagementSystem
             }
         }
 
-        private void IssueListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             var GridForm = new GridForm("発注テーブル", "発注情報選択");

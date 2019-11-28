@@ -413,7 +413,6 @@
             this.Name = "CustomerListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "顧客管理";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerListForm_FormClosed);
             this.Load += new System.EventHandler(this.CustomerListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

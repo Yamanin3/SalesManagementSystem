@@ -425,7 +425,6 @@
             this.Name = "On_orderListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注文管理";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.On_orderListForm_FormClosed);
             this.Load += new System.EventHandler(this.On_orderListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

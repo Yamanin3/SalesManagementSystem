@@ -56,10 +56,5 @@ namespace SalesManagementSystem
                 Close();
             }
         }
-
-        private void GridForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
     }
 }

@@ -29,11 +29,6 @@ namespace SalesManagementSystem
             Close();
         }
 
-        private void In_stockListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void In_stockListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();

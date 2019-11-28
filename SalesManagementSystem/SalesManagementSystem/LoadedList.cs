@@ -55,12 +55,6 @@ namespace SalesManagementSystem
 
             }
         }
-
-        private void LoadedListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentCell == null)

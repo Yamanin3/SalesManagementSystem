@@ -54,9 +54,5 @@ namespace SalesManagementSystem
             button1.PerformClick();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

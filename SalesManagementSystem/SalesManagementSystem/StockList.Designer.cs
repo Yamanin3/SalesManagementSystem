@@ -268,7 +268,6 @@
             this.Name = "StockListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "在庫一覧";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StockListForm_FormClosed);
             this.Load += new System.EventHandler(this.StockListForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -455,7 +455,6 @@
             this.Name = "MemberListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員管理";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MemberListForm_FormClosed);
             this.Load += new System.EventHandler(this.MemberList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

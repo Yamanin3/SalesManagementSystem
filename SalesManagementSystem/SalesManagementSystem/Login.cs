@@ -18,16 +18,6 @@ namespace SalesManagementSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Login_Form_Load(object sender, EventArgs e)
         {
 
@@ -132,6 +122,11 @@ namespace SalesManagementSystem
         private void Login_Form_Activated(object sender, EventArgs e)
         {
             textBox1.Focus();
+        }
+
+        private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

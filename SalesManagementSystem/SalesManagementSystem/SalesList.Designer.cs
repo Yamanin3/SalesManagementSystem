@@ -123,7 +123,6 @@
             this.Name = "SalesListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "売上一覧";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SalesListForm_FormClosed);
             this.Load += new System.EventHandler(this.SalesListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

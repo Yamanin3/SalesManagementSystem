@@ -126,7 +126,6 @@
             this.Name = "OrderedListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "発注済み一覧";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrderedListForm_FormClosed);
             this.Load += new System.EventHandler(this.OrderedListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

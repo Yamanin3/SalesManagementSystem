@@ -313,7 +313,6 @@
             this.Name = "LoadedListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入庫管理";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoadedListForm_FormClosed);
             this.Load += new System.EventHandler(this.LoadedListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -25,11 +25,6 @@ namespace SalesManagementSystem
             
         }
 
-        private void OrderedListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
-
         private void OrderedListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();

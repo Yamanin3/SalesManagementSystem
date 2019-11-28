@@ -283,10 +283,6 @@ namespace SalesManagementSystem
 
         }
 
-        private void CustomerListForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            button1.PerformClick();
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
