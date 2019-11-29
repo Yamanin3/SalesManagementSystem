@@ -32,7 +32,7 @@ namespace SalesManagementSystem
 
         private void RefreshLoad()
         {
-            AC.sql = "select ss.出庫ID, od.発注ID, pd.商品ID, pd.商品名, ss.出庫数, mk.メーカー名, ff.営業所名 from (((出庫テーブル as ss inner join 発注テーブル as od on ss.発注ID = od.発注ID) inner join 商品マスタ as pd on ss.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on od.メーカーID = mk.メーカーID) inner join 営業所マスタ as ff on ss.営業所ID = ff.営業所ID";
+            AC.sql = "select ss.出庫ID, pd.商品ID, pd.商品名, ss.出庫数, mk.メーカー名, ff.営業所名 from ((出庫テーブル as ss inner join 商品マスタ as pd on ss.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID) inner join 営業所マスタ as ff on ss.営業所ID = ff.営業所ID";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -43,7 +43,6 @@ namespace SalesManagementSystem
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 textBox1.Text = "";
-                textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
@@ -71,12 +70,11 @@ namespace SalesManagementSystem
             {
 
                 textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
             }
         }
@@ -97,7 +95,7 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())))
+                if ((string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -118,9 +116,8 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 出庫テーブル(発注ID, 商品ID, 営業所ID, 出庫数) Values(?, ?, ?, ?)";
+                            AC.sql = "insert into 出庫テーブル(商品ID, 営業所ID, 出庫数) Values(?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox2.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox7.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
@@ -163,37 +160,21 @@ namespace SalesManagementSystem
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("発注テーブル", "発注情報選択");
+            var GridForm = new GridForm("商品マスタ", "商品の選択");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select メーカーID, 商品ID from 発注テーブル where 発注ID = @id";
-                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
-                    AC.rd = AC.cmd.ExecuteReader();
-
-                    if (AC.rd.Read())
-                    {
-                        MID = int.Parse(AC.rd.GetValue(0).ToString());
-                        textBox6.Tag = MID.ToString();
-                        PID = int.Parse(AC.rd.GetValue(1).ToString());
-                        textBox3.Text = PID.ToString();
-                        textBox2.Text = id.ToString();
-                    }
-                    else {return;}
-                    AC.rd.Close();
-
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 商品名 from 商品マスタ where 商品ID = @id";
-                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
+                    AC.cmd.CommandText = "select 商品名, メーカーID from 商品マスタ where 商品ID = @id";
+                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id; PID = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
                     {
                         textBox4.Text = AC.rd.GetString(0);
+                        MID = int.Parse(AC.rd.GetValue(1).ToString());
                     }
                     else { return; }
                     AC.rd.Close();
@@ -213,7 +194,7 @@ namespace SalesManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("発注情報の取得に失敗しました : " + ex.Message.ToString(), "発注情報の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("商品情報の取得に失敗しました : " + ex.Message.ToString(), "商品情報の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
