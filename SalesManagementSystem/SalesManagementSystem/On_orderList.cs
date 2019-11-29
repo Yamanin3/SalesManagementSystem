@@ -38,7 +38,6 @@ namespace SalesManagementSystem
 
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
-                dataGridView1.Columns[8].Visible = false;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
                     textBox1.Text = "";
@@ -66,7 +65,6 @@ namespace SalesManagementSystem
 
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
-                dataGridView1.Columns[8].Visible = false;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
                     textBox1.Text = "";
@@ -251,11 +249,9 @@ namespace SalesManagementSystem
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
-            {
-                AC.dt.Rows.Add();
-                dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            }
+            AC.dt.Rows.Add();
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void toolStripButtonRefresh_Click(object sender, EventArgs e)
