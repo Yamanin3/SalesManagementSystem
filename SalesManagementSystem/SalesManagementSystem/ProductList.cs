@@ -324,33 +324,38 @@ namespace SalesManagementSystem
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            { if (dataGridView1.CurrentCell == null) { return; } return; }
+            else
             {
-                string msg = "レコードを削除しますか？";
-                string caption = "レコードの削除";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                MessageBoxIcon ico = MessageBoxIcon.Question;
-
-                DialogResult result;
-
-                result = MessageBox.Show(this, msg, caption, buttons, ico);
-
-                if (result == DialogResult.Yes)
+                try
                 {
-                    AC.sql = "update 商品マスタ set ステータス = ? where 商品ID = @id";
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
-                    AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                    AC.cmd.CommandText = AC.sql;
-                    AC.cmd.ExecuteNonQuery();
-                    RefreshLoad();
+                    string msg = "レコードを削除しますか？";
+                    string caption = "レコードの削除";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    MessageBoxIcon ico = MessageBoxIcon.Question;
 
+                    DialogResult result;
+
+                    result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        AC.sql = "update 商品マスタ set ステータス = ? where 商品ID = @id";
+                        AC.cmd.Parameters.Clear();
+                        AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
+                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        AC.cmd.CommandText = AC.sql;
+                        AC.cmd.ExecuteNonQuery();
+                        RefreshLoad();
+
+                    }
+                    else { return; }
                 }
-                else { return; }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("データの削除に失敗しました" + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("データの削除に失敗しました" + ex.Message.ToString(), "データの削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

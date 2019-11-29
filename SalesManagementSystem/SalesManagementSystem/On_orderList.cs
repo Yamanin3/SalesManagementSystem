@@ -251,9 +251,11 @@ namespace SalesManagementSystem
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
-            AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridView1.CurrentCell == null)
+            {
+                AC.dt.Rows.Add();
+                dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            }
         }
 
         private void toolStripButtonRefresh_Click(object sender, EventArgs e)
@@ -262,7 +264,11 @@ namespace SalesManagementSystem
         }
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
-        { 
+        {
+            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "") 
+            { if (dataGridView1.CurrentCell == null) { return; } return; }
+            else
+            {
                 try
                 {
                     string msg = "選択された注文をキャンセルしますか？";
@@ -290,7 +296,7 @@ namespace SalesManagementSystem
                         AC.rd = AC.cmd.ExecuteReader();
                         if (AC.rd.Read())
                         { stock = int.Parse(AC.rd.GetValue(0).ToString()); }
-                        AC.rd.Close(); 
+                        AC.rd.Close();
 
                         AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id";
                         AC.cmd.Parameters.Clear();
@@ -300,13 +306,14 @@ namespace SalesManagementSystem
                         AC.cmd.ExecuteNonQuery();
 
                         RefreshLoad();
-                }
-                    else {return;}
+                    }
+                    else { return; }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("注文のキャンセルに失敗しました : " + ex.Message.ToString(), "注文のキャンセル", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -52,14 +52,6 @@ namespace SalesManagementSystem
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
-        }
-
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentCell == null)
@@ -81,9 +73,9 @@ namespace SalesManagementSystem
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
-            AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+                AC.dt.Rows.Add();
+                dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
+                dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void toolStripButtonRefresh_Click(object sender, EventArgs e)
