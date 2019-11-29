@@ -173,6 +173,7 @@ namespace SalesManagementSystem
 
                     if (AC.rd.Read())
                     {
+                        textBox3.Text = PID.ToString();
                         textBox4.Text = AC.rd.GetString(0);
                         MID = int.Parse(AC.rd.GetValue(1).ToString());
                     }
