@@ -95,6 +95,7 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
+            AC.closeConnection();
             Application.Exit();
         }
 
@@ -126,6 +127,7 @@ namespace SalesManagementSystem
 
         private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
+            AC.closeConnection();
             Application.Exit();
         }
     }

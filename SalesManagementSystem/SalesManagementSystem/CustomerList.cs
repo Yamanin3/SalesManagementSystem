@@ -312,14 +312,23 @@ namespace SalesManagementSystem
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select 顧客ID, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス from 顧客マスタ where (顧客ID like '%{kw}%' or 顧客名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%') and ステータス = 0";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
         }
     }
 }

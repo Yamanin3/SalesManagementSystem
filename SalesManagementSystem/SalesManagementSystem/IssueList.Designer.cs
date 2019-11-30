@@ -55,8 +55,8 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.出庫テーブルTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.出庫テーブルTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.出庫テーブルBindingSource)).BeginInit();
@@ -315,21 +315,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(648, 12);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 52;
-            this.buttonSearch.Text = "検索";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
             // SearchTextbox
             // 
             this.SearchTextbox.Location = new System.Drawing.Point(482, 14);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 51;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
+            this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonSearch.Location = new System.Drawing.Point(648, 12);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(51, 23);
+            this.buttonSearch.TabIndex = 53;
+            this.buttonSearch.Text = "検索";
+            this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // IssueListForm
             // 
@@ -387,7 +390,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox SearchTextbox;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

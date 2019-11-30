@@ -58,8 +58,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -117,7 +117,7 @@
             this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
             this.toolStripButtonNew.Text = "新規作成";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
@@ -126,7 +126,7 @@
             this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
@@ -135,7 +135,7 @@
             this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
             this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(88, 22);
+            this.toolStripButtonRemove.Size = new System.Drawing.Size(73, 22);
             this.toolStripButtonRemove.Text = "キャンセル";
             this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
@@ -392,21 +392,24 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(751, 12);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 52;
-            this.buttonSearch.Text = "検索";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
             // SearchTextbox
             // 
             this.SearchTextbox.Location = new System.Drawing.Point(585, 14);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 51;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
+            this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonSearch.Location = new System.Drawing.Point(751, 12);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(51, 23);
+            this.buttonSearch.TabIndex = 53;
+            this.buttonSearch.Text = "検索";
+            this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // On_orderListForm
             // 
@@ -468,7 +471,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox SearchTextbox;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

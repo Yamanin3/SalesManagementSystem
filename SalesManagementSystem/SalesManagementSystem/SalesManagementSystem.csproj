@@ -376,5 +376,8 @@
   <ItemGroup>
     <None Include="Resources\search_file_2_cool-3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying_glass_4-0.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

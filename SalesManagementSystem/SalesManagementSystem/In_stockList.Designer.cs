@@ -101,11 +101,14 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
+            this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(418, 55);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 43;
+            this.buttonSearch.Size = new System.Drawing.Size(51, 23);
+            this.buttonSearch.TabIndex = 53;
             this.buttonSearch.Text = "検索";
+            this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // In_stockListForm
