@@ -465,5 +465,37 @@ namespace SalesManagementSystem
                 RefreshLoad();
             }
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                string kw = SearchTextbox.Text;
+                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.会員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 0";
+                AC.cmd.CommandText = AC.sql;
+                AC.da = new OleDbDataAdapter(AC.cmd);
+                AC.dt = new DataTable();
+                AC.da.Fill(AC.dt);
+                dataGridView1.DataSource = AC.dt;
+            }
+            else
+            {
+                string kw = SearchTextbox.Text;
+                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.会員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 1";
+                AC.cmd.CommandText = AC.sql;
+                AC.da = new OleDbDataAdapter(AC.cmd);
+                AC.dt = new DataTable();
+                AC.da.Fill(AC.dt);
+                dataGridView1.DataSource = AC.dt;
+            }
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

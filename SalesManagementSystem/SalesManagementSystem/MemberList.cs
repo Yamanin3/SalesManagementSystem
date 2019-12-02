@@ -323,5 +323,24 @@ namespace SalesManagementSystem
         {
 
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select 会員ID, 会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 会員マスタ where (会員ID like '%{kw}%' or 会員名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%' or 入会日 like '%{kw}%') and ステータス = 0";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

@@ -44,5 +44,24 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select i.入荷ID, pd.商品ID, pd.商品名, i.入荷数, i.入荷日, ff.営業所名 from (入荷テーブル as i inner join 営業所マスタ as ff on i.営業所ID = ff.営業所ID) inner join 商品マスタ as pd on i.商品ID = pd.商品ID where (i.入荷ID like '%{kw}%' or pd.商品ID like '%{kw}%' or pd.商品名 like '%{kw}%' or i.入荷数 like '%{kw}%' or i.入荷日 like '%{kw}%' or ff.営業所名 like '%{kw}%')";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

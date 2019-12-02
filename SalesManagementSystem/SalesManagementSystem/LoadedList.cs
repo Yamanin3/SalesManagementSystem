@@ -230,5 +230,24 @@ namespace SalesManagementSystem
                 }
             }
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select ld.入庫ID, od.発注ID, pd.商品ID, pd.商品名, od.発注数量 as 入庫数, mk.メーカー名 from ((入庫テーブル as ld inner join 発注テーブル as od on ld.発注ID = od.発注ID) inner join 商品マスタ as pd on ld.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on ld.メーカーID = mk.メーカーID where (ld.入庫ID like '%{kw}%' or od.発注ID like '%{kw}%' or pd.商品ID like '%{kw}%' or pd.商品名 like '%{kw}%' or od.発注数量 like '%{kw}%' or mk.メーカー名 like '%{kw}%')";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

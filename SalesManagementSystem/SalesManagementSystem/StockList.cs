@@ -218,5 +218,24 @@ namespace SalesManagementSystem
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select st.在庫ID, pd.商品ID, pd.商品名, st.在庫数, st.発注点 from 在庫テーブル as st right outer join 商品マスタ as pd on st.商品ID = pd.商品ID where (st.在庫ID like '%{kw}%' or pd.商品ID like '%{kw}%' or pd.商品名 like '%{kw}%' or st.在庫数 like '%{kw}%' or st.発注点 like '%{kw}%') and ステータス = 0";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

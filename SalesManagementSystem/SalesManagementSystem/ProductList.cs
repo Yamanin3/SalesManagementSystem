@@ -358,5 +358,24 @@ namespace SalesManagementSystem
                 }
             }
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kw = SearchTextbox.Text;
+            AC.sql = $"select pd.商品ID, pd.商品名, pd.重量, pd.口径, pd.全長, pd.マガジンタイプ, pd.装弾数, mk.メーカー名, pd.商品価格, mk.メーカーID from 商品マスタ as pd inner join 仕入先マスタ as mk on pd.メーカーID = mk.メーカーID where (pd.商品ID like '%{kw}%' or pd.商品名 like '%{kw}%' or pd.重量 like '%{kw}%' or pd.口径 like '%{kw}%' or pd.全長 like '%{kw}%' or pd.マガジンタイプ like '%{kw}%' or pd.装弾数 like '%{kw}%' or mk.メーカー名 like '%{kw}%' or pd.商品価格 like '%{kw}%') and ステータス = 0";
+            AC.cmd.CommandText = AC.sql;
+            AC.da = new OleDbDataAdapter(AC.cmd);
+            AC.dt = new DataTable();
+            AC.da.Fill(AC.dt);
+            dataGridView1.DataSource = AC.dt;
+        }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }

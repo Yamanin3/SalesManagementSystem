@@ -102,8 +102,10 @@ namespace SalesManagementSystem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
+            AC.closeConnection();
+            this.Hide();
             Form loginForm = new Login_Form();
-            loginForm.ShowDialog();
+            loginForm.Show();
         }
     }
 }
