@@ -93,7 +93,11 @@ namespace SalesManagementSystem
                 }
                 else
                 {
-
+                    if(textBox5.Text == "0")
+                    {
+                        MessageBox.Show("無効な出庫数です。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     try
                     {
                         string msg = "データを追加しますか？";
@@ -152,7 +156,7 @@ namespace SalesManagementSystem
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("商品マスタ", "商品の選択");
+            var GridForm = new GridForm("商品マスタ", "商品の選択", "select * from 商品マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
