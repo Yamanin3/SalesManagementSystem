@@ -96,6 +96,13 @@ namespace SalesManagementSystem
                 if ((string.IsNullOrEmpty(this.textBox4.Text.Trim())))
                 {
                     MessageBox.Show("発注点を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBox4.Focus();
+                    textBox4.SelectAll();
+                }else if (textBox4.Text == "0")
+                {
+                    MessageBox.Show("発注点に\"0\"は設定できません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBox4.Focus();
+                    textBox4.SelectAll();
                 }
                 else
                 {
