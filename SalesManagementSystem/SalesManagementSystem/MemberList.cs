@@ -76,10 +76,24 @@ namespace SalesManagementSystem
                 if (dataGridView1.CurrentCell == null)
                 {
                     return;
+                }else if(dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+                {
+                    textBox8.Enabled = true;
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 }
                 else
                 {
-
+                    textBox8.Enabled = false;
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -320,7 +334,7 @@ namespace SalesManagementSystem
                         {
 
                             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 会員マスタ set 会員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ?, パスワード = ? where 会員ID = @id;";
+                            AC.sql = "update 会員マスタ set 会員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 会員ID = @id;";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -331,7 +345,6 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = Sha256hash.ToHash(textBox8.Text);
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;

@@ -27,7 +27,6 @@ C:\Users\Yamanin3\Desktop\Visual-Studio\Login_form\SalesManagementSystem\obj\Deb
 C:\Users\Yamanin3\Desktop\Visual-Studio\Login_form\SalesManagementSystem\obj\Debug\SalesManagementSystem.exe
 C:\Users\Yamanin3\Desktop\Visual-Studio\Login_form\SalesManagementSystem\obj\Debug\SalesManagementSystem.pdb
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csprojAssemblyReference.cache
-C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.Login_Form.resources
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csproj.GenerateResource.cache
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.exe
 C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.pdb
@@ -95,3 +94,4 @@ C:\Users\yaman\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManageme
 C:\Users\yaman\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.csproj.GenerateResource.cache
 C:\Users\yaman\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.exe
 C:\Users\yaman\Desktop\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.pdb
+C:\Users\yamanin-Note\Desktop\git\SalesManagementSystem\SalesManagementSystem\SalesManagementSystem\obj\Debug\SalesManagementSystem.Login_Form.resources
