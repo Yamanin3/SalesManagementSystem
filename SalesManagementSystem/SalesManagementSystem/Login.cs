@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
+using SalesManagementSystem.Static_Classes;
 
 namespace SalesManagementSystem
 {
@@ -54,8 +55,8 @@ namespace SalesManagementSystem
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
 
-            AC.cmd.Parameters.AddWithValue("@us", this.textBox1.Text.Trim().ToString());
-            AC.cmd.Parameters.AddWithValue("@pa", this.textBox2.Text.Trim().ToString());
+            AC.cmd.Parameters.AddWithValue("@us", textBox1.Text.Trim().ToString());
+            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBox2.Text.Trim().ToString()));
 
             AC.rd = AC.cmd.ExecuteReader();
 

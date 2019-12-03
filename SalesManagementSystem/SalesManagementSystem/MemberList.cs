@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
 using System.Data.OleDb;
+using SalesManagementSystem.Static_Classes;
 
 namespace SalesManagementSystem
 {
@@ -227,7 +228,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = Sha256hash.ToHash(textBox8.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
@@ -330,7 +331,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = Sha256hash.ToHash(textBox8.Text);
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;

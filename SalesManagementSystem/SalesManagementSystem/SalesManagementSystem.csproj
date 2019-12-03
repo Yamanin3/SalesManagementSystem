@@ -138,6 +138,7 @@
     <Compile Include="In_stockList.Designer.cs">
       <DependentUpon>In_stockList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Static_Classes\Sha256hash.cs" />
     <Compile Include="StockList.cs">
       <SubType>Form</SubType>
     </Compile>
