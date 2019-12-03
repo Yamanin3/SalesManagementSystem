@@ -254,8 +254,8 @@ namespace SalesManagementSystem
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "") 
-            { if (dataGridView1.CurrentCell == null) { return; } return; }
+            if (string.IsNullOrEmpty(dataGridView1.CurrentRow?.Cells[0].Value.ToString() )) 
+            {return; }
             else
             {
                 try

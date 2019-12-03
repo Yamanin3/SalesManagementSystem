@@ -19,6 +19,8 @@ namespace SalesManagementSystem
         public int result;
         private string sql;
 
+        private DataTable table;
+
         public GridForm(string tbl, string fname, string sql = null)
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace SalesManagementSystem
 
         private void GridForm_Load(object sender, EventArgs e)
         {
+            table = AC.dt;
+
             if(sql == null) {
                 sql = $"select * from {tblname}";
             }
@@ -55,6 +59,11 @@ namespace SalesManagementSystem
                 DialogResult = DialogResult.OK;
                 Close();
             }
+        }
+
+        private void GridForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AC.dt = table;
         }
     }
 }
