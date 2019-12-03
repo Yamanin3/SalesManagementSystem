@@ -90,6 +90,12 @@ namespace SalesManagementSystem
                         return;
                     }
 
+                    int iLengthpost = textBox4.TextLength;
+                    int iLengthphone = textBox6.TextLength;
+
+                    if (iLengthpost < 7) { MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox4.Focus(); textBox4.SelectAll(); return; }
+                    if (iLengthphone < 10) { MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox6.Focus(); textBox6.SelectAll(); return; }
+                    
                     try
                     {
                         string msg = "データを追加しますか？";
@@ -158,6 +164,12 @@ namespace SalesManagementSystem
                         textBox7.SelectAll();
                         return;
                     }
+                    int iLengthpost = textBox4.TextLength;
+                    int iLengthphone = textBox6.TextLength;
+
+                    if (iLengthpost < 7) { MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox4.Focus(); textBox4.SelectAll(); return; }
+                    if (iLengthphone < 10) { MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox6.Focus(); textBox6.SelectAll(); return; }
+
                     try
                     {
                         string msg = "データの編集を反映しますか？";
