@@ -99,8 +99,8 @@ namespace SalesManagementSystem
 
                     try
                     {
-                        string msg = "レコードを追加しますか？";
-                        string caption = "レコードの追加";
+                        string msg = "データを追加しますか？";
+                        string caption = "データの追加";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 

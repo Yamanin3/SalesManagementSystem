@@ -86,13 +86,6 @@ namespace SalesManagementSystem
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form menu = new MainMenuForm();
-            menu.Show();
-        }
-
         private void On_orderListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
@@ -133,8 +126,8 @@ namespace SalesManagementSystem
 
                     try
                     {
-                        string msg = "レコードを追加しますか？";
-                        string caption = "レコードの追加";
+                        string msg = "データを追加しますか？";
+                        string caption = "データの追加";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 

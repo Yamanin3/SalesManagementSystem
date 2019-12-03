@@ -77,19 +77,23 @@ namespace SalesManagementSystem
                     if(textBox7.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
                     int index = textBox7.Text.IndexOf('@');
                     if(textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
 
                     try
                     {
-                        string msg = "レコードを追加しますか？";
-                        string caption = "レコードの追加";
+                        string msg = "データを追加しますか？";
+                        string caption = "データの追加";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -116,25 +120,19 @@ namespace SalesManagementSystem
                             int rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
-
                                 RefreshLoad();
-
                             }
                         }
                         else
                         {
                             return;
                         }
-
-
                         }
                         catch (Exception ex)
                         {
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
-                    
-                
                 }
             }
             else
@@ -148,18 +146,22 @@ namespace SalesManagementSystem
                     if (textBox7.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
                     int index = textBox7.Text.IndexOf('@');
                     if (textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
                     try
                     {
-                        string msg = "レコードの編集を反映しますか？";
-                        string caption = "レコードの編集";
+                        string msg = "データの編集を反映しますか？";
+                        string caption = "データの編集";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 

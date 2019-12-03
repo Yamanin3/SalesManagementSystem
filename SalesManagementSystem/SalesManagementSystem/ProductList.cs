@@ -118,8 +118,8 @@ namespace SalesManagementSystem
 
                     try
                     {
-                        string msg = "レコードを追加しますか？";
-                        string caption = "レコードの追加";
+                        string msg = "データを追加しますか？";
+                        string caption = "データの追加";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -189,8 +189,8 @@ namespace SalesManagementSystem
                 {
                     try
                     {
-                        string msg = "レコードの編集を反映しますか？";
-                        string caption = "レコードの編集";
+                        string msg = "データの編集を反映しますか？";
+                        string caption = "データの編集";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -330,8 +330,8 @@ namespace SalesManagementSystem
             {
                 try
                 {
-                    string msg = "レコードを削除しますか？";
-                    string caption = "レコードの削除";
+                    string msg = "データを削除しますか？";
+                    string caption = "データの削除";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     MessageBoxIcon ico = MessageBoxIcon.Question;
 

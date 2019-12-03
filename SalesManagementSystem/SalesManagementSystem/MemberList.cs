@@ -161,19 +161,45 @@ namespace SalesManagementSystem
                     if (textBox7.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
                     int index = textBox7.Text.IndexOf('@');
                     if (textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
+                    }
+                    
+                    int iLength = textBox8.TextLength;
+                    string passwd = textBox8.Text;
+
+                    if(iLength < 8) { MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください",  "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox8.Focus(); textBox8.SelectAll(); return; }
+                    else if(iLength >= 8)
+                    {
+                        int answer = 0;
+                        foreach (char c in passwd)
+                        {
+                            if (answer == 1) { break; }
+                            if (!char.IsUpper(c)) { }
+                            else { answer = 1; }
+                        }
+                        if (answer == 0)
+                        {
+                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            textBox8.Focus();
+                            textBox8.SelectAll();
+                            return;
+                        }
                     }
 
                     try
                     {
-                        string msg = "レコードを追加しますか？";
-                        string caption = "レコードの追加";
+                        string msg = "データを追加しますか？";
+                        string caption = "データの追加";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -211,16 +237,12 @@ namespace SalesManagementSystem
                         {
                             return;
                         }
-
-
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-
-
                 }
             }
             else
@@ -234,18 +256,45 @@ namespace SalesManagementSystem
                     if (textBox7.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
                     int index = textBox7.Text.IndexOf('@');
                     if (textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox7.Focus();
+                        textBox7.SelectAll();
                         return;
                     }
+
+                    int iLength = textBox8.TextLength;
+                    string passwd = textBox8.Text;
+
+                    if (iLength < 8) { MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox8.Focus(); textBox8.SelectAll(); return; }
+                    else if (iLength >= 8)
+                    {
+                        int answer = 0;
+                        foreach (char c in passwd)
+                        {
+                            if (answer == 1) { break; }
+                            if (!char.IsUpper(c)){}
+                            else { answer = 1; }
+                        }
+                        if(answer == 0)
+                        {
+                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            textBox8.Focus();
+                            textBox8.SelectAll();
+                            return;
+                        }
+                    }
+
                     try
                     {
-                        string msg = "レコードの編集を反映しますか？";
-                        string caption = "レコードの編集";
+                        string msg = "データの編集を反映しますか？";
+                        string caption = "データの編集";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         MessageBoxIcon ico = MessageBoxIcon.Question;
 
