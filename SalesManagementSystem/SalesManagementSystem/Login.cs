@@ -38,7 +38,7 @@ namespace SalesManagementSystem
             {
                 
 
-                MessageBox.Show("会員名とパスワードを入力してください", "会員ログイン : データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員名とパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -67,7 +67,7 @@ namespace SalesManagementSystem
                 while (AC.rd.Read())
                 {
                     AC.currentFullName = AC.rd[0].ToString();
-                    MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "会員ログイン : ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.textBox1.Text = string.Empty;
@@ -82,7 +82,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                MessageBox.Show("会員名かパスワードが違います。もう一度やり直してください。", "会員ログイン : ログイン失敗", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員名かパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {

@@ -101,10 +101,23 @@ namespace SalesManagementSystem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            AC.closeConnection();
-            this.Hide();
-            Form loginForm = new Login_Form();
-            loginForm.Show();
+            string msg = "本当にログアウトしますか？";
+            string caption = "ログアウト";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            MessageBoxIcon ico = MessageBoxIcon.Question;
+
+            DialogResult result;
+
+            result = MessageBox.Show(this, msg, caption, buttons, ico);
+
+            if (result == DialogResult.Yes)
+            {
+                AC.closeConnection();
+                this.Hide();
+                Form loginForm = new Login_Form();
+                loginForm.Show();
+            }
+            else { return; }
         }
     }
 }
