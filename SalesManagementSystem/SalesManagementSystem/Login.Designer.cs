@@ -41,7 +41,9 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.Location = new System.Drawing.Point(241, 35);
+            this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 19);
             this.textBox1.TabIndex = 3;
@@ -51,6 +53,7 @@
             // 
             this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox2.Location = new System.Drawing.Point(241, 75);
+            this.textBox2.MaxLength = 40;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(132, 19);
@@ -137,14 +140,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -25,7 +25,6 @@ namespace SalesManagementSystem
 
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
-
             RefreshLoad();
 
         }

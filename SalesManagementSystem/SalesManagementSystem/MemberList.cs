@@ -26,7 +26,6 @@ namespace SalesManagementSystem
 
         private void MemberList_Load(object sender, EventArgs e)
         {
-
             RefreshLoad();
 
         }

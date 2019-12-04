@@ -21,7 +21,9 @@ namespace SalesManagementSystem
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
-
+            this.button1.BackColor = Color.FromArgb(191, 205, 219);
+            this.button2.BackColor = Color.FromArgb(191, 205, 219);
+            this.BackColor = System.Drawing.Color.FromArgb(215, 228, 242);
             AC.openConnection();
 
         }
