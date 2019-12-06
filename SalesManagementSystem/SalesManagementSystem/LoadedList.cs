@@ -32,6 +32,7 @@ namespace SalesManagementSystem
         private void LoadedListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void RefreshLoad()
@@ -46,6 +47,7 @@ namespace SalesManagementSystem
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
+                buttonAdd.Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -54,16 +56,27 @@ namespace SalesManagementSystem
                 textBox6.Text = "";
 
             }
+            else
+            {
+                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+            }
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentCell == null)
             {
-                return;
+                buttonAdd.Enabled = false;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
             }
-            else
+            else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-
+                buttonAdd.Enabled = true;
+                buttonAdd.Text = "追加";
                 textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -71,6 +84,17 @@ namespace SalesManagementSystem
                 textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
+            }
+            else
+            {
+                buttonAdd.Enabled = false;
+                buttonAdd.Text = "編集";
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
         }
 
@@ -240,6 +264,7 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)

@@ -14,6 +14,7 @@ namespace SalesManagementSystem
 {
     public partial class Login_Form : Form
     {
+        private int status;
         public Login_Form()
         {
             InitializeComponent();
@@ -36,9 +37,8 @@ namespace SalesManagementSystem
 
             if ((string.IsNullOrEmpty(this.textBox1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())))
             {
-                
 
-                MessageBox.Show("会員名とパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -50,14 +50,14 @@ namespace SalesManagementSystem
 
                 return;
 
-               }
+            }
 
-            AC.sql = "select 会員名, パスワード from 会員マスタ where 会員名 = @us and パスワード = @pa;";
+            AC.sql = "select 会員ID, パスワード, 会員名, ステータス from 会員マスタ where 会員ID = @id and パスワード = @pa;";
             AC.cmd.Parameters.Clear();
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
 
-            AC.cmd.Parameters.AddWithValue("@us", textBox1.Text.Trim().ToString());
+            AC.cmd.Parameters.AddWithValue("@id", textBox1.Text.Trim().ToString());
             AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBox2.Text.Trim().ToString()));
 
             AC.rd = AC.cmd.ExecuteReader();
@@ -66,7 +66,8 @@ namespace SalesManagementSystem
             {
                 while (AC.rd.Read())
                 {
-                    AC.currentFullName = AC.rd[0].ToString();
+                    AC.currentFullName = AC.rd[2].ToString();
+                    status = int.Parse(AC.rd[3].ToString());
                     MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -80,9 +81,18 @@ namespace SalesManagementSystem
 
 
             }
+            else if(status != 0)
+            {
+                MessageBox.Show("会員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                if (this.textBox1.CanSelect)
+                {
+                    this.textBox1.Select();
+                }
+            }
             else
             {
-                MessageBox.Show("会員名かパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("会員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -102,7 +112,7 @@ namespace SalesManagementSystem
             Application.Exit();
         }
 
-        
+
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {

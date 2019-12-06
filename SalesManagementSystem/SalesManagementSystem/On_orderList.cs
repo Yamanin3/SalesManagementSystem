@@ -67,6 +67,7 @@ namespace SalesManagementSystem
                 dataGridView1.DataSource = AC.dt;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
+                    buttonAdd.Enabled = false;
                     textBox1.Text = "";
                     textBox2.Text = "";
                     textBox3.Text = "";
@@ -89,16 +90,27 @@ namespace SalesManagementSystem
         private void On_orderListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentCell == null)
             {
-                return;
+                buttonAdd.Enabled = false;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Text = "";
+                dateTimePicker1.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
             }
-            else
+            else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
+                buttonAdd.Enabled = true;
+                buttonAdd.Text = "追加";
                 textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -109,6 +121,20 @@ namespace SalesManagementSystem
                 textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 
             }
+            else
+            {
+                buttonAdd.Enabled = false;
+                buttonAdd.Text = "編集";
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            }
+            
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // 追加ボタンクリック後の処理////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -307,7 +333,7 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("顧客マスタ", "顧客選択");
+            var GridForm = new GridForm("顧客マスタ", "顧客選択", "select * from 顧客マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -341,12 +367,11 @@ namespace SalesManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("商品マスタ", "商品選択");
+            var GridForm = new GridForm("商品マスタ", "商品選択", "select * from 商品マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
                     AC.cmd.CommandText = "select 商品名, 商品価格, メーカーID from 商品マスタ where 商品ID = @id";
@@ -367,7 +392,18 @@ namespace SalesManagementSystem
                         return;
                     }
                     AC.rd.Close();
+                    if (textBox5.Text != "")
+                    {
 
+                        double quantity = double.Parse(comboBox1.Text);
+                        double price = double.Parse(textBox5.Text);
+
+                        textBox6.Text = (price * quantity).ToString();
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -378,7 +414,7 @@ namespace SalesManagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("会員マスタ", "担当者選択");
+            var GridForm = new GridForm("会員マスタ", "担当者選択", "select * from 会員マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -470,6 +506,7 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
+                dataGridView1_SelectionChanged(this, EventArgs.Empty);
             }
             else
             {
@@ -480,6 +517,7 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
                 dataGridView1.DataSource = AC.dt;
+                dataGridView1_SelectionChanged(this, EventArgs.Empty);
             }
         }
 

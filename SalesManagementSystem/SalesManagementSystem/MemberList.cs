@@ -43,6 +43,7 @@ namespace SalesManagementSystem
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
+                buttonAdd.Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -57,6 +58,7 @@ namespace SalesManagementSystem
             }
             else
             {
+                buttonAdd.Enabled = true;
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
         }
@@ -74,9 +76,23 @@ namespace SalesManagementSystem
             {
                 if (dataGridView1.CurrentCell == null)
                 {
-                    return;
-                }else if(dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+                    buttonAdd.Enabled = false;
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    comboBox1.Text = "";
+                    dateTimePicker1.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+                    dateTimePicker2.Text = "";
+                    textBox8.Text = "";
+                }
+                else if(dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
                 {
+                    buttonAdd.Enabled = true;
+                    buttonAdd.Text = "追加";
                     textBox8.Enabled = true;
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -92,6 +108,8 @@ namespace SalesManagementSystem
                 }
                 else
                 {
+                    buttonAdd.Enabled = true;
+                    buttonAdd.Text = "編集";
                     textBox8.Enabled = false;
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -408,6 +426,7 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
