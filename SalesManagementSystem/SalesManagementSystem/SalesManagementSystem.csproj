@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6879CCC-C671-4FF9-990A-ACF19F9E8BB7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SalesManagementSystem</RootNamespace>
+    <AssemblyName>SalesManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerList.Designer.cs">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridForm.Designer.cs">
+      <DependentUpon>GridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssueList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueList.Designer.cs">
+      <DependentUpon>IssueList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadedList.Designer.cs">
+      <DependentUpon>LoadedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberList.Designer.cs">
+      <DependentUpon>MemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderedList.Designer.cs">
+      <DependentUpon>OrderedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="On_orderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="On_orderList.Designer.cs">
+      <DependentUpon>On_orderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestList.Designer.cs">
+      <DependentUpon>RequestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesList.Designer.cs">
+      <DependentUpon>SalesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipList.Designer.cs">
+      <DependentUpon>ShipList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSdatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Static_Classes\AccessDb_Connection.cs" />
+    <Compile Include="In_stockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="In_stockList.Designer.cs">
+      <DependentUpon>In_stockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Static_Classes\Sha256hash.cs" />
+    <Compile Include="StockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockList.Designer.cs">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomerList.resx">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridForm.resx">
+      <DependentUpon>GridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueList.resx">
+      <DependentUpon>IssueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadedList.resx">
+      <DependentUpon>LoadedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberList.resx">
+      <DependentUpon>MemberList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="On_orderList.resx">
+      <DependentUpon>On_orderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderedList.resx">
+      <DependentUpon>OrderedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RequestList.resx">
+      <DependentUpon>RequestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="In_stockList.resx">
+      <DependentUpon>In_stockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesList.resx">
+      <DependentUpon>SalesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipList.resx">
+      <DependentUpon>ShipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockList.resx">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SMSdatabaseDataSet.xsc">
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SMSdatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SMSdatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SMSdatabaseDataSet.xss">
+      <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keychain-Access-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keychain-Access-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keychain-Access-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keychain-Access-2561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Padlocks_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20181020_122243691_iOS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\290.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_padlock-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_explorer_2k-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_player_stream_no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_player_stream_no1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modem-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msinfo32-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msagent-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msagent-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad_file-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_world-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write_yellow-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd_drive_purple-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd_drive-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gears_tweakui_a-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winrep-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write_card_phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_computer-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book_pad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_file_2_cool-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying_glass_4-0.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
