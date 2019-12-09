@@ -412,7 +412,6 @@
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 51;
-            this.SearchTextbox.TextChanged += new System.EventHandler(this.SearchTextbox_TextChanged);
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
             // button1

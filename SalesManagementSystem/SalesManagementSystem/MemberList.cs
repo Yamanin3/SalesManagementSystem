@@ -412,11 +412,6 @@ namespace SalesManagementSystem
             }
         }
 
-        private void SearchTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string kw = SearchTextbox.Text;

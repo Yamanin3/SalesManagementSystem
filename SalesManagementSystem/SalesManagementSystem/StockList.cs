@@ -31,6 +31,7 @@ namespace SalesManagementSystem
         private void StockListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void RefreshLoad()
@@ -72,11 +73,13 @@ namespace SalesManagementSystem
                     textBox3.Text = "";
                     textBox4.Text = "";
                     buttonAdd.Enabled = false;
+                    textBox4.Enabled = false;
 
                 }
                 else
                 {
                     buttonAdd.Enabled = true;
+                    textBox4.Enabled = true;
                     textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     if(dataGridView1.CurrentRow.Cells[3].Value.ToString() == "")

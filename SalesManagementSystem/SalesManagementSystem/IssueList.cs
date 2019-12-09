@@ -74,6 +74,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
+                textBox5.Enabled = true;
                 textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -86,6 +87,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
+                textBox5.Enabled = false;
                 textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();

@@ -48,6 +48,7 @@ namespace SalesManagementSystem
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
+                buttonAdd.Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -60,6 +61,7 @@ namespace SalesManagementSystem
             }
             else
             {
+                buttonAdd.Enabled = true;
                 // datagridview1の最上段にカーソルを当てる
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
@@ -71,10 +73,21 @@ namespace SalesManagementSystem
             {
                 if (dataGridView1.CurrentCell == null)
                 {
-                    return;
+                    buttonAdd.Enabled = false;
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+                    textBox8.Text = "";
+                    comboBox1.Text = "";
                 }
-                else
+                else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
                 {
+                    buttonAdd.Enabled = true;
+                    buttonAdd.Text = "追加";
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -86,6 +99,21 @@ namespace SalesManagementSystem
                     textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textBox7.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
 
+                }
+                else
+                {
+                    buttonAdd.Enabled = true;
+                    buttonAdd.Text = "編集";
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBox7.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 }
             }catch(Exception ex)
             {
@@ -368,6 +396,7 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
