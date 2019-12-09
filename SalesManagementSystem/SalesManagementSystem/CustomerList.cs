@@ -22,7 +22,6 @@ namespace SalesManagementSystem
             InitializeComponent();
         }
 
-
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
