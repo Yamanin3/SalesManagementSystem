@@ -370,5 +370,9 @@ namespace SalesManagementSystem
             }
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> あああ
