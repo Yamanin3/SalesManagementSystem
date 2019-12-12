@@ -119,7 +119,7 @@ namespace SalesManagementSystem
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBox7.Text = AC.currentFullName;
 
             }
             else
@@ -186,9 +186,9 @@ namespace SalesManagementSystem
 
                                 AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 社員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox3.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox2.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = AC.currentID;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
                                 AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
                                 AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
@@ -342,8 +342,8 @@ namespace SalesManagementSystem
 
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 顧客名 from 顧客マスタ where 顧客ID = @id";
-                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
+                    AC.cmd.CommandText = "select 顧客名 from 顧客マスタ where 顧客ID = ?";
+                    AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
@@ -375,8 +375,8 @@ namespace SalesManagementSystem
                 {
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 商品名, 商品価格, メーカーID from 商品マスタ where 商品ID = @id";
-                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
+                    AC.cmd.CommandText = "select 商品名, 商品価格, メーカーID from 商品マスタ where 商品ID = ?";
+                    AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
@@ -409,40 +409,6 @@ namespace SalesManagementSystem
                 catch (Exception ex)
                 {
                     MessageBox.Show("商品名の取得に失敗しました : " + ex.Message.ToString(), "商品名の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            var GridForm = new GridForm("社員マスタ", "担当者選択", "select * from 社員マスタ where ステータス = 0");
-            if (GridForm.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-
-                    var id = GridForm.result;
-                    AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 社員名 from 社員マスタ where 社員ID = @id";
-                    AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
-                    AC.rd = AC.cmd.ExecuteReader();
-
-                    if (AC.rd.Read())
-                    {
-                        textBox7.Text = AC.rd.GetString(0);
-                        textBox7.Tag = id;
-                    }
-
-                    else
-                    {
-                        return;
-                    }
-                    AC.rd.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("担当者の取得に失敗しました : " + ex.Message.ToString(), "担当者の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -480,7 +446,6 @@ namespace SalesManagementSystem
                 buttonAdd.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
-                button4.Enabled = false;
             }
             else
             {
@@ -491,7 +456,6 @@ namespace SalesManagementSystem
                 buttonAdd.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = true;
-                button4.Enabled = true;
                 RefreshLoad();
             }
         }

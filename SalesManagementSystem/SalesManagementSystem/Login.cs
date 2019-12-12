@@ -15,6 +15,7 @@ namespace SalesManagementSystem
     public partial class Login_Form : Form
     {
         private int status;
+
         public Login_Form()
         {
             InitializeComponent();
@@ -71,6 +72,8 @@ namespace SalesManagementSystem
                     status = int.Parse(AC.rd[3].ToString());
                     MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                AC.currentID = int.Parse(textBox1.Text.ToString());
 
                 this.textBox1.Text = string.Empty;
                 this.textBox2.Text = string.Empty;

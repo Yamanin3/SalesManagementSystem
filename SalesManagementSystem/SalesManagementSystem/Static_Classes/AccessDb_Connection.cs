@@ -18,6 +18,7 @@ namespace Login_form.Static_Classes
         public static DataTable dt;
 
         public static string currentFullName;
+        public static int currentID;
         public static string sql;
 
         public static string getConnectionString()
