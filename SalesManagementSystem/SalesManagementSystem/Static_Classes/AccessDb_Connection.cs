@@ -27,12 +27,10 @@ namespace Login_form.Static_Classes
             string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + Application.StartupPath + "\\SMSdatabase.mdb;";
 
             return connectionString;
-
         }
 
         public static void openConnection()
         {
-
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -40,16 +38,15 @@ namespace Login_form.Static_Classes
                     con.ConnectionString = getConnectionString();
                     con.Open();
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "社員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         public static void closeConnection()
         {
-
             try
             {
                 if (con.State == ConnectionState.Open)
@@ -61,8 +58,6 @@ namespace Login_form.Static_Classes
             {
                 MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "社員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
     }
 }
