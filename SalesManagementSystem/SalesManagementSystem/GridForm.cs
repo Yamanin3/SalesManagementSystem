@@ -67,5 +67,10 @@ namespace SalesManagementSystem
         {
             AC.dt = table;
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
