@@ -33,6 +33,7 @@ namespace SalesManagementSystem
         private void ProductListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            this.MaximizeBox = false;
         }
 
         private void RefreshLoad()

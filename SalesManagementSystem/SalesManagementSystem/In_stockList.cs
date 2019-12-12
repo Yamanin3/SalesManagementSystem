@@ -32,6 +32,7 @@ namespace SalesManagementSystem
         private void In_stockListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            this.MaximizeBox = false;
         }
 
         private void RefreshLoad()

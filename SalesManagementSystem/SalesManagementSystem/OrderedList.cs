@@ -28,6 +28,7 @@ namespace SalesManagementSystem
         private void OrderedListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
+            this.MaximizeBox = false;
         }
 
         private void RefreshLoad()

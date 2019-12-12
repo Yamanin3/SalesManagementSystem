@@ -91,6 +91,7 @@ namespace SalesManagementSystem
         {
             RefreshLoad();
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            this.MaximizeBox = false;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

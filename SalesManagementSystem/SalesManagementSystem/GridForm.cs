@@ -31,6 +31,8 @@ namespace SalesManagementSystem
 
         private void GridForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+
             table = AC.dt;
 
             if(sql == null) {

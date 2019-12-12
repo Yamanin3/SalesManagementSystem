@@ -25,7 +25,7 @@ namespace SalesManagementSystem
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
             RefreshLoad();
-
+            this.MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

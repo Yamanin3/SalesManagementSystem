@@ -55,6 +55,7 @@ namespace SalesManagementSystem
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
         }
 
         private void button6_Click(object sender, EventArgs e)

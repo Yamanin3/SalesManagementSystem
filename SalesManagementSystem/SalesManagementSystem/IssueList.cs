@@ -27,6 +27,7 @@ namespace SalesManagementSystem
 
         private void IssueListForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
             RefreshLoad();
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
