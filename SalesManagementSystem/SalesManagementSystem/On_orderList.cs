@@ -279,10 +279,10 @@ namespace SalesManagementSystem
             RefreshLoad();
         }
 
-        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(dataGridView1.CurrentRow?.Cells[0].Value.ToString() )) 
-            {return; }
+            if (string.IsNullOrEmpty(dataGridView1.CurrentRow?.Cells[0].Value.ToString()))
+            { return; }
             else
             {
                 try
@@ -476,7 +476,7 @@ namespace SalesManagementSystem
                 comboBox1.Enabled = false;
                 dateTimePicker1.Enabled = false;
                 toolStripButtonNew.Enabled = false;
-                toolStripButtonRemove.Enabled = false;
+                buttonRemove.Enabled = false;
                 buttonAdd.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -487,7 +487,7 @@ namespace SalesManagementSystem
                 comboBox1.Enabled = true;
                 dateTimePicker1.Enabled = true;
                 toolStripButtonNew.Enabled = true;
-                toolStripButtonRemove.Enabled = true;
+                buttonRemove.Enabled = true;
                 buttonAdd.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = true;
@@ -529,5 +529,7 @@ namespace SalesManagementSystem
                 buttonSearch.PerformClick();
             }
         }
+
+       
     }
 }

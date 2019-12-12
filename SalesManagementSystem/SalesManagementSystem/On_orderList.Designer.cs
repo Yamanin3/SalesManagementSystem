@@ -34,8 +34,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonRemove = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -104,8 +104,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonNew,
-            this.toolStripButtonRefresh,
-            this.toolStripButtonRemove});
+            this.toolStripButtonRefresh});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(991, 25);
@@ -130,17 +129,9 @@
             this.toolStripButtonRefresh.Text = "更新";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
-            // toolStripButtonRemove
-            // 
-            this.toolStripButtonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_48;
-            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButtonRemove.Text = "キャンセル";
-            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRemove);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
@@ -167,6 +158,20 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "注文操作";
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_32;
+            this.buttonRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemove.Location = new System.Drawing.Point(158, 248);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(79, 39);
+            this.buttonRemove.TabIndex = 23;
+            this.buttonRemove.Text = "削除";
+            this.buttonRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // comboBox1
             // 
@@ -253,7 +258,7 @@
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(101, 248);
+            this.buttonAdd.Location = new System.Drawing.Point(52, 248);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(79, 39);
             this.buttonAdd.TabIndex = 7;
@@ -450,7 +455,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -476,5 +480,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonRemove;
     }
 }
