@@ -34,7 +34,7 @@ namespace SalesManagementSystem
         private void RefreshLoad()
         {
 
-            AC.sql = "select 会員ID, 会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 会員マスタ where ステータス = 0";
+            AC.sql = "select 社員ID, 社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 社員マスタ where ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -144,7 +144,7 @@ namespace SalesManagementSystem
             RefreshLoad();
         }
 
-        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        private void buttonrRemove_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             { if (dataGridView1.CurrentCell == null) { return; } return; }
@@ -152,8 +152,8 @@ namespace SalesManagementSystem
             {
                 try
                 {
-                    string msg = "選択された会員を削除しますか？";
-                    string caption = "会員の削除";
+                    string msg = "選択された社員を削除しますか？";
+                    string caption = "社員の削除";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     MessageBoxIcon ico = MessageBoxIcon.Question;
 
@@ -163,7 +163,7 @@ namespace SalesManagementSystem
 
                     if (result == DialogResult.Yes)
                     {
-                        AC.sql = "update 会員マスタ set ステータス = ? where 会員ID = @id";
+                        AC.sql = "update 社員マスタ set ステータス = ? where 社員ID = @id";
                         AC.cmd.Parameters.Clear();
                         AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
                         AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -176,7 +176,7 @@ namespace SalesManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("会員の削除に失敗しました : " + ex.Message.ToString(), "会員の削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("社員の削除に失敗しました : " + ex.Message.ToString(), "社員の削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -249,7 +249,7 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
 
-                            AC.sql = "insert into 会員マスタ(会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            AC.sql = "insert into 社員マスタ(社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -352,7 +352,7 @@ namespace SalesManagementSystem
                         {
 
                             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 会員マスタ set 会員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 会員ID = @id;";
+                            AC.sql = "update 社員マスタ set 社員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 社員ID = @id;";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -416,7 +416,7 @@ namespace SalesManagementSystem
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string kw = SearchTextbox.Text;
-            AC.sql = $"select 会員ID, 会員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 会員マスタ where (会員ID like '%{kw}%' or 会員名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%' or 入会日 like '%{kw}%') and ステータス = 0";
+            AC.sql = $"select 社員ID, 社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 社員マスタ where (社員ID like '%{kw}%' or 社員名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%' or 入会日 like '%{kw}%') and ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -432,5 +432,7 @@ namespace SalesManagementSystem
                 buttonSearch.PerformClick();
             }
         }
+
+        
     }
 }
