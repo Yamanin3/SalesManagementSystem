@@ -188,7 +188,7 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("発注テーブル", "発注情報選択", "select * from 発注テーブル where ステータス = 0");
+            var GridForm = new GridForm("発注テーブル", "発注情報選択", "select od.発注ID, pd.商品名, mk.メーカー名, od.発注数量, od.発注日 from (発注テーブル as od inner join 商品マスタ as pd on od.商品ID = pd.商品ID) inner join 仕入先マスタ as mk on od.メーカーID = mk.メーカーID where od.ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
