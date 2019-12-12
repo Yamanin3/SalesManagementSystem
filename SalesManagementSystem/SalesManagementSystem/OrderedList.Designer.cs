@@ -60,6 +60,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(668, 224);
             this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.TabStop = false;
             // 
             // label1
             // 
@@ -78,7 +79,7 @@
             this.button1.Location = new System.Drawing.Point(11, 312);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 40;
+            this.button1.TabIndex = 2;
             this.button1.Text = "閉じる";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -99,7 +100,7 @@
             this.SearchTextbox.Location = new System.Drawing.Point(284, 40);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
-            this.SearchTextbox.TabIndex = 62;
+            this.SearchTextbox.TabIndex = 0;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
             // buttonSearch
@@ -109,7 +110,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(450, 38);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(51, 23);
-            this.buttonSearch.TabIndex = 63;
+            this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "検索";
             this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSearch.UseVisualStyleBackColor = true;

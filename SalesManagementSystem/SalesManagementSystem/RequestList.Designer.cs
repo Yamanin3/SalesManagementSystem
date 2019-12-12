@@ -61,6 +61,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(668, 224);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.TabStop = false;
             // 
             // label1
             // 
@@ -78,7 +79,7 @@
             this.button2.Location = new System.Drawing.Point(548, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 32);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 2;
             this.button2.Text = "発注済み一覧を表示";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -100,7 +101,7 @@
             this.button1.Location = new System.Drawing.Point(14, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 48;
+            this.button1.TabIndex = 3;
             this.button1.Text = "閉じる";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -111,7 +112,7 @@
             this.SearchTextbox.Location = new System.Drawing.Point(321, 48);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
-            this.SearchTextbox.TabIndex = 49;
+            this.SearchTextbox.TabIndex = 0;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
             // buttonSearch
@@ -121,7 +122,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(487, 46);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(51, 23);
-            this.buttonSearch.TabIndex = 53;
+            this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "検索";
             this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSearch.UseVisualStyleBackColor = true;

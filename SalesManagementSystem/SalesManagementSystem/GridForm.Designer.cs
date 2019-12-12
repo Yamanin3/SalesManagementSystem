@@ -56,6 +56,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(731, 364);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // buttonSearch
@@ -65,7 +66,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(473, 10);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(51, 23);
-            this.buttonSearch.TabIndex = 54;
+            this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "検索";
             this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -76,7 +77,7 @@
             this.SearchTextbox.Location = new System.Drawing.Point(226, 12);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(241, 19);
-            this.SearchTextbox.TabIndex = 53;
+            this.SearchTextbox.TabIndex = 0;
             // 
             // GridForm
             // 
