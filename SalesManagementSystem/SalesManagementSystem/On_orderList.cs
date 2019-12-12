@@ -186,9 +186,9 @@ namespace SalesManagementSystem
 
                                 AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 社員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox3.Tag;
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox2.Tag;
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = AC.currentID;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = AC.currentID;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
                                 AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
                                 AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
