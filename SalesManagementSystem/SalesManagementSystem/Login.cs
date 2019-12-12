@@ -39,7 +39,7 @@ namespace SalesManagementSystem
             if ((string.IsNullOrEmpty(this.textBox1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())))
             {
 
-                MessageBox.Show("会員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -53,7 +53,7 @@ namespace SalesManagementSystem
 
             }
 
-            AC.sql = "select 会員ID, パスワード, 会員名, ステータス from 会員マスタ where 会員ID = @id and パスワード = @pa;";
+            AC.sql = "select 社員ID, パスワード, 社員名, ステータス from 社員マスタ where 社員ID = @id and パスワード = @pa;";
             AC.cmd.Parameters.Clear();
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
@@ -84,7 +84,7 @@ namespace SalesManagementSystem
             }
             else if(status != 0)
             {
-                MessageBox.Show("会員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {
@@ -93,7 +93,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                MessageBox.Show("会員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (this.textBox1.CanSelect)
                 {

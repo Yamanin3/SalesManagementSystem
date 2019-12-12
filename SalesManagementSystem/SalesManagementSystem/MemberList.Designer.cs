@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonrRemove = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,21 +60,20 @@
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.会員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.社員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
-            this.会員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.会員マスタTableAdapter();
+            this.社員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.会員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.社員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonrRemove = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -107,7 +107,21 @@
             this.groupBox1.Size = new System.Drawing.Size(279, 417);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "会員操作";
+            this.groupBox1.Text = "社員操作";
+            // 
+            // buttonrRemove
+            // 
+            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_32;
+            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonrRemove.Location = new System.Drawing.Point(161, 345);
+            this.buttonrRemove.Name = "buttonrRemove";
+            this.buttonrRemove.Size = new System.Drawing.Size(79, 39);
+            this.buttonrRemove.TabIndex = 30;
+            this.buttonrRemove.Text = "削除";
+            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonrRemove.UseVisualStyleBackColor = true;
+            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
             // dateTimePicker2
             // 
@@ -360,7 +374,7 @@
             this.groupBox2.Size = new System.Drawing.Size(682, 417);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "会員一覧";
+            this.groupBox2.Text = "社員一覧";
             // 
             // dataGridView1
             // 
@@ -383,19 +397,19 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // 会員マスタBindingSource1
+            // 社員マスタBindingSource1
             // 
-            this.会員マスタBindingSource1.DataMember = "会員マスタ";
-            this.会員マスタBindingSource1.DataSource = this.sMSdatabaseDataSet;
+            this.社員マスタBindingSource1.DataMember = "社員マスタ";
+            this.社員マスタBindingSource1.DataSource = this.sMSdatabaseDataSet;
             // 
             // sMSdatabaseDataSet
             // 
             this.sMSdatabaseDataSet.DataSetName = "SMSdatabaseDataSet";
             this.sMSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // 会員マスタTableAdapter
+            // 社員マスタTableAdapter
             // 
-            this.会員マスタTableAdapter.ClearBeforeFill = true;
+            this.社員マスタTableAdapter.ClearBeforeFill = true;
             // 
             // SearchTextbox
             // 
@@ -418,9 +432,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // 会員マスタBindingSource
+            // 社員マスタBindingSource
             // 
-            this.会員マスタBindingSource.DataMember = "会員マスタ";
+            this.社員マスタBindingSource.DataMember = "社員マスタ";
             // 
             // buttonSearch
             // 
@@ -434,20 +448,6 @@
             this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // buttonrRemove
-            // 
-            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_32;
-            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonrRemove.Location = new System.Drawing.Point(161, 345);
-            this.buttonrRemove.Name = "buttonrRemove";
-            this.buttonrRemove.Size = new System.Drawing.Size(79, 39);
-            this.buttonrRemove.TabIndex = 30;
-            this.buttonrRemove.Text = "削除";
-            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonrRemove.UseVisualStyleBackColor = true;
-            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
             // MemberListForm
             // 
@@ -472,9 +472,9 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.会員マスタBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,10 +510,10 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.BindingSource 会員マスタBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 会員IDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 会員番号DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 会員名DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource 社員マスタBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 社員IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 社員番号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 社員名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ふりがなDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 性別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 生年月日DataGridViewTextBoxColumn;
@@ -523,8 +523,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn メールアドレスDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 入会日DataGridViewTextBoxColumn;
         private SMSdatabaseDataSet sMSdatabaseDataSet;
-        private System.Windows.Forms.BindingSource 会員マスタBindingSource1;
-        private SMSdatabaseDataSetTableAdapters.会員マスタTableAdapter 会員マスタTableAdapter;
+        private System.Windows.Forms.BindingSource 社員マスタBindingSource1;
+        private SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter 社員マスタTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox SearchTextbox;

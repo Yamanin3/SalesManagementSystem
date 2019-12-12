@@ -31,7 +31,7 @@ namespace SalesManagementSystem
         {
             if (checkBox1.Checked == false)
             {
-                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0";
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -58,7 +58,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 1";
+                AC.sql = "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 1";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -184,7 +184,7 @@ namespace SalesManagementSystem
                             if (stock >= int.Parse(comboBox1.Text))
                             {
 
-                                AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 会員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
+                                AC.sql = "insert into 注文テーブル(商品ID, 顧客ID, 社員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
@@ -415,7 +415,7 @@ namespace SalesManagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("会員マスタ", "担当者選択", "select * from 会員マスタ where ステータス = 0");
+            var GridForm = new GridForm("社員マスタ", "担当者選択", "select * from 社員マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -423,7 +423,7 @@ namespace SalesManagementSystem
 
                     var id = GridForm.result;
                     AC.cmd.Parameters.Clear();
-                    AC.cmd.CommandText = "select 会員名 from 会員マスタ where 会員ID = @id";
+                    AC.cmd.CommandText = "select 社員名 from 社員マスタ where 社員ID = @id";
                     AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
                     AC.rd = AC.cmd.ExecuteReader();
 
@@ -501,7 +501,7 @@ namespace SalesManagementSystem
             if (checkBox1.Checked == false)
             {
                 string kw = SearchTextbox.Text;
-                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.会員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 0";
+                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 0";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -512,7 +512,7 @@ namespace SalesManagementSystem
             else
             {
                 string kw = SearchTextbox.Text;
-                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.会員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 会員マスタ as mem on od.会員ID = mem.会員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.会員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 1";
+                AC.sql = $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 1";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();

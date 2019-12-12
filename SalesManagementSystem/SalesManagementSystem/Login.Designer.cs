@@ -67,7 +67,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 12);
             this.label1.TabIndex = 5;
-            this.label1.Text = "会員ID";
+            this.label1.Text = "社員ID";
             // 
             // label2
             // 
@@ -129,7 +129,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "会員ログイン";
+            this.Text = "社員ログイン";
             this.Activated += new System.EventHandler(this.Login_Form_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_Form_FormClosed);
             this.Load += new System.EventHandler(this.Login_Form_Load);

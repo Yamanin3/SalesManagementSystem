@@ -432,7 +432,5 @@ namespace SalesManagementSystem
                 buttonSearch.PerformClick();
             }
         }
-
-        
     }
 }

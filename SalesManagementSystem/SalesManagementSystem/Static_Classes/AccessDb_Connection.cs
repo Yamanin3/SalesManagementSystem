@@ -41,7 +41,7 @@ namespace Login_form.Static_Classes
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "会員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "社員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -58,7 +58,7 @@ namespace Login_form.Static_Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "会員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("エラー" + Environment.NewLine + "説明: " + ex.Message.ToString(), "社員ログイン : データベースへの接続", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
