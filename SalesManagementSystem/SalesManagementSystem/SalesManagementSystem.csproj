@@ -58,12 +58,6 @@
     <Compile Include="GridForm.Designer.cs">
       <DependentUpon>GridForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IssueList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IssueList.Designer.cs">
-      <DependentUpon>IssueList.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoadedList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,12 +126,6 @@
       <DependentUpon>SMSdatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Static_Classes\AccessDb_Connection.cs" />
-    <Compile Include="In_stockList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="In_stockList.Designer.cs">
-      <DependentUpon>In_stockList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Static_Classes\Sha256hash.cs" />
     <Compile Include="StockList.cs">
       <SubType>Form</SubType>
@@ -150,9 +138,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GridForm.resx">
       <DependentUpon>GridForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IssueList.resx">
-      <DependentUpon>IssueList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadedList.resx">
       <DependentUpon>LoadedList.cs</DependentUpon>
@@ -187,9 +172,6 @@
     </Compile>
     <EmbeddedResource Include="RequestList.resx">
       <DependentUpon>RequestList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="In_stockList.resx">
-      <DependentUpon>In_stockList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesList.resx">
       <DependentUpon>SalesList.cs</DependentUpon>

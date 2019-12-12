@@ -47,12 +47,6 @@ namespace SalesManagementSystem
             Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Form in_stockForm = new In_stockListForm();
-            in_stockForm.ShowDialog();
-        }
-
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
@@ -80,12 +74,6 @@ namespace SalesManagementSystem
         {
             AC.closeConnection();
             Application.Exit();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Form issuelistForm = new IssueListForm();
-            issuelistForm.ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
