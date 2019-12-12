@@ -19,6 +19,7 @@ namespace SalesManagementSystem
         private int I;
         private double D;
         private long L;
+        private int stock;
 
         public IssueListForm()
         {
@@ -57,6 +58,7 @@ namespace SalesManagementSystem
             {
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
+            
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -120,11 +122,28 @@ namespace SalesManagementSystem
                 }
                 else
                 {
-                    if(textBox5.Text == "0")
+                    AC.cmd.Parameters.Clear();
+                    AC.cmd.CommandText = "select 在庫数 from 在庫テーブル where 商品ID = ?";
+                    AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = PID;
+                    AC.rd = AC.cmd.ExecuteReader();
+
+                    if (AC.rd.Read())
                     {
-                        MessageBox.Show("無効な出庫数です。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        stock = int.Parse(AC.rd.GetValue(0).ToString());
+                    }
+                    else { return; }
+                    AC.rd.Close();
+
+                    if (textBox5.Text == "0")
+                    {
+                        MessageBox.Show("出庫数は\"1\"上で入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }else if(int.Parse(textBox5.Text.ToString()) > stock)
+                    {
+                        MessageBox.Show("在庫数を上回る出庫数を指定できません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
+
                     try
                     {
                         string msg = "データを追加しますか？";
