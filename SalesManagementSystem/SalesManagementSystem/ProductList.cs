@@ -351,7 +351,7 @@ namespace SalesManagementSystem
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void buttonrRemove_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             { if (dataGridView1.CurrentCell == null) { return; } return; }
@@ -407,5 +407,7 @@ namespace SalesManagementSystem
                 buttonSearch.PerformClick();
             }
         }
+
+       
     }
 }
