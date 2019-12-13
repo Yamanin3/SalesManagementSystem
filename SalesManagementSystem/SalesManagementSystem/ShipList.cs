@@ -70,6 +70,7 @@ namespace SalesManagementSystem
                 // datagridview1の最上段にカーソルを当てる
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
