@@ -78,6 +78,7 @@
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(241, 19);
             this.SearchTextbox.TabIndex = 0;
+            this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
             // GridForm
             // 

@@ -94,5 +94,13 @@ namespace SalesManagementSystem
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
+        }
     }
 }
