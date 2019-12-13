@@ -85,7 +85,7 @@ namespace SalesManagementSystem
         private void button11_Click(object sender, EventArgs e)
         {
             Form saleslistForm = new SalesListForm();
-            saleslistForm.Show();
+            saleslistForm.ShowDialog();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
