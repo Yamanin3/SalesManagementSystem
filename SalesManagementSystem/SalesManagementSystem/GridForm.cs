@@ -70,7 +70,29 @@ namespace SalesManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            
+            StringBuilder builder = new StringBuilder();
+            foreach (DataColumn col in AC.dt.Columns)
+                if (col.DataType.FullName == typeof(string).FullName)
+                    builder.Append($"{col.ColumnName} like '%{SearchTextbox.Text}%' or ");
+                else if (DateTime.TryParse(SearchTextbox.Text, out DateTime dateTime) && col.DataType.FullName == typeof(DateTime).FullName)
+                    builder.Append($"{col.ColumnName} = #{SearchTextbox.Text}# or ");
+                else if (int.TryParse(SearchTextbox.Text, out int value) && col.DataType.FullName == typeof(int).FullName)
+                    builder.Append($"{col.ColumnName} = {value} or ");
+
+            builder.Remove(builder.Length - 4, 4);
+
+            var rows = AC.dt.Select(builder.ToString());
+            if (rows.Length > 0)
+                dataGridView1.DataSource = rows.CopyToDataTable();
+            else
+            {
+                var tbl = new DataTable();
+                foreach (DataColumn col in AC.dt.Columns)
+                    tbl.Columns.Add(new DataColumn(col.ColumnName));
+                dataGridView1.DataSource = tbl;
+
+                MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

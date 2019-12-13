@@ -334,7 +334,7 @@ namespace SalesManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("顧客マスタ", "顧客選択", "select * from 顧客マスタ where ステータス = 0");
+            var GridForm = new GridForm("顧客マスタ", "顧客選択", "select 顧客ID, 顧客名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス from 顧客マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -368,7 +368,7 @@ namespace SalesManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("商品マスタ", "商品選択", "select * from 商品マスタ where ステータス = 0");
+            var GridForm = new GridForm("商品マスタ", "商品選択", "select 商品ID, 商品名, 重量, 口径, 全長, マガジンタイプ, 装弾数, 商品価格 from 商品マスタ where ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try

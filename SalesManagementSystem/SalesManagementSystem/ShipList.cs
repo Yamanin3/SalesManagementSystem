@@ -209,7 +209,7 @@ namespace SalesManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("注文テーブル", "注文情報選択", "select * from 注文テーブル where ステータス = 0");
+            var GridForm = new GridForm("注文テーブル", "注文情報選択", "select od.注文ID, pd.商品名, od.注文数量, od.注文日, od.合計額 from 注文テーブル as od inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
