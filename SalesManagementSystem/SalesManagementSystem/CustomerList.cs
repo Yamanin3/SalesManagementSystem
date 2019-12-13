@@ -344,6 +344,7 @@ namespace SalesManagementSystem
                 buttonAdd.Enabled = true;
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -380,6 +381,9 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridView1.CurrentCell == null) 
+                MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)

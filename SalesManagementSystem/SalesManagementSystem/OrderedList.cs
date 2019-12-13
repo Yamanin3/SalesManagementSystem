@@ -46,6 +46,8 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
+            if (dataGridView1.CurrentCell == null)
+                MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
