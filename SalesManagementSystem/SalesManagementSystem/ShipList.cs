@@ -1,23 +1,18 @@
-﻿using Login_form.Static_Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Login_form.Static_Classes;
 
 namespace SalesManagementSystem
 {
     public partial class ShipListForm : Form
     {
-        private int PID;
         private int CID;
         private int OID;
+        private int PID;
         private int total;
+
         public ShipListForm()
         {
             InitializeComponent();
@@ -25,7 +20,7 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Form menu = new MainMenuForm();
             menu.Show();
         }
@@ -34,13 +29,14 @@ namespace SalesManagementSystem
         {
             RefreshLoad();
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            this.MaximizeBox = false;
+            MaximizeBox = false;
         }
 
         private void RefreshLoad()
         {
             AC.cmd.Parameters.Clear();
-            AC.sql = "select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID where sh.ステータス = 0";
+            AC.sql =
+                "select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID where sh.ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -62,7 +58,6 @@ namespace SalesManagementSystem
                 textBox8.Text = "";
                 textBox9.Text = "";
                 textBox10.Text = "";
-
             }
             else
             {
@@ -70,6 +65,7 @@ namespace SalesManagementSystem
                 // datagridview1の最上段にカーソルを当てる
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
             }
+
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
@@ -103,7 +99,6 @@ namespace SalesManagementSystem
                 textBox8.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 textBox9.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 textBox10.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-
             }
             else
             {
@@ -126,19 +121,19 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())) || (string.IsNullOrEmpty(this.textBox9.Text.Trim())) || (string.IsNullOrEmpty(this.textBox10.Text.Trim())))
-                {
+                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(textBox9.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox10.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
                 else
-                {
-
                     try
                     {
-                        string msg = "データを追加しますか？";
-                        string caption = "データの追加";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        MessageBoxIcon ico = MessageBoxIcon.Question;
+                        var msg = "データを追加しますか？";
+                        var caption = "データの追加";
+                        var buttons = MessageBoxButtons.YesNo;
+                        var ico = MessageBoxIcon.Question;
 
                         DialogResult result;
 
@@ -146,7 +141,6 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-
                             AC.sql = "insert into 出荷テーブル(注文ID, 商品ID, 顧客ID, ステータス) Values(?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Text;
@@ -155,7 +149,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
+                            var rows = AC.cmd.ExecuteNonQuery();
                             if (rows >= 1)
                             {
                                 AC.cmd.Parameters.Clear();
@@ -174,31 +168,25 @@ namespace SalesManagementSystem
                                 RefreshLoad();
                             }
                         }
-                        else
-                        {
-                            return;
-                        }
-
-
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("データの追加に失敗しました: " + ex.Message, "データの追加", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
-
-
-                }
-            } 
+            }
             else
             {
                 MessageBox.Show("出荷済みのデータは編集できません", "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0]; // 非可視セルがどうのこうの言われたらCells[]の値に非表示にしてるIDの数を入れるといい
+            dataGridView1.CurrentCell =
+                dataGridView1.Rows[dataGridView1.Rows.Count - 1]
+                    .Cells[0]; // 非可視セルがどうのこうの言われたらCells[]の値に非表示にしてるIDの数を入れるといい
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
 
@@ -209,7 +197,8 @@ namespace SalesManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var GridForm = new GridForm("注文テーブル", "注文情報選択", "select od.注文ID, pd.商品名, od.注文数量, od.注文日, od.合計額 from 注文テーブル as od inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0");
+            var GridForm = new GridForm("注文テーブル", "注文情報選択",
+                "select od.注文ID, pd.商品名, od.注文数量, od.注文日, od.合計額 from 注文テーブル as od inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0");
             if (GridForm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -237,42 +226,37 @@ namespace SalesManagementSystem
                     {
                         return;
                     }
-                    AC.rd.Close();
 
+                    AC.rd.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("注文情報の取得に失敗しました : " + ex.Message.ToString(), "注文情報の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("注文情報の取得に失敗しました : " + ex.Message, "注文情報の取得", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
 
                 try
                 {
-                    
                     AC.cmd.Parameters.Clear();
                     AC.cmd.CommandText = "select 商品名 from 商品マスタ where 商品ID = @id";
                     AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = PID;
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
-                    {
                         textBox3.Text = AC.rd.GetString(0);
-                    }
 
                     else
-                    {
                         return;
-                    }
                     AC.rd.Close();
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("商品情報の取得に失敗しました : " + ex.Message.ToString(), "商品情報の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("商品情報の取得に失敗しました : " + ex.Message, "商品情報の取得", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
 
                 try
                 {
-
                     AC.cmd.Parameters.Clear();
                     AC.cmd.CommandText = "select 顧客名, ふりがな, 郵便番号, 住所, 電話番号 from 顧客マスタ where 顧客ID = @id";
                     AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = CID;
@@ -291,14 +275,14 @@ namespace SalesManagementSystem
                     {
                         return;
                     }
-                    AC.rd.Close();
 
+                    AC.rd.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("顧客情報の取得に失敗しました : " + ex.Message.ToString(), "顧客情報の取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("顧客情報の取得に失敗しました : " + ex.Message, "顧客情報の取得", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -309,8 +293,9 @@ namespace SalesManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string kw = SearchTextbox.Text;
-            AC.sql = $"select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID where (sh.出荷ID like '%{kw}%' or od.注文ID like '%{kw}%' or pd.商品名 like '%{kw}%' or od.合計額 like '%{kw}%' or cus.顧客名 like '%{kw}%' or cus.ふりがな like '%{kw}%' or cus.郵便番号 like '%{kw}%' or cus.住所 like '%{kw}%' or cus.電話番号 like '%{kw}%') and sh.ステータス = 0";
+            var kw = SearchTextbox.Text;
+            AC.sql =
+                $"select sh.出荷ID, od.注文ID, pd.商品名, od.注文数量, od.合計額, cus.顧客名, cus.ふりがな, cus.郵便番号, cus.住所, cus.電話番号 from ((出荷テーブル as sh inner join 顧客マスタ as cus on sh.顧客ID = cus.顧客ID) inner join 注文テーブル as od on sh.注文ID = od.注文ID) inner join 商品マスタ as pd on sh.商品ID = pd.商品ID where (sh.出荷ID like '%{kw}%' or od.注文ID like '%{kw}%' or pd.商品名 like '%{kw}%' or od.合計額 like '%{kw}%' or cus.顧客名 like '%{kw}%' or cus.ふりがな like '%{kw}%' or cus.郵便番号 like '%{kw}%' or cus.住所 like '%{kw}%' or cus.電話番号 like '%{kw}%') and sh.ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -321,10 +306,7 @@ namespace SalesManagementSystem
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonSearch.PerformClick();
-            }
+            if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
     }
 }

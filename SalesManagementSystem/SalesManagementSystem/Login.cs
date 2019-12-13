@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
 using SalesManagementSystem.Static_Classes;
@@ -23,12 +18,11 @@ namespace SalesManagementSystem
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
-            this.MaximizeBox = false;
-            this.button1.BackColor = Color.FromArgb(191, 205, 219);
-            this.button2.BackColor = Color.FromArgb(191, 205, 219);
-            this.BackColor = System.Drawing.Color.FromArgb(215, 228, 242);
+            MaximizeBox = false;
+            button1.BackColor = Color.FromArgb(191, 205, 219);
+            button2.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
             AC.openConnection();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,21 +31,16 @@ namespace SalesManagementSystem
 
             AC.openConnection();
 
-            if ((string.IsNullOrEmpty(this.textBox1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox2.Text.Trim())))
+            if (string.IsNullOrEmpty(textBox1.Text.Trim()) || string.IsNullOrEmpty(textBox2.Text.Trim()))
             {
-
                 MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                if (this.textBox1.CanSelect)
-                {
-                    this.textBox1.Select();
-                }
+                if (textBox1.CanSelect) textBox1.Select();
 
-                this.textBox1.SelectAll();
-                this.textBox2.Text = string.Empty;
+                textBox1.SelectAll();
+                textBox2.Text = string.Empty;
 
                 return;
-
             }
 
             AC.sql = "select 社員ID, パスワード, 社員名, ステータス from 社員マスタ where 社員ID = @id and パスワード = @pa;";
@@ -59,8 +48,8 @@ namespace SalesManagementSystem
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
 
-            AC.cmd.Parameters.AddWithValue("@id", textBox1.Text.Trim().ToString());
-            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBox2.Text.Trim().ToString()));
+            AC.cmd.Parameters.AddWithValue("@id", textBox1.Text.Trim());
+            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBox2.Text.Trim()));
 
             AC.rd = AC.cmd.ExecuteReader();
 
@@ -70,44 +59,39 @@ namespace SalesManagementSystem
                 {
                     AC.currentFullName = AC.rd[2].ToString();
                     status = int.Parse(AC.rd[3].ToString());
-                    MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "ログイン成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ようこそ " + AC.currentFullName + "さん", "ログイン成功", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
 
-                AC.currentID = int.Parse(textBox1.Text.ToString());
+                AC.currentID = int.Parse(textBox1.Text);
 
-                this.textBox1.Text = string.Empty;
-                this.textBox2.Text = string.Empty;
+                textBox1.Text = string.Empty;
+                textBox2.Text = string.Empty;
 
-                this.Hide();
+                Hide();
 
                 Form menuForm = new MainMenuForm();
                 menuForm.Show();
-
-
             }
-            else if(status != 0)
+            else if (status != 0)
             {
-                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
 
-                if (this.textBox1.CanSelect)
-                {
-                    this.textBox1.Select();
-                }
+                if (textBox1.CanSelect) textBox1.Select();
             }
             else
             {
-                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
 
-                if (this.textBox1.CanSelect)
-                {
-                    this.textBox1.Select();
-                }
+                if (textBox1.CanSelect) textBox1.Select();
             }
-            this.textBox1.SelectAll();
-            this.textBox2.Text = string.Empty;
+
+            textBox1.SelectAll();
+            textBox2.Text = string.Empty;
 
             AC.rd.Close();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -117,24 +101,14 @@ namespace SalesManagementSystem
         }
 
 
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyCode == Keys.Enter)
-            {
-                button1.PerformClick();
-            }
-
+            if (e.KeyCode == Keys.Enter) button1.PerformClick();
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyCode == Keys.Enter)
-            {
-                button1.PerformClick();
-            }
+            if (e.KeyCode == Keys.Enter) button1.PerformClick();
         }
 
         private void Login_Form_Activated(object sender, EventArgs e)

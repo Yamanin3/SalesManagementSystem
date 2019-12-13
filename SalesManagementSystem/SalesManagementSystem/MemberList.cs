@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
-using System.Data.OleDb;
 using SalesManagementSystem.Static_Classes;
 
 namespace SalesManagementSystem
 {
     public partial class MemberListForm : Form
     {
-        private int I;
         private double D;
+        private int I;
         private long L;
 
         public MemberListForm()
@@ -27,13 +21,11 @@ namespace SalesManagementSystem
         private void MemberList_Load(object sender, EventArgs e)
         {
             RefreshLoad();
-            this.MaximizeBox = false;
-
+            MaximizeBox = false;
         }
 
         private void RefreshLoad()
         {
-
             AC.sql = "select 社員ID, 社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 社員マスタ where ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
@@ -66,7 +58,7 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Form menu = new MainMenuForm();
             menu.Show();
         }
@@ -90,7 +82,7 @@ namespace SalesManagementSystem
                     dateTimePicker2.Text = "";
                     textBox8.Text = "";
                 }
-                else if(dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+                else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
@@ -124,11 +116,11 @@ namespace SalesManagementSystem
                     dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 }
-            }catch(Exception ex)
-            {
-                MessageBox.Show("データの取得に失敗しました : " + ex.Message.ToString(), "データの取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("データの取得に失敗しました : " + ex.Message, "データの取得", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
@@ -147,15 +139,17 @@ namespace SalesManagementSystem
         private void buttonrRemove_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
-            { if (dataGridView1.CurrentCell == null) { return; } return; }
+            {
+                if (dataGridView1.CurrentCell == null) return;
+            }
             else
             {
                 try
                 {
-                    string msg = "選択された社員を削除しますか？";
-                    string caption = "社員の削除";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    MessageBoxIcon ico = MessageBoxIcon.Question;
+                    var msg = "選択された社員を削除しますか？";
+                    var caption = "社員の削除";
+                    var buttons = MessageBoxButtons.YesNo;
+                    var ico = MessageBoxIcon.Question;
 
                     DialogResult result;
 
@@ -166,17 +160,18 @@ namespace SalesManagementSystem
                         AC.sql = "update 社員マスタ set ステータス = ? where 社員ID = @id";
                         AC.cmd.Parameters.Clear();
                         AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
-                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
+                            int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                         AC.cmd.CommandText = AC.sql;
                         AC.cmd.ExecuteNonQuery();
 
                         RefreshLoad();
                     }
-                    else { return; }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("社員の削除に失敗しました : " + ex.Message.ToString(), "社員の削除", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("社員の削除に失敗しました : " + ex.Message, "社員の削除", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
         }
@@ -185,7 +180,11 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
+                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
+                    string.IsNullOrEmpty(comboBox1.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker1.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox8.Text.Trim()))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -193,42 +192,75 @@ namespace SalesManagementSystem
                 {
                     if (textBox7.Text.IndexOf('@') == -1)
                     {
-                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
                         textBox7.Focus();
                         textBox7.SelectAll();
                         return;
                     }
-                    int index = textBox7.Text.IndexOf('@');
+
+                    var index = textBox7.Text.IndexOf('@');
                     if (textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
-                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
                         textBox7.Focus();
                         textBox7.SelectAll();
                         return;
                     }
 
-                    int iLengthpost = textBox4.TextLength;
-                    int iLengthphone = textBox6.TextLength;
+                    var iLengthpost = textBox4.TextLength;
+                    var iLengthphone = textBox6.TextLength;
 
-                    if (iLengthpost < 7) { MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox4.Focus(); textBox4.SelectAll(); return; }
-                    if (iLengthphone < 10) { MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox6.Focus(); textBox6.SelectAll(); return; }
-
-                    int iLength = textBox8.TextLength;
-                    string passwd = textBox8.Text;
-
-                    if(iLength < 8) { MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください",  "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox8.Focus(); textBox8.SelectAll(); return; }
-                    else if(iLength >= 8)
+                    if (iLengthpost < 7)
                     {
-                        int answer = 0;
-                        foreach (char c in passwd)
+                        MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox4.Focus();
+                        textBox4.SelectAll();
+                        return;
+                    }
+
+                    if (iLengthphone < 10)
+                    {
+                        MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox6.Focus();
+                        textBox6.SelectAll();
+                        return;
+                    }
+
+                    var iLength = textBox8.TextLength;
+                    var passwd = textBox8.Text;
+
+                    if (iLength < 8)
+                    {
+                        MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox8.Focus();
+                        textBox8.SelectAll();
+                        return;
+                    }
+
+                    if (iLength >= 8)
+                    {
+                        var answer = 0;
+                        foreach (var c in passwd)
                         {
-                            if (answer == 1) { break; }
-                            if (!char.IsUpper(c)) { }
-                            else { answer = 1; }
+                            if (answer == 1) break;
+                            if (!char.IsUpper(c))
+                            {
+                            }
+                            else
+                            {
+                                answer = 1;
+                            }
                         }
+
                         if (answer == 0)
                         {
-                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
                             textBox8.Focus();
                             textBox8.SelectAll();
                             return;
@@ -237,10 +269,10 @@ namespace SalesManagementSystem
 
                     try
                     {
-                        string msg = "データを追加しますか？";
-                        string caption = "データの追加";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        MessageBoxIcon ico = MessageBoxIcon.Question;
+                        var msg = "データを追加しますか？";
+                        var caption = "データの追加";
+                        var buttons = MessageBoxButtons.YesNo;
+                        var ico = MessageBoxIcon.Question;
 
                         DialogResult result;
 
@@ -248,8 +280,8 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-
-                            AC.sql = "insert into 社員マスタ(社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            AC.sql =
+                                "insert into 社員マスタ(社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -264,29 +296,24 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
-                            if (rows >= 1)
-                            {
-
-                                RefreshLoad();
-
-                            }
-                        }
-                        else
-                        {
-                            return;
+                            var rows = AC.cmd.ExecuteNonQuery();
+                            if (rows >= 1) RefreshLoad();
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("データの追加に失敗しました: " + ex.Message.ToString(), "データの追加", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        MessageBox.Show("データの追加に失敗しました: " + ex.Message, "データの追加", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                if ((string.IsNullOrEmpty(this.textBox2.Text.Trim())) || (string.IsNullOrEmpty(this.textBox3.Text.Trim())) || (string.IsNullOrEmpty(this.textBox4.Text.Trim())) || (string.IsNullOrEmpty(this.textBox5.Text.Trim())) || (string.IsNullOrEmpty(this.textBox6.Text.Trim())) || (string.IsNullOrEmpty(this.textBox7.Text.Trim())) || (string.IsNullOrEmpty(this.comboBox1.Text.Trim())) || (string.IsNullOrEmpty(this.dateTimePicker1.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())) || (string.IsNullOrEmpty(this.textBox8.Text.Trim())))
+                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
+                    string.IsNullOrEmpty(comboBox1.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker1.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(textBox8.Text.Trim()))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -294,43 +321,76 @@ namespace SalesManagementSystem
                 {
                     if (textBox7.Text.IndexOf('@') == -1)
                     {
-                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
                         textBox7.Focus();
                         textBox7.SelectAll();
                         return;
                     }
-                    int index = textBox7.Text.IndexOf('@');
+
+                    var index = textBox7.Text.IndexOf('@');
                     if (textBox7.Text.IndexOf('@', index + 1) != -1)
                     {
-                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
                         textBox7.Focus();
                         textBox7.SelectAll();
                         return;
                     }
 
-                    int iLengthpost = textBox4.TextLength;
-                    int iLengthphone = textBox6.TextLength;
+                    var iLengthpost = textBox4.TextLength;
+                    var iLengthphone = textBox6.TextLength;
 
-                    if (iLengthpost < 7) { MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox4.Focus(); textBox4.SelectAll(); return; }
-                    if (iLengthphone < 10) { MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox6.Focus(); textBox6.SelectAll(); return; }
-
-
-                    int iLength = textBox8.TextLength;
-                    string passwd = textBox8.Text;
-
-                    if (iLength < 8) { MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); textBox8.Focus(); textBox8.SelectAll(); return; }
-                    else if (iLength >= 8)
+                    if (iLengthpost < 7)
                     {
-                        int answer = 0;
-                        foreach (char c in passwd)
+                        MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox4.Focus();
+                        textBox4.SelectAll();
+                        return;
+                    }
+
+                    if (iLengthphone < 10)
+                    {
+                        MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox6.Focus();
+                        textBox6.SelectAll();
+                        return;
+                    }
+
+
+                    var iLength = textBox8.TextLength;
+                    var passwd = textBox8.Text;
+
+                    if (iLength < 8)
+                    {
+                        MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        textBox8.Focus();
+                        textBox8.SelectAll();
+                        return;
+                    }
+
+                    if (iLength >= 8)
+                    {
+                        var answer = 0;
+                        foreach (var c in passwd)
                         {
-                            if (answer == 1) { break; }
-                            if (!char.IsUpper(c)){}
-                            else { answer = 1; }
+                            if (answer == 1) break;
+                            if (!char.IsUpper(c))
+                            {
+                            }
+                            else
+                            {
+                                answer = 1;
+                            }
                         }
-                        if(answer == 0)
+
+                        if (answer == 0)
                         {
-                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
                             textBox8.Focus();
                             textBox8.SelectAll();
                             return;
@@ -339,10 +399,10 @@ namespace SalesManagementSystem
 
                     try
                     {
-                        string msg = "データの編集を反映しますか？";
-                        string caption = "データの編集";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        MessageBoxIcon ico = MessageBoxIcon.Question;
+                        var msg = "データの編集を反映しますか？";
+                        var caption = "データの編集";
+                        var buttons = MessageBoxButtons.YesNo;
+                        var ico = MessageBoxIcon.Question;
 
                         DialogResult result;
 
@@ -350,9 +410,9 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-
-                            int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                            AC.sql = "update 社員マスタ set 社員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 社員ID = @id;";
+                            var id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            AC.sql =
+                                "update 社員マスタ set 社員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 社員ID = @id;";
                             AC.cmd.Parameters.Clear();
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
@@ -366,26 +426,16 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
-                            int rows = AC.cmd.ExecuteNonQuery();
-                            if (rows >= 1)
-                            {
-
-                                RefreshLoad();
-
-                            }
+                            var rows = AC.cmd.ExecuteNonQuery();
+                            if (rows >= 1) RefreshLoad();
                         }
-                        else
-                        {
-                            return;
-                        }
-
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("データの編集に失敗しました: " + ex.Message.ToString(), "データの編集", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("データの編集に失敗しました: " + ex.Message, "データの編集", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                 }
-
             }
         }
 
@@ -415,8 +465,9 @@ namespace SalesManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string kw = SearchTextbox.Text;
-            AC.sql = $"select 社員ID, 社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 社員マスタ where (社員ID like '%{kw}%' or 社員名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%' or 入会日 like '%{kw}%') and ステータス = 0";
+            var kw = SearchTextbox.Text;
+            AC.sql =
+                $"select 社員ID, 社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード from 社員マスタ where (社員ID like '%{kw}%' or 社員名 like '%{kw}%' or ふりがな like '%{kw}%' or 性別 like '%{kw}%' or 生年月日 like '%{kw}%' or 郵便番号 like '%{kw}%' or 住所 like '%{kw}%' or 電話番号 like '%{kw}%' or メールアドレス like '%{kw}%' or 入会日 like '%{kw}%') and ステータス = 0";
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
@@ -427,10 +478,7 @@ namespace SalesManagementSystem
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonSearch.PerformClick();
-            }
+            if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
     }
 }

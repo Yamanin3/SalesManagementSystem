@@ -1,13 +1,6 @@
-﻿using Login_form.Static_Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Login_form.Static_Classes;
 
 namespace SalesManagementSystem
 {
@@ -49,7 +42,7 @@ namespace SalesManagementSystem
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            this.MaximizeBox = false;
+            MaximizeBox = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -90,10 +83,10 @@ namespace SalesManagementSystem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            string msg = "本当にログアウトしますか？";
-            string caption = "ログアウト";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            MessageBoxIcon ico = MessageBoxIcon.Question;
+            var msg = "本当にログアウトしますか？";
+            var caption = "ログアウト";
+            var buttons = MessageBoxButtons.YesNo;
+            var ico = MessageBoxIcon.Question;
 
             DialogResult result;
 
@@ -102,11 +95,13 @@ namespace SalesManagementSystem
             if (result == DialogResult.Yes)
             {
                 AC.closeConnection();
-                this.Hide();
+                Hide();
                 Form loginForm = new Login_Form();
                 loginForm.Show();
             }
-            else { return; }
+            else
+            {
+            }
         }
     }
 }

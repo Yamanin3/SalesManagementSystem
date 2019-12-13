@@ -1,25 +1,20 @@
-﻿using Login_form.Static_Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Login_form.Static_Classes;
 
 namespace SalesManagementSystem
 {
     public partial class GridForm : Form
     {
-        private string tblname;
-        private string formname;
+        private readonly string formname;
         public int result;
         private string sql;
 
         private DataTable table;
+        private readonly string tblname;
 
         public GridForm(string tbl, string fname, string sql = null)
         {
@@ -31,14 +26,12 @@ namespace SalesManagementSystem
 
         private void GridForm_Load(object sender, EventArgs e)
         {
-            this.MaximizeBox = false;
+            MaximizeBox = false;
 
             table = AC.dt;
 
-            if(sql == null) {
-                sql = $"select * from {tblname}";
-            }
-            this.Text = formname;
+            if (sql == null) sql = $"select * from {tblname}";
+            Text = formname;
             AC.sql = sql;
             AC.cmd.CommandText = AC.sql;
             AC.da = new OleDbDataAdapter(AC.cmd);
@@ -46,18 +39,16 @@ namespace SalesManagementSystem
 
             AC.da.Fill(AC.dt);
             dataGridView1.DataSource = AC.dt;
-
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell == null || e.RowIndex <= -1)// e.RowIndexが-1以下かどうかでヘッダー部ダブルクリック時のエラーを回避
+            if (dataGridView1.CurrentCell == null || e.RowIndex <= -1) // e.RowIndexが-1以下かどうかでヘッダー部ダブルクリック時のエラーを回避
             {
-                return;
             }
             else
             {
-                result = (int)dataGridView1[0, e.RowIndex].Value;
+                result = (int) dataGridView1[0, e.RowIndex].Value;
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -70,20 +61,24 @@ namespace SalesManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
             foreach (DataColumn col in AC.dt.Columns)
                 if (col.DataType.FullName == typeof(string).FullName)
                     builder.Append($"{col.ColumnName} like '%{SearchTextbox.Text}%' or ");
-                else if (DateTime.TryParse(SearchTextbox.Text, out DateTime dateTime) && col.DataType.FullName == typeof(DateTime).FullName)
+                else if (DateTime.TryParse(SearchTextbox.Text, out var dateTime) &&
+                         col.DataType.FullName == typeof(DateTime).FullName)
                     builder.Append($"{col.ColumnName} = #{SearchTextbox.Text}# or ");
-                else if (int.TryParse(SearchTextbox.Text, out int value) && col.DataType.FullName == typeof(int).FullName)
+                else if (int.TryParse(SearchTextbox.Text, out var value) &&
+                         col.DataType.FullName == typeof(int).FullName)
                     builder.Append($"{col.ColumnName} = {value} or ");
 
             builder.Remove(builder.Length - 4, 4);
 
             var rows = AC.dt.Select(builder.ToString());
             if (rows.Length > 0)
+            {
                 dataGridView1.DataSource = rows.CopyToDataTable();
+            }
             else
             {
                 var tbl = new DataTable();
@@ -97,10 +92,7 @@ namespace SalesManagementSystem
 
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonSearch.PerformClick();
-            }
+            if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
     }
 }
