@@ -54,7 +54,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::SalesManagementSystem.Properties.Resources.header_Menuuu;
-            this.pictureBox4.Location = new System.Drawing.Point(463, -1);
+            this.pictureBox4.Location = new System.Drawing.Point(504, -1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(214, 64);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -65,7 +65,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::SalesManagementSystem.Properties.Resources.header_back;
-            this.pictureBox3.Location = new System.Drawing.Point(263, -1);
+            this.pictureBox3.Location = new System.Drawing.Point(296, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(214, 64);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,10 +99,10 @@
             this.buttonLogout.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.Image = global::SalesManagementSystem.Properties.Resources.exit;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.Location = new System.Drawing.Point(12, 267);
+            this.buttonLogout.Location = new System.Drawing.Point(39, 342);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(103, 41);
-            this.buttonLogout.TabIndex = 11;
+            this.buttonLogout.TabIndex = 9;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -112,11 +112,11 @@
             // 
             this.button8.Image = global::SalesManagementSystem.Properties.Resources.msagent_3;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(429, 139);
+            this.button8.Location = new System.Drawing.Point(288, 257);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(138, 47);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "入庫確認";
+            this.button8.TabIndex = 5;
+            this.button8.Text = "入庫管理";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -124,10 +124,10 @@
             // 
             this.button7.Image = global::SalesManagementSystem.Properties.Resources.search_computer_0;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(251, 192);
+            this.button7.Location = new System.Drawing.Point(466, 183);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(138, 47);
-            this.button7.TabIndex = 5;
+            this.button7.TabIndex = 7;
             this.button7.Text = "在庫確認";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -136,7 +136,7 @@
             // 
             this.button6.Image = global::SalesManagementSystem.Properties.Resources.write_card_phone;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(429, 86);
+            this.button6.Location = new System.Drawing.Point(466, 109);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(138, 47);
             this.button6.TabIndex = 6;
@@ -149,10 +149,10 @@
             this.buttonExit.Font = new System.Drawing.Font("Haettenschweiler", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.Image = global::SalesManagementSystem.Properties.Resources.Exit__3_;
             this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonExit.Location = new System.Drawing.Point(540, 266);
+            this.buttonExit.Location = new System.Drawing.Point(586, 341);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(82, 41);
-            this.buttonExit.TabIndex = 12;
+            this.buttonExit.TabIndex = 10;
             this.buttonExit.Text = "  Exit";
             this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             // 
             this.button4.Image = global::SalesManagementSystem.Properties.Resources.address_book_0;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(67, 192);
+            this.button4.Location = new System.Drawing.Point(104, 257);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 47);
             this.button4.TabIndex = 2;
@@ -174,7 +174,7 @@
             // 
             this.button10.Image = global::SalesManagementSystem.Properties.Resources.address_book_home;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.Location = new System.Drawing.Point(251, 139);
+            this.button10.Location = new System.Drawing.Point(288, 183);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(138, 47);
             this.button10.TabIndex = 4;
@@ -186,7 +186,7 @@
             // 
             this.button3.Image = global::SalesManagementSystem.Properties.Resources.winrep_1;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(251, 86);
+            this.button3.Location = new System.Drawing.Point(288, 109);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 47);
             this.button3.TabIndex = 3;
@@ -198,7 +198,7 @@
             // 
             this.button2.Image = global::SalesManagementSystem.Properties.Resources._220;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(67, 139);
+            this.button2.Location = new System.Drawing.Point(104, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 47);
             this.button2.TabIndex = 1;
@@ -210,10 +210,10 @@
             // 
             this.button11.Image = global::SalesManagementSystem.Properties.Resources.write_yellow_1;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.Location = new System.Drawing.Point(429, 192);
+            this.button11.Location = new System.Drawing.Point(466, 257);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(138, 47);
-            this.button11.TabIndex = 10;
+            this.button11.TabIndex = 8;
             this.button11.Text = "売上確認";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -222,7 +222,7 @@
             // 
             this.button1.Image = global::SalesManagementSystem.Properties.Resources.user_card;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(67, 86);
+            this.button1.Location = new System.Drawing.Point(104, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 47);
             this.button1.TabIndex = 0;
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 320);
+            this.ClientSize = new System.Drawing.Size(702, 408);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
