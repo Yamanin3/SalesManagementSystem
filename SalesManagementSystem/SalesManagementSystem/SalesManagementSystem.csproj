@@ -473,5 +473,17 @@
   <ItemGroup>
     <None Include="Resources\header_LoadText.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit %283%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
