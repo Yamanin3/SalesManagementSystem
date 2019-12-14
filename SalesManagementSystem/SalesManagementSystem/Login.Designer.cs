@@ -114,7 +114,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::SalesManagementSystem.Properties.Resources.Cool_Text___Login_344207030785697;
-            this.pictureBox5.Location = new System.Drawing.Point(1, 7);
+            this.pictureBox5.Location = new System.Drawing.Point(6, 6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(102, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -63,6 +63,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap _10_2_web_security_free_png_image {
+            get {
+                object obj = ResourceManager.GetObject("10-2-web-security-free-png-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap _20181020_122243691_iOS {
             get {
                 object obj = ResourceManager.GetObject("20181020_122243691_iOS", resourceCulture);
@@ -196,6 +206,17 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap computer_explorer_2k_2 {
             get {
                 object obj = ResourceManager.GetObject("computer_explorer_2k-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap computer_security_threat_national_cyber_security_awareness_month_proactive_cyber_defence_cyberwarfare_topic_logo {
+            get {
+                object obj = ResourceManager.GetObject("computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-" +
+                        "defence-cyberwarfare-topic-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +474,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap navbar {
+            get {
+                object obj = ResourceManager.GetObject("navbar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap no_1 {
             get {
                 object obj = ResourceManager.GetObject("no-1", resourceCulture);
@@ -636,6 +667,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap user_world_1 {
             get {
                 object obj = ResourceManager.GetObject("user_world-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap users_key_2 {
+            get {
+                object obj = ResourceManager.GetObject("users_key-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

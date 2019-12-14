@@ -398,5 +398,17 @@
   <ItemGroup>
     <None Include="Resources\header_keychain1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-defence-cyberwarfare-topic-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-2-web-security-free-png-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_key-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
