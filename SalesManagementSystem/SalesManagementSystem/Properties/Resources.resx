@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="check_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Plus-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,6 +238,9 @@
   <data name="add-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_MenuuuText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_MenuuuText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cooltext344206965910431" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206965910431.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -268,14 +274,14 @@
   <data name="write_card_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\write_card_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="msinfo32-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\msinfo32-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="windows-95-computer-icons-operating-systems-windows-10-window" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="write_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\write_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msinfo32-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\msinfo32-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logout-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,8 +301,8 @@
   <data name="20181020_122243691_iOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\20181020_122243691_iOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="write_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\write_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="290" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\290.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -309,6 +315,12 @@
   </data>
   <data name="address_book_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_MenuText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_MenuText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="computer_explorer_2k-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer_explorer_2k-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,7 +373,7 @@
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Menuuu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Menuuu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
