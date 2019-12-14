@@ -148,6 +148,9 @@
   <data name="cooltext344206965910431" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206965910431.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_ProductText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_ProductText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="notepad_file-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad_file-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +177,12 @@
   </data>
   <data name="windows-95-computer-icons-operating-systems-windows-10-window" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\windows-95-computer-icons-operating-systems-windows-10-window.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Keychain-Access-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Keychain-Access-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plus-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +220,11 @@
   <data name="Icon_78" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Remove-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Remove-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-defence-cyberwarfare-topic-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-defence-cyberwarfare-topic-logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_551" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,6 +241,9 @@
   <data name="address_book-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="media_player_stream_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\media_player_stream_no.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="web-security-clipart-personal-security-138591-1416281" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\web-security-clipart-personal-security-138591-1416281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,8 +256,8 @@
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20181020_122243691_iOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20181020_122243691_iOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Actions-dialog-close-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-dialog-close-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notepad-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,14 +271,8 @@
   <data name="Refresh-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="note-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\note-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cooltext344206679891783" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206679891783.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cd_drive-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cd_drive-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="write_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\write_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,26 +313,26 @@
   <data name="220" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\220.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-import-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-import-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="key_padlock-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key_padlock-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="media_player_stream_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\media_player_stream_no.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cd_drive-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cd_drive-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-defence-cyberwarfare-topic-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-security-threat-national-cyber-security-awareness-month-proactive-cyber-defence-cyberwarfare-topic-logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Remove-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-import-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-import-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="media_player_stream_no1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\media_player_stream_no1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Keychain-Access-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keychain-Access-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20181020_122243691_iOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20181020_122243691_iOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="note-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="write_yellow-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\write_yellow-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,7 +343,7 @@
   <data name="address_book_pad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book_pad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Actions-dialog-close-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Actions-dialog-close-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_product2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

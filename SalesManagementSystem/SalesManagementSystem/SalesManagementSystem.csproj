@@ -422,5 +422,14 @@
   <ItemGroup>
     <None Include="Resources\Actions-dialog-close-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_ProductText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_product2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
