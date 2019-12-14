@@ -156,8 +156,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.Keychain_Access_2561;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 54);
+            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.Lock;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 133);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

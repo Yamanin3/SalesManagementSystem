@@ -410,5 +410,11 @@
   <ItemGroup>
     <None Include="Resources\users_key-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-security-clipart-personal-security-138591-1416281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

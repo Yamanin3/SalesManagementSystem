@@ -384,6 +384,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Lock {
+            get {
+                object obj = ResourceManager.GetObject("Lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Logout_32 {
             get {
                 object obj = ResourceManager.GetObject("Logout-32", resourceCulture);
@@ -677,6 +687,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap users_key_2 {
             get {
                 object obj = ResourceManager.GetObject("users_key-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap web_security_clipart_personal_security_138591_1416281 {
+            get {
+                object obj = ResourceManager.GetObject("web-security-clipart-personal-security-138591-1416281", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
