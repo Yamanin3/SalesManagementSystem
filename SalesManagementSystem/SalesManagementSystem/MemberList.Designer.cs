@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonrRemove = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -55,29 +53,40 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.社員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
             this.社員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.社員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonrRemove = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.社員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonNew);
             this.groupBox1.Controls.Add(this.buttonrRemove);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.buttonAdd);
@@ -102,26 +111,12 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 32);
+            this.groupBox1.Location = new System.Drawing.Point(12, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(279, 417);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "社員操作";
-            // 
-            // buttonrRemove
-            // 
-            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_32;
-            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonrRemove.Location = new System.Drawing.Point(161, 345);
-            this.buttonrRemove.Name = "buttonrRemove";
-            this.buttonrRemove.Size = new System.Drawing.Size(79, 39);
-            this.buttonrRemove.TabIndex = 12;
-            this.buttonrRemove.Text = "削除";
-            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonrRemove.UseVisualStyleBackColor = true;
-            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
             // dateTimePicker2
             // 
@@ -130,20 +125,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(124, 19);
             this.dateTimePicker2.TabIndex = 9;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(37, 345);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
-            this.buttonAdd.TabIndex = 11;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label11
             // 
@@ -336,40 +317,10 @@
             this.textBox1.Size = new System.Drawing.Size(124, 19);
             this.textBox1.TabIndex = 0;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonNew,
-            this.toolStripButtonRefresh});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(991, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonNew
-            // 
-            this.toolStripButtonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
-            this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(75, 22);
-            this.toolStripButtonNew.Text = "新規作成";
-            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
-            // 
-            // toolStripButtonRefresh
-            // 
-            this.toolStripButtonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_48;
-            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButtonRefresh.Text = "更新";
-            this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(297, 32);
+            this.groupBox2.Location = new System.Drawing.Point(297, 91);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(682, 417);
             this.groupBox2.TabIndex = 4;
@@ -414,34 +365,72 @@
             // 
             // SearchTextbox
             // 
-            this.SearchTextbox.Location = new System.Drawing.Point(547, 14);
+            this.SearchTextbox.Location = new System.Drawing.Point(508, 73);
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
+            this.SearchTextbox.Size = new System.Drawing.Size(211, 19);
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
-            // button1
+            // pictureBox5
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 460);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "閉じる";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::SalesManagementSystem.Properties.Resources.header_Member;
+            this.pictureBox5.Location = new System.Drawing.Point(778, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(214, 64);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
             // 
-            // 社員マスタBindingSource
+            // pictureBox4
             // 
-            this.社員マスタBindingSource.DataMember = "社員マスタ";
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::SalesManagementSystem.Properties.Resources.header_back;
+            this.pictureBox4.Location = new System.Drawing.Point(615, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(214, 64);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::SalesManagementSystem.Properties.Resources.header_back;
+            this.pictureBox3.Location = new System.Drawing.Point(411, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(214, 64);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::SalesManagementSystem.Properties.Resources.header_back;
+            this.pictureBox2.Location = new System.Drawing.Point(211, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(214, 64);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.header_MemberText;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(214, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonSearch
             // 
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(713, 12);
+            this.buttonSearch.Location = new System.Drawing.Point(725, 71);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(51, 23);
             this.buttonSearch.TabIndex = 2;
@@ -450,16 +439,94 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // button1
+            // 
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 519);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "閉じる";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonrRemove
+            // 
+            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
+            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonrRemove.Location = new System.Drawing.Point(160, 360);
+            this.buttonrRemove.Name = "buttonrRemove";
+            this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
+            this.buttonrRemove.TabIndex = 13;
+            this.buttonrRemove.Text = "削除";
+            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonrRemove.UseVisualStyleBackColor = true;
+            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(47, 360);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(70, 33);
+            this.buttonAdd.TabIndex = 12;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // 社員マスタBindingSource
+            // 
+            this.社員マスタBindingSource.DataMember = "社員マスタ";
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNew.Location = new System.Drawing.Point(104, 319);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(70, 33);
+            this.buttonNew.TabIndex = 11;
+            this.buttonNew.Text = "新規";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(903, 513);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // MemberListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 503);
+            this.ClientSize = new System.Drawing.Size(991, 562);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -469,12 +536,15 @@
             this.Load += new System.EventHandler(this.MemberList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -500,9 +570,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonNew;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -531,5 +598,12 @@
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonrRemove;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

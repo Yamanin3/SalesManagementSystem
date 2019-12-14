@@ -123,19 +123,6 @@ namespace SalesManagementSystem
             }
         }
 
-        private void toolStripButtonNew_Click(object sender, EventArgs e)
-        {
-            AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-        }
-
-
-        private void toolStripButtonRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshLoad();
-        }
-
         private void buttonrRemove_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
@@ -481,6 +468,18 @@ namespace SalesManagementSystem
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshLoad();
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            AC.dt.Rows.Add();
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }

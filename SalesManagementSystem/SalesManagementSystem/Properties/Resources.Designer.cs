@@ -434,6 +434,26 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap header_Member {
+            get {
+                object obj = ResourceManager.GetObject("header_Member", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_MemberText {
+            get {
+                object obj = ResourceManager.GetObject("header_MemberText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap header_Menu {
             get {
                 object obj = ResourceManager.GetObject("header_Menu", resourceCulture);

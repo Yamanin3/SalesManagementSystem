@@ -485,5 +485,11 @@
   <ItemGroup>
     <None Include="Resources\Exit %283%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_MemberText.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

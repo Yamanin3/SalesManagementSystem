@@ -55,6 +55,7 @@
             this.sMSdatabaseDataSet1 = new SalesManagementSystem.SMSdatabaseDataSet();
             this.顧客マスタTableAdapter1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -62,12 +63,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.buttonrRemove = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.顧客マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sMSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -328,6 +328,20 @@
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(903, 460);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
@@ -409,6 +423,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // buttonNew
+            // 
+            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNew.Location = new System.Drawing.Point(112, 276);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(70, 33);
+            this.buttonNew.TabIndex = 9;
+            this.buttonNew.Text = "新規";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
             // buttonrRemove
             // 
             this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -441,39 +469,11 @@
             // 
             this.顧客マスタBindingSource.DataMember = "顧客マスタ";
             // 
-            // buttonNew
-            // 
-            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
-            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNew.Location = new System.Drawing.Point(112, 276);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(70, 33);
-            this.buttonNew.TabIndex = 9;
-            this.buttonNew.Text = "新規";
-            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(903, 460);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 3;
-            this.buttonRefresh.Text = "更新";
-            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
             // CustomerListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 501);
+            this.ClientSize = new System.Drawing.Size(991, 505);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
