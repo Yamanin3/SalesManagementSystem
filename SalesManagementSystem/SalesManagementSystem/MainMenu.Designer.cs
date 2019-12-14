@@ -34,16 +34,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonStock = new System.Windows.Forms.Button();
+            this.buttonOrdering = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonProduct = new System.Windows.Forms.Button();
+            this.buttonShip = new System.Windows.Forms.Button();
+            this.buttonOrder = new System.Windows.Forms.Button();
+            this.buttonMember = new System.Windows.Forms.Button();
+            this.buttonSales = new System.Windows.Forms.Button();
+            this.buttonCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,41 +108,41 @@
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // button8
+            // buttonLoad
             // 
-            this.button8.Image = global::SalesManagementSystem.Properties.Resources.msagent_3;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(288, 257);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(138, 47);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "入庫管理";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.buttonLoad.Image = global::SalesManagementSystem.Properties.Resources.msagent_3;
+            this.buttonLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLoad.Location = new System.Drawing.Point(288, 257);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(138, 47);
+            this.buttonLoad.TabIndex = 5;
+            this.buttonLoad.Text = "入庫管理";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // buttonStock
             // 
-            this.button7.Image = global::SalesManagementSystem.Properties.Resources.search_computer_0;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(466, 183);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(138, 47);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "在庫確認";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonStock.Image = global::SalesManagementSystem.Properties.Resources.search_computer_0;
+            this.buttonStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonStock.Location = new System.Drawing.Point(466, 183);
+            this.buttonStock.Name = "buttonStock";
+            this.buttonStock.Size = new System.Drawing.Size(138, 47);
+            this.buttonStock.TabIndex = 7;
+            this.buttonStock.Text = "在庫確認";
+            this.buttonStock.UseVisualStyleBackColor = true;
+            this.buttonStock.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // buttonOrdering
             // 
-            this.button6.Image = global::SalesManagementSystem.Properties.Resources.write_card_phone;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(466, 109);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(138, 47);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "発注確認";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonOrdering.Image = global::SalesManagementSystem.Properties.Resources.write_card_phone;
+            this.buttonOrdering.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonOrdering.Location = new System.Drawing.Point(466, 109);
+            this.buttonOrdering.Name = "buttonOrdering";
+            this.buttonOrdering.Size = new System.Drawing.Size(138, 47);
+            this.buttonOrdering.TabIndex = 6;
+            this.buttonOrdering.Text = "発注確認";
+            this.buttonOrdering.UseVisualStyleBackColor = true;
+            this.buttonOrdering.Click += new System.EventHandler(this.button6_Click);
             // 
             // buttonExit
             // 
@@ -158,77 +158,77 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // button4
+            // buttonProduct
             // 
-            this.button4.Image = global::SalesManagementSystem.Properties.Resources.address_book_0;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(104, 257);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 47);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "商品管理";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonProduct.Image = global::SalesManagementSystem.Properties.Resources.address_book_0;
+            this.buttonProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonProduct.Location = new System.Drawing.Point(104, 257);
+            this.buttonProduct.Name = "buttonProduct";
+            this.buttonProduct.Size = new System.Drawing.Size(138, 47);
+            this.buttonProduct.TabIndex = 2;
+            this.buttonProduct.Text = "商品管理";
+            this.buttonProduct.UseVisualStyleBackColor = true;
+            this.buttonProduct.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button10
+            // buttonShip
             // 
-            this.button10.Image = global::SalesManagementSystem.Properties.Resources.address_book_home;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.Location = new System.Drawing.Point(288, 183);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(138, 47);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "出荷管理";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.buttonShip.Image = global::SalesManagementSystem.Properties.Resources.address_book_home;
+            this.buttonShip.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonShip.Location = new System.Drawing.Point(288, 183);
+            this.buttonShip.Name = "buttonShip";
+            this.buttonShip.Size = new System.Drawing.Size(138, 47);
+            this.buttonShip.TabIndex = 4;
+            this.buttonShip.Text = "出荷管理";
+            this.buttonShip.UseVisualStyleBackColor = true;
+            this.buttonShip.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button3
+            // buttonOrder
             // 
-            this.button3.Image = global::SalesManagementSystem.Properties.Resources.winrep_1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(288, 109);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 47);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "注文管理";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonOrder.Image = global::SalesManagementSystem.Properties.Resources.winrep_1;
+            this.buttonOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonOrder.Location = new System.Drawing.Point(288, 109);
+            this.buttonOrder.Name = "buttonOrder";
+            this.buttonOrder.Size = new System.Drawing.Size(138, 47);
+            this.buttonOrder.TabIndex = 3;
+            this.buttonOrder.Text = "注文管理";
+            this.buttonOrder.UseVisualStyleBackColor = true;
+            this.buttonOrder.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // buttonMember
             // 
-            this.button2.Image = global::SalesManagementSystem.Properties.Resources._220;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(104, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "社員管理";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonMember.Image = global::SalesManagementSystem.Properties.Resources._220;
+            this.buttonMember.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonMember.Location = new System.Drawing.Point(104, 183);
+            this.buttonMember.Name = "buttonMember";
+            this.buttonMember.Size = new System.Drawing.Size(138, 47);
+            this.buttonMember.TabIndex = 1;
+            this.buttonMember.Text = "社員管理";
+            this.buttonMember.UseVisualStyleBackColor = true;
+            this.buttonMember.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button11
+            // buttonSales
             // 
-            this.button11.Image = global::SalesManagementSystem.Properties.Resources.write_yellow_1;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.Location = new System.Drawing.Point(466, 257);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(138, 47);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "売上確認";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.buttonSales.Image = global::SalesManagementSystem.Properties.Resources.write_yellow_1;
+            this.buttonSales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSales.Location = new System.Drawing.Point(466, 257);
+            this.buttonSales.Name = "buttonSales";
+            this.buttonSales.Size = new System.Drawing.Size(138, 47);
+            this.buttonSales.TabIndex = 8;
+            this.buttonSales.Text = "売上確認";
+            this.buttonSales.UseVisualStyleBackColor = true;
+            this.buttonSales.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button1
+            // buttonCustomer
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.user_card;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(104, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "顧客管理";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCustomer.Image = global::SalesManagementSystem.Properties.Resources.user_card;
+            this.buttonCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCustomer.Location = new System.Drawing.Point(104, 109);
+            this.buttonCustomer.Name = "buttonCustomer";
+            this.buttonCustomer.Size = new System.Drawing.Size(138, 47);
+            this.buttonCustomer.TabIndex = 0;
+            this.buttonCustomer.Text = "顧客管理";
+            this.buttonCustomer.UseVisualStyleBackColor = true;
+            this.buttonCustomer.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainMenuForm
             // 
@@ -240,16 +240,16 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLogout);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.buttonStock);
+            this.Controls.Add(this.buttonOrdering);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonProduct);
+            this.Controls.Add(this.buttonShip);
+            this.Controls.Add(this.buttonOrder);
+            this.Controls.Add(this.buttonMember);
+            this.Controls.Add(this.buttonSales);
+            this.Controls.Add(this.buttonCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuForm";
@@ -266,15 +266,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button buttonProduct;
+        private System.Windows.Forms.Button buttonOrder;
+        private System.Windows.Forms.Button buttonMember;
+        private System.Windows.Forms.Button buttonCustomer;
+        private System.Windows.Forms.Button buttonOrdering;
+        private System.Windows.Forms.Button buttonStock;
+        private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.Button buttonShip;
+        private System.Windows.Forms.Button buttonSales;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
