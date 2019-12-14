@@ -365,5 +365,38 @@
   <ItemGroup>
     <None Include="Resources\Remove-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooltext344206679891783.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooltext344206965910431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cool Text - Login 344207030785697.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header-keychain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_keychain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_keychain1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

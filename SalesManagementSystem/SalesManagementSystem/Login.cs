@@ -22,6 +22,7 @@ namespace SalesManagementSystem
             button1.BackColor = Color.FromArgb(191, 205, 219);
             button2.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242);
+            pictureBox2.Controls.Add(pictureBox5); //ピクチャーボックスの背景を透過させる(プロパティ:BackColorがTransparentになっていること)
             AC.openConnection();
         }
 
