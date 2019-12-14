@@ -199,6 +199,9 @@
   <data name="Remove-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Remove-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_Menuuu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Menuuu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -232,6 +235,9 @@
   <data name="cooltext344206679891783" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206679891783.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_CustomerText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_CustomerText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Remove-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Remove-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -261,9 +267,6 @@
   </data>
   <data name="notepad-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Right_132313" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Right_132313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10-2-web-security-free-png-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10-2-web-security-free-png-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,8 +298,8 @@
   <data name="Padlocks_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Padlocks_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="winrep-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\winrep-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder_Right_132313" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_Right_132313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="20181020_122243691_iOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\20181020_122243691_iOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -312,6 +315,9 @@
   </data>
   <data name="msagent-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="winrep-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winrep-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="address_book_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,7 +379,7 @@
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_Menuuu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_Menuuu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
