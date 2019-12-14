@@ -133,6 +133,26 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap add_icon {
+            get {
+                object obj = ResourceManager.GetObject("add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap add_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap address_book_0 {
             get {
                 object obj = ResourceManager.GetObject("address_book-0", resourceCulture);
@@ -213,6 +233,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap check_mark {
+            get {
+                object obj = ResourceManager.GetObject("check_mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap computer_explorer_2k_2 {
             get {
                 object obj = ResourceManager.GetObject("computer_explorer_2k-2", resourceCulture);
@@ -257,6 +287,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap cooltext344206965910431 {
             get {
                 object obj = ResourceManager.GetObject("cooltext344206965910431", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete {
+            get {
+                object obj = ResourceManager.GetObject("Delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -357,6 +397,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap Icon_78 {
             get {
                 object obj = ResourceManager.GetObject("Icon_78", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Right_132313 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Right_132313", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -627,6 +677,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap Previous_32 {
             get {
                 object obj = ResourceManager.GetObject("Previous-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

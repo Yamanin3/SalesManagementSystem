@@ -56,6 +56,7 @@
             this.商品マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.商品マスタTableAdapter();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -63,10 +64,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.buttonrRemove = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -132,7 +132,7 @@
             this.button2.Location = new System.Drawing.Point(208, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 19);
-            this.button2.TabIndex = 7;
+            this.button2.TabIndex = 6;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -152,7 +152,7 @@
             this.comboBox1.Location = new System.Drawing.Point(102, 153);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 20);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1.TabIndex = 4;
             // 
             // textBox8
             // 
@@ -161,7 +161,7 @@
             this.textBox8.MaxLength = 8;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 19);
-            this.textBox8.TabIndex = 8;
+            this.textBox8.TabIndex = 7;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // textBox7
@@ -179,7 +179,7 @@
             this.textBox6.MaxLength = 4;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 19);
-            this.textBox6.TabIndex = 6;
+            this.textBox6.TabIndex = 5;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label10
@@ -234,7 +234,7 @@
             this.textBox5.MaxLength = 4;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 19);
-            this.textBox5.TabIndex = 4;
+            this.textBox5.TabIndex = 3;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label4
@@ -253,7 +253,7 @@
             this.textBox4.MaxLength = 6;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 19);
-            this.textBox4.TabIndex = 3;
+            this.textBox4.TabIndex = 2;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
@@ -281,7 +281,7 @@
             this.textBox3.MaxLength = 4;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 19);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 1;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
@@ -290,7 +290,7 @@
             this.textBox2.MaxLength = 50;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 19);
-            this.textBox2.TabIndex = 1;
+            this.textBox2.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -347,6 +347,20 @@
             this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(799, 440);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // pictureBox5
             // 
@@ -423,20 +437,34 @@
             this.button1.Location = new System.Drawing.Point(12, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "閉じる";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // buttonNew
+            // 
+            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNew.Location = new System.Drawing.Point(96, 260);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(70, 33);
+            this.buttonNew.TabIndex = 8;
+            this.buttonNew.Text = "新規";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
             // buttonrRemove
             // 
             this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Remove_32;
+            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
             this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonrRemove.Location = new System.Drawing.Point(142, 301);
+            this.buttonrRemove.Location = new System.Drawing.Point(147, 301);
             this.buttonrRemove.Name = "buttonrRemove";
-            this.buttonrRemove.Size = new System.Drawing.Size(79, 39);
+            this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
             this.buttonrRemove.TabIndex = 10;
             this.buttonrRemove.Text = "削除";
             this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -446,44 +474,16 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.Add_32;
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(29, 301);
+            this.buttonAdd.Location = new System.Drawing.Point(44, 301);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(79, 39);
+            this.buttonAdd.Size = new System.Drawing.Size(70, 33);
             this.buttonAdd.TabIndex = 9;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonNew
-            // 
-            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.Plus_321;
-            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNew.Location = new System.Drawing.Point(87, 258);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(79, 39);
-            this.buttonNew.TabIndex = 32;
-            this.buttonNew.Text = "新規";
-            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.Refresh_32;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(793, 440);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(79, 39);
-            this.buttonRefresh.TabIndex = 33;
-            this.buttonRefresh.Text = "更新";
-            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // ProductListForm
             // 
