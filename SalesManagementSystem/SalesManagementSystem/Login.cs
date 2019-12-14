@@ -34,7 +34,7 @@ namespace SalesManagementSystem
 
             if (string.IsNullOrEmpty(textBox1.Text.Trim()) || string.IsNullOrEmpty(textBox2.Text.Trim()))
             {
-                MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (textBox1.CanSelect) textBox1.Select();
 
@@ -77,14 +77,14 @@ namespace SalesManagementSystem
             else if (status != 0)
             {
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                    MessageBoxIcon.Error);
 
                 if (textBox1.CanSelect) textBox1.Select();
             }
             else
             {
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                    MessageBoxIcon.Error);
 
                 if (textBox1.CanSelect) textBox1.Select();
             }

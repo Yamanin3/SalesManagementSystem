@@ -33,12 +33,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -86,24 +86,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "パスワード";
             // 
-            // button2
-            // 
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(275, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "終了";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.key_padlock_1;
+            this.button1.Image = global::SalesManagementSystem.Properties.Resources.icons8_import_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(177, 173);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 35);
+            this.button1.Size = new System.Drawing.Size(77, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "ログイン";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -153,6 +142,18 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Image = global::SalesManagementSystem.Properties.Resources.Actions_dialog_close_icon;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.Location = new System.Drawing.Point(282, 173);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(77, 35);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "     終了";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 

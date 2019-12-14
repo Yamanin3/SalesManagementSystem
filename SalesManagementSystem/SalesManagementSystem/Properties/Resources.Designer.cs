@@ -113,6 +113,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_dialog_close_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-dialog-close-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Add_32 {
             get {
                 object obj = ResourceManager.GetObject("Add-32", resourceCulture);
@@ -317,6 +327,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap Icon_78 {
             get {
                 object obj = ResourceManager.GetObject("Icon_78", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_import_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-import-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
