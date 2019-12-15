@@ -591,7 +591,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 住所DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話番号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn メールアドレスDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 入会日DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 入社日DataGridViewTextBoxColumn;
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 社員マスタBindingSource1;
         private SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter 社員マスタTableAdapter;

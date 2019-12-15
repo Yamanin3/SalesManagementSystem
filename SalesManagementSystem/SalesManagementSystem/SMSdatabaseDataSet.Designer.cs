@@ -1125,7 +1125,7 @@ namespace SalesManagementSystem {
             
             private global::System.Data.DataColumn column社員番号;
             
-            private global::System.Data.DataColumn column入会日;
+            private global::System.Data.DataColumn column入社日;
             
             private global::System.Data.DataColumn columnパスワード;
             
@@ -1244,9 +1244,9 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 入会日Column {
+            public global::System.Data.DataColumn 入社日Column {
                 get {
-                    return this.column入会日;
+                    return this.column入社日;
                 }
             }
             
@@ -1295,7 +1295,7 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public 社員マスタRow Add社員マスタRow(string 社員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, System.DateTime 生年月日, int 社員番号, System.DateTime 入会日, string パスワード) {
+            public 社員マスタRow Add社員マスタRow(string 社員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, System.DateTime 生年月日, int 社員番号, System.DateTime 入社日, string パスワード) {
                 社員マスタRow row社員マスタRow = ((社員マスタRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1308,7 +1308,7 @@ namespace SalesManagementSystem {
                         性別,
                         生年月日,
                         社員番号,
-                        入会日,
+                        入社日,
                         パスワード};
                 row社員マスタRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row社員マスタRow);
@@ -1349,7 +1349,7 @@ namespace SalesManagementSystem {
                 this.column性別 = base.Columns["性別"];
                 this.column生年月日 = base.Columns["生年月日"];
                 this.column社員番号 = base.Columns["社員番号"];
-                this.column入会日 = base.Columns["入会日"];
+                this.column入社日 = base.Columns["入社日"];
                 this.columnパスワード = base.Columns["パスワード"];
             }
             
@@ -1376,8 +1376,8 @@ namespace SalesManagementSystem {
                 base.Columns.Add(this.column生年月日);
                 this.column社員番号 = new global::System.Data.DataColumn("社員番号", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column社員番号);
-                this.column入会日 = new global::System.Data.DataColumn("入会日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column入会日);
+                this.column入社日 = new global::System.Data.DataColumn("入社日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column入社日);
                 this.columnパスワード = new global::System.Data.DataColumn("パスワード", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnパスワード);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -5543,17 +5543,17 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 入会日 {
+            public System.DateTime 入社日 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.table社員マスタ.入会日Column]));
+                        return ((global::System.DateTime)(this[this.table社員マスタ.入社日Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'社員マスタ\' にある列 \'入会日\' の値は DBNull です。", e);
+                        throw new global::System.Data.StrongTypingException("テーブル \'社員マスタ\' にある列 \'入社日\' の値は DBNull です。", e);
                     }
                 }
                 set {
-                    this[this.table社員マスタ.入会日Column] = value;
+                    this[this.table社員マスタ.入社日Column] = value;
                 }
             }
             
@@ -5683,14 +5683,14 @@ namespace SalesManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is入会日Null() {
-                return this.IsNull(this.table社員マスタ.入会日Column);
+            public bool Is入社日Null() {
+                return this.IsNull(this.table社員マスタ.入社日Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set入会日Null() {
-                this[this.table社員マスタ.入会日Column] = global::System.Convert.DBNull;
+            public void Set入社日Null() {
+                this[this.table社員マスタ.入社日Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8780,12 +8780,12 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("性別", "性別");
             tableMapping.ColumnMappings.Add("生年月日", "生年月日");
             tableMapping.ColumnMappings.Add("社員番号", "社員番号");
-            tableMapping.ColumnMappings.Add("入会日", "入会日");
+            tableMapping.ColumnMappings.Add("入社日", "入社日");
             tableMapping.ColumnMappings.Add("パスワード", "パスワード");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `社員マスタ` WHERE ((`社員ID` = ?) AND ((? = 1 AND `社員名` IS NULL) OR (`社員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `社員番号` IS NULL) OR (`社員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `社員マスタ` WHERE ((`社員ID` = ?) AND ((? = 1 AND `社員名` IS NULL) OR (`社員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `社員番号` IS NULL) OR (`社員番号` = ?)) AND ((? = 1 AND `入社日` IS NULL) OR (`入社日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_社員ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_社員名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員名", global::System.Data.DataRowVersion.Original, true, null));
@@ -8806,14 +8806,14 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入会日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入社日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入社日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_パスワード", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `社員マスタ` (`社員名`, `住所`, `電話番号`, `ふりがな`, `メールアドレス`, `郵便番号`, `性別`, `生年月日`" +
-                ", `社員番号`, `入会日`, `パスワード`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                ", `社員番号`, `入社日`, `パスワード`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("社員名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
@@ -8824,11 +8824,11 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("性別", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "性別", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入社日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `社員マスタ` SET `社員名` = ?, `住所` = ?, `電話番号` = ?, `ふりがな` = ?, `メールアドレス` = ?, `郵便番号` = ?, `性別` = ?, `生年月日` = ?, `社員番号` = ?, `入会日` = ?, `パスワード` = ? WHERE ((`社員ID` = ?) AND ((? = 1 AND `社員名` IS NULL) OR (`社員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `社員番号` IS NULL) OR (`社員番号` = ?)) AND ((? = 1 AND `入会日` IS NULL) OR (`入会日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `社員マスタ` SET `社員名` = ?, `住所` = ?, `電話番号` = ?, `ふりがな` = ?, `メールアドレス` = ?, `郵便番号` = ?, `性別` = ?, `生年月日` = ?, `社員番号` = ?, `入社日` = ?, `パスワード` = ? WHERE ((`社員ID` = ?) AND ((? = 1 AND `社員名` IS NULL) OR (`社員名` = ?)) AND ((? = 1 AND `住所` IS NULL) OR (`住所` = ?)) AND ((? = 1 AND `電話番号` IS NULL) OR (`電話番号` = ?)) AND ((? = 1 AND `ふりがな` IS NULL) OR (`ふりがな` = ?)) AND ((? = 1 AND `メールアドレス` IS NULL) OR (`メールアドレス` = ?)) AND ((? = 1 AND `郵便番号` IS NULL) OR (`郵便番号` = ?)) AND ((? = 1 AND `性別` IS NULL) OR (`性別` = ?)) AND ((? = 1 AND `生年月日` IS NULL) OR (`生年月日` = ?)) AND ((? = 1 AND `社員番号` IS NULL) OR (`社員番号` = ?)) AND ((? = 1 AND `入社日` IS NULL) OR (`入社日` = ?)) AND ((? = 1 AND `パスワード` IS NULL) OR (`パスワード` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("社員名", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員名", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("住所", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "住所", global::System.Data.DataRowVersion.Current, false, null));
@@ -8839,7 +8839,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("性別", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "性別", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("入社日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_社員ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_社員名", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員名", global::System.Data.DataRowVersion.Original, true, null));
@@ -8860,8 +8860,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_生年月日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生年月日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_社員番号", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "社員番号", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入会日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入会日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入会日", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_入社日", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_入社日", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "入社日", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_パスワード", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_パスワード", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "パスワード", global::System.Data.DataRowVersion.Original, false, null));
         }
@@ -8879,7 +8879,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 社員ID, 社員名, 住所, 電話番号, ふりがな, メールアドレス, 郵便番号, 性別, 生年月日, 社員番号, 入会日, パスワード FROM " +
+            this._commandCollection[0].CommandText = "SELECT 社員ID, 社員名, 住所, 電話番号, ふりがな, メールアドレス, 郵便番号, 性別, 生年月日, 社員番号, 入社日, パスワード FROM " +
                 "社員マスタ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -8941,7 +8941,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_社員ID, string Original_社員名, string Original_住所, string Original_電話番号, string Original_ふりがな, string Original_メールアドレス, string Original_郵便番号, string Original_性別, global::System.Nullable<global::System.DateTime> Original_生年月日, global::System.Nullable<int> Original_社員番号, global::System.Nullable<global::System.DateTime> Original_入会日, string Original_パスワード) {
+        public virtual int Delete(int Original_社員ID, string Original_社員名, string Original_住所, string Original_電話番号, string Original_ふりがな, string Original_メールアドレス, string Original_郵便番号, string Original_性別, global::System.Nullable<global::System.DateTime> Original_生年月日, global::System.Nullable<int> Original_社員番号, global::System.Nullable<global::System.DateTime> Original_入社日, string Original_パスワード) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_社員ID));
             if ((Original_社員名 == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -9015,9 +9015,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_入会日.HasValue == true)) {
+            if ((Original_入社日.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_入会日.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_入社日.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
@@ -9051,7 +9051,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string 社員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, global::System.Nullable<global::System.DateTime> 生年月日, global::System.Nullable<int> 社員番号, global::System.Nullable<global::System.DateTime> 入会日, string パスワード) {
+        public virtual int Insert(string 社員名, string 住所, string 電話番号, string ふりがな, string メールアドレス, string 郵便番号, string 性別, global::System.Nullable<global::System.DateTime> 生年月日, global::System.Nullable<int> 社員番号, global::System.Nullable<global::System.DateTime> 入社日, string パスワード) {
             if ((社員名 == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9106,8 +9106,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((入会日.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(入会日.Value));
+            if ((入社日.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(入社日.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
@@ -9148,7 +9148,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     string 性別, 
                     global::System.Nullable<global::System.DateTime> 生年月日, 
                     global::System.Nullable<int> 社員番号, 
-                    global::System.Nullable<global::System.DateTime> 入会日, 
+                    global::System.Nullable<global::System.DateTime> 入社日, 
                     string パスワード, 
                     int Original_社員ID, 
                     string Original_社員名, 
@@ -9160,7 +9160,7 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                     string Original_性別, 
                     global::System.Nullable<global::System.DateTime> Original_生年月日, 
                     global::System.Nullable<int> Original_社員番号, 
-                    global::System.Nullable<global::System.DateTime> Original_入会日, 
+                    global::System.Nullable<global::System.DateTime> Original_入社日, 
                     string Original_パスワード) {
             if ((社員名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -9216,8 +9216,8 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((入会日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(入会日.Value));
+            if ((入社日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(入社日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
@@ -9301,9 +9301,9 @@ namespace SalesManagementSystem.SMSdatabaseDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((Original_入会日.HasValue == true)) {
+            if ((Original_入社日.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_入会日.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_入社日.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
