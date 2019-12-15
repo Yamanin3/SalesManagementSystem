@@ -27,7 +27,7 @@ namespace SalesManagementSystem
             if (checkBox1.Checked == false)
             {
                 AC.sql =
-                    "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0";
+                    "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, emp.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as emp on od.社員ID = emp.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 0";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -54,7 +54,7 @@ namespace SalesManagementSystem
             else
             {
                 AC.sql =
-                    "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 1";
+                    "select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, emp.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as emp on od.社員ID = emp.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where od.ステータス = 1";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -436,7 +436,7 @@ namespace SalesManagementSystem
             {
                 var kw = SearchTextbox.Text;
                 AC.sql =
-                    $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 0";
+                    $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, emp.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as emp on od.社員ID = emp.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or emp.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 0";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
@@ -450,7 +450,7 @@ namespace SalesManagementSystem
             {
                 var kw = SearchTextbox.Text;
                 AC.sql =
-                    $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, mem.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as mem on od.社員ID = mem.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or mem.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 1";
+                    $"select od.注文ID, cus.顧客名, pd.商品名, od.注文数量, od.注文日, pd.商品価格, od.合計額, emp.社員名, pd.商品ID from ((注文テーブル as od inner join 顧客マスタ as cus on od.顧客ID = cus.顧客ID) inner join 社員マスタ as emp on od.社員ID = emp.社員ID) inner join 商品マスタ as pd on od.商品ID = pd.商品ID where (od.注文ID like '%{kw}%' or cus.顧客名 like '%{kw}%' or pd.商品名 like '%{kw}%' or od.注文数量 like '%{kw}%' or od.注文日 like '%{kw}%' or pd.商品価格 like '%{kw}%' or od.合計額 like '%{kw}%' or emp.社員名 like '%{kw}%' or pd.商品ID like '%{kw}%') and od.ステータス = 1";
                 AC.cmd.CommandText = AC.sql;
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
