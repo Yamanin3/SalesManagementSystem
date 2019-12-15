@@ -157,6 +157,9 @@
   <data name="header_LoadText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_LoadText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_product2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icon_551" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -406,6 +409,9 @@
   <data name="cooltext344206679891783" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206679891783.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_OrderText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_OrderText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="media_player_stream_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\media_player_stream_no.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -427,8 +433,8 @@
   <data name="no-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\no-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_product" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_product2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Ordered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Ordered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="write_yellow-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\write_yellow-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -436,7 +442,7 @@
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_Ordered" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_Ordered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

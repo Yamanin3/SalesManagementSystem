@@ -494,6 +494,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap header_Order {
+            get {
+                object obj = ResourceManager.GetObject("header_Order", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap header_Ordered {
             get {
                 object obj = ResourceManager.GetObject("header_Ordered", resourceCulture);
@@ -527,6 +537,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap header_OrderingText {
             get {
                 object obj = ResourceManager.GetObject("header_OrderingText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_OrderText {
+            get {
+                object obj = ResourceManager.GetObject("header_OrderText", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

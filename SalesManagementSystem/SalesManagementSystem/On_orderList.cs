@@ -251,18 +251,6 @@ namespace SalesManagementSystem
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void toolStripButtonNew_Click(object sender, EventArgs e)
-        {
-            AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-        }
-
-        private void toolStripButtonRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshLoad();
-        }
-
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(dataGridView1.CurrentRow?.Cells[0].Value.ToString()))
@@ -416,7 +404,7 @@ namespace SalesManagementSystem
 
                 comboBox1.Enabled = false;
                 dateTimePicker1.Enabled = false;
-                toolStripButtonNew.Enabled = false;
+                buttonNew.Enabled = false;
                 buttonRemove.Enabled = false;
                 buttonAdd.Enabled = false;
                 button2.Enabled = false;
@@ -426,7 +414,7 @@ namespace SalesManagementSystem
             {
                 comboBox1.Enabled = true;
                 dateTimePicker1.Enabled = true;
-                toolStripButtonNew.Enabled = true;
+                buttonNew.Enabled = true;
                 buttonRemove.Enabled = true;
                 buttonAdd.Enabled = true;
                 button2.Enabled = true;
@@ -468,6 +456,18 @@ namespace SalesManagementSystem
         private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshLoad();
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            AC.dt.Rows.Add();
+            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
+            dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }

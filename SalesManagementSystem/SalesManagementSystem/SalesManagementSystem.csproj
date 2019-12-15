@@ -524,5 +524,11 @@
   <ItemGroup>
     <None Include="Resources\header_Ordered.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_OrderText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Order.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
