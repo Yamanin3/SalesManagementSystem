@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
 
@@ -22,6 +23,7 @@ namespace SalesManagementSystem
 
         private void SalesListForm_Load(object sender, EventArgs e)
         {
+            BackColor = Color.FromArgb(236, 233, 216);
             RefreshLoad();
             MaximizeBox = false;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
@@ -26,6 +27,7 @@ namespace SalesManagementSystem
 
         private void GridForm_Load(object sender, EventArgs e)
         {
+            BackColor = Color.FromArgb(236, 233, 216);
             MaximizeBox = false;
 
             table = AC.dt;

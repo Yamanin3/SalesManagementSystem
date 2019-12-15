@@ -19,9 +19,9 @@ namespace SalesManagementSystem
         private void Login_Form_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
-            buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
-            buttonExit.BackColor = Color.FromArgb(191, 205, 219);
-            BackColor = Color.FromArgb(215, 228, 242);
+            //buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
+            //buttonExit.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(236, 233, 216);
             pictureBox2.Controls.Add(pictureBox5); //ピクチャーボックスの背景を透過させる(プロパティ:BackColorがTransparentになっていること)
             AC.openConnection();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 using Login_form.Static_Classes;
 
@@ -21,6 +22,7 @@ namespace SalesManagementSystem
             RefreshLoad();
             MaximizeBox = false;
             dateTimePickerCbirth.MaxDate = DateTime.Now;
+            BackColor = Color.FromArgb(236, 233, 216);
         }
 
         private void button1_Click(object sender, EventArgs e)
