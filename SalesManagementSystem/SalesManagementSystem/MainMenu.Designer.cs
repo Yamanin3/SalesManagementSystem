@@ -41,7 +41,7 @@
             this.buttonProduct = new System.Windows.Forms.Button();
             this.buttonShip = new System.Windows.Forms.Button();
             this.buttonOrder = new System.Windows.Forms.Button();
-            this.buttonMember = new System.Windows.Forms.Button();
+            this.buttonEmployee = new System.Windows.Forms.Button();
             this.buttonSales = new System.Windows.Forms.Button();
             this.buttonCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -120,7 +120,7 @@
             this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "入庫管理";
             this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.button8_Click);
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // buttonStock
             // 
@@ -133,7 +133,7 @@
             this.buttonStock.TabIndex = 7;
             this.buttonStock.Text = "在庫確認";
             this.buttonStock.UseVisualStyleBackColor = true;
-            this.buttonStock.Click += new System.EventHandler(this.button7_Click);
+            this.buttonStock.Click += new System.EventHandler(this.buttonStock_Click);
             // 
             // buttonOrdering
             // 
@@ -146,7 +146,7 @@
             this.buttonOrdering.TabIndex = 6;
             this.buttonOrdering.Text = "発注確認";
             this.buttonOrdering.UseVisualStyleBackColor = true;
-            this.buttonOrdering.Click += new System.EventHandler(this.button6_Click);
+            this.buttonOrdering.Click += new System.EventHandler(this.buttonOrdering_Click);
             // 
             // buttonExit
             // 
@@ -174,7 +174,7 @@
             this.buttonProduct.TabIndex = 2;
             this.buttonProduct.Text = "商品管理";
             this.buttonProduct.UseVisualStyleBackColor = true;
-            this.buttonProduct.Click += new System.EventHandler(this.button4_Click);
+            this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
             // 
             // buttonShip
             // 
@@ -187,7 +187,7 @@
             this.buttonShip.TabIndex = 4;
             this.buttonShip.Text = "出荷管理";
             this.buttonShip.UseVisualStyleBackColor = true;
-            this.buttonShip.Click += new System.EventHandler(this.button10_Click);
+            this.buttonShip.Click += new System.EventHandler(this.buttonShip_Click);
             // 
             // buttonOrder
             // 
@@ -200,20 +200,20 @@
             this.buttonOrder.TabIndex = 3;
             this.buttonOrder.Text = "注文管理";
             this.buttonOrder.UseVisualStyleBackColor = true;
-            this.buttonOrder.Click += new System.EventHandler(this.button3_Click);
+            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
-            // buttonMember
+            // buttonEmployee
             // 
-            this.buttonMember.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonMember.Image = global::SalesManagementSystem.Properties.Resources._220;
-            this.buttonMember.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonMember.Location = new System.Drawing.Point(104, 183);
-            this.buttonMember.Name = "buttonMember";
-            this.buttonMember.Size = new System.Drawing.Size(138, 47);
-            this.buttonMember.TabIndex = 1;
-            this.buttonMember.Text = "社員管理";
-            this.buttonMember.UseVisualStyleBackColor = true;
-            this.buttonMember.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonEmployee.Image = global::SalesManagementSystem.Properties.Resources._220;
+            this.buttonEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEmployee.Location = new System.Drawing.Point(104, 183);
+            this.buttonEmployee.Name = "buttonEmployee";
+            this.buttonEmployee.Size = new System.Drawing.Size(138, 47);
+            this.buttonEmployee.TabIndex = 1;
+            this.buttonEmployee.Text = "社員管理";
+            this.buttonEmployee.UseVisualStyleBackColor = true;
+            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
             // buttonSales
             // 
@@ -226,7 +226,7 @@
             this.buttonSales.TabIndex = 8;
             this.buttonSales.Text = "売上確認";
             this.buttonSales.UseVisualStyleBackColor = true;
-            this.buttonSales.Click += new System.EventHandler(this.button11_Click);
+            this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
             // 
             // buttonCustomer
             // 
@@ -239,7 +239,7 @@
             this.buttonCustomer.TabIndex = 0;
             this.buttonCustomer.Text = "顧客管理";
             this.buttonCustomer.UseVisualStyleBackColor = true;
-            this.buttonCustomer.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
             // 
             // MainMenuForm
             // 
@@ -258,7 +258,7 @@
             this.Controls.Add(this.buttonProduct);
             this.Controls.Add(this.buttonShip);
             this.Controls.Add(this.buttonOrder);
-            this.Controls.Add(this.buttonMember);
+            this.Controls.Add(this.buttonEmployee);
             this.Controls.Add(this.buttonSales);
             this.Controls.Add(this.buttonCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -279,7 +279,7 @@
         #endregion
         private System.Windows.Forms.Button buttonProduct;
         private System.Windows.Forms.Button buttonOrder;
-        private System.Windows.Forms.Button buttonMember;
+        private System.Windows.Forms.Button buttonEmployee;
         private System.Windows.Forms.Button buttonCustomer;
         private System.Windows.Forms.Button buttonOrdering;
         private System.Windows.Forms.Button buttonStock;

@@ -1,6 +1,6 @@
 ﻿namespace SalesManagementSystem
 {
-    partial class MemberListForm
+    partial class EmployeeListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
-            this.dateTimePickerMjoin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEjoin = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxMpass = new System.Windows.Forms.TextBox();
-            this.dateTimePickerMbirth = new System.Windows.Forms.DateTimePicker();
+            this.textBoxEpass = new System.Windows.Forms.TextBox();
+            this.dateTimePickerEbirth = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxMmail = new System.Windows.Forms.TextBox();
-            this.textBoxMphone = new System.Windows.Forms.TextBox();
-            this.textBoxMaddress = new System.Windows.Forms.TextBox();
-            this.textBoxMpost = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxEphone = new System.Windows.Forms.TextBox();
+            this.textBoxEaddress = new System.Windows.Forms.TextBox();
+            this.textBoxEpost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxMsex = new System.Windows.Forms.ComboBox();
+            this.comboBoxEsex = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxMhurigana = new System.Windows.Forms.TextBox();
-            this.textBoxMname = new System.Windows.Forms.TextBox();
-            this.textBoxMID = new System.Windows.Forms.TextBox();
+            this.textBoxEhurigana = new System.Windows.Forms.TextBox();
+            this.textBoxEname = new System.Windows.Forms.TextBox();
+            this.textBoxEID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.社員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -89,29 +89,29 @@
             this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.buttonNew);
             this.groupBox1.Controls.Add(this.buttonRemove);
-            this.groupBox1.Controls.Add(this.dateTimePickerMjoin);
+            this.groupBox1.Controls.Add(this.dateTimePickerEjoin);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBoxMpass);
-            this.groupBox1.Controls.Add(this.dateTimePickerMbirth);
+            this.groupBox1.Controls.Add(this.textBoxEpass);
+            this.groupBox1.Controls.Add(this.dateTimePickerEbirth);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxMmail);
-            this.groupBox1.Controls.Add(this.textBoxMphone);
-            this.groupBox1.Controls.Add(this.textBoxMaddress);
-            this.groupBox1.Controls.Add(this.textBoxMpost);
+            this.groupBox1.Controls.Add(this.textBoxEmail);
+            this.groupBox1.Controls.Add(this.textBoxEphone);
+            this.groupBox1.Controls.Add(this.textBoxEaddress);
+            this.groupBox1.Controls.Add(this.textBoxEpost);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBoxMsex);
+            this.groupBox1.Controls.Add(this.comboBoxEsex);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxMhurigana);
-            this.groupBox1.Controls.Add(this.textBoxMname);
-            this.groupBox1.Controls.Add(this.textBoxMID);
+            this.groupBox1.Controls.Add(this.textBoxEhurigana);
+            this.groupBox1.Controls.Add(this.textBoxEname);
+            this.groupBox1.Controls.Add(this.textBoxEID);
             this.groupBox1.Location = new System.Drawing.Point(12, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(279, 417);
@@ -164,13 +164,13 @@
             this.buttonRemove.UseVisualStyleBackColor = true;
             this.buttonRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
-            // dateTimePickerMjoin
+            // dateTimePickerEjoin
             // 
-            this.dateTimePickerMjoin.Enabled = false;
-            this.dateTimePickerMjoin.Location = new System.Drawing.Point(116, 257);
-            this.dateTimePickerMjoin.Name = "dateTimePickerMjoin";
-            this.dateTimePickerMjoin.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePickerMjoin.TabIndex = 8;
+            this.dateTimePickerEjoin.Enabled = false;
+            this.dateTimePickerEjoin.Location = new System.Drawing.Point(116, 257);
+            this.dateTimePickerEjoin.Name = "dateTimePickerEjoin";
+            this.dateTimePickerEjoin.Size = new System.Drawing.Size(124, 19);
+            this.dateTimePickerEjoin.TabIndex = 8;
             // 
             // buttonAdd
             // 
@@ -205,22 +205,22 @@
             this.label10.TabIndex = 28;
             this.label10.Text = "入社日:";
             // 
-            // textBoxMpass
+            // textBoxEpass
             // 
-            this.textBoxMpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBoxMpass.Location = new System.Drawing.Point(116, 282);
-            this.textBoxMpass.MaxLength = 30;
-            this.textBoxMpass.Name = "textBoxMpass";
-            this.textBoxMpass.PasswordChar = '*';
-            this.textBoxMpass.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMpass.TabIndex = 9;
+            this.textBoxEpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxEpass.Location = new System.Drawing.Point(116, 282);
+            this.textBoxEpass.MaxLength = 30;
+            this.textBoxEpass.Name = "textBoxEpass";
+            this.textBoxEpass.PasswordChar = '*';
+            this.textBoxEpass.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEpass.TabIndex = 9;
             // 
-            // dateTimePickerMbirth
+            // dateTimePickerEbirth
             // 
-            this.dateTimePickerMbirth.Location = new System.Drawing.Point(116, 132);
-            this.dateTimePickerMbirth.Name = "dateTimePickerMbirth";
-            this.dateTimePickerMbirth.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePickerMbirth.TabIndex = 3;
+            this.dateTimePickerEbirth.Location = new System.Drawing.Point(116, 132);
+            this.dateTimePickerEbirth.Name = "dateTimePickerEbirth";
+            this.dateTimePickerEbirth.Size = new System.Drawing.Size(124, 19);
+            this.dateTimePickerEbirth.TabIndex = 3;
             // 
             // label9
             // 
@@ -231,42 +231,42 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "メールアドレス:";
             // 
-            // textBoxMmail
+            // textBoxEmail
             // 
-            this.textBoxMmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBoxMmail.Location = new System.Drawing.Point(116, 232);
-            this.textBoxMmail.MaxLength = 60;
-            this.textBoxMmail.Name = "textBoxMmail";
-            this.textBoxMmail.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMmail.TabIndex = 7;
+            this.textBoxEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxEmail.Location = new System.Drawing.Point(116, 232);
+            this.textBoxEmail.MaxLength = 60;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEmail.TabIndex = 7;
             // 
-            // textBoxMphone
+            // textBoxEphone
             // 
-            this.textBoxMphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBoxMphone.Location = new System.Drawing.Point(116, 207);
-            this.textBoxMphone.MaxLength = 12;
-            this.textBoxMphone.Name = "textBoxMphone";
-            this.textBoxMphone.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMphone.TabIndex = 6;
-            this.textBoxMphone.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBoxEphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxEphone.Location = new System.Drawing.Point(116, 207);
+            this.textBoxEphone.MaxLength = 12;
+            this.textBoxEphone.Name = "textBoxEphone";
+            this.textBoxEphone.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEphone.TabIndex = 6;
+            this.textBoxEphone.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBoxMaddress
+            // textBoxEaddress
             // 
-            this.textBoxMaddress.Location = new System.Drawing.Point(116, 182);
-            this.textBoxMaddress.MaxLength = 50;
-            this.textBoxMaddress.Name = "textBoxMaddress";
-            this.textBoxMaddress.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMaddress.TabIndex = 5;
+            this.textBoxEaddress.Location = new System.Drawing.Point(116, 182);
+            this.textBoxEaddress.MaxLength = 50;
+            this.textBoxEaddress.Name = "textBoxEaddress";
+            this.textBoxEaddress.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEaddress.TabIndex = 5;
             // 
-            // textBoxMpost
+            // textBoxEpost
             // 
-            this.textBoxMpost.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBoxMpost.Location = new System.Drawing.Point(116, 157);
-            this.textBoxMpost.MaxLength = 7;
-            this.textBoxMpost.Name = "textBoxMpost";
-            this.textBoxMpost.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMpost.TabIndex = 4;
-            this.textBoxMpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxEpost.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxEpost.Location = new System.Drawing.Point(116, 157);
+            this.textBoxEpost.MaxLength = 7;
+            this.textBoxEpost.Name = "textBoxEpost";
+            this.textBoxEpost.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEpost.TabIndex = 4;
+            this.textBoxEpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
             // 
@@ -304,19 +304,19 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "生年月日:";
             // 
-            // comboBoxMsex
+            // comboBoxEsex
             // 
-            this.comboBoxMsex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMsex.FormattingEnabled = true;
-            this.comboBoxMsex.Items.AddRange(new object[] {
+            this.comboBoxEsex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEsex.FormattingEnabled = true;
+            this.comboBoxEsex.Items.AddRange(new object[] {
             "---",
             "男",
             "女",
             "不明"});
-            this.comboBoxMsex.Location = new System.Drawing.Point(116, 106);
-            this.comboBoxMsex.Name = "comboBoxMsex";
-            this.comboBoxMsex.Size = new System.Drawing.Size(124, 20);
-            this.comboBoxMsex.TabIndex = 2;
+            this.comboBoxEsex.Location = new System.Drawing.Point(116, 106);
+            this.comboBoxEsex.Name = "comboBoxEsex";
+            this.comboBoxEsex.Size = new System.Drawing.Size(124, 20);
+            this.comboBoxEsex.TabIndex = 2;
             // 
             // label4
             // 
@@ -354,30 +354,30 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "社員ID:";
             // 
-            // textBoxMhurigana
+            // textBoxEhurigana
             // 
-            this.textBoxMhurigana.Location = new System.Drawing.Point(116, 81);
-            this.textBoxMhurigana.MaxLength = 40;
-            this.textBoxMhurigana.Name = "textBoxMhurigana";
-            this.textBoxMhurigana.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMhurigana.TabIndex = 1;
+            this.textBoxEhurigana.Location = new System.Drawing.Point(116, 81);
+            this.textBoxEhurigana.MaxLength = 40;
+            this.textBoxEhurigana.Name = "textBoxEhurigana";
+            this.textBoxEhurigana.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEhurigana.TabIndex = 1;
             // 
-            // textBoxMname
+            // textBoxEname
             // 
-            this.textBoxMname.Location = new System.Drawing.Point(116, 56);
-            this.textBoxMname.MaxLength = 20;
-            this.textBoxMname.Name = "textBoxMname";
-            this.textBoxMname.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMname.TabIndex = 0;
+            this.textBoxEname.Location = new System.Drawing.Point(116, 56);
+            this.textBoxEname.MaxLength = 20;
+            this.textBoxEname.Name = "textBoxEname";
+            this.textBoxEname.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEname.TabIndex = 0;
             // 
-            // textBoxMID
+            // textBoxEID
             // 
-            this.textBoxMID.Enabled = false;
-            this.textBoxMID.Location = new System.Drawing.Point(116, 31);
-            this.textBoxMID.MaxLength = 4;
-            this.textBoxMID.Name = "textBoxMID";
-            this.textBoxMID.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMID.TabIndex = 0;
+            this.textBoxEID.Enabled = false;
+            this.textBoxEID.Location = new System.Drawing.Point(116, 31);
+            this.textBoxEID.MaxLength = 4;
+            this.textBoxEID.Name = "textBoxEID";
+            this.textBoxEID.Size = new System.Drawing.Size(124, 19);
+            this.textBoxEID.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -481,7 +481,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.header_MemberText;
+            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.header_Employee;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(214, 64);
@@ -521,7 +521,7 @@
             // 
             this.社員マスタBindingSource.DataMember = "社員マスタ";
             // 
-            // MemberListForm
+            // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -538,10 +538,10 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MemberListForm";
+            this.Name = "EmployeeListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社員管理";
-            this.Load += new System.EventHandler(this.MemberList_Load);
+            this.Load += new System.EventHandler(this.EmployeeList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -562,29 +562,29 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxMmail;
-        private System.Windows.Forms.TextBox textBoxMphone;
-        private System.Windows.Forms.TextBox textBoxMaddress;
-        private System.Windows.Forms.TextBox textBoxMpost;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxEphone;
+        private System.Windows.Forms.TextBox textBoxEaddress;
+        private System.Windows.Forms.TextBox textBoxEpost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxMsex;
+        private System.Windows.Forms.ComboBox comboBoxEsex;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxMhurigana;
-        private System.Windows.Forms.TextBox textBoxMname;
-        private System.Windows.Forms.TextBox textBoxMID;
+        private System.Windows.Forms.TextBox textBoxEhurigana;
+        private System.Windows.Forms.TextBox textBoxEname;
+        private System.Windows.Forms.TextBox textBoxEID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxMpass;
-        private System.Windows.Forms.DateTimePicker dateTimePickerMbirth;
+        private System.Windows.Forms.TextBox textBoxEpass;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEbirth;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.BindingSource 社員マスタBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 社員IDDataGridViewTextBoxColumn;
@@ -601,7 +601,7 @@
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 社員マスタBindingSource1;
         private SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter 社員マスタTableAdapter;
-        private System.Windows.Forms.DateTimePicker dateTimePickerMjoin;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEjoin;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;

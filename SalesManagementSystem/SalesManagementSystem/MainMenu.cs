@@ -12,25 +12,25 @@ namespace SalesManagementSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCustomer_Click(object sender, EventArgs e)
         {
             Form customerlistForm = new CustomerListForm();
             customerlistForm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonEmployee_Click(object sender, EventArgs e)
         {
-            Form memberlistForm = new MemberListForm();
-            memberlistForm.ShowDialog();
+            Form employeelistForm = new EmployeeListForm();
+            employeelistForm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonOrder_Click(object sender, EventArgs e)
         {
             Form on_orderlistForm = new On_orderListForm();
             on_orderlistForm.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonProduct_Click(object sender, EventArgs e)
         {
             Form productlistForm = new ProductListForm();
             productlistForm.ShowDialog();
@@ -44,7 +44,7 @@ namespace SalesManagementSystem
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
             buttonCustomer.BackColor = Color.FromArgb(191, 205, 219);
-            buttonMember.BackColor = Color.FromArgb(191, 205, 219);
+            buttonEmployee.BackColor = Color.FromArgb(191, 205, 219);
             buttonProduct.BackColor = Color.FromArgb(191, 205, 219);
             buttonOrder.BackColor = Color.FromArgb(191, 205, 219);
             buttonShip.BackColor = Color.FromArgb(191, 205, 219);
@@ -58,19 +58,19 @@ namespace SalesManagementSystem
             MaximizeBox = false;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonOrdering_Click(object sender, EventArgs e)
         {
             Form requestlistForm = new RequestListForm();
             requestlistForm.ShowDialog();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonStock_Click(object sender, EventArgs e)
         {
             Form stocklistForm = new StockListForm();
             stocklistForm.ShowDialog();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void buttonLoad_Click(object sender, EventArgs e)
         {
             Form loadedlistForm = new LoadedListForm();
             loadedlistForm.ShowDialog();
@@ -82,13 +82,13 @@ namespace SalesManagementSystem
             Application.Exit();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void buttonShip_Click(object sender, EventArgs e)
         {
             Form shiplistForm = new ShipListForm();
             shiplistForm.ShowDialog();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void buttonSales_Click(object sender, EventArgs e)
         {
             Form saleslistForm = new SalesListForm();
             saleslistForm.ShowDialog();
