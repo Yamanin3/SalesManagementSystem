@@ -26,7 +26,7 @@ namespace SalesManagementSystem
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            Form on_orderlistForm = new On_orderListForm();
+            Form on_orderlistForm = new OrderListForm();
             on_orderlistForm.ShowDialog();
         }
 

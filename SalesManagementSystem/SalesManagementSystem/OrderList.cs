@@ -7,7 +7,7 @@ using Login_form.Static_Classes;
 
 namespace SalesManagementSystem
 {
-    public partial class On_orderListForm : Form
+    public partial class OrderListForm : Form
     {
         private int answer;
         private int dstock;
@@ -17,7 +17,7 @@ namespace SalesManagementSystem
         private int PID;
         private int stock;
 
-        public On_orderListForm()
+        public OrderListForm()
         {
             InitializeComponent();
         }
@@ -81,7 +81,7 @@ namespace SalesManagementSystem
             }
         }
 
-        private void On_orderListForm_Load(object sender, EventArgs e)
+        private void OrderListForm_Load(object sender, EventArgs e)
         {
             buttonAdd.BackColor = Color.FromArgb(191, 205, 219);
             buttonNew.BackColor = Color.FromArgb(191, 205, 219);
