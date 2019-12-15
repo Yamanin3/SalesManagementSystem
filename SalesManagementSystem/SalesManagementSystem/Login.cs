@@ -19,6 +19,8 @@ namespace SalesManagementSystem
         private void Login_Form_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
+            buttonLogin.BackColor = Color.FromArgb(247, 245, 238);
+            buttonExit.BackColor = Color.FromArgb(247, 245, 238);
             //buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
             //buttonExit.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(247, 245, 238);
