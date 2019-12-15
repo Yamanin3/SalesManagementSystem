@@ -28,8 +28,13 @@ namespace SalesManagementSystem
 
         private void ProductListForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(247, 245, 238);
-            RefreshLoad();
+            buttonAdd.BackColor = Color.FromArgb(191, 205, 219);
+            buttonNew.BackColor = Color.FromArgb(191, 205, 219);
+            buttonRemove.BackColor = Color.FromArgb(191, 205, 219);
+            buttonRefresh.BackColor = Color.FromArgb(191, 205, 219);
+            buttonClose.BackColor = Color.FromArgb(191, 205, 219);
+            buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
             MaximizeBox = false;
         }
 

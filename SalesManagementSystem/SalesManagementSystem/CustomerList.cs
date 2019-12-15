@@ -22,7 +22,13 @@ namespace SalesManagementSystem
             RefreshLoad();
             MaximizeBox = false;
             dateTimePickerCbirth.MaxDate = DateTime.Now;
-            BackColor = Color.FromArgb(247, 245, 238);
+            buttonAdd.BackColor = Color.FromArgb(191, 205, 219);
+            buttonNew.BackColor = Color.FromArgb(191, 205, 219);
+            buttonRemove.BackColor = Color.FromArgb(191, 205, 219);
+            buttonRefresh.BackColor = Color.FromArgb(191, 205, 219);
+            buttonClose.BackColor = Color.FromArgb(191, 205, 219);
+            buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
         }
 
         private void button1_Click(object sender, EventArgs e)

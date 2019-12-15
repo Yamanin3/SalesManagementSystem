@@ -96,6 +96,7 @@
             // 
             // buttonLogout
             // 
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogout.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.Image = global::SalesManagementSystem.Properties.Resources.exit;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,6 +111,7 @@
             // 
             // buttonLoad
             // 
+            this.buttonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLoad.Image = global::SalesManagementSystem.Properties.Resources.msagent_3;
             this.buttonLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLoad.Location = new System.Drawing.Point(288, 257);
@@ -122,6 +124,7 @@
             // 
             // buttonStock
             // 
+            this.buttonStock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStock.Image = global::SalesManagementSystem.Properties.Resources.search_computer_0;
             this.buttonStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonStock.Location = new System.Drawing.Point(466, 183);
@@ -134,6 +137,7 @@
             // 
             // buttonOrdering
             // 
+            this.buttonOrdering.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonOrdering.Image = global::SalesManagementSystem.Properties.Resources.write_card_phone;
             this.buttonOrdering.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonOrdering.Location = new System.Drawing.Point(466, 109);
@@ -146,6 +150,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExit.Font = new System.Drawing.Font("Haettenschweiler", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.Image = global::SalesManagementSystem.Properties.Resources.Exit__3_;
             this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,6 +165,7 @@
             // 
             // buttonProduct
             // 
+            this.buttonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonProduct.Image = global::SalesManagementSystem.Properties.Resources.address_book_0;
             this.buttonProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonProduct.Location = new System.Drawing.Point(104, 257);
@@ -172,6 +178,7 @@
             // 
             // buttonShip
             // 
+            this.buttonShip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonShip.Image = global::SalesManagementSystem.Properties.Resources.address_book_home;
             this.buttonShip.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonShip.Location = new System.Drawing.Point(288, 183);
@@ -184,6 +191,7 @@
             // 
             // buttonOrder
             // 
+            this.buttonOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonOrder.Image = global::SalesManagementSystem.Properties.Resources.winrep_1;
             this.buttonOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonOrder.Location = new System.Drawing.Point(288, 109);
@@ -196,6 +204,7 @@
             // 
             // buttonMember
             // 
+            this.buttonMember.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMember.Image = global::SalesManagementSystem.Properties.Resources._220;
             this.buttonMember.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonMember.Location = new System.Drawing.Point(104, 183);
@@ -208,6 +217,7 @@
             // 
             // buttonSales
             // 
+            this.buttonSales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSales.Image = global::SalesManagementSystem.Properties.Resources.write_yellow_1;
             this.buttonSales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSales.Location = new System.Drawing.Point(466, 257);
@@ -220,6 +230,7 @@
             // 
             // buttonCustomer
             // 
+            this.buttonCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCustomer.Image = global::SalesManagementSystem.Properties.Resources.user_card;
             this.buttonCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCustomer.Location = new System.Drawing.Point(104, 109);

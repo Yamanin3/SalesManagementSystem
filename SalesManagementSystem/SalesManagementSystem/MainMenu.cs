@@ -43,7 +43,18 @@ namespace SalesManagementSystem
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(247, 245, 238);
+            buttonCustomer.BackColor = Color.FromArgb(191, 205, 219);
+            buttonMember.BackColor = Color.FromArgb(191, 205, 219);
+            buttonProduct.BackColor = Color.FromArgb(191, 205, 219);
+            buttonOrder.BackColor = Color.FromArgb(191, 205, 219);
+            buttonShip.BackColor = Color.FromArgb(191, 205, 219);
+            buttonLoad.BackColor = Color.FromArgb(191, 205, 219);
+            buttonOrdering.BackColor = Color.FromArgb(191, 205, 219);
+            buttonStock.BackColor = Color.FromArgb(191, 205, 219);
+            buttonSales.BackColor = Color.FromArgb(191, 205, 219);
+            buttonLogout.BackColor = Color.FromArgb(191, 205, 219);
+            buttonExit.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
             MaximizeBox = false;
         }
 

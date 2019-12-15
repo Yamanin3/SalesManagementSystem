@@ -19,19 +19,15 @@ namespace SalesManagementSystem
         private void Login_Form_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
-            buttonLogin.BackColor = Color.FromArgb(247, 245, 238);
-            buttonExit.BackColor = Color.FromArgb(247, 245, 238);
-            //buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
-            //buttonExit.BackColor = Color.FromArgb(191, 205, 219);
-            BackColor = Color.FromArgb(247, 245, 238);
+            buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
+            buttonExit.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
             pictureBox2.Controls.Add(pictureBox5); //ピクチャーボックスの背景を透過させる(プロパティ:BackColorがTransparentになっていること)
             AC.openConnection();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            buttonLogin.Focus();
-
             AC.openConnection();
 
             if (string.IsNullOrEmpty(textBoxMID.Text.Trim()) || string.IsNullOrEmpty(textBoxMpass.Text.Trim()))

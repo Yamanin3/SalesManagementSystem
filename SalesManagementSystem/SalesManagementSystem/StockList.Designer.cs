@@ -39,7 +39,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonSet = new System.Windows.Forms.Button();
@@ -62,10 +62,10 @@
             // 
             // SearchTextbox
             // 
-            this.SearchTextbox.Location = new System.Drawing.Point(470, 76);
+            this.SearchTextbox.Location = new System.Drawing.Point(425, 76);
             this.SearchTextbox.MaxLength = 50;
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
+            this.SearchTextbox.Size = new System.Drawing.Size(205, 19);
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
@@ -111,7 +111,7 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.buttonSet);
@@ -176,19 +176,20 @@
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 1;
             // 
-            // button2
+            // buttonRefresh
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(128, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 39);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "更新";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(128, 191);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(79, 39);
+            this.buttonRefresh.TabIndex = 5;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -210,6 +211,7 @@
             // 
             // buttonSet
             // 
+            this.buttonSet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSet.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonSet.Image = global::SalesManagementSystem.Properties.Resources.gears_tweakui_a_1;
             this.buttonSet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,6 +281,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(636, 74);
@@ -292,6 +295,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClose.Location = new System.Drawing.Point(12, 451);
@@ -352,7 +356,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.PictureBox pictureBox1;

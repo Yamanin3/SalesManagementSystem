@@ -22,8 +22,9 @@ namespace SalesManagementSystem
 
         private void RequestListForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(247, 245, 238);
-            RefreshLoad();
+            buttonClose.BackColor = Color.FromArgb(191, 205, 219);
+            buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
             MaximizeBox = false;
         }
 

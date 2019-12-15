@@ -67,6 +67,7 @@
             // 
             // buttonToOrdered
             // 
+            this.buttonToOrdered.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonToOrdered.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonToOrdered.Location = new System.Drawing.Point(548, 337);
             this.buttonToOrdered.Name = "buttonToOrdered";
@@ -131,6 +132,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(428, 72);
@@ -144,6 +146,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClose.Location = new System.Drawing.Point(14, 337);

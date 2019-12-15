@@ -115,6 +115,7 @@
             // 
             // buttonRefresh
             // 
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
             this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,6 +130,7 @@
             // 
             // buttonNew
             // 
+            this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
             this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,6 +145,7 @@
             // 
             // buttonRemove
             // 
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
             this.buttonRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,6 +176,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -444,6 +448,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(739, 70);
@@ -457,6 +462,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClose.Location = new System.Drawing.Point(12, 463);

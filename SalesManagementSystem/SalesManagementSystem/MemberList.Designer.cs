@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonrRemove = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             this.dateTimePickerMjoin = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             // 
             this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.buttonNew);
-            this.groupBox1.Controls.Add(this.buttonrRemove);
+            this.groupBox1.Controls.Add(this.buttonRemove);
             this.groupBox1.Controls.Add(this.dateTimePickerMjoin);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label11);
@@ -121,6 +121,7 @@
             // 
             // buttonRefresh
             // 
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
             this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,6 +136,7 @@
             // 
             // buttonNew
             // 
+            this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
             this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,19 +149,20 @@
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
-            // buttonrRemove
+            // buttonRemove
             // 
-            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
-            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonrRemove.Location = new System.Drawing.Point(151, 364);
-            this.buttonrRemove.Name = "buttonrRemove";
-            this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
-            this.buttonrRemove.TabIndex = 13;
-            this.buttonrRemove.Text = "削除";
-            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonrRemove.UseVisualStyleBackColor = true;
-            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
+            this.buttonRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemove.Location = new System.Drawing.Point(151, 364);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(70, 33);
+            this.buttonRemove.TabIndex = 13;
+            this.buttonRemove.Text = "削除";
+            this.buttonRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
             // dateTimePickerMjoin
             // 
@@ -171,6 +174,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,6 +491,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(725, 71);
@@ -500,6 +505,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClose.Location = new System.Drawing.Point(12, 519);
@@ -599,7 +605,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Button buttonrRemove;
+        private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

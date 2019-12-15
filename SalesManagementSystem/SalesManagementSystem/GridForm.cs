@@ -27,7 +27,8 @@ namespace SalesManagementSystem
 
         private void GridForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(247, 245, 238);
+            buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
             MaximizeBox = false;
 
             table = AC.dt;

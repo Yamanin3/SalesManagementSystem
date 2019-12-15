@@ -61,6 +61,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Image = global::SalesManagementSystem.Properties.Resources.magnifying_glass_4_0;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonSearch.Location = new System.Drawing.Point(473, 10);

@@ -25,7 +25,12 @@ namespace SalesManagementSystem
 
         private void LoadedListForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(247, 245, 238);
+            buttonAdd.BackColor = Color.FromArgb(191, 205, 219);
+            buttonNew.BackColor = Color.FromArgb(191, 205, 219);
+            buttonRefresh.BackColor = Color.FromArgb(191, 205, 219);
+            buttonClose.BackColor = Color.FromArgb(191, 205, 219);
+            buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            BackColor = Color.FromArgb(215, 228, 242);
             RefreshLoad();
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;

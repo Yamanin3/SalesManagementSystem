@@ -88,6 +88,7 @@
             // 
             // buttonLogin
             // 
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.Image = global::SalesManagementSystem.Properties.Resources.icons8_import_32;
             this.buttonLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLogin.Location = new System.Drawing.Point(177, 173);
@@ -145,6 +146,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExit.Image = global::SalesManagementSystem.Properties.Resources.Actions_dialog_close_icon;
             this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonExit.Location = new System.Drawing.Point(282, 173);
