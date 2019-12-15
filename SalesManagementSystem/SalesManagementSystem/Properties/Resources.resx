@@ -148,6 +148,9 @@
   <data name="Plus-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_OrderedText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_OrderedText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cd_drive_purple-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cd_drive_purple-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,6 +219,9 @@
   </data>
   <data name="Remove-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Remove-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_Ordering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Ordering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="header_Menuuu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_Menuuu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -430,7 +436,7 @@
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_Ordering" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_Ordering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Ordered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Ordered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
