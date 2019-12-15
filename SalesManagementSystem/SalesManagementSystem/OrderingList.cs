@@ -7,9 +7,9 @@ using Login_form.Static_Classes;
 
 namespace SalesManagementSystem
 {
-    public partial class RequestListForm : Form
+    public partial class OrderingListForm : Form
     {
-        public RequestListForm()
+        public OrderingListForm()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace SalesManagementSystem
             orderedlistForm.ShowDialog();
         }
 
-        private void RequestListForm_Load(object sender, EventArgs e)
+        private void OrderingListForm_Load(object sender, EventArgs e)
         {
             buttonClose.BackColor = Color.FromArgb(191, 205, 219);
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);

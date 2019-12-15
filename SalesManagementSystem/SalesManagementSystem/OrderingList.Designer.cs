@@ -1,6 +1,6 @@
 ﻿namespace SalesManagementSystem
 {
-    partial class RequestListForm
+    partial class OrderingListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderingListForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonToOrdered = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
@@ -158,7 +158,7 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // RequestListForm
+            // OrderingListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,10 +174,10 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RequestListForm";
+            this.Name = "OrderingListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "発注リスト";
-            this.Load += new System.EventHandler(this.RequestListForm_Load);
+            this.Load += new System.EventHandler(this.OrderingListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

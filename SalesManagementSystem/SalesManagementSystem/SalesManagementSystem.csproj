@@ -102,11 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestList.cs">
+    <Compile Include="OrderingList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RequestList.Designer.cs">
-      <DependentUpon>RequestList.cs</DependentUpon>
+    <Compile Include="OrderingList.Designer.cs">
+      <DependentUpon>OrderingList.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesList.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RequestList.resx">
-      <DependentUpon>RequestList.cs</DependentUpon>
+    <EmbeddedResource Include="OrderingList.resx">
+      <DependentUpon>OrderingList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesList.resx">
       <DependentUpon>SalesList.cs</DependentUpon>

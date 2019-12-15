@@ -60,7 +60,7 @@ namespace SalesManagementSystem
 
         private void buttonOrdering_Click(object sender, EventArgs e)
         {
-            Form requestlistForm = new RequestListForm();
+            Form requestlistForm = new OrderingListForm();
             requestlistForm.ShowDialog();
         }
 
