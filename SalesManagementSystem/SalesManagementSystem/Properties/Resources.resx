@@ -154,8 +154,11 @@
   <data name="Plus-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_file_2_cool-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_file_2_cool-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_Ordered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Ordered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="header_OrderedText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_OrderedText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,9 +195,6 @@
   </data>
   <data name="header_Ship" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_Ship.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monitor_windows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor_windows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,6 +247,9 @@
   <data name="Previous-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Previous-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="navbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -277,6 +280,9 @@
   <data name="header_MenuuuText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_MenuuuText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_LoginText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_LoginText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cooltext344206965910431" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cooltext344206965910431.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -301,8 +307,8 @@
   <data name="notepad-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_Ordered" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_Ordered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_file_2_cool-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_file_2_cool-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10-2-web-security-free-png-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10-2-web-security-free-png-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,6 +379,9 @@
   <data name="header_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_Employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="header_MenuText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header_MenuText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -442,10 +451,13 @@
   <data name="write_yellow-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\write_yellow-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_Login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="msagent-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msagent-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="header_Employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_Employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="header_Login3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header_Login3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -533,5 +533,17 @@
   <ItemGroup>
     <None Include="Resources\header_Employee.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_LoginText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Login2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Login3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
