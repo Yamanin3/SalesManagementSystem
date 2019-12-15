@@ -514,6 +514,46 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap header_Ship {
+            get {
+                object obj = ResourceManager.GetObject("header_Ship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_ShipText {
+            get {
+                object obj = ResourceManager.GetObject("header_ShipText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_Stock {
+            get {
+                object obj = ResourceManager.GetObject("header_Stock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_StockText {
+            get {
+                object obj = ResourceManager.GetObject("header_StockText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_55 {
             get {
                 object obj = ResourceManager.GetObject("Icon_55", resourceCulture);
@@ -727,6 +767,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap navbar {
             get {
                 object obj = ResourceManager.GetObject("navbar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap navbar1 {
+            get {
+                object obj = ResourceManager.GetObject("navbar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -491,5 +491,20 @@
   <ItemGroup>
     <None Include="Resources\header_MemberText.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_StockText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_ShipText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_Ship.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
