@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
-            this.textBoxMID = new System.Windows.Forms.TextBox();
-            this.textBoxMpass = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxEID = new System.Windows.Forms.TextBox();
+            this.textBoxEpass = new System.Windows.Forms.TextBox();
+            this.labelEID = new System.Windows.Forms.Label();
+            this.labelEpass = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -47,44 +47,44 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxMID
+            // textBoxEID
             // 
-            this.textBoxMID.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxMID.Location = new System.Drawing.Point(230, 85);
-            this.textBoxMID.MaxLength = 20;
-            this.textBoxMID.Name = "textBoxMID";
-            this.textBoxMID.Size = new System.Drawing.Size(132, 19);
-            this.textBoxMID.TabIndex = 3;
-            this.textBoxMID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBoxEID.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxEID.Location = new System.Drawing.Point(230, 85);
+            this.textBoxEID.MaxLength = 4;
+            this.textBoxEID.Name = "textBoxEID";
+            this.textBoxEID.Size = new System.Drawing.Size(132, 19);
+            this.textBoxEID.TabIndex = 3;
+            this.textBoxEID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // textBoxMpass
+            // textBoxEpass
             // 
-            this.textBoxMpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBoxMpass.Location = new System.Drawing.Point(230, 125);
-            this.textBoxMpass.MaxLength = 40;
-            this.textBoxMpass.Name = "textBoxMpass";
-            this.textBoxMpass.PasswordChar = '*';
-            this.textBoxMpass.Size = new System.Drawing.Size(132, 19);
-            this.textBoxMpass.TabIndex = 4;
-            this.textBoxMpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.textBoxEpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxEpass.Location = new System.Drawing.Point(230, 125);
+            this.textBoxEpass.MaxLength = 30;
+            this.textBoxEpass.Name = "textBoxEpass";
+            this.textBoxEpass.PasswordChar = '*';
+            this.textBoxEpass.Size = new System.Drawing.Size(132, 19);
+            this.textBoxEpass.TabIndex = 4;
+            this.textBoxEpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
-            // label1
+            // labelEID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "社員ID";
+            this.labelEID.AutoSize = true;
+            this.labelEID.Location = new System.Drawing.Point(155, 88);
+            this.labelEID.Name = "labelEID";
+            this.labelEID.Size = new System.Drawing.Size(40, 12);
+            this.labelEID.TabIndex = 5;
+            this.labelEID.Text = "社員ID";
             // 
-            // label2
+            // labelEpass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(155, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "パスワード";
+            this.labelEpass.AutoSize = true;
+            this.labelEpass.Location = new System.Drawing.Point(155, 128);
+            this.labelEpass.Name = "labelEpass";
+            this.labelEpass.Size = new System.Drawing.Size(52, 12);
+            this.labelEpass.TabIndex = 6;
+            this.labelEpass.Text = "パスワード";
             // 
             // buttonLogin
             // 
@@ -177,10 +177,10 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxMpass);
-            this.Controls.Add(this.textBoxMID);
+            this.Controls.Add(this.labelEpass);
+            this.Controls.Add(this.labelEID);
+            this.Controls.Add(this.textBoxEpass);
+            this.Controls.Add(this.textBoxEID);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.pictureBox1);
@@ -205,10 +205,10 @@
         #endregion
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.TextBox textBoxMID;
-        private System.Windows.Forms.TextBox textBoxMpass;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxEID;
+        private System.Windows.Forms.TextBox textBoxEpass;
+        private System.Windows.Forms.Label labelEID;
+        private System.Windows.Forms.Label labelEpass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

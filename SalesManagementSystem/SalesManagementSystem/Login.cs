@@ -30,14 +30,14 @@ namespace SalesManagementSystem
         {
             AC.openConnection();
 
-            if (string.IsNullOrEmpty(textBoxMID.Text.Trim()) || string.IsNullOrEmpty(textBoxMpass.Text.Trim()))
+            if (string.IsNullOrEmpty(textBoxEID.Text.Trim()) || string.IsNullOrEmpty(textBoxEpass.Text.Trim()))
             {
                 MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (textBoxMID.CanSelect) textBoxMID.Select();
+                if (textBoxEID.CanSelect) textBoxEID.Select();
 
-                textBoxMID.SelectAll();
-                textBoxMpass.Text = string.Empty;
+                textBoxEID.SelectAll();
+                textBoxEpass.Text = string.Empty;
 
                 return;
             }
@@ -47,8 +47,8 @@ namespace SalesManagementSystem
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
 
-            AC.cmd.Parameters.AddWithValue("@id", textBoxMID.Text.Trim());
-            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBoxMpass.Text.Trim()));
+            AC.cmd.Parameters.AddWithValue("@id", textBoxEID.Text.Trim());
+            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBoxEpass.Text.Trim()));
 
             AC.rd = AC.cmd.ExecuteReader();
 
@@ -62,10 +62,10 @@ namespace SalesManagementSystem
                         MessageBoxIcon.Information);
                 }
 
-                AC.currentID = int.Parse(textBoxMID.Text);
+                AC.currentID = int.Parse(textBoxEID.Text);
 
-                textBoxMID.Text = string.Empty;
-                textBoxMpass.Text = string.Empty;
+                textBoxEID.Text = string.Empty;
+                textBoxEpass.Text = string.Empty;
 
                 Hide();
 
@@ -77,18 +77,18 @@ namespace SalesManagementSystem
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                if (textBoxMID.CanSelect) textBoxMID.Select();
+                if (textBoxEID.CanSelect) textBoxEID.Select();
             }
             else
             {
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                if (textBoxMID.CanSelect) textBoxMID.Select();
+                if (textBoxEID.CanSelect) textBoxEID.Select();
             }
 
-            textBoxMID.SelectAll();
-            textBoxMpass.Text = string.Empty;
+            textBoxEID.SelectAll();
+            textBoxEpass.Text = string.Empty;
 
             AC.rd.Close();
         }
@@ -112,7 +112,7 @@ namespace SalesManagementSystem
 
         private void Login_Form_Activated(object sender, EventArgs e)
         {
-            textBoxMID.Focus();
+            textBoxEID.Focus();
         }
 
         private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
