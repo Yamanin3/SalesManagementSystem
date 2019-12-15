@@ -39,7 +39,7 @@ namespace SalesManagementSystem
                     textBoxOID.Text = "";
                     textBoxCname.Text = "";
                     textBoxPname.Text = "";
-                    comboBoxOquantity.Text = "";
+                    comboBoxOquantity.Text = "1";
                     dateTimePickerOdate.Text = "";
                     textBoxPcurrency.Text = "";
                     textBoxOcurrency.Text = "";
@@ -67,7 +67,7 @@ namespace SalesManagementSystem
                     textBoxOID.Text = "";
                     textBoxCname.Text = "";
                     textBoxPname.Text = "";
-                    comboBoxOquantity.Text = "";
+                    comboBoxOquantity.Text = "1";
                     dateTimePickerOdate.Text = "";
                     textBoxPcurrency.Text = "";
                     textBoxOcurrency.Text = "";
@@ -102,7 +102,7 @@ namespace SalesManagementSystem
                 textBoxOID.Text = "";
                 textBoxCname.Text = "";
                 textBoxPname.Text = "";
-                comboBoxOquantity.Text = "";
+                comboBoxOquantity.Text = "1";
                 dateTimePickerOdate.Text = "";
                 textBoxPcurrency.Text = "";
                 textBoxOcurrency.Text = "";
@@ -189,7 +189,7 @@ namespace SalesManagementSystem
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = AC.currentID;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBoxOquantity.Text);
                                 AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerOdate.Text;
-                                AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxOcurrency.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxOcurrency.Text;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                                 AC.cmd.CommandText = AC.sql;
@@ -374,8 +374,8 @@ namespace SalesManagementSystem
                     AC.rd.Close();
                     if (textBoxPcurrency.Text != "")
                     {
-                        var quantity = double.Parse(comboBoxOquantity.Text);
-                        var price = double.Parse(textBoxPcurrency.Text);
+                        long quantity = long.Parse(comboBoxOquantity.Text);
+                        long price = long.Parse(textBoxPcurrency.Text);
 
                         textBoxOcurrency.Text = (price * quantity).ToString();
                     }
@@ -391,8 +391,8 @@ namespace SalesManagementSystem
         {
             if (textBoxPcurrency.Text != "")
             {
-                var quantity = double.Parse(comboBoxOquantity.Text);
-                var price = double.Parse(textBoxPcurrency.Text);
+                long quantity = long.Parse(comboBoxOquantity.Text);
+                long price = long.Parse(textBoxPcurrency.Text);
 
                 textBoxOcurrency.Text = (price * quantity).ToString();
             }

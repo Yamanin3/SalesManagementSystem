@@ -157,7 +157,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPlength.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxPmagazine.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPcapa.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxPcurrency.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPcurrency.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
@@ -220,7 +220,7 @@ namespace SalesManagementSystem
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPlength.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxPmagazine.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPcapa.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxPcurrency.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPcurrency.Text;
                             AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
