@@ -39,6 +39,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonSet = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -176,6 +176,20 @@
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button2.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(128, 191);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 39);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "更新";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -276,20 +290,6 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(128, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 39);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "更新";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // buttonClose
             // 
             this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
@@ -297,7 +297,7 @@
             this.buttonClose.Location = new System.Drawing.Point(12, 451);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(61, 31);
-            this.buttonClose.TabIndex = 4;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "閉じる";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;

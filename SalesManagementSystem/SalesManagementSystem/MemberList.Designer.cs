@@ -127,7 +127,7 @@
             this.buttonRefresh.Location = new System.Drawing.Point(151, 318);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.Text = "更新";
             this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.buttonNew.Location = new System.Drawing.Point(63, 318);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(70, 33);
-            this.buttonNew.TabIndex = 11;
+            this.buttonNew.TabIndex = 10;
             this.buttonNew.Text = "新規";
             this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.dateTimePickerMjoin.Location = new System.Drawing.Point(116, 257);
             this.dateTimePickerMjoin.Name = "dateTimePickerMjoin";
             this.dateTimePickerMjoin.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePickerMjoin.TabIndex = 9;
+            this.dateTimePickerMjoin.TabIndex = 8;
             // 
             // buttonAdd
             // 
@@ -209,14 +209,14 @@
             this.textBoxMpass.Name = "textBoxMpass";
             this.textBoxMpass.PasswordChar = '*';
             this.textBoxMpass.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMpass.TabIndex = 10;
+            this.textBoxMpass.TabIndex = 9;
             // 
             // dateTimePickerMbirth
             // 
             this.dateTimePickerMbirth.Location = new System.Drawing.Point(116, 132);
             this.dateTimePickerMbirth.Name = "dateTimePickerMbirth";
             this.dateTimePickerMbirth.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePickerMbirth.TabIndex = 4;
+            this.dateTimePickerMbirth.TabIndex = 3;
             // 
             // label9
             // 
@@ -234,7 +234,7 @@
             this.textBoxMmail.MaxLength = 60;
             this.textBoxMmail.Name = "textBoxMmail";
             this.textBoxMmail.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMmail.TabIndex = 8;
+            this.textBoxMmail.TabIndex = 7;
             // 
             // textBoxMphone
             // 
@@ -243,7 +243,7 @@
             this.textBoxMphone.MaxLength = 12;
             this.textBoxMphone.Name = "textBoxMphone";
             this.textBoxMphone.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMphone.TabIndex = 7;
+            this.textBoxMphone.TabIndex = 6;
             this.textBoxMphone.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBoxMaddress
@@ -252,7 +252,7 @@
             this.textBoxMaddress.MaxLength = 50;
             this.textBoxMaddress.Name = "textBoxMaddress";
             this.textBoxMaddress.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMaddress.TabIndex = 6;
+            this.textBoxMaddress.TabIndex = 5;
             // 
             // textBoxMpost
             // 
@@ -261,7 +261,7 @@
             this.textBoxMpost.MaxLength = 7;
             this.textBoxMpost.Name = "textBoxMpost";
             this.textBoxMpost.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMpost.TabIndex = 5;
+            this.textBoxMpost.TabIndex = 4;
             this.textBoxMpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
@@ -312,7 +312,7 @@
             this.comboBoxMsex.Location = new System.Drawing.Point(116, 106);
             this.comboBoxMsex.Name = "comboBoxMsex";
             this.comboBoxMsex.Size = new System.Drawing.Size(124, 20);
-            this.comboBoxMsex.TabIndex = 3;
+            this.comboBoxMsex.TabIndex = 2;
             // 
             // label4
             // 
@@ -356,7 +356,7 @@
             this.textBoxMhurigana.MaxLength = 40;
             this.textBoxMhurigana.Name = "textBoxMhurigana";
             this.textBoxMhurigana.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMhurigana.TabIndex = 2;
+            this.textBoxMhurigana.TabIndex = 1;
             // 
             // textBoxMname
             // 
@@ -364,7 +364,7 @@
             this.textBoxMname.MaxLength = 20;
             this.textBoxMname.Name = "textBoxMname";
             this.textBoxMname.Size = new System.Drawing.Size(124, 19);
-            this.textBoxMname.TabIndex = 1;
+            this.textBoxMname.TabIndex = 0;
             // 
             // textBoxMID
             // 
@@ -505,7 +505,7 @@
             this.buttonClose.Location = new System.Drawing.Point(12, 519);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(61, 31);
-            this.buttonClose.TabIndex = 4;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "閉じる";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;

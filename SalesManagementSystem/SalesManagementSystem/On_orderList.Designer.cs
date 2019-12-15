@@ -144,7 +144,7 @@
             this.buttonRefresh.Location = new System.Drawing.Point(157, 247);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 4;
+            this.buttonRefresh.TabIndex = 5;
             this.buttonRefresh.Text = "更新";
             this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.buttonNew.Location = new System.Drawing.Point(68, 247);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(70, 33);
-            this.buttonNew.TabIndex = 8;
+            this.buttonNew.TabIndex = 4;
             this.buttonNew.Text = "新規";
             this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             this.buttonRemove.Location = new System.Drawing.Point(157, 292);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(70, 33);
-            this.buttonRemove.TabIndex = 10;
+            this.buttonRemove.TabIndex = 7;
             this.buttonRemove.Text = "削除";
             this.buttonRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.comboBoxOquantity.Location = new System.Drawing.Point(116, 103);
             this.comboBoxOquantity.Name = "comboBoxOquantity";
             this.comboBoxOquantity.Size = new System.Drawing.Size(121, 20);
-            this.comboBoxOquantity.TabIndex = 3;
+            this.comboBoxOquantity.TabIndex = 2;
             this.comboBoxOquantity.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // button3
@@ -207,7 +207,7 @@
             this.button3.Location = new System.Drawing.Point(243, 78);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 19);
-            this.button3.TabIndex = 2;
+            this.button3.TabIndex = 1;
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -217,7 +217,7 @@
             this.button2.Location = new System.Drawing.Point(243, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 19);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 0;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -246,7 +246,7 @@
             this.dateTimePickerOdate.Location = new System.Drawing.Point(116, 128);
             this.dateTimePickerOdate.Name = "dateTimePickerOdate";
             this.dateTimePickerOdate.Size = new System.Drawing.Size(121, 19);
-            this.dateTimePickerOdate.TabIndex = 4;
+            this.dateTimePickerOdate.TabIndex = 3;
             // 
             // buttonAdd
             // 
@@ -256,7 +256,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(68, 292);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(70, 33);
-            this.buttonAdd.TabIndex = 9;
+            this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -465,7 +465,7 @@
             this.buttonClose.Location = new System.Drawing.Point(12, 442);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(61, 31);
-            this.buttonClose.TabIndex = 5;
+            this.buttonClose.TabIndex = 4;
             this.buttonClose.Text = "閉じる";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;

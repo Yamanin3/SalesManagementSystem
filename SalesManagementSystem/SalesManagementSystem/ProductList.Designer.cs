@@ -119,7 +119,7 @@
             this.buttonRefresh.Location = new System.Drawing.Point(147, 262);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.TabIndex = 9;
             this.buttonRefresh.Text = "更新";
             this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.buttonrRemove.Location = new System.Drawing.Point(147, 305);
             this.buttonrRemove.Name = "buttonrRemove";
             this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
-            this.buttonrRemove.TabIndex = 10;
+            this.buttonrRemove.TabIndex = 11;
             this.buttonrRemove.Text = "削除";
             this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonrRemove.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(59, 305);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(70, 33);
-            this.buttonAdd.TabIndex = 9;
+            this.buttonAdd.TabIndex = 10;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -483,7 +483,7 @@
             this.buttonClose.Location = new System.Drawing.Point(12, 443);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(61, 31);
-            this.buttonClose.TabIndex = 4;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "閉じる";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;

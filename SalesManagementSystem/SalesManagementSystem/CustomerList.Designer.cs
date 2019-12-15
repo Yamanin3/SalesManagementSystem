@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonrRemove = new System.Windows.Forms.Button();
             this.dateTimePickerCbirth = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.sMSdatabaseDataSet1 = new SalesManagementSystem.SMSdatabaseDataSet();
             this.顧客マスタTableAdapter1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.顧客マスタTableAdapter();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -113,6 +113,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "顧客操作";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(157, 277);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 9;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // buttonNew
             // 
             this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -121,7 +135,7 @@
             this.buttonNew.Location = new System.Drawing.Point(65, 277);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(70, 33);
-            this.buttonNew.TabIndex = 9;
+            this.buttonNew.TabIndex = 8;
             this.buttonNew.Text = "新規";
             this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -146,7 +160,7 @@
             this.dateTimePickerCbirth.Location = new System.Drawing.Point(116, 138);
             this.dateTimePickerCbirth.Name = "dateTimePickerCbirth";
             this.dateTimePickerCbirth.Size = new System.Drawing.Size(111, 19);
-            this.dateTimePickerCbirth.TabIndex = 4;
+            this.dateTimePickerCbirth.TabIndex = 3;
             // 
             // label9
             // 
@@ -178,7 +192,7 @@
             this.textBoxCmail.MaxLength = 60;
             this.textBoxCmail.Name = "textBoxCmail";
             this.textBoxCmail.Size = new System.Drawing.Size(111, 19);
-            this.textBoxCmail.TabIndex = 8;
+            this.textBoxCmail.TabIndex = 7;
             // 
             // textBoxCphone
             // 
@@ -187,7 +201,7 @@
             this.textBoxCphone.MaxLength = 12;
             this.textBoxCphone.Name = "textBoxCphone";
             this.textBoxCphone.Size = new System.Drawing.Size(111, 19);
-            this.textBoxCphone.TabIndex = 7;
+            this.textBoxCphone.TabIndex = 6;
             this.textBoxCphone.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBoxCaddress
@@ -196,7 +210,7 @@
             this.textBoxCaddress.MaxLength = 50;
             this.textBoxCaddress.Name = "textBoxCaddress";
             this.textBoxCaddress.Size = new System.Drawing.Size(111, 19);
-            this.textBoxCaddress.TabIndex = 6;
+            this.textBoxCaddress.TabIndex = 5;
             // 
             // textBoxCpost
             // 
@@ -205,7 +219,7 @@
             this.textBoxCpost.MaxLength = 7;
             this.textBoxCpost.Name = "textBoxCpost";
             this.textBoxCpost.Size = new System.Drawing.Size(111, 19);
-            this.textBoxCpost.TabIndex = 5;
+            this.textBoxCpost.TabIndex = 4;
             this.textBoxCpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
@@ -255,7 +269,7 @@
             this.comboBoxCsex.Location = new System.Drawing.Point(116, 112);
             this.comboBoxCsex.Name = "comboBoxCsex";
             this.comboBoxCsex.Size = new System.Drawing.Size(111, 20);
-            this.comboBoxCsex.TabIndex = 3;
+            this.comboBoxCsex.TabIndex = 2;
             // 
             // label4
             // 
@@ -299,7 +313,7 @@
             this.textBoxChurigana.MaxLength = 40;
             this.textBoxChurigana.Name = "textBoxChurigana";
             this.textBoxChurigana.Size = new System.Drawing.Size(111, 19);
-            this.textBoxChurigana.TabIndex = 2;
+            this.textBoxChurigana.TabIndex = 1;
             // 
             // textBoxCname
             // 
@@ -307,7 +321,7 @@
             this.textBoxCname.MaxLength = 20;
             this.textBoxCname.Name = "textBoxCname";
             this.textBoxCname.Size = new System.Drawing.Size(111, 19);
-            this.textBoxCname.TabIndex = 1;
+            this.textBoxCname.TabIndex = 0;
             // 
             // textBoxCID
             // 
@@ -372,20 +386,6 @@
             this.SearchTextbox.Size = new System.Drawing.Size(241, 19);
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(157, 277);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 3;
-            this.buttonRefresh.Text = "更新";
-            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // pictureBox5
             // 
@@ -462,7 +462,7 @@
             this.buttonClose.Location = new System.Drawing.Point(12, 463);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(61, 31);
-            this.buttonClose.TabIndex = 4;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "閉じる";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;
