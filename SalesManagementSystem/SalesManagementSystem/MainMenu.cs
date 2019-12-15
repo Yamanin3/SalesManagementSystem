@@ -43,7 +43,7 @@ namespace SalesManagementSystem
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(236, 233, 216);
+            BackColor = Color.FromArgb(247, 245, 238);
             MaximizeBox = false;
         }
 

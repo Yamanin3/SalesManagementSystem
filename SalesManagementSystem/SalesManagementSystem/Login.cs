@@ -21,7 +21,7 @@ namespace SalesManagementSystem
             MaximizeBox = false;
             //buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
             //buttonExit.BackColor = Color.FromArgb(191, 205, 219);
-            BackColor = Color.FromArgb(236, 233, 216);
+            BackColor = Color.FromArgb(247, 245, 238);
             pictureBox2.Controls.Add(pictureBox5); //ピクチャーボックスの背景を透過させる(プロパティ:BackColorがTransparentになっていること)
             AC.openConnection();
         }
