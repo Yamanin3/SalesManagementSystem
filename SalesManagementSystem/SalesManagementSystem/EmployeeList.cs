@@ -41,9 +41,9 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
+            dataGridViewElist.DataSource = AC.dt;
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dataGridViewElist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
                 textBoxEID.Text = "";
@@ -61,7 +61,7 @@ namespace SalesManagementSystem
             else
             {
                 buttonAdd.Enabled = true;
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                dataGridViewElist.CurrentCell = dataGridViewElist.Rows[0].Cells[0];
             }
         }
 
@@ -72,11 +72,11 @@ namespace SalesManagementSystem
             menu.Show();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewElist_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.CurrentCell == null)
+                if (dataGridViewElist.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
                     textBoxEID.Text = "";
@@ -91,39 +91,39 @@ namespace SalesManagementSystem
                     dateTimePickerEjoin.Text = "";
                     textBoxEpass.Text = "";
                 }
-                else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+                else if (dataGridViewElist.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
                     textBoxEpass.Enabled = true;
-                    textBoxEID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBoxEname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBoxEhurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBoxEsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePickerEbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBoxEpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBoxEaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBoxEphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBoxEmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    dateTimePickerEjoin.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textBoxEpass.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
+                    textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
+                    textBoxEhurigana.Text = dataGridViewElist.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxEsex.Text = dataGridViewElist.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerEbirth.Text = dataGridViewElist.CurrentRow.Cells[4].Value.ToString();
+                    textBoxEpost.Text = dataGridViewElist.CurrentRow.Cells[5].Value.ToString();
+                    textBoxEaddress.Text = dataGridViewElist.CurrentRow.Cells[6].Value.ToString();
+                    textBoxEphone.Text = dataGridViewElist.CurrentRow.Cells[7].Value.ToString();
+                    textBoxEmail.Text = dataGridViewElist.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePickerEjoin.Text = dataGridViewElist.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEpass.Text = dataGridViewElist.CurrentRow.Cells[10].Value.ToString();
                 }
                 else
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
                     textBoxEpass.Enabled = false;
-                    textBoxEID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBoxEname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBoxEhurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBoxEsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePickerEbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBoxEpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBoxEaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBoxEphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBoxEmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    dateTimePickerEjoin.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textBoxEpass.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
+                    textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
+                    textBoxEhurigana.Text = dataGridViewElist.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxEsex.Text = dataGridViewElist.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerEbirth.Text = dataGridViewElist.CurrentRow.Cells[4].Value.ToString();
+                    textBoxEpost.Text = dataGridViewElist.CurrentRow.Cells[5].Value.ToString();
+                    textBoxEaddress.Text = dataGridViewElist.CurrentRow.Cells[6].Value.ToString();
+                    textBoxEphone.Text = dataGridViewElist.CurrentRow.Cells[7].Value.ToString();
+                    textBoxEmail.Text = dataGridViewElist.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePickerEjoin.Text = dataGridViewElist.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEpass.Text = dataGridViewElist.CurrentRow.Cells[10].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -134,9 +134,9 @@ namespace SalesManagementSystem
 
         private void buttonrRemove_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewElist.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (dataGridView1.CurrentCell == null) return;
+                if (dataGridViewElist.CurrentCell == null) return;
             }
             else
             {
@@ -157,7 +157,7 @@ namespace SalesManagementSystem
                         AC.cmd.Parameters.Clear();
                         AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
                         AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
-                            int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            int.Parse(dataGridViewElist.CurrentRow.Cells[0].Value.ToString());
                         AC.cmd.CommandText = AC.sql;
                         AC.cmd.ExecuteNonQuery();
 
@@ -174,7 +174,7 @@ namespace SalesManagementSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewElist.SelectedRows.Count <= 0 || dataGridViewElist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if (string.IsNullOrEmpty(textBoxEname.Text.Trim()) || string.IsNullOrEmpty(textBoxEhurigana.Text.Trim()) ||
                     string.IsNullOrEmpty(textBoxEpost.Text.Trim()) || string.IsNullOrEmpty(textBoxEaddress.Text.Trim()) ||
@@ -406,7 +406,7 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-                            var id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            var id = int.Parse(dataGridViewElist.CurrentRow.Cells[0].Value.ToString());
                             AC.sql =
                                 "update 社員マスタ set 社員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入社日 = ? where 社員ID = @id;";
                             AC.cmd.Parameters.Clear();
@@ -468,9 +468,9 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            if (dataGridView1.CurrentCell == null)
+            dataGridViewElist.DataSource = AC.dt;
+            dataGridViewElist_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridViewElist.CurrentCell == null)
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -487,8 +487,8 @@ namespace SalesManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewElist.CurrentCell = dataGridViewElist.Rows[dataGridViewElist.Rows.Count - 1].Cells[0];
+            dataGridViewElist_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }
