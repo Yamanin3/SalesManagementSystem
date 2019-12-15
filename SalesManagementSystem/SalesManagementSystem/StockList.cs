@@ -43,7 +43,7 @@ namespace SalesManagementSystem
 
             if (dataGridView1.SelectedRows.Count <= 0)
             {
-                buttonAdd.Enabled = false;
+                buttonSet.Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "0";
@@ -51,7 +51,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                buttonAdd.Enabled = true;
+                buttonSet.Enabled = true;
                 // datagridview1の最上段にカーソルを当てる
                 dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[1];
             }
@@ -67,12 +67,12 @@ namespace SalesManagementSystem
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
-                    buttonAdd.Enabled = false;
+                    buttonSet.Enabled = false;
                     textBox4.Enabled = false;
                 }
                 else
                 {
-                    buttonAdd.Enabled = true;
+                    buttonSet.Enabled = true;
                     textBox4.Enabled = true;
                     textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();

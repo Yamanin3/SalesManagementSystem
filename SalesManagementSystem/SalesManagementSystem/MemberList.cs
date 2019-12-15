@@ -22,6 +22,7 @@ namespace SalesManagementSystem
         {
             RefreshLoad();
             MaximizeBox = false;
+            dateTimePickerMbirth.MaxDate = DateTime.Now;
         }
 
         private void RefreshLoad()
@@ -37,17 +38,17 @@ namespace SalesManagementSystem
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                comboBox1.Text = "";
-                dateTimePicker1.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                dateTimePicker2.Text = "";
-                textBox8.Text = "";
+                textBoxMID.Text = "";
+                textBoxMname.Text = "";
+                textBoxMhurigana.Text = "";
+                comboBoxMsex.Text = "";
+                dateTimePickerMbirth.Text = "";
+                textBoxMpost.Text = "";
+                textBoxMaddress.Text = "";
+                textBoxMphone.Text = "";
+                textBoxMmail.Text = "";
+                dateTimePickerMjoin.Text = "";
+                textBoxMpass.Text = "";
             }
             else
             {
@@ -70,51 +71,51 @@ namespace SalesManagementSystem
                 if (dataGridView1.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    comboBox1.Text = "";
-                    dateTimePicker1.Text = "";
-                    textBox4.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
-                    dateTimePicker2.Text = "";
-                    textBox8.Text = "";
+                    textBoxMID.Text = "";
+                    textBoxMname.Text = "";
+                    textBoxMhurigana.Text = "";
+                    comboBoxMsex.Text = "";
+                    dateTimePickerMbirth.Text = "";
+                    textBoxMpost.Text = "";
+                    textBoxMaddress.Text = "";
+                    textBoxMphone.Text = "";
+                    textBoxMmail.Text = "";
+                    dateTimePickerMjoin.Text = "";
+                    textBoxMpass.Text = "";
                 }
                 else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
-                    textBox8.Enabled = true;
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textBoxMpass.Enabled = true;
+                    textBoxMID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBoxMname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBoxMhurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxMsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerMbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBoxMpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBoxMaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBoxMphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBoxMmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePickerMjoin.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBoxMpass.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 }
                 else
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
-                    textBox8.Enabled = false;
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textBox8.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textBoxMpass.Enabled = false;
+                    textBoxMID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBoxMname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBoxMhurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxMsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerMbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBoxMpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBoxMaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBoxMphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBoxMmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    dateTimePickerMjoin.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBoxMpass.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -167,44 +168,44 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
-                    string.IsNullOrEmpty(comboBox1.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker1.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox8.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxMname.Text.Trim()) || string.IsNullOrEmpty(textBoxMhurigana.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMpost.Text.Trim()) || string.IsNullOrEmpty(textBoxMaddress.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMphone.Text.Trim()) || string.IsNullOrEmpty(textBoxMmail.Text.Trim()) ||
+                    string.IsNullOrEmpty(comboBoxMsex.Text.Trim()) || string.IsNullOrEmpty(dateTimePickerMbirth.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMpass.Text.Trim()))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    if (textBox7.Text.IndexOf('@') == -1)
+                    if (textBoxMmail.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox7.Focus();
-                        textBox7.SelectAll();
+                        textBoxMmail.Focus();
+                        textBoxMmail.SelectAll();
                         return;
                     }
 
-                    var index = textBox7.Text.IndexOf('@');
-                    if (textBox7.Text.IndexOf('@', index + 1) != -1)
+                    var index = textBoxMmail.Text.IndexOf('@');
+                    if (textBoxMmail.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox7.Focus();
-                        textBox7.SelectAll();
+                        textBoxMmail.Focus();
+                        textBoxMmail.SelectAll();
                         return;
                     }
 
-                    var iLengthpost = textBox4.TextLength;
-                    var iLengthphone = textBox6.TextLength;
+                    var iLengthpost = textBoxMpost.TextLength;
+                    var iLengthphone = textBoxMphone.TextLength;
 
                     if (iLengthpost < 7)
                     {
                         MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox4.Focus();
-                        textBox4.SelectAll();
+                        textBoxMpost.Focus();
+                        textBoxMpost.SelectAll();
                         return;
                     }
 
@@ -212,20 +213,20 @@ namespace SalesManagementSystem
                     {
                         MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox6.Focus();
-                        textBox6.SelectAll();
+                        textBoxMphone.Focus();
+                        textBoxMphone.SelectAll();
                         return;
                     }
 
-                    var iLength = textBox8.TextLength;
-                    var passwd = textBox8.Text;
+                    var iLength = textBoxMpass.TextLength;
+                    var passwd = textBoxMpass.Text;
 
                     if (iLength < 8)
                     {
                         MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox8.Focus();
-                        textBox8.SelectAll();
+                        textBoxMpass.Focus();
+                        textBoxMpass.SelectAll();
                         return;
                     }
 
@@ -248,8 +249,8 @@ namespace SalesManagementSystem
                         {
                             MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
-                            textBox8.Focus();
-                            textBox8.SelectAll();
+                            textBoxMpass.Focus();
+                            textBoxMpass.SelectAll();
                             return;
                         }
                     }
@@ -270,16 +271,16 @@ namespace SalesManagementSystem
                             AC.sql =
                                 "insert into 社員マスタ(社員名, ふりがな, 性別, 生年月日, 郵便番号, 住所, 電話番号, メールアドレス, 入会日, パスワード, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = Sha256hash.ToHash(textBox8.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMname.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMhurigana.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxMsex.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerMbirth.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMpost.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMaddress.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMphone.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMmail.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerMjoin.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = Sha256hash.ToHash(textBoxMpass.Text);
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
@@ -296,44 +297,44 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
-                    string.IsNullOrEmpty(comboBox1.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker1.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(textBox8.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxMname.Text.Trim()) || string.IsNullOrEmpty(textBoxMhurigana.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMpost.Text.Trim()) || string.IsNullOrEmpty(textBoxMaddress.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMphone.Text.Trim()) || string.IsNullOrEmpty(textBoxMmail.Text.Trim()) ||
+                    string.IsNullOrEmpty(comboBoxMsex.Text.Trim()) || string.IsNullOrEmpty(dateTimePickerMbirth.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMpass.Text.Trim()) || string.IsNullOrEmpty(textBoxMpass.Text.Trim()))
                 {
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    if (textBox7.Text.IndexOf('@') == -1)
+                    if (textBoxMmail.Text.IndexOf('@') == -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox7.Focus();
-                        textBox7.SelectAll();
+                        textBoxMmail.Focus();
+                        textBoxMmail.SelectAll();
                         return;
                     }
 
-                    var index = textBox7.Text.IndexOf('@');
-                    if (textBox7.Text.IndexOf('@', index + 1) != -1)
+                    var index = textBoxMmail.Text.IndexOf('@');
+                    if (textBoxMmail.Text.IndexOf('@', index + 1) != -1)
                     {
                         MessageBox.Show("これは有効なメールアドレスではありません", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox7.Focus();
-                        textBox7.SelectAll();
+                        textBoxMmail.Focus();
+                        textBoxMmail.SelectAll();
                         return;
                     }
 
-                    var iLengthpost = textBox4.TextLength;
-                    var iLengthphone = textBox6.TextLength;
+                    var iLengthpost = textBoxMpost.TextLength;
+                    var iLengthphone = textBoxMphone.TextLength;
 
                     if (iLengthpost < 7)
                     {
                         MessageBox.Show("正しい郵便番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox4.Focus();
-                        textBox4.SelectAll();
+                        textBoxMpost.Focus();
+                        textBoxMpost.SelectAll();
                         return;
                     }
 
@@ -341,21 +342,21 @@ namespace SalesManagementSystem
                     {
                         MessageBox.Show("正しい電話番号を入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox6.Focus();
-                        textBox6.SelectAll();
+                        textBoxMphone.Focus();
+                        textBoxMphone.SelectAll();
                         return;
                     }
 
 
-                    var iLength = textBox8.TextLength;
-                    var passwd = textBox8.Text;
+                    var iLength = textBoxMpass.TextLength;
+                    var passwd = textBoxMpass.Text;
 
                     if (iLength < 8)
                     {
                         MessageBox.Show("パスワードが短すぎます。8文字以上で入力してください", "データ入力エラー", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-                        textBox8.Focus();
-                        textBox8.SelectAll();
+                        textBoxMpass.Focus();
+                        textBoxMpass.SelectAll();
                         return;
                     }
 
@@ -378,8 +379,8 @@ namespace SalesManagementSystem
                         {
                             MessageBox.Show("パスワードに大文字が含まれていません。", "データ入力エラー", MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
-                            textBox8.Focus();
-                            textBox8.SelectAll();
+                            textBoxMpass.Focus();
+                            textBoxMpass.SelectAll();
                             return;
                         }
                     }
@@ -401,15 +402,15 @@ namespace SalesManagementSystem
                             AC.sql =
                                 "update 社員マスタ set 社員名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ?, 入会日 = ? where 社員ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox5.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox6.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox7.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker2.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMname.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMhurigana.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxMsex.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerMbirth.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMpost.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMaddress.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMphone.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxMmail.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerMjoin.Text;
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
@@ -433,9 +434,9 @@ namespace SalesManagementSystem
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox4.Text) && int.TryParse(textBox4.Text, out I) != true)
+            if (!string.IsNullOrEmpty(textBoxMpost.Text) && int.TryParse(textBoxMpost.Text, out I) != true)
             {
-                textBox4.ResetText();
+                textBoxMpost.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -443,9 +444,9 @@ namespace SalesManagementSystem
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             long L;
-            if (!string.IsNullOrEmpty(textBox6.Text) && long.TryParse(textBox6.Text, out L) != true)
+            if (!string.IsNullOrEmpty(textBoxMphone.Text) && long.TryParse(textBoxMphone.Text, out L) != true)
             {
-                textBox6.ResetText();
+                textBoxMphone.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxMID = new System.Windows.Forms.TextBox();
+            this.textBoxMpass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -47,26 +47,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxMID
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(230, 85);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 19);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBoxMID.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxMID.Location = new System.Drawing.Point(230, 85);
+            this.textBoxMID.MaxLength = 20;
+            this.textBoxMID.Name = "textBoxMID";
+            this.textBoxMID.Size = new System.Drawing.Size(132, 19);
+            this.textBoxMID.TabIndex = 3;
+            this.textBoxMID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // textBox2
+            // textBoxMpass
             // 
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox2.Location = new System.Drawing.Point(230, 125);
-            this.textBox2.MaxLength = 40;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(132, 19);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.textBoxMpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxMpass.Location = new System.Drawing.Point(230, 125);
+            this.textBoxMpass.MaxLength = 40;
+            this.textBoxMpass.Name = "textBoxMpass";
+            this.textBoxMpass.PasswordChar = '*';
+            this.textBoxMpass.Size = new System.Drawing.Size(132, 19);
+            this.textBoxMpass.TabIndex = 4;
+            this.textBoxMpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label1
             // 
@@ -86,18 +86,18 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "パスワード";
             // 
-            // button1
+            // buttonLogin
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.icons8_import_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(177, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ログイン";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLogin.Image = global::SalesManagementSystem.Properties.Resources.icons8_import_32;
+            this.buttonLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLogin.Location = new System.Drawing.Point(177, 173);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(77, 35);
+            this.buttonLogin.TabIndex = 1;
+            this.buttonLogin.Text = "ログイン";
+            this.buttonLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox5
             // 
@@ -143,17 +143,17 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
-            // button2
+            // buttonExit
             // 
-            this.button2.Image = global::SalesManagementSystem.Properties.Resources.Actions_dialog_close_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(282, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "     終了";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonExit.Image = global::SalesManagementSystem.Properties.Resources.Actions_dialog_close_icon;
+            this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonExit.Location = new System.Drawing.Point(282, 173);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(77, 35);
+            this.buttonExit.TabIndex = 2;
+            this.buttonExit.Text = "     終了";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -167,7 +167,7 @@
             // 
             // Login_Form
             // 
-            this.AcceptButton = this.button1;
+            this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 226);
@@ -177,10 +177,10 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxMpass);
+            this.Controls.Add(this.textBoxMID);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -201,10 +201,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.TextBox textBoxMID;
+        private System.Windows.Forms.TextBox textBoxMpass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;

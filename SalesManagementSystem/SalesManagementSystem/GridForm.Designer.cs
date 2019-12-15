@@ -75,6 +75,7 @@
             // SearchTextbox
             // 
             this.SearchTextbox.Location = new System.Drawing.Point(226, 12);
+            this.SearchTextbox.MaxLength = 50;
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(241, 19);
             this.SearchTextbox.TabIndex = 0;

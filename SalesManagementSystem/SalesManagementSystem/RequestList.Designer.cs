@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestListForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonToOrdered = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,22 +65,23 @@
             this.dataGridView1.TabIndex = 32;
             this.dataGridView1.TabStop = false;
             // 
-            // button2
+            // buttonToOrdered
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(548, 337);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 32);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "発注済み一覧を表示";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonToOrdered.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonToOrdered.Location = new System.Drawing.Point(548, 337);
+            this.buttonToOrdered.Name = "buttonToOrdered";
+            this.buttonToOrdered.Size = new System.Drawing.Size(134, 32);
+            this.buttonToOrdered.TabIndex = 2;
+            this.buttonToOrdered.Text = "発注済み一覧を表示";
+            this.buttonToOrdered.UseVisualStyleBackColor = true;
+            this.buttonToOrdered.Click += new System.EventHandler(this.button2_Click);
             // 
             // SearchTextbox
             // 
-            this.SearchTextbox.Location = new System.Drawing.Point(262, 74);
+            this.SearchTextbox.Location = new System.Drawing.Point(222, 74);
+            this.SearchTextbox.MaxLength = 50;
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(160, 19);
+            this.SearchTextbox.Size = new System.Drawing.Size(200, 19);
             this.SearchTextbox.TabIndex = 0;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
@@ -141,18 +142,18 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // button1
+            // buttonClose
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(14, 337);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "閉じる";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClose.Location = new System.Drawing.Point(14, 337);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(61, 31);
+            this.buttonClose.TabIndex = 3;
+            this.buttonClose.Text = "閉じる";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // RequestListForm
             // 
@@ -165,8 +166,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.buttonToOrdered);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -186,8 +187,8 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonToOrdered;
+        private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.PictureBox pictureBox1;

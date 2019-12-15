@@ -19,8 +19,8 @@ namespace SalesManagementSystem
         private void Login_Form_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
-            button1.BackColor = Color.FromArgb(191, 205, 219);
-            button2.BackColor = Color.FromArgb(191, 205, 219);
+            buttonLogin.BackColor = Color.FromArgb(191, 205, 219);
+            buttonExit.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242);
             pictureBox2.Controls.Add(pictureBox5); //ピクチャーボックスの背景を透過させる(プロパティ:BackColorがTransparentになっていること)
             AC.openConnection();
@@ -28,18 +28,18 @@ namespace SalesManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Focus();
+            buttonLogin.Focus();
 
             AC.openConnection();
 
-            if (string.IsNullOrEmpty(textBox1.Text.Trim()) || string.IsNullOrEmpty(textBox2.Text.Trim()))
+            if (string.IsNullOrEmpty(textBoxMID.Text.Trim()) || string.IsNullOrEmpty(textBoxMpass.Text.Trim()))
             {
                 MessageBox.Show("社員IDとパスワードを入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (textBox1.CanSelect) textBox1.Select();
+                if (textBoxMID.CanSelect) textBoxMID.Select();
 
-                textBox1.SelectAll();
-                textBox2.Text = string.Empty;
+                textBoxMID.SelectAll();
+                textBoxMpass.Text = string.Empty;
 
                 return;
             }
@@ -49,8 +49,8 @@ namespace SalesManagementSystem
             AC.cmd.CommandType = CommandType.Text;
             AC.cmd.CommandText = AC.sql;
 
-            AC.cmd.Parameters.AddWithValue("@id", textBox1.Text.Trim());
-            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBox2.Text.Trim()));
+            AC.cmd.Parameters.AddWithValue("@id", textBoxMID.Text.Trim());
+            AC.cmd.Parameters.AddWithValue("@pa", Sha256hash.ToHash(textBoxMpass.Text.Trim()));
 
             AC.rd = AC.cmd.ExecuteReader();
 
@@ -64,10 +64,10 @@ namespace SalesManagementSystem
                         MessageBoxIcon.Information);
                 }
 
-                AC.currentID = int.Parse(textBox1.Text);
+                AC.currentID = int.Parse(textBoxMID.Text);
 
-                textBox1.Text = string.Empty;
-                textBox2.Text = string.Empty;
+                textBoxMID.Text = string.Empty;
+                textBoxMpass.Text = string.Empty;
 
                 Hide();
 
@@ -79,18 +79,18 @@ namespace SalesManagementSystem
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                if (textBox1.CanSelect) textBox1.Select();
+                if (textBoxMID.CanSelect) textBoxMID.Select();
             }
             else
             {
                 MessageBox.Show("社員IDかパスワードが違います。もう一度やり直してください。", "データ入力エラー", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                if (textBox1.CanSelect) textBox1.Select();
+                if (textBoxMID.CanSelect) textBoxMID.Select();
             }
 
-            textBox1.SelectAll();
-            textBox2.Text = string.Empty;
+            textBoxMID.SelectAll();
+            textBoxMpass.Text = string.Empty;
 
             AC.rd.Close();
         }
@@ -104,17 +104,17 @@ namespace SalesManagementSystem
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) button1.PerformClick();
+            if (e.KeyCode == Keys.Enter) buttonLogin.PerformClick();
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) button1.PerformClick();
+            if (e.KeyCode == Keys.Enter) buttonLogin.PerformClick();
         }
 
         private void Login_Form_Activated(object sender, EventArgs e)
         {
-            textBox1.Focus();
+            textBoxMID.Focus();
         }
 
         private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)

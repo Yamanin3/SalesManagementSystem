@@ -31,28 +31,32 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberListForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonrRemove = new System.Windows.Forms.Button();
+            this.dateTimePickerMjoin = new System.Windows.Forms.DateTimePicker();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxMpass = new System.Windows.Forms.TextBox();
+            this.dateTimePickerMbirth = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxMmail = new System.Windows.Forms.TextBox();
+            this.textBoxMphone = new System.Windows.Forms.TextBox();
+            this.textBoxMaddress = new System.Windows.Forms.TextBox();
+            this.textBoxMpost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMsex = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxMhurigana = new System.Windows.Forms.TextBox();
+            this.textBoxMname = new System.Windows.Forms.TextBox();
+            this.textBoxMID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.社員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -65,12 +69,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonrRemove = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.社員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,31 +86,32 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.buttonNew);
             this.groupBox1.Controls.Add(this.buttonrRemove);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dateTimePickerMjoin);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.textBoxMpass);
+            this.groupBox1.Controls.Add(this.dateTimePickerMbirth);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBoxMmail);
+            this.groupBox1.Controls.Add(this.textBoxMphone);
+            this.groupBox1.Controls.Add(this.textBoxMaddress);
+            this.groupBox1.Controls.Add(this.textBoxMpost);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxMsex);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxMhurigana);
+            this.groupBox1.Controls.Add(this.textBoxMname);
+            this.groupBox1.Controls.Add(this.textBoxMID);
             this.groupBox1.Location = new System.Drawing.Point(12, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(279, 417);
@@ -118,13 +119,69 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "社員操作";
             // 
-            // dateTimePicker2
+            // buttonRefresh
             // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(116, 257);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePicker2.TabIndex = 9;
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(151, 318);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNew.Location = new System.Drawing.Point(63, 318);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(70, 33);
+            this.buttonNew.TabIndex = 11;
+            this.buttonNew.Text = "新規";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
+            // buttonrRemove
+            // 
+            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
+            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonrRemove.Location = new System.Drawing.Point(151, 364);
+            this.buttonrRemove.Name = "buttonrRemove";
+            this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
+            this.buttonrRemove.TabIndex = 13;
+            this.buttonrRemove.Text = "削除";
+            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonrRemove.UseVisualStyleBackColor = true;
+            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
+            // 
+            // dateTimePickerMjoin
+            // 
+            this.dateTimePickerMjoin.Enabled = false;
+            this.dateTimePickerMjoin.Location = new System.Drawing.Point(116, 257);
+            this.dateTimePickerMjoin.Name = "dateTimePickerMjoin";
+            this.dateTimePickerMjoin.Size = new System.Drawing.Size(124, 19);
+            this.dateTimePickerMjoin.TabIndex = 9;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(63, 364);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(70, 33);
+            this.buttonAdd.TabIndex = 12;
+            this.buttonAdd.Text = "追加";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label11
             // 
@@ -142,24 +199,24 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 12);
             this.label10.TabIndex = 28;
-            this.label10.Text = "入会日:";
+            this.label10.Text = "入社日:";
             // 
-            // textBox8
+            // textBoxMpass
             // 
-            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox8.Location = new System.Drawing.Point(116, 282);
-            this.textBox8.MaxLength = 30;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(124, 19);
-            this.textBox8.TabIndex = 10;
+            this.textBoxMpass.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxMpass.Location = new System.Drawing.Point(116, 282);
+            this.textBoxMpass.MaxLength = 30;
+            this.textBoxMpass.Name = "textBoxMpass";
+            this.textBoxMpass.PasswordChar = '*';
+            this.textBoxMpass.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMpass.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dateTimePickerMbirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 132);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(124, 19);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePickerMbirth.Location = new System.Drawing.Point(116, 132);
+            this.dateTimePickerMbirth.Name = "dateTimePickerMbirth";
+            this.dateTimePickerMbirth.Size = new System.Drawing.Size(124, 19);
+            this.dateTimePickerMbirth.TabIndex = 4;
             // 
             // label9
             // 
@@ -170,42 +227,42 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "メールアドレス:";
             // 
-            // textBox7
+            // textBoxMmail
             // 
-            this.textBox7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox7.Location = new System.Drawing.Point(116, 232);
-            this.textBox7.MaxLength = 60;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(124, 19);
-            this.textBox7.TabIndex = 8;
+            this.textBoxMmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxMmail.Location = new System.Drawing.Point(116, 232);
+            this.textBoxMmail.MaxLength = 60;
+            this.textBoxMmail.Name = "textBoxMmail";
+            this.textBoxMmail.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMmail.TabIndex = 8;
             // 
-            // textBox6
+            // textBoxMphone
             // 
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox6.Location = new System.Drawing.Point(116, 207);
-            this.textBox6.MaxLength = 12;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(124, 19);
-            this.textBox6.TabIndex = 7;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBoxMphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxMphone.Location = new System.Drawing.Point(116, 207);
+            this.textBoxMphone.MaxLength = 12;
+            this.textBoxMphone.Name = "textBoxMphone";
+            this.textBoxMphone.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMphone.TabIndex = 7;
+            this.textBoxMphone.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox5
+            // textBoxMaddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(116, 182);
-            this.textBox5.MaxLength = 50;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 19);
-            this.textBox5.TabIndex = 6;
+            this.textBoxMaddress.Location = new System.Drawing.Point(116, 182);
+            this.textBoxMaddress.MaxLength = 50;
+            this.textBoxMaddress.Name = "textBoxMaddress";
+            this.textBoxMaddress.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMaddress.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxMpost
             // 
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox4.Location = new System.Drawing.Point(116, 157);
-            this.textBox4.MaxLength = 7;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 19);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxMpost.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxMpost.Location = new System.Drawing.Point(116, 157);
+            this.textBoxMpost.MaxLength = 7;
+            this.textBoxMpost.Name = "textBoxMpost";
+            this.textBoxMpost.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMpost.TabIndex = 5;
+            this.textBoxMpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
             // 
@@ -243,19 +300,19 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "生年月日:";
             // 
-            // comboBox1
+            // comboBoxMsex
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxMsex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMsex.FormattingEnabled = true;
+            this.comboBoxMsex.Items.AddRange(new object[] {
             "---",
             "男",
             "女",
             "不明"});
-            this.comboBox1.Location = new System.Drawing.Point(116, 106);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 20);
-            this.comboBox1.TabIndex = 3;
+            this.comboBoxMsex.Location = new System.Drawing.Point(116, 106);
+            this.comboBoxMsex.Name = "comboBoxMsex";
+            this.comboBoxMsex.Size = new System.Drawing.Size(124, 20);
+            this.comboBoxMsex.TabIndex = 3;
             // 
             // label4
             // 
@@ -293,29 +350,30 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "社員ID:";
             // 
-            // textBox3
+            // textBoxMhurigana
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 81);
-            this.textBox3.MaxLength = 40;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 19);
-            this.textBox3.TabIndex = 2;
+            this.textBoxMhurigana.Location = new System.Drawing.Point(116, 81);
+            this.textBoxMhurigana.MaxLength = 40;
+            this.textBoxMhurigana.Name = "textBoxMhurigana";
+            this.textBoxMhurigana.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMhurigana.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxMname
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 56);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 19);
-            this.textBox2.TabIndex = 1;
+            this.textBoxMname.Location = new System.Drawing.Point(116, 56);
+            this.textBoxMname.MaxLength = 20;
+            this.textBoxMname.Name = "textBoxMname";
+            this.textBoxMname.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMname.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxMID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(116, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 19);
-            this.textBox1.TabIndex = 0;
+            this.textBoxMID.Enabled = false;
+            this.textBoxMID.Location = new System.Drawing.Point(116, 31);
+            this.textBoxMID.MaxLength = 4;
+            this.textBoxMID.Name = "textBoxMID";
+            this.textBoxMID.Size = new System.Drawing.Size(124, 19);
+            this.textBoxMID.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -366,6 +424,7 @@
             // SearchTextbox
             // 
             this.SearchTextbox.Location = new System.Drawing.Point(508, 73);
+            this.SearchTextbox.MaxLength = 50;
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(211, 19);
             this.SearchTextbox.TabIndex = 1;
@@ -439,85 +498,28 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // button1
+            // buttonClose
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 519);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "閉じる";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // buttonrRemove
-            // 
-            this.buttonrRemove.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonrRemove.Image = global::SalesManagementSystem.Properties.Resources.Delete;
-            this.buttonrRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonrRemove.Location = new System.Drawing.Point(160, 360);
-            this.buttonrRemove.Name = "buttonrRemove";
-            this.buttonrRemove.Size = new System.Drawing.Size(70, 33);
-            this.buttonrRemove.TabIndex = 13;
-            this.buttonrRemove.Text = "削除";
-            this.buttonrRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonrRemove.UseVisualStyleBackColor = true;
-            this.buttonrRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Image = global::SalesManagementSystem.Properties.Resources.check_mark;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(47, 360);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(70, 33);
-            this.buttonAdd.TabIndex = 12;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClose.Location = new System.Drawing.Point(12, 519);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(61, 31);
+            this.buttonClose.TabIndex = 4;
+            this.buttonClose.Text = "閉じる";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // 社員マスタBindingSource
             // 
             this.社員マスタBindingSource.DataMember = "社員マスタ";
-            // 
-            // buttonNew
-            // 
-            this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
-            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNew.Location = new System.Drawing.Point(104, 319);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(70, 33);
-            this.buttonNew.TabIndex = 11;
-            this.buttonNew.Text = "新規";
-            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(903, 513);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 3;
-            this.buttonRefresh.Text = "更新";
-            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // MemberListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 562);
-            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -525,7 +527,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -554,29 +556,29 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxMmail;
+        private System.Windows.Forms.TextBox textBoxMphone;
+        private System.Windows.Forms.TextBox textBoxMaddress;
+        private System.Windows.Forms.TextBox textBoxMpost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxMsex;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxMhurigana;
+        private System.Windows.Forms.TextBox textBoxMname;
+        private System.Windows.Forms.TextBox textBoxMID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxMpass;
+        private System.Windows.Forms.DateTimePicker dateTimePickerMbirth;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.BindingSource 社員マスタBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 社員IDDataGridViewTextBoxColumn;
@@ -593,8 +595,8 @@
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 社員マスタBindingSource1;
         private SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter 社員マスタTableAdapter;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerMjoin;
+        private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonrRemove;

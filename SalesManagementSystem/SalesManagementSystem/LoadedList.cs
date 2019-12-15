@@ -43,12 +43,12 @@ namespace SalesManagementSystem
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                textBoxLID.Text = "";
+                textBoxRID.Text = "";
+                textBoxPID.Text = "";
+                textBoxPname.Text = "";
+                textBoxLquantity.Text = "";
+                textBoxMname.Text = "";
             }
             else
             {
@@ -61,34 +61,34 @@ namespace SalesManagementSystem
             if (dataGridView1.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                textBoxLID.Text = "";
+                textBoxRID.Text = "";
+                textBoxPID.Text = "";
+                textBoxPname.Text = "";
+                textBoxLquantity.Text = "";
+                textBoxMname.Text = "";
             }
             else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxLID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxRID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBoxLquantity.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxMname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxLID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxRID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBoxLquantity.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxMname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
         }
 
@@ -96,9 +96,9 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxRID.Text.Trim()) || string.IsNullOrEmpty(textBoxPID.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPname.Text.Trim()) || string.IsNullOrEmpty(textBoxLquantity.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMname.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -116,11 +116,11 @@ namespace SalesManagementSystem
                         {
                             AC.sql = "insert into 入庫テーブル(発注ID, 商品ID, メーカーID, 入庫日, 入庫数) Values(?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox2.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox6.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxRID.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPID.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBoxMname.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now.ToString("d");
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxLquantity.Text);
 
                             AC.cmd.CommandText = AC.sql;
                             var rows = AC.cmd.ExecuteNonQuery();
@@ -129,15 +129,15 @@ namespace SalesManagementSystem
                                 AC.sql = "update 発注テーブル set ステータス = ? where 発注ID = @id";
                                 AC.cmd.Parameters.Clear();
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 1;
-                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(textBox2.Text);
+                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(textBoxRID.Text);
 
                                 AC.cmd.CommandText = AC.sql;
                                 AC.cmd.ExecuteNonQuery();
 
                                 AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = stock + int.Parse(textBox5.Text);
-                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(textBox3.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = stock + int.Parse(textBoxLquantity.Text);
+                                AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = int.Parse(textBoxPID.Text);
 
                                 AC.cmd.CommandText = AC.sql;
                                 AC.cmd.ExecuteNonQuery();
@@ -177,11 +177,11 @@ namespace SalesManagementSystem
                     if (AC.rd.Read())
                     {
                         MID = int.Parse(AC.rd.GetValue(0).ToString());
-                        textBox6.Tag = MID.ToString();
+                        textBoxMname.Tag = MID.ToString();
                         PID = int.Parse(AC.rd.GetValue(1).ToString());
-                        textBox3.Text = PID.ToString();
-                        textBox5.Text = AC.rd.GetValue(2).ToString();
-                        textBox2.Text = id.ToString();
+                        textBoxPID.Text = PID.ToString();
+                        textBoxLquantity.Text = AC.rd.GetValue(2).ToString();
+                        textBoxRID.Text = id.ToString();
                     }
                     else
                     {
@@ -196,7 +196,7 @@ namespace SalesManagementSystem
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
-                        textBox4.Text = AC.rd.GetString(0);
+                        textBoxPname.Text = AC.rd.GetString(0);
                     else
                         return;
                     AC.rd.Close();
@@ -207,7 +207,7 @@ namespace SalesManagementSystem
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
-                        textBox6.Text = AC.rd.GetString(0);
+                        textBoxMname.Text = AC.rd.GetString(0);
                     else
                         return;
                     AC.rd.Close();

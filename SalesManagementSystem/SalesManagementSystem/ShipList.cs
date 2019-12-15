@@ -48,16 +48,16 @@ namespace SalesManagementSystem
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
-                textBox10.Text = "";
+                textBoxSID.Text = "";
+                textBoxOID.Text = "";
+                textBoxPname.Text = "";
+                textBoxSquantity.Text = "";
+                textBoxOcurrency.Text = "";
+                textBoxCname.Text = "";
+                textBoxChurigana.Text = "";
+                textBoxCpost.Text = "";
+                textBoxCaddress.Text = "";
+                textBoxCphone.Text = "";
             }
             else
             {
@@ -74,46 +74,46 @@ namespace SalesManagementSystem
             if (dataGridView1.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
-                textBox10.Text = "";
+                textBoxSID.Text = "";
+                textBoxOID.Text = "";
+                textBoxPname.Text = "";
+                textBoxSquantity.Text = "";
+                textBoxOcurrency.Text = "";
+                textBoxCname.Text = "";
+                textBoxChurigana.Text = "";
+                textBoxCpost.Text = "";
+                textBoxCaddress.Text = "";
+                textBoxCphone.Text = "";
             }
             else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox8.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox9.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox10.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBoxSID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxOID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBoxSquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxCname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBoxCpost.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textBoxCphone.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox8.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBox9.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBox10.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBoxSID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxOID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBoxSquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxCname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBoxCpost.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textBoxCphone.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             }
         }
 
@@ -121,11 +121,11 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(textBox9.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox10.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxOID.Text.Trim()) || string.IsNullOrEmpty(textBoxPname.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxSquantity.Text.Trim()) || string.IsNullOrEmpty(textBoxOcurrency.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxCname.Text.Trim()) || string.IsNullOrEmpty(textBoxChurigana.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxCpost.Text.Trim()) || string.IsNullOrEmpty(textBoxCaddress.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxCphone.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -143,9 +143,9 @@ namespace SalesManagementSystem
                         {
                             AC.sql = "insert into 出荷テーブル(注文ID, 商品ID, 顧客ID, ステータス) Values(?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox3.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox6.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBoxOID.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBoxPname.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBoxCname.Tag;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
@@ -198,13 +198,13 @@ namespace SalesManagementSystem
                     if (AC.rd.Read())
                     {
                         PID = int.Parse(AC.rd.GetValue(0).ToString());
-                        textBox3.Tag = PID.ToString();
+                        textBoxPname.Tag = PID.ToString();
                         CID = int.Parse(AC.rd.GetValue(1).ToString());
-                        textBox6.Tag = CID.ToString();
-                        textBox4.Text = AC.rd.GetValue(2).ToString();
+                        textBoxCname.Tag = CID.ToString();
+                        textBoxSquantity.Text = AC.rd.GetValue(2).ToString();
                         total = int.Parse(AC.rd.GetValue(3).ToString());
-                        textBox5.Text = total.ToString();
-                        textBox2.Text = id.ToString();
+                        textBoxOcurrency.Text = total.ToString();
+                        textBoxOID.Text = id.ToString();
                         OID = id;
                     }
 
@@ -229,7 +229,7 @@ namespace SalesManagementSystem
                     AC.rd = AC.cmd.ExecuteReader();
 
                     if (AC.rd.Read())
-                        textBox3.Text = AC.rd.GetString(0);
+                        textBoxPname.Text = AC.rd.GetString(0);
 
                     else
                         return;
@@ -250,11 +250,11 @@ namespace SalesManagementSystem
 
                     if (AC.rd.Read())
                     {
-                        textBox6.Text = AC.rd.GetString(0);
-                        textBox7.Text = AC.rd.GetString(1);
-                        textBox8.Text = AC.rd.GetValue(2).ToString();
-                        textBox9.Text = AC.rd.GetString(3);
-                        textBox10.Text = AC.rd.GetValue(4).ToString();
+                        textBoxCname.Text = AC.rd.GetString(0);
+                        textBoxChurigana.Text = AC.rd.GetString(1);
+                        textBoxCpost.Text = AC.rd.GetValue(2).ToString();
+                        textBoxCaddress.Text = AC.rd.GetString(3);
+                        textBoxCphone.Text = AC.rd.GetValue(4).ToString();
                     }
 
                     else

@@ -32,17 +32,18 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxOquantity = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxMname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerOdate = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxOcurrency = new System.Windows.Forms.TextBox();
+            this.textBoxPcurrency = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,9 +51,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPname = new System.Windows.Forms.TextBox();
+            this.textBoxCname = new System.Windows.Forms.TextBox();
+            this.textBoxOID = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -61,8 +62,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -107,17 +107,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.buttonNew);
             this.groupBox1.Controls.Add(this.buttonRemove);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxOquantity);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textBoxMname);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimePickerOdate);
             this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBoxOcurrency);
+            this.groupBox1.Controls.Add(this.textBoxPcurrency);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -125,9 +126,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxPname);
+            this.groupBox1.Controls.Add(this.textBoxCname);
+            this.groupBox1.Controls.Add(this.textBoxOID);
             this.groupBox1.Location = new System.Drawing.Point(6, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 348);
@@ -135,12 +136,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "注文操作";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(157, 247);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
+            this.buttonRefresh.TabIndex = 4;
+            this.buttonRefresh.Text = "更新";
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // buttonNew
             // 
             this.buttonNew.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonNew.Image = global::SalesManagementSystem.Properties.Resources.add_icon__1_;
             this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNew.Location = new System.Drawing.Point(113, 247);
+            this.buttonNew.Location = new System.Drawing.Point(68, 247);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(70, 33);
             this.buttonNew.TabIndex = 8;
@@ -163,14 +178,14 @@
             this.buttonRemove.UseVisualStyleBackColor = true;
             this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
-            // comboBox1
+            // comboBoxOquantity
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.comboBoxOquantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxOquantity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOquantity.FormattingEnabled = true;
+            this.comboBoxOquantity.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -181,11 +196,11 @@
             "8",
             "9",
             "10"});
-            this.comboBox1.Location = new System.Drawing.Point(116, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBoxOquantity.Location = new System.Drawing.Point(116, 103);
+            this.comboBoxOquantity.Name = "comboBoxOquantity";
+            this.comboBoxOquantity.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxOquantity.TabIndex = 3;
+            this.comboBoxOquantity.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // button3
             // 
@@ -207,14 +222,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox7
+            // textBoxMname
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(116, 203);
-            this.textBox7.MaxLength = 20;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 19);
-            this.textBox7.TabIndex = 7;
+            this.textBoxMname.Enabled = false;
+            this.textBoxMname.Location = new System.Drawing.Point(116, 203);
+            this.textBoxMname.MaxLength = 20;
+            this.textBoxMname.Name = "textBoxMname";
+            this.textBoxMname.Size = new System.Drawing.Size(121, 19);
+            this.textBoxMname.TabIndex = 7;
             // 
             // label4
             // 
@@ -225,13 +240,13 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "担当者名:";
             // 
-            // dateTimePicker1
+            // dateTimePickerOdate
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 19);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePickerOdate.Enabled = false;
+            this.dateTimePickerOdate.Location = new System.Drawing.Point(116, 128);
+            this.dateTimePickerOdate.Name = "dateTimePickerOdate";
+            this.dateTimePickerOdate.Size = new System.Drawing.Size(121, 19);
+            this.dateTimePickerOdate.TabIndex = 4;
             // 
             // buttonAdd
             // 
@@ -247,23 +262,23 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // textBox6
+            // textBoxOcurrency
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(116, 178);
-            this.textBox6.MaxLength = 16;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 19);
-            this.textBox6.TabIndex = 6;
+            this.textBoxOcurrency.Enabled = false;
+            this.textBoxOcurrency.Location = new System.Drawing.Point(116, 178);
+            this.textBoxOcurrency.MaxLength = 16;
+            this.textBoxOcurrency.Name = "textBoxOcurrency";
+            this.textBoxOcurrency.Size = new System.Drawing.Size(121, 19);
+            this.textBoxOcurrency.TabIndex = 6;
             // 
-            // textBox5
+            // textBoxPcurrency
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(116, 153);
-            this.textBox5.MaxLength = 8;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 19);
-            this.textBox5.TabIndex = 5;
+            this.textBoxPcurrency.Enabled = false;
+            this.textBoxPcurrency.Location = new System.Drawing.Point(116, 153);
+            this.textBoxPcurrency.MaxLength = 8;
+            this.textBoxPcurrency.Name = "textBoxPcurrency";
+            this.textBoxPcurrency.Size = new System.Drawing.Size(121, 19);
+            this.textBoxPcurrency.TabIndex = 5;
             // 
             // label8
             // 
@@ -328,31 +343,32 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "注文ID:";
             // 
-            // textBox3
+            // textBoxPname
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(116, 78);
-            this.textBox3.MaxLength = 40;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 19);
-            this.textBox3.TabIndex = 2;
+            this.textBoxPname.Enabled = false;
+            this.textBoxPname.Location = new System.Drawing.Point(116, 78);
+            this.textBoxPname.MaxLength = 50;
+            this.textBoxPname.Name = "textBoxPname";
+            this.textBoxPname.Size = new System.Drawing.Size(121, 19);
+            this.textBoxPname.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxCname
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(116, 53);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 19);
-            this.textBox2.TabIndex = 1;
+            this.textBoxCname.Enabled = false;
+            this.textBoxCname.Location = new System.Drawing.Point(116, 53);
+            this.textBoxCname.MaxLength = 20;
+            this.textBoxCname.Name = "textBoxCname";
+            this.textBoxCname.Size = new System.Drawing.Size(121, 19);
+            this.textBoxCname.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxOID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(116, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 19);
-            this.textBox1.TabIndex = 0;
+            this.textBoxOID.Enabled = false;
+            this.textBoxOID.Location = new System.Drawing.Point(116, 28);
+            this.textBoxOID.MaxLength = 4;
+            this.textBoxOID.Name = "textBoxOID";
+            this.textBoxOID.Size = new System.Drawing.Size(121, 19);
+            this.textBoxOID.TabIndex = 0;
             // 
             // checkBox1
             // 
@@ -368,6 +384,7 @@
             // SearchTextbox
             // 
             this.SearchTextbox.Location = new System.Drawing.Point(518, 73);
+            this.SearchTextbox.MaxLength = 50;
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(227, 19);
             this.SearchTextbox.TabIndex = 1;
@@ -441,39 +458,24 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // button1
+            // buttonClose
             // 
-            this.button1.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 442);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "閉じる";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Image = global::SalesManagementSystem.Properties.Resources.refresh;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(906, 439);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(70, 33);
-            this.buttonRefresh.TabIndex = 4;
-            this.buttonRefresh.Text = "更新";
-            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            this.buttonClose.Image = global::SalesManagementSystem.Properties.Resources.media_player_stream_no1;
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClose.Location = new System.Drawing.Point(12, 442);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(61, 31);
+            this.buttonClose.TabIndex = 5;
+            this.buttonClose.Text = "閉じる";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // On_orderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 485);
-            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox4);
@@ -482,7 +484,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -510,8 +512,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxOcurrency;
+        private System.Windows.Forms.TextBox textBoxPcurrency;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -519,17 +521,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPname;
+        private System.Windows.Forms.TextBox textBoxCname;
+        private System.Windows.Forms.TextBox textBoxOID;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOdate;
+        private System.Windows.Forms.TextBox textBoxMname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxOquantity;
+        private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;

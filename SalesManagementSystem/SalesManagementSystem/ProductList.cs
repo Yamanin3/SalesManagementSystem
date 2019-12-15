@@ -45,15 +45,15 @@ namespace SalesManagementSystem
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                comboBox1.Text = "";
+                textBoxPID.Text = "";
+                textBoxPname.Text = "";
+                textBoxPweight.Text = "";
+                textBoxPcaliber.Text = "";
+                textBoxPlength.Text = "";
+                textBoxPcapa.Text = "";
+                textBoxMname.Text = "";
+                textBoxPcurrency.Text = "";
+                comboBoxPmagazine.Text = "";
             }
             else
             {
@@ -70,45 +70,45 @@ namespace SalesManagementSystem
                 if (dataGridView1.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox4.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
-                    textBox8.Text = "";
-                    comboBox1.Text = "";
+                    textBoxPID.Text = "";
+                    textBoxPname.Text = "";
+                    textBoxPweight.Text = "";
+                    textBoxPcaliber.Text = "";
+                    textBoxPlength.Text = "";
+                    textBoxPcapa.Text = "";
+                    textBoxMname.Text = "";
+                    textBoxPcurrency.Text = "";
+                    comboBoxPmagazine.Text = "";
                 }
                 else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    textBox7.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBoxPID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBoxPname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBoxPweight.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    textBoxPcaliber.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textBoxPlength.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxPmagazine.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBoxPcapa.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBoxMname.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBoxMname.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 }
                 else
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    textBox7.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textBoxPID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    textBoxPname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    textBoxPweight.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    textBoxPcaliber.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textBoxPlength.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxPmagazine.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textBoxPcapa.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textBoxMname.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBoxMname.Tag = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -121,10 +121,10 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(comboBox1.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxPname.Text.Trim()) || string.IsNullOrEmpty(textBoxPweight.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcaliber.Text.Trim()) || string.IsNullOrEmpty(textBoxPlength.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcapa.Text.Trim()) || string.IsNullOrEmpty(textBoxMname.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcurrency.Text.Trim()) || string.IsNullOrEmpty(comboBoxPmagazine.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -143,14 +143,14 @@ namespace SalesManagementSystem
                             AC.sql =
                                 "insert into 商品マスタ(メーカーID, 商品名, 重量, 口径, 全長, マガジンタイプ, 装弾数, 商品価格, ステータス) Values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox7.Tag;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox6.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBoxMname.Tag;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPname.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPweight.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPcaliber.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPlength.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxPmagazine.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPcapa.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxPcurrency.Text;
                             AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                             AC.cmd.CommandText = AC.sql;
@@ -183,10 +183,10 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox4.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(textBox7.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox8.Text.Trim()) || string.IsNullOrEmpty(comboBox1.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxPname.Text.Trim()) || string.IsNullOrEmpty(textBoxPweight.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcaliber.Text.Trim()) || string.IsNullOrEmpty(textBoxPlength.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcapa.Text.Trim()) || string.IsNullOrEmpty(textBoxMname.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxPcurrency.Text.Trim()) || string.IsNullOrEmpty(comboBoxPmagazine.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -206,14 +206,14 @@ namespace SalesManagementSystem
                             AC.sql =
                                 "update 商品マスタ set メーカーID = ?, 商品名 = ?, 重量 = ?, 口径 = ?, 全長 = ?, マガジンタイプ = ?, 装弾数 = ?, 商品価格 = ? where 商品ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = int.Parse(textBox7.Tag.ToString());
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox2.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox3.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBox4.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox5.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox6.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox8.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = int.Parse(textBoxMname.Tag.ToString());
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPname.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPweight.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = textBoxPcaliber.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPlength.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.VarWChar).Value = comboBoxPmagazine.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxPcapa.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxPcurrency.Text;
                             AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
@@ -243,8 +243,8 @@ namespace SalesManagementSystem
 
                     if (AC.rd.Read())
                     {
-                        textBox7.Text = AC.rd.GetString(0);
-                        textBox7.Tag = id;
+                        textBoxMname.Text = AC.rd.GetString(0);
+                        textBoxMname.Tag = id;
                     }
 
                     else
@@ -268,45 +268,45 @@ namespace SalesManagementSystem
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox8.Text) && int.TryParse(textBox8.Text, out I) != true)
+            if (!string.IsNullOrEmpty(textBoxPcurrency.Text) && int.TryParse(textBoxPcurrency.Text, out I) != true)
             {
-                textBox8.ResetText();
+                textBoxPcurrency.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox6.Text) && int.TryParse(textBox6.Text, out I) != true)
+            if (!string.IsNullOrEmpty(textBoxPcapa.Text) && int.TryParse(textBoxPcapa.Text, out I) != true)
             {
-                textBox6.ResetText();
+                textBoxPcapa.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox4.Text) && double.TryParse(textBox4.Text, out D) != true)
+            if (!string.IsNullOrEmpty(textBoxPcaliber.Text) && double.TryParse(textBoxPcaliber.Text, out D) != true)
             {
-                textBox4.ResetText();
+                textBoxPcaliber.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox3.Text) && double.TryParse(textBox3.Text, out D) != true)
+            if (!string.IsNullOrEmpty(textBoxPweight.Text) && double.TryParse(textBoxPweight.Text, out D) != true)
             {
-                textBox3.ResetText();
+                textBoxPweight.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox5.Text) && double.TryParse(textBox5.Text, out D) != true)
+            if (!string.IsNullOrEmpty(textBoxPlength.Text) && double.TryParse(textBoxPlength.Text, out D) != true)
             {
-                textBox5.ResetText();
+                textBoxPlength.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

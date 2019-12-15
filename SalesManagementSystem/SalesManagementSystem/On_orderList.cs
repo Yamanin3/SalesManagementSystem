@@ -35,14 +35,14 @@ namespace SalesManagementSystem
                 dataGridView1.DataSource = AC.dt;
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    comboBox1.Text = "";
-                    dateTimePicker1.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
+                    textBoxOID.Text = "";
+                    textBoxCname.Text = "";
+                    textBoxPname.Text = "";
+                    comboBoxOquantity.Text = "";
+                    dateTimePickerOdate.Text = "";
+                    textBoxPcurrency.Text = "";
+                    textBoxOcurrency.Text = "";
+                    textBoxMname.Text = "";
                 }
                 else
                 {
@@ -63,14 +63,14 @@ namespace SalesManagementSystem
                 if (dataGridView1.SelectedRows.Count <= 0)
                 {
                     buttonAdd.Enabled = false;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    comboBox1.Text = "";
-                    dateTimePicker1.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
+                    textBoxOID.Text = "";
+                    textBoxCname.Text = "";
+                    textBoxPname.Text = "";
+                    comboBoxOquantity.Text = "";
+                    dateTimePickerOdate.Text = "";
+                    textBoxPcurrency.Text = "";
+                    textBoxOcurrency.Text = "";
+                    textBoxMname.Text = "";
                 }
                 else
                 {
@@ -92,40 +92,40 @@ namespace SalesManagementSystem
             if (dataGridView1.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                comboBox1.Text = "";
-                dateTimePicker1.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
+                textBoxOID.Text = "";
+                textBoxCname.Text = "";
+                textBoxPname.Text = "";
+                comboBoxOquantity.Text = "";
+                dateTimePickerOdate.Text = "";
+                textBoxPcurrency.Text = "";
+                textBoxOcurrency.Text = "";
+                textBoxMname.Text = "";
             }
             else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox7.Text = AC.currentFullName;
+                textBoxOID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxOquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePickerOdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBoxMname.Text = AC.currentFullName;
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBoxOID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxOquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePickerOdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textBoxMname.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             }
         }
 
@@ -136,10 +136,10 @@ namespace SalesManagementSystem
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox2.Text.Trim()) || string.IsNullOrEmpty(textBox3.Text.Trim()) ||
-                    string.IsNullOrEmpty(comboBox1.Text.Trim()) || string.IsNullOrEmpty(textBox5.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox6.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker1.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBox7.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxCname.Text.Trim()) || string.IsNullOrEmpty(textBoxPname.Text.Trim()) ||
+                    string.IsNullOrEmpty(comboBoxOquantity.Text.Trim()) || string.IsNullOrEmpty(textBoxPcurrency.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxOcurrency.Text.Trim()) || string.IsNullOrEmpty(dateTimePickerOdate.Text.Trim()) ||
+                    string.IsNullOrEmpty(textBoxMname.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -172,17 +172,17 @@ namespace SalesManagementSystem
 
                             AC.rd.Close();
 
-                            if (stock >= int.Parse(comboBox1.Text))
+                            if (stock >= int.Parse(comboBoxOquantity.Text))
                             {
                                 AC.sql =
                                     "insert into 注文テーブル(商品ID, 顧客ID, 社員ID, 注文数量, 注文日, 合計額, ステータス) Values(?, ?, ?, ?, ?, ?, ?)";
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox3.Tag;
-                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBox2.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBoxPname.Tag;
+                                AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = textBoxCname.Tag;
                                 AC.cmd.Parameters.Add("?", OleDbType.BigInt).Value = AC.currentID;
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBox1.Text);
-                                AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
-                                AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBox6.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(comboBoxOquantity.Text);
+                                AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerOdate.Text;
+                                AC.cmd.Parameters.Add("?", OleDbType.Currency).Value = textBoxOcurrency.Text;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                                 AC.cmd.CommandText = AC.sql;
@@ -190,7 +190,7 @@ namespace SalesManagementSystem
                                 if (rows >= 1)
                                 {
                                     RefreshLoad();
-                                    dstock = stock - int.Parse(comboBox1.Text);
+                                    dstock = stock - int.Parse(comboBoxOquantity.Text);
                                     AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id;";
                                     AC.cmd.Parameters.Clear();
                                     AC.cmd.Parameters.Add("id", OleDbType.Integer).Value = dstock;
@@ -226,7 +226,7 @@ namespace SalesManagementSystem
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = MID;
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = order_quantity;
-                                    AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePicker1.Text;
+                                    AC.cmd.Parameters.Add("?", OleDbType.Date).Value = dateTimePickerOdate.Text;
                                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
 
                                     AC.cmd.CommandText = AC.sql;
@@ -319,8 +319,8 @@ namespace SalesManagementSystem
 
                     if (AC.rd.Read())
                     {
-                        textBox2.Text = AC.rd.GetString(0);
-                        textBox2.Tag = id;
+                        textBoxCname.Text = AC.rd.GetString(0);
+                        textBoxCname.Tag = id;
                     }
 
                     else
@@ -352,10 +352,10 @@ namespace SalesManagementSystem
 
                     if (AC.rd.Read())
                     {
-                        textBox3.Text = AC.rd.GetString(0);
-                        textBox5.Text = AC.rd.GetValue(1).ToString();
+                        textBoxPname.Text = AC.rd.GetString(0);
+                        textBoxPcurrency.Text = AC.rd.GetValue(1).ToString();
                         MID = int.Parse(AC.rd.GetValue(2).ToString());
-                        textBox3.Tag = id;
+                        textBoxPname.Tag = id;
                         PID = id;
                     }
 
@@ -365,12 +365,12 @@ namespace SalesManagementSystem
                     }
 
                     AC.rd.Close();
-                    if (textBox5.Text != "")
+                    if (textBoxPcurrency.Text != "")
                     {
-                        var quantity = double.Parse(comboBox1.Text);
-                        var price = double.Parse(textBox5.Text);
+                        var quantity = double.Parse(comboBoxOquantity.Text);
+                        var price = double.Parse(textBoxPcurrency.Text);
 
-                        textBox6.Text = (price * quantity).ToString();
+                        textBoxOcurrency.Text = (price * quantity).ToString();
                     }
                 }
                 catch (Exception ex)
@@ -382,12 +382,12 @@ namespace SalesManagementSystem
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (textBox5.Text != "")
+            if (textBoxPcurrency.Text != "")
             {
-                var quantity = double.Parse(comboBox1.Text);
-                var price = double.Parse(textBox5.Text);
+                var quantity = double.Parse(comboBoxOquantity.Text);
+                var price = double.Parse(textBoxPcurrency.Text);
 
-                textBox6.Text = (price * quantity).ToString();
+                textBoxOcurrency.Text = (price * quantity).ToString();
             }
         }
 
@@ -402,8 +402,8 @@ namespace SalesManagementSystem
             {
                 RefreshLoad();
 
-                comboBox1.Enabled = false;
-                dateTimePicker1.Enabled = false;
+                comboBoxOquantity.Enabled = false;
+                dateTimePickerOdate.Enabled = false;
                 buttonNew.Enabled = false;
                 buttonRemove.Enabled = false;
                 buttonAdd.Enabled = false;
@@ -412,8 +412,8 @@ namespace SalesManagementSystem
             }
             else
             {
-                comboBox1.Enabled = true;
-                dateTimePicker1.Enabled = true;
+                comboBoxOquantity.Enabled = true;
+                dateTimePickerOdate.Enabled = true;
                 buttonNew.Enabled = true;
                 buttonRemove.Enabled = true;
                 buttonAdd.Enabled = true;
