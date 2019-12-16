@@ -37,11 +37,11 @@ namespace SalesManagementSystem
             Close();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewClist_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.CurrentCell == null)
+                if (dataGridViewClist.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
                     textBoxCID.Text = "";
@@ -54,33 +54,33 @@ namespace SalesManagementSystem
                     textBoxCphone.Text = "";
                     textBoxCmail.Text = "";
                 }
-                else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+                else if (dataGridViewClist.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
-                    textBoxCID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBoxCsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePickerCbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBoxCpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBoxCphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBoxCmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBoxCID.Text = dataGridViewClist.CurrentRow.Cells[0].Value.ToString();
+                    textBoxCname.Text = dataGridViewClist.CurrentRow.Cells[1].Value.ToString();
+                    textBoxChurigana.Text = dataGridViewClist.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxCsex.Text = dataGridViewClist.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerCbirth.Text = dataGridViewClist.CurrentRow.Cells[4].Value.ToString();
+                    textBoxCpost.Text = dataGridViewClist.CurrentRow.Cells[5].Value.ToString();
+                    textBoxCaddress.Text = dataGridViewClist.CurrentRow.Cells[6].Value.ToString();
+                    textBoxCphone.Text = dataGridViewClist.CurrentRow.Cells[7].Value.ToString();
+                    textBoxCmail.Text = dataGridViewClist.CurrentRow.Cells[8].Value.ToString();
                 }
                 else
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
-                    textBoxCID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    comboBoxCsex.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    dateTimePickerCbirth.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textBoxCpost.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textBoxCphone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    textBoxCmail.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    textBoxCID.Text = dataGridViewClist.CurrentRow.Cells[0].Value.ToString();
+                    textBoxCname.Text = dataGridViewClist.CurrentRow.Cells[1].Value.ToString();
+                    textBoxChurigana.Text = dataGridViewClist.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxCsex.Text = dataGridViewClist.CurrentRow.Cells[3].Value.ToString();
+                    dateTimePickerCbirth.Text = dataGridViewClist.CurrentRow.Cells[4].Value.ToString();
+                    textBoxCpost.Text = dataGridViewClist.CurrentRow.Cells[5].Value.ToString();
+                    textBoxCaddress.Text = dataGridViewClist.CurrentRow.Cells[6].Value.ToString();
+                    textBoxCphone.Text = dataGridViewClist.CurrentRow.Cells[7].Value.ToString();
+                    textBoxCmail.Text = dataGridViewClist.CurrentRow.Cells[8].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -92,7 +92,7 @@ namespace SalesManagementSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewClist.SelectedRows.Count <= 0 || dataGridViewClist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if (string.IsNullOrEmpty(textBoxCname.Text.Trim()) || string.IsNullOrEmpty(textBoxChurigana.Text.Trim()) ||
                     string.IsNullOrEmpty(textBoxCpost.Text.Trim()) || string.IsNullOrEmpty(textBoxCaddress.Text.Trim()) ||
@@ -245,7 +245,7 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-                            var id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            var id = int.Parse(dataGridViewClist.CurrentRow.Cells[0].Value.ToString());
                             AC.sql =
                                 "update 顧客マスタ set 顧客名 = ?, ふりがな = ?, 性別 = ?, 生年月日 = ?, 郵便番号 = ?, 住所 = ?, 電話番号 = ?, メールアドレス = ? where 顧客ID = @id;";
                             AC.cmd.Parameters.Clear();
@@ -275,9 +275,9 @@ namespace SalesManagementSystem
 
         private void buttonrRemove_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewClist.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (dataGridView1.CurrentCell == null) return;
+                if (dataGridViewClist.CurrentCell == null) return;
             }
             else
             {
@@ -298,7 +298,7 @@ namespace SalesManagementSystem
                         AC.cmd.Parameters.Clear();
                         AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
                         AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
-                            int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            int.Parse(dataGridViewClist.CurrentRow.Cells[0].Value.ToString());
                         AC.cmd.CommandText = AC.sql;
                         AC.cmd.ExecuteNonQuery();
 
@@ -321,9 +321,9 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
+            dataGridViewClist.DataSource = AC.dt;
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dataGridViewClist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
                 textBoxCID.Text = "";
@@ -339,7 +339,7 @@ namespace SalesManagementSystem
             else
             {
                 buttonAdd.Enabled = true;
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                dataGridViewClist.CurrentCell = dataGridViewClist.Rows[0].Cells[0];
             }
 
         }
@@ -376,9 +376,9 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            if (dataGridView1.CurrentCell == null) 
+            dataGridViewClist.DataSource = AC.dt;
+            dataGridViewClist_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridViewClist.CurrentCell == null) 
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
@@ -391,8 +391,8 @@ namespace SalesManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewClist.CurrentCell = dataGridViewClist.Rows[dataGridViewClist.Rows.Count - 1].Cells[0];
+            dataGridViewClist_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)

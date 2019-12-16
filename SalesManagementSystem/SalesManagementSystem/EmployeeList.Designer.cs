@@ -30,35 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEoperation = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.dateTimePickerEjoin = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelEpass = new System.Windows.Forms.Label();
+            this.labelEjoin = new System.Windows.Forms.Label();
             this.textBoxEpass = new System.Windows.Forms.TextBox();
             this.dateTimePickerEbirth = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxEphone = new System.Windows.Forms.TextBox();
             this.textBoxEaddress = new System.Windows.Forms.TextBox();
             this.textBoxEpost = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelEphone = new System.Windows.Forms.Label();
+            this.labelEaddress = new System.Windows.Forms.Label();
+            this.labelEpost = new System.Windows.Forms.Label();
+            this.labelEbirth = new System.Windows.Forms.Label();
             this.comboBoxEsex = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEsex = new System.Windows.Forms.Label();
+            this.labelEhurigana = new System.Windows.Forms.Label();
+            this.labelEname = new System.Windows.Forms.Label();
+            this.labelEid = new System.Windows.Forms.Label();
             this.textBoxEhurigana = new System.Windows.Forms.TextBox();
             this.textBoxEname = new System.Windows.Forms.TextBox();
             this.textBoxEID = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBoxElist = new System.Windows.Forms.GroupBox();
+            this.dataGridViewElist = new System.Windows.Forms.DataGridView();
             this.社員マスタBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
             this.社員マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.社員マスタTableAdapter();
@@ -71,9 +71,10 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.社員マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableAdapterManager1 = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.TableAdapterManager();
+            this.groupBoxEoperation.SuspendLayout();
+            this.groupBoxElist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewElist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -84,40 +85,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxEoperation
             // 
-            this.groupBox1.Controls.Add(this.buttonRefresh);
-            this.groupBox1.Controls.Add(this.buttonNew);
-            this.groupBox1.Controls.Add(this.buttonRemove);
-            this.groupBox1.Controls.Add(this.dateTimePickerEjoin);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBoxEpass);
-            this.groupBox1.Controls.Add(this.dateTimePickerEbirth);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxEmail);
-            this.groupBox1.Controls.Add(this.textBoxEphone);
-            this.groupBox1.Controls.Add(this.textBoxEaddress);
-            this.groupBox1.Controls.Add(this.textBoxEpost);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBoxEsex);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxEhurigana);
-            this.groupBox1.Controls.Add(this.textBoxEname);
-            this.groupBox1.Controls.Add(this.textBoxEID);
-            this.groupBox1.Location = new System.Drawing.Point(12, 91);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 417);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "社員操作";
+            this.groupBoxEoperation.Controls.Add(this.buttonRefresh);
+            this.groupBoxEoperation.Controls.Add(this.buttonNew);
+            this.groupBoxEoperation.Controls.Add(this.buttonRemove);
+            this.groupBoxEoperation.Controls.Add(this.dateTimePickerEjoin);
+            this.groupBoxEoperation.Controls.Add(this.buttonAdd);
+            this.groupBoxEoperation.Controls.Add(this.labelEpass);
+            this.groupBoxEoperation.Controls.Add(this.labelEjoin);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEpass);
+            this.groupBoxEoperation.Controls.Add(this.dateTimePickerEbirth);
+            this.groupBoxEoperation.Controls.Add(this.labelEmail);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEmail);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEphone);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEaddress);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEpost);
+            this.groupBoxEoperation.Controls.Add(this.labelEphone);
+            this.groupBoxEoperation.Controls.Add(this.labelEaddress);
+            this.groupBoxEoperation.Controls.Add(this.labelEpost);
+            this.groupBoxEoperation.Controls.Add(this.labelEbirth);
+            this.groupBoxEoperation.Controls.Add(this.comboBoxEsex);
+            this.groupBoxEoperation.Controls.Add(this.labelEsex);
+            this.groupBoxEoperation.Controls.Add(this.labelEhurigana);
+            this.groupBoxEoperation.Controls.Add(this.labelEname);
+            this.groupBoxEoperation.Controls.Add(this.labelEid);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEhurigana);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEname);
+            this.groupBoxEoperation.Controls.Add(this.textBoxEID);
+            this.groupBoxEoperation.Location = new System.Drawing.Point(12, 91);
+            this.groupBoxEoperation.Name = "groupBoxEoperation";
+            this.groupBoxEoperation.Size = new System.Drawing.Size(279, 417);
+            this.groupBoxEoperation.TabIndex = 0;
+            this.groupBoxEoperation.TabStop = false;
+            this.groupBoxEoperation.Text = "社員操作";
             // 
             // buttonRefresh
             // 
@@ -187,23 +188,23 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // label11
+            // labelEpass
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(35, 285);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 12);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "パスワード:";
+            this.labelEpass.AutoSize = true;
+            this.labelEpass.Location = new System.Drawing.Point(35, 285);
+            this.labelEpass.Name = "labelEpass";
+            this.labelEpass.Size = new System.Drawing.Size(54, 12);
+            this.labelEpass.TabIndex = 29;
+            this.labelEpass.Text = "パスワード:";
             // 
-            // label10
+            // labelEjoin
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 260);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 12);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "入社日:";
+            this.labelEjoin.AutoSize = true;
+            this.labelEjoin.Location = new System.Drawing.Point(35, 260);
+            this.labelEjoin.Name = "labelEjoin";
+            this.labelEjoin.Size = new System.Drawing.Size(43, 12);
+            this.labelEjoin.TabIndex = 28;
+            this.labelEjoin.Text = "入社日:";
             // 
             // textBoxEpass
             // 
@@ -222,14 +223,14 @@
             this.dateTimePickerEbirth.Size = new System.Drawing.Size(124, 19);
             this.dateTimePickerEbirth.TabIndex = 3;
             // 
-            // label9
+            // labelEmail
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 235);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 12);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "メールアドレス:";
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(35, 235);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(71, 12);
+            this.labelEmail.TabIndex = 25;
+            this.labelEmail.Text = "メールアドレス:";
             // 
             // textBoxEmail
             // 
@@ -268,41 +269,41 @@
             this.textBoxEpost.TabIndex = 4;
             this.textBoxEpost.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label8
+            // labelEphone
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 12);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "電話番号:";
+            this.labelEphone.AutoSize = true;
+            this.labelEphone.Location = new System.Drawing.Point(35, 210);
+            this.labelEphone.Name = "labelEphone";
+            this.labelEphone.Size = new System.Drawing.Size(55, 12);
+            this.labelEphone.TabIndex = 16;
+            this.labelEphone.Text = "電話番号:";
             // 
-            // label7
+            // labelEaddress
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 12);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "住所:";
+            this.labelEaddress.AutoSize = true;
+            this.labelEaddress.Location = new System.Drawing.Point(35, 185);
+            this.labelEaddress.Name = "labelEaddress";
+            this.labelEaddress.Size = new System.Drawing.Size(31, 12);
+            this.labelEaddress.TabIndex = 15;
+            this.labelEaddress.Text = "住所:";
             // 
-            // label6
+            // labelEpost
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 12);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "郵便番号:";
+            this.labelEpost.AutoSize = true;
+            this.labelEpost.Location = new System.Drawing.Point(35, 160);
+            this.labelEpost.Name = "labelEpost";
+            this.labelEpost.Size = new System.Drawing.Size(55, 12);
+            this.labelEpost.TabIndex = 14;
+            this.labelEpost.Text = "郵便番号:";
             // 
-            // label5
+            // labelEbirth
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 12);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "生年月日:";
+            this.labelEbirth.AutoSize = true;
+            this.labelEbirth.Location = new System.Drawing.Point(35, 137);
+            this.labelEbirth.Name = "labelEbirth";
+            this.labelEbirth.Size = new System.Drawing.Size(55, 12);
+            this.labelEbirth.TabIndex = 13;
+            this.labelEbirth.Text = "生年月日:";
             // 
             // comboBoxEsex
             // 
@@ -318,41 +319,41 @@
             this.comboBoxEsex.Size = new System.Drawing.Size(124, 20);
             this.comboBoxEsex.TabIndex = 2;
             // 
-            // label4
+            // labelEsex
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "性別";
+            this.labelEsex.AutoSize = true;
+            this.labelEsex.Location = new System.Drawing.Point(37, 109);
+            this.labelEsex.Name = "labelEsex";
+            this.labelEsex.Size = new System.Drawing.Size(29, 12);
+            this.labelEsex.TabIndex = 11;
+            this.labelEsex.Text = "性別";
             // 
-            // label3
+            // labelEhurigana
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 12);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ふりがな:";
+            this.labelEhurigana.AutoSize = true;
+            this.labelEhurigana.Location = new System.Drawing.Point(35, 84);
+            this.labelEhurigana.Name = "labelEhurigana";
+            this.labelEhurigana.Size = new System.Drawing.Size(45, 12);
+            this.labelEhurigana.TabIndex = 10;
+            this.labelEhurigana.Text = "ふりがな:";
             // 
-            // label2
+            // labelEname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 12);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "社員名:";
+            this.labelEname.AutoSize = true;
+            this.labelEname.Location = new System.Drawing.Point(35, 59);
+            this.labelEname.Name = "labelEname";
+            this.labelEname.Size = new System.Drawing.Size(43, 12);
+            this.labelEname.TabIndex = 9;
+            this.labelEname.Text = "社員名:";
             // 
-            // label1
+            // labelEid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 12);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "社員ID:";
+            this.labelEid.AutoSize = true;
+            this.labelEid.Location = new System.Drawing.Point(35, 34);
+            this.labelEid.Name = "labelEid";
+            this.labelEid.Size = new System.Drawing.Size(42, 12);
+            this.labelEid.TabIndex = 8;
+            this.labelEid.Text = "社員ID:";
             // 
             // textBoxEhurigana
             // 
@@ -379,37 +380,37 @@
             this.textBoxEID.Size = new System.Drawing.Size(124, 19);
             this.textBoxEID.TabIndex = 0;
             // 
-            // groupBox2
+            // groupBoxElist
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(297, 91);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 417);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "社員一覧";
+            this.groupBoxElist.Controls.Add(this.dataGridViewElist);
+            this.groupBoxElist.Location = new System.Drawing.Point(297, 91);
+            this.groupBoxElist.Name = "groupBoxElist";
+            this.groupBoxElist.Size = new System.Drawing.Size(682, 417);
+            this.groupBoxElist.TabIndex = 4;
+            this.groupBoxElist.TabStop = false;
+            this.groupBoxElist.Text = "社員一覧";
             // 
-            // dataGridView1
+            // dataGridViewElist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(676, 399);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewElist.AllowUserToAddRows = false;
+            this.dataGridViewElist.AllowUserToDeleteRows = false;
+            this.dataGridViewElist.AllowUserToOrderColumns = true;
+            this.dataGridViewElist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewElist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewElist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewElist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewElist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewElist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewElist.Location = new System.Drawing.Point(3, 15);
+            this.dataGridViewElist.MultiSelect = false;
+            this.dataGridViewElist.Name = "dataGridViewElist";
+            this.dataGridViewElist.ReadOnly = true;
+            this.dataGridViewElist.RowTemplate.Height = 21;
+            this.dataGridViewElist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewElist.Size = new System.Drawing.Size(676, 399);
+            this.dataGridViewElist.TabIndex = 0;
+            this.dataGridViewElist.TabStop = false;
+            this.dataGridViewElist.SelectionChanged += new System.EventHandler(this.dataGridViewElist_SelectionChanged);
             // 
             // 社員マスタBindingSource1
             // 
@@ -521,6 +522,24 @@
             // 
             this.社員マスタBindingSource.DataMember = "社員マスタ";
             // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.UpdateOrder = SalesManagementSystem.SMSdatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.仕入先マスタTableAdapter = null;
+            this.tableAdapterManager1.入庫テーブルTableAdapter = null;
+            this.tableAdapterManager1.入荷テーブルTableAdapter = null;
+            this.tableAdapterManager1.出庫テーブルTableAdapter = null;
+            this.tableAdapterManager1.出荷テーブルTableAdapter = null;
+            this.tableAdapterManager1.商品マスタTableAdapter = null;
+            this.tableAdapterManager1.営業所マスタTableAdapter = null;
+            this.tableAdapterManager1.在庫テーブルTableAdapter = null;
+            this.tableAdapterManager1.売上テーブルTableAdapter = null;
+            this.tableAdapterManager1.注文テーブルTableAdapter = null;
+            this.tableAdapterManager1.発注テーブルTableAdapter = null;
+            this.tableAdapterManager1.社員マスタTableAdapter = this.社員マスタTableAdapter;
+            this.tableAdapterManager1.顧客マスタTableAdapter = null;
+            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -534,18 +553,18 @@
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxElist);
+            this.Controls.Add(this.groupBoxEoperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社員管理";
             this.Load += new System.EventHandler(this.EmployeeList_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBoxEoperation.ResumeLayout(false);
+            this.groupBoxEoperation.PerformLayout();
+            this.groupBoxElist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewElist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.社員マスタBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -561,28 +580,28 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEoperation;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxEphone;
         private System.Windows.Forms.TextBox textBoxEaddress;
         private System.Windows.Forms.TextBox textBoxEpost;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelEphone;
+        private System.Windows.Forms.Label labelEaddress;
+        private System.Windows.Forms.Label labelEpost;
+        private System.Windows.Forms.Label labelEbirth;
         private System.Windows.Forms.ComboBox comboBoxEsex;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEsex;
+        private System.Windows.Forms.Label labelEhurigana;
+        private System.Windows.Forms.Label labelEname;
+        private System.Windows.Forms.Label labelEid;
         private System.Windows.Forms.TextBox textBoxEhurigana;
         private System.Windows.Forms.TextBox textBoxEname;
         private System.Windows.Forms.TextBox textBoxEID;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.GroupBox groupBoxElist;
+        private System.Windows.Forms.DataGridView dataGridViewElist;
+        private System.Windows.Forms.Label labelEpass;
+        private System.Windows.Forms.Label labelEjoin;
         private System.Windows.Forms.TextBox textBoxEpass;
         private System.Windows.Forms.DateTimePicker dateTimePickerEbirth;
         private System.Windows.Forms.Button buttonAdd;
@@ -613,5 +632,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonRefresh;
+        private SMSdatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }
