@@ -30,32 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductListForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxPoperation = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPID = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.labelPID = new System.Windows.Forms.Label();
+            this.textBoxPid = new System.Windows.Forms.TextBox();
+            this.buttonPmaker = new System.Windows.Forms.Button();
             this.comboBoxPmagazine = new System.Windows.Forms.ComboBox();
             this.textBoxPcurrency = new System.Windows.Forms.TextBox();
             this.textBoxMname = new System.Windows.Forms.TextBox();
             this.textBoxPcapa = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelPcurrency = new System.Windows.Forms.Label();
+            this.labelPmaker = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelPcapa = new System.Windows.Forms.Label();
+            this.labelPmagazine = new System.Windows.Forms.Label();
+            this.labelPlength = new System.Windows.Forms.Label();
             this.textBoxPlength = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelPcaliber = new System.Windows.Forms.Label();
             this.textBoxPcaliber = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPweight = new System.Windows.Forms.Label();
+            this.labelPname = new System.Windows.Forms.Label();
             this.textBoxPweight = new System.Windows.Forms.TextBox();
             this.textBoxPname = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBoxPlist = new System.Windows.Forms.GroupBox();
+            this.dataGridViewPlist = new System.Windows.Forms.DataGridView();
             this.sMSdatabaseDataSet = new SalesManagementSystem.SMSdatabaseDataSet();
             this.商品マスタBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品マスタTableAdapter = new SalesManagementSystem.SMSdatabaseDataSetTableAdapters.商品マスタTableAdapter();
@@ -67,9 +67,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBoxPoperation.SuspendLayout();
+            this.groupBoxPlist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品マスタBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,37 +79,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxPoperation
             // 
-            this.groupBox1.Controls.Add(this.buttonRefresh);
-            this.groupBox1.Controls.Add(this.buttonNew);
-            this.groupBox1.Controls.Add(this.buttonRemove);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxPID);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBoxPmagazine);
-            this.groupBox1.Controls.Add(this.textBoxPcurrency);
-            this.groupBox1.Controls.Add(this.textBoxMname);
-            this.groupBox1.Controls.Add(this.textBoxPcapa);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxPlength);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxPcaliber);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxPweight);
-            this.groupBox1.Controls.Add(this.textBoxPname);
-            this.groupBox1.Location = new System.Drawing.Point(12, 89);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 348);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "商品操作";
+            this.groupBoxPoperation.Controls.Add(this.buttonRefresh);
+            this.groupBoxPoperation.Controls.Add(this.buttonNew);
+            this.groupBoxPoperation.Controls.Add(this.buttonRemove);
+            this.groupBoxPoperation.Controls.Add(this.labelPID);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPid);
+            this.groupBoxPoperation.Controls.Add(this.buttonPmaker);
+            this.groupBoxPoperation.Controls.Add(this.comboBoxPmagazine);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPcurrency);
+            this.groupBoxPoperation.Controls.Add(this.textBoxMname);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPcapa);
+            this.groupBoxPoperation.Controls.Add(this.labelPcurrency);
+            this.groupBoxPoperation.Controls.Add(this.labelPmaker);
+            this.groupBoxPoperation.Controls.Add(this.buttonAdd);
+            this.groupBoxPoperation.Controls.Add(this.labelPcapa);
+            this.groupBoxPoperation.Controls.Add(this.labelPmagazine);
+            this.groupBoxPoperation.Controls.Add(this.labelPlength);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPlength);
+            this.groupBoxPoperation.Controls.Add(this.labelPcaliber);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPcaliber);
+            this.groupBoxPoperation.Controls.Add(this.labelPweight);
+            this.groupBoxPoperation.Controls.Add(this.labelPname);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPweight);
+            this.groupBoxPoperation.Controls.Add(this.textBoxPname);
+            this.groupBoxPoperation.Location = new System.Drawing.Point(12, 89);
+            this.groupBoxPoperation.Name = "groupBoxPoperation";
+            this.groupBoxPoperation.Size = new System.Drawing.Size(260, 348);
+            this.groupBoxPoperation.TabIndex = 0;
+            this.groupBoxPoperation.TabStop = false;
+            this.groupBoxPoperation.Text = "商品操作";
             // 
             // buttonRefresh
             // 
@@ -156,33 +156,33 @@
             this.buttonRemove.UseVisualStyleBackColor = true;
             this.buttonRemove.Click += new System.EventHandler(this.buttonrRemove_Click);
             // 
-            // label1
+            // labelPID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 12);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "商品ID:";
+            this.labelPID.AutoSize = true;
+            this.labelPID.Location = new System.Drawing.Point(27, 31);
+            this.labelPID.Name = "labelPID";
+            this.labelPID.Size = new System.Drawing.Size(42, 12);
+            this.labelPID.TabIndex = 31;
+            this.labelPID.Text = "商品ID:";
             // 
-            // textBoxPID
+            // textBoxPid
             // 
-            this.textBoxPID.Enabled = false;
-            this.textBoxPID.Location = new System.Drawing.Point(102, 28);
-            this.textBoxPID.MaxLength = 4;
-            this.textBoxPID.Name = "textBoxPID";
-            this.textBoxPID.Size = new System.Drawing.Size(100, 19);
-            this.textBoxPID.TabIndex = 0;
+            this.textBoxPid.Enabled = false;
+            this.textBoxPid.Location = new System.Drawing.Point(102, 28);
+            this.textBoxPid.MaxLength = 4;
+            this.textBoxPid.Name = "textBoxPid";
+            this.textBoxPid.Size = new System.Drawing.Size(100, 19);
+            this.textBoxPid.TabIndex = 0;
             // 
-            // button2
+            // buttonPmaker
             // 
-            this.button2.Location = new System.Drawing.Point(208, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 19);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonPmaker.Location = new System.Drawing.Point(208, 204);
+            this.buttonPmaker.Name = "buttonPmaker";
+            this.buttonPmaker.Size = new System.Drawing.Size(22, 19);
+            this.buttonPmaker.TabIndex = 6;
+            this.buttonPmaker.Text = "...";
+            this.buttonPmaker.UseVisualStyleBackColor = true;
+            this.buttonPmaker.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBoxPmagazine
             // 
@@ -230,23 +230,23 @@
             this.textBoxPcapa.TabIndex = 5;
             this.textBoxPcapa.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // label10
+            // labelPcurrency
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 232);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 12);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "商品価格:";
+            this.labelPcurrency.AutoSize = true;
+            this.labelPcurrency.Location = new System.Drawing.Point(27, 232);
+            this.labelPcurrency.Name = "labelPcurrency";
+            this.labelPcurrency.Size = new System.Drawing.Size(55, 12);
+            this.labelPcurrency.TabIndex = 28;
+            this.labelPcurrency.Text = "商品価格:";
             // 
-            // label9
+            // labelPmaker
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 207);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 12);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "メーカー名:";
+            this.labelPmaker.AutoSize = true;
+            this.labelPmaker.Location = new System.Drawing.Point(27, 207);
+            this.labelPmaker.Name = "labelPmaker";
+            this.labelPmaker.Size = new System.Drawing.Size(56, 12);
+            this.labelPmaker.TabIndex = 26;
+            this.labelPmaker.Text = "メーカー名:";
             // 
             // buttonAdd
             // 
@@ -263,32 +263,32 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // label8
+            // labelPcapa
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 182);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 12);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "装弾数:";
+            this.labelPcapa.AutoSize = true;
+            this.labelPcapa.Location = new System.Drawing.Point(27, 182);
+            this.labelPcapa.Name = "labelPcapa";
+            this.labelPcapa.Size = new System.Drawing.Size(43, 12);
+            this.labelPcapa.TabIndex = 20;
+            this.labelPcapa.Text = "装弾数:";
             // 
-            // label7
+            // labelPmagazine
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 156);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 12);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "マガジンタイプ:";
+            this.labelPmagazine.AutoSize = true;
+            this.labelPmagazine.Location = new System.Drawing.Point(27, 156);
+            this.labelPmagazine.Name = "labelPmagazine";
+            this.labelPmagazine.Size = new System.Drawing.Size(71, 12);
+            this.labelPmagazine.TabIndex = 18;
+            this.labelPmagazine.Text = "マガジンタイプ:";
             // 
-            // label5
+            // labelPlength
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 12);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "全長(mm):";
+            this.labelPlength.AutoSize = true;
+            this.labelPlength.Location = new System.Drawing.Point(27, 131);
+            this.labelPlength.Name = "labelPlength";
+            this.labelPlength.Size = new System.Drawing.Size(57, 12);
+            this.labelPlength.TabIndex = 14;
+            this.labelPlength.Text = "全長(mm):";
             // 
             // textBoxPlength
             // 
@@ -300,14 +300,14 @@
             this.textBoxPlength.TabIndex = 3;
             this.textBoxPlength.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // label4
+            // labelPcaliber
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 12);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "口径(mm):";
+            this.labelPcaliber.AutoSize = true;
+            this.labelPcaliber.Location = new System.Drawing.Point(27, 106);
+            this.labelPcaliber.Name = "labelPcaliber";
+            this.labelPcaliber.Size = new System.Drawing.Size(57, 12);
+            this.labelPcaliber.TabIndex = 12;
+            this.labelPcaliber.Text = "口径(mm):";
             // 
             // textBoxPcaliber
             // 
@@ -319,23 +319,23 @@
             this.textBoxPcaliber.TabIndex = 2;
             this.textBoxPcaliber.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label3
+            // labelPweight
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 12);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "重量(kg):";
+            this.labelPweight.AutoSize = true;
+            this.labelPweight.Location = new System.Drawing.Point(27, 81);
+            this.labelPweight.Name = "labelPweight";
+            this.labelPweight.Size = new System.Drawing.Size(51, 12);
+            this.labelPweight.TabIndex = 10;
+            this.labelPweight.Text = "重量(kg):";
             // 
-            // label2
+            // labelPname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 12);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "商品名:";
+            this.labelPname.AutoSize = true;
+            this.labelPname.Location = new System.Drawing.Point(27, 56);
+            this.labelPname.Name = "labelPname";
+            this.labelPname.Size = new System.Drawing.Size(43, 12);
+            this.labelPname.TabIndex = 9;
+            this.labelPname.Text = "商品名:";
             // 
             // textBoxPweight
             // 
@@ -355,39 +355,39 @@
             this.textBoxPname.Size = new System.Drawing.Size(100, 19);
             this.textBoxPname.TabIndex = 0;
             // 
-            // groupBox2
+            // groupBoxPlist
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(278, 89);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(597, 348);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "商品一覧";
+            this.groupBoxPlist.Controls.Add(this.dataGridViewPlist);
+            this.groupBoxPlist.Location = new System.Drawing.Point(278, 89);
+            this.groupBoxPlist.Name = "groupBoxPlist";
+            this.groupBoxPlist.Size = new System.Drawing.Size(597, 348);
+            this.groupBoxPlist.TabIndex = 6;
+            this.groupBoxPlist.TabStop = false;
+            this.groupBoxPlist.Text = "商品一覧";
             // 
-            // dataGridView1
+            // dataGridViewPlist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewPlist.AllowUserToAddRows = false;
+            this.dataGridViewPlist.AllowUserToDeleteRows = false;
+            this.dataGridViewPlist.AllowUserToOrderColumns = true;
+            this.dataGridViewPlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 330);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewPlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewPlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewPlist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewPlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewPlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPlist.Location = new System.Drawing.Point(3, 15);
+            this.dataGridViewPlist.MultiSelect = false;
+            this.dataGridViewPlist.Name = "dataGridViewPlist";
+            this.dataGridViewPlist.ReadOnly = true;
+            this.dataGridViewPlist.RowTemplate.Height = 21;
+            this.dataGridViewPlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPlist.Size = new System.Drawing.Size(591, 330);
+            this.dataGridViewPlist.TabIndex = 0;
+            this.dataGridViewPlist.TabStop = false;
+            this.dataGridViewPlist.SelectionChanged += new System.EventHandler(this.dataGridViewPlist_SelectionChanged);
             // 
             // sMSdatabaseDataSet
             // 
@@ -507,19 +507,19 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxPlist);
             this.Controls.Add(this.SearchTextbox);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxPoperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品管理";
             this.Load += new System.EventHandler(this.ProductListForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBoxPoperation.ResumeLayout(false);
+            this.groupBoxPoperation.PerformLayout();
+            this.groupBoxPlist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sMSdatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品マスタBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -533,32 +533,32 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxPoperation;
+        private System.Windows.Forms.Label labelPweight;
+        private System.Windows.Forms.Label labelPname;
         private System.Windows.Forms.TextBox textBoxPweight;
         private System.Windows.Forms.TextBox textBoxPname;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBoxPlist;
+        private System.Windows.Forms.DataGridView dataGridViewPlist;
+        private System.Windows.Forms.Label labelPcapa;
+        private System.Windows.Forms.Label labelPmagazine;
+        private System.Windows.Forms.Label labelPlength;
         private System.Windows.Forms.TextBox textBoxPlength;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelPcaliber;
         private System.Windows.Forms.TextBox textBoxPcaliber;
         private System.Windows.Forms.Button buttonAdd;
         private SMSdatabaseDataSet sMSdatabaseDataSet;
         private System.Windows.Forms.BindingSource 商品マスタBindingSource;
         private SMSdatabaseDataSetTableAdapters.商品マスタTableAdapter 商品マスタTableAdapter;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelPcurrency;
+        private System.Windows.Forms.Label labelPmaker;
         private System.Windows.Forms.ComboBox comboBoxPmagazine;
         private System.Windows.Forms.TextBox textBoxPcurrency;
         private System.Windows.Forms.TextBox textBoxPcapa;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonPmaker;
         private System.Windows.Forms.TextBox textBoxMname;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxPID;
+        private System.Windows.Forms.Label labelPID;
+        private System.Windows.Forms.TextBox textBoxPid;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;

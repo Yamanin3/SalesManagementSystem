@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderListForm));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxOlist = new System.Windows.Forms.GroupBox();
+            this.dataGridViewOlist = new System.Windows.Forms.DataGridView();
+            this.groupBoxODoperation = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.comboBoxOquantity = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBoxMname = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.buttonPname = new System.Windows.Forms.Button();
+            this.buttonCname = new System.Windows.Forms.Button();
+            this.textBoxEname = new System.Windows.Forms.TextBox();
+            this.labelEname = new System.Windows.Forms.Label();
             this.dateTimePickerOdate = new System.Windows.Forms.DateTimePicker();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxOcurrency = new System.Windows.Forms.TextBox();
             this.textBoxPcurrency = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelOcurrency = new System.Windows.Forms.Label();
+            this.labelPcurrency = new System.Windows.Forms.Label();
+            this.labelOdate = new System.Windows.Forms.Label();
+            this.labelOquantity = new System.Windows.Forms.Label();
+            this.labelPname = new System.Windows.Forms.Label();
+            this.labelCname = new System.Windows.Forms.Label();
+            this.labelOid = new System.Windows.Forms.Label();
             this.textBoxPname = new System.Windows.Forms.TextBox();
             this.textBoxCname = new System.Windows.Forms.TextBox();
             this.textBoxOID = new System.Windows.Forms.TextBox();
@@ -63,9 +63,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxOlist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOlist)).BeginInit();
+            this.groupBoxODoperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -73,68 +73,68 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // groupBoxOlist
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(308, 88);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(671, 351);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "注文一覧";
+            this.groupBoxOlist.Controls.Add(this.dataGridViewOlist);
+            this.groupBoxOlist.Location = new System.Drawing.Point(308, 88);
+            this.groupBoxOlist.Name = "groupBoxOlist";
+            this.groupBoxOlist.Size = new System.Drawing.Size(671, 351);
+            this.groupBoxOlist.TabIndex = 2;
+            this.groupBoxOlist.TabStop = false;
+            this.groupBoxOlist.Text = "注文一覧";
             // 
-            // dataGridView1
+            // dataGridViewOlist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(665, 333);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewOlist.AllowUserToAddRows = false;
+            this.dataGridViewOlist.AllowUserToDeleteRows = false;
+            this.dataGridViewOlist.AllowUserToOrderColumns = true;
+            this.dataGridViewOlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewOlist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewOlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewOlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOlist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewOlist.Location = new System.Drawing.Point(3, 15);
+            this.dataGridViewOlist.MultiSelect = false;
+            this.dataGridViewOlist.Name = "dataGridViewOlist";
+            this.dataGridViewOlist.ReadOnly = true;
+            this.dataGridViewOlist.RowTemplate.Height = 21;
+            this.dataGridViewOlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewOlist.Size = new System.Drawing.Size(665, 333);
+            this.dataGridViewOlist.TabIndex = 0;
+            this.dataGridViewOlist.TabStop = false;
+            this.dataGridViewOlist.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // groupBox1
+            // groupBoxODoperation
             // 
-            this.groupBox1.Controls.Add(this.buttonRefresh);
-            this.groupBox1.Controls.Add(this.buttonNew);
-            this.groupBox1.Controls.Add(this.buttonRemove);
-            this.groupBox1.Controls.Add(this.comboBoxOquantity);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBoxMname);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePickerOdate);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.textBoxOcurrency);
-            this.groupBox1.Controls.Add(this.textBoxPcurrency);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxPname);
-            this.groupBox1.Controls.Add(this.textBoxCname);
-            this.groupBox1.Controls.Add(this.textBoxOID);
-            this.groupBox1.Location = new System.Drawing.Point(6, 88);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 348);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "注文操作";
+            this.groupBoxODoperation.Controls.Add(this.buttonRefresh);
+            this.groupBoxODoperation.Controls.Add(this.buttonNew);
+            this.groupBoxODoperation.Controls.Add(this.buttonRemove);
+            this.groupBoxODoperation.Controls.Add(this.comboBoxOquantity);
+            this.groupBoxODoperation.Controls.Add(this.buttonPname);
+            this.groupBoxODoperation.Controls.Add(this.buttonCname);
+            this.groupBoxODoperation.Controls.Add(this.textBoxEname);
+            this.groupBoxODoperation.Controls.Add(this.labelEname);
+            this.groupBoxODoperation.Controls.Add(this.dateTimePickerOdate);
+            this.groupBoxODoperation.Controls.Add(this.buttonAdd);
+            this.groupBoxODoperation.Controls.Add(this.textBoxOcurrency);
+            this.groupBoxODoperation.Controls.Add(this.textBoxPcurrency);
+            this.groupBoxODoperation.Controls.Add(this.labelOcurrency);
+            this.groupBoxODoperation.Controls.Add(this.labelPcurrency);
+            this.groupBoxODoperation.Controls.Add(this.labelOdate);
+            this.groupBoxODoperation.Controls.Add(this.labelOquantity);
+            this.groupBoxODoperation.Controls.Add(this.labelPname);
+            this.groupBoxODoperation.Controls.Add(this.labelCname);
+            this.groupBoxODoperation.Controls.Add(this.labelOid);
+            this.groupBoxODoperation.Controls.Add(this.textBoxPname);
+            this.groupBoxODoperation.Controls.Add(this.textBoxCname);
+            this.groupBoxODoperation.Controls.Add(this.textBoxOID);
+            this.groupBoxODoperation.Location = new System.Drawing.Point(6, 88);
+            this.groupBoxODoperation.Name = "groupBoxODoperation";
+            this.groupBoxODoperation.Size = new System.Drawing.Size(296, 348);
+            this.groupBoxODoperation.TabIndex = 0;
+            this.groupBoxODoperation.TabStop = false;
+            this.groupBoxODoperation.Text = "注文操作";
             // 
             // buttonRefresh
             // 
@@ -205,43 +205,43 @@
             this.comboBoxOquantity.TabIndex = 2;
             this.comboBoxOquantity.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
-            // button3
+            // buttonPname
             // 
-            this.button3.Location = new System.Drawing.Point(243, 78);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 19);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonPname.Location = new System.Drawing.Point(243, 78);
+            this.buttonPname.Name = "buttonPname";
+            this.buttonPname.Size = new System.Drawing.Size(22, 19);
+            this.buttonPname.TabIndex = 1;
+            this.buttonPname.Text = "...";
+            this.buttonPname.UseVisualStyleBackColor = true;
+            this.buttonPname.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // buttonCname
             // 
-            this.button2.Location = new System.Drawing.Point(243, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 19);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCname.Location = new System.Drawing.Point(243, 53);
+            this.buttonCname.Name = "buttonCname";
+            this.buttonCname.Size = new System.Drawing.Size(22, 19);
+            this.buttonCname.TabIndex = 0;
+            this.buttonCname.Text = "...";
+            this.buttonCname.UseVisualStyleBackColor = true;
+            this.buttonCname.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBoxMname
+            // textBoxEname
             // 
-            this.textBoxMname.Enabled = false;
-            this.textBoxMname.Location = new System.Drawing.Point(116, 203);
-            this.textBoxMname.MaxLength = 20;
-            this.textBoxMname.Name = "textBoxMname";
-            this.textBoxMname.Size = new System.Drawing.Size(121, 19);
-            this.textBoxMname.TabIndex = 7;
+            this.textBoxEname.Enabled = false;
+            this.textBoxEname.Location = new System.Drawing.Point(116, 203);
+            this.textBoxEname.MaxLength = 20;
+            this.textBoxEname.Name = "textBoxEname";
+            this.textBoxEname.Size = new System.Drawing.Size(121, 19);
+            this.textBoxEname.TabIndex = 7;
             // 
-            // label4
+            // labelEname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 206);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 12);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "担当者名:";
+            this.labelEname.AutoSize = true;
+            this.labelEname.Location = new System.Drawing.Point(41, 206);
+            this.labelEname.Name = "labelEname";
+            this.labelEname.Size = new System.Drawing.Size(55, 12);
+            this.labelEname.TabIndex = 18;
+            this.labelEname.Text = "担当者名:";
             // 
             // dateTimePickerOdate
             // 
@@ -284,68 +284,68 @@
             this.textBoxPcurrency.Size = new System.Drawing.Size(121, 19);
             this.textBoxPcurrency.TabIndex = 5;
             // 
-            // label8
+            // labelOcurrency
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 181);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 12);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "合計額:";
+            this.labelOcurrency.AutoSize = true;
+            this.labelOcurrency.Location = new System.Drawing.Point(41, 181);
+            this.labelOcurrency.Name = "labelOcurrency";
+            this.labelOcurrency.Size = new System.Drawing.Size(43, 12);
+            this.labelOcurrency.TabIndex = 16;
+            this.labelOcurrency.Text = "合計額:";
             // 
-            // label7
+            // labelPcurrency
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 156);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "商品価格";
+            this.labelPcurrency.AutoSize = true;
+            this.labelPcurrency.Location = new System.Drawing.Point(41, 156);
+            this.labelPcurrency.Name = "labelPcurrency";
+            this.labelPcurrency.Size = new System.Drawing.Size(53, 12);
+            this.labelPcurrency.TabIndex = 15;
+            this.labelPcurrency.Text = "商品価格";
             // 
-            // label6
+            // labelOdate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 12);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "注文日:";
+            this.labelOdate.AutoSize = true;
+            this.labelOdate.Location = new System.Drawing.Point(41, 131);
+            this.labelOdate.Name = "labelOdate";
+            this.labelOdate.Size = new System.Drawing.Size(43, 12);
+            this.labelOdate.TabIndex = 14;
+            this.labelOdate.Text = "注文日:";
             // 
-            // label5
+            // labelOquantity
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 12);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "数量:";
+            this.labelOquantity.AutoSize = true;
+            this.labelOquantity.Location = new System.Drawing.Point(41, 106);
+            this.labelOquantity.Name = "labelOquantity";
+            this.labelOquantity.Size = new System.Drawing.Size(31, 12);
+            this.labelOquantity.TabIndex = 13;
+            this.labelOquantity.Text = "数量:";
             // 
-            // label3
+            // labelPname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "商品名:";
+            this.labelPname.AutoSize = true;
+            this.labelPname.Location = new System.Drawing.Point(41, 81);
+            this.labelPname.Name = "labelPname";
+            this.labelPname.Size = new System.Drawing.Size(43, 12);
+            this.labelPname.TabIndex = 10;
+            this.labelPname.Text = "商品名:";
             // 
-            // label2
+            // labelCname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 12);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "顧客名:";
+            this.labelCname.AutoSize = true;
+            this.labelCname.Location = new System.Drawing.Point(41, 56);
+            this.labelCname.Name = "labelCname";
+            this.labelCname.Size = new System.Drawing.Size(43, 12);
+            this.labelCname.TabIndex = 9;
+            this.labelCname.Text = "顧客名:";
             // 
-            // label1
+            // labelOid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 12);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "注文ID:";
+            this.labelOid.AutoSize = true;
+            this.labelOid.Location = new System.Drawing.Point(41, 31);
+            this.labelOid.Name = "labelOid";
+            this.labelOid.Size = new System.Drawing.Size(42, 12);
+            this.labelOid.TabIndex = 8;
+            this.labelOid.Text = "注文ID:";
             // 
             // textBoxPname
             // 
@@ -491,18 +491,18 @@
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxODoperation);
+            this.Controls.Add(this.groupBoxOlist);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注文管理";
             this.Load += new System.EventHandler(this.OrderListForm_Load);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxOlist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOlist)).EndInit();
+            this.groupBoxODoperation.ResumeLayout(false);
+            this.groupBoxODoperation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -515,27 +515,27 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxOlist;
+        private System.Windows.Forms.DataGridView dataGridViewOlist;
+        private System.Windows.Forms.GroupBox groupBoxODoperation;
         private System.Windows.Forms.TextBox textBoxOcurrency;
         private System.Windows.Forms.TextBox textBoxPcurrency;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelOcurrency;
+        private System.Windows.Forms.Label labelPcurrency;
+        private System.Windows.Forms.Label labelOdate;
+        private System.Windows.Forms.Label labelOquantity;
+        private System.Windows.Forms.Label labelPname;
+        private System.Windows.Forms.Label labelCname;
+        private System.Windows.Forms.Label labelOid;
         private System.Windows.Forms.TextBox textBoxPname;
         private System.Windows.Forms.TextBox textBoxCname;
         private System.Windows.Forms.TextBox textBoxOID;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DateTimePicker dateTimePickerOdate;
-        private System.Windows.Forms.TextBox textBoxMname;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxEname;
+        private System.Windows.Forms.Label labelEname;
+        private System.Windows.Forms.Button buttonPname;
+        private System.Windows.Forms.Button buttonCname;
         private System.Windows.Forms.ComboBox comboBoxOquantity;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.CheckBox checkBox1;

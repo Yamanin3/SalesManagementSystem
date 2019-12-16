@@ -33,8 +33,8 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
 
                 AC.da.Fill(AC.dt);
-                dataGridView1.DataSource = AC.dt;
-                if (dataGridView1.SelectedRows.Count <= 0)
+                dataGridViewOlist.DataSource = AC.dt;
+                if (dataGridViewOlist.SelectedRows.Count <= 0)
                 {
                     textBoxOID.Text = "";
                     textBoxCname.Text = "";
@@ -43,12 +43,12 @@ namespace SalesManagementSystem
                     dateTimePickerOdate.Text = "";
                     textBoxPcurrency.Text = "";
                     textBoxOcurrency.Text = "";
-                    textBoxMname.Text = "";
+                    textBoxEname.Text = "";
                 }
                 else
                 {
                     // datagridview1の最上段にカーソルを当てる
-                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                    dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[0].Cells[0];
                 }
             }
             else
@@ -60,8 +60,8 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
 
                 AC.da.Fill(AC.dt);
-                dataGridView1.DataSource = AC.dt;
-                if (dataGridView1.SelectedRows.Count <= 0)
+                dataGridViewOlist.DataSource = AC.dt;
+                if (dataGridViewOlist.SelectedRows.Count <= 0)
                 {
                     buttonAdd.Enabled = false;
                     textBoxOID.Text = "";
@@ -71,12 +71,12 @@ namespace SalesManagementSystem
                     dateTimePickerOdate.Text = "";
                     textBoxPcurrency.Text = "";
                     textBoxOcurrency.Text = "";
-                    textBoxMname.Text = "";
+                    textBoxEname.Text = "";
                 }
                 else
                 {
                     // datagridview1の最上段にカーソルを当てる
-                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                    dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[0].Cells[0];
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace SalesManagementSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            if (dataGridViewOlist.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
                 textBoxOID.Text = "";
@@ -106,33 +106,33 @@ namespace SalesManagementSystem
                 dateTimePickerOdate.Text = "";
                 textBoxPcurrency.Text = "";
                 textBoxOcurrency.Text = "";
-                textBoxMname.Text = "";
+                textBoxEname.Text = "";
             }
-            else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            else if (dataGridViewOlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBoxOID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                comboBoxOquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePickerOdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBoxMname.Text = AC.currentFullName;
+                textBoxOID.Text = dataGridViewOlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxCname.Text = dataGridViewOlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridViewOlist.CurrentRow.Cells[2].Value.ToString();
+                comboBoxOquantity.Text = dataGridViewOlist.CurrentRow.Cells[3].Value.ToString();
+                dateTimePickerOdate.Text = dataGridViewOlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxPcurrency.Text = dataGridViewOlist.CurrentRow.Cells[5].Value.ToString();
+                textBoxOcurrency.Text = dataGridViewOlist.CurrentRow.Cells[6].Value.ToString();
+                textBoxEname.Text = AC.currentFullName;
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBoxOID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxCname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                comboBoxOquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePickerOdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxPcurrency.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBoxMname.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBoxOID.Text = dataGridViewOlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxCname.Text = dataGridViewOlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridViewOlist.CurrentRow.Cells[2].Value.ToString();
+                comboBoxOquantity.Text = dataGridViewOlist.CurrentRow.Cells[3].Value.ToString();
+                dateTimePickerOdate.Text = dataGridViewOlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxPcurrency.Text = dataGridViewOlist.CurrentRow.Cells[5].Value.ToString();
+                textBoxOcurrency.Text = dataGridViewOlist.CurrentRow.Cells[6].Value.ToString();
+                textBoxEname.Text = dataGridViewOlist.CurrentRow.Cells[7].Value.ToString();
             }
         }
 
@@ -141,12 +141,12 @@ namespace SalesManagementSystem
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewOlist.SelectedRows.Count <= 0 || dataGridViewOlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if (string.IsNullOrEmpty(textBoxCname.Text.Trim()) || string.IsNullOrEmpty(textBoxPname.Text.Trim()) ||
                     string.IsNullOrEmpty(comboBoxOquantity.Text.Trim()) || string.IsNullOrEmpty(textBoxPcurrency.Text.Trim()) ||
                     string.IsNullOrEmpty(textBoxOcurrency.Text.Trim()) || string.IsNullOrEmpty(dateTimePickerOdate.Text.Trim()) ||
-                    string.IsNullOrEmpty(textBoxMname.Text.Trim()))
+                    string.IsNullOrEmpty(textBoxEname.Text.Trim()))
                     MessageBox.Show("全てのデータ項目を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -260,7 +260,7 @@ namespace SalesManagementSystem
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(dataGridView1.CurrentRow?.Cells[0].Value.ToString()))
+            if (string.IsNullOrEmpty(dataGridViewOlist.CurrentRow?.Cells[0].Value.ToString()))
                 return;
             try
             {
@@ -279,14 +279,14 @@ namespace SalesManagementSystem
                     AC.cmd.Parameters.Clear();
                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 2;
                     AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
-                        int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        int.Parse(dataGridViewOlist.CurrentRow.Cells[0].Value.ToString());
                     AC.cmd.CommandText = AC.sql;
                     AC.cmd.ExecuteNonQuery();
 
                     AC.sql = "select 在庫数 from 在庫テーブル where 商品ID = @id";
                     AC.cmd.Parameters.Clear();
                     AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
-                        int.Parse(dataGridView1.CurrentRow.Cells[8].Value.ToString());
+                        int.Parse(dataGridViewOlist.CurrentRow.Cells[8].Value.ToString());
                     AC.cmd.CommandText = AC.sql;
                     AC.rd = AC.cmd.ExecuteReader();
                     if (AC.rd.Read()) stock = int.Parse(AC.rd.GetValue(0).ToString());
@@ -295,9 +295,9 @@ namespace SalesManagementSystem
                     AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id";
                     AC.cmd.Parameters.Clear();
                     AC.cmd.Parameters.Add("?", OleDbType.Integer).Value =
-                        stock + int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                        stock + int.Parse(dataGridViewOlist.CurrentRow.Cells[3].Value.ToString());
                     AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value =
-                        int.Parse(dataGridView1.CurrentRow.Cells[8].Value.ToString());
+                        int.Parse(dataGridViewOlist.CurrentRow.Cells[8].Value.ToString());
                     AC.cmd.CommandText = AC.sql;
                     AC.cmd.ExecuteNonQuery();
 
@@ -414,8 +414,8 @@ namespace SalesManagementSystem
                 buttonNew.Enabled = false;
                 buttonRemove.Enabled = false;
                 buttonAdd.Enabled = false;
-                button2.Enabled = false;
-                button3.Enabled = false;
+                buttonCname.Enabled = false;
+                buttonPname.Enabled = false;
             }
             else
             {
@@ -424,8 +424,8 @@ namespace SalesManagementSystem
                 buttonNew.Enabled = true;
                 buttonRemove.Enabled = true;
                 buttonAdd.Enabled = true;
-                button2.Enabled = true;
-                button3.Enabled = true;
+                buttonCname.Enabled = true;
+                buttonPname.Enabled = true;
                 RefreshLoad();
             }
         }
@@ -441,9 +441,9 @@ namespace SalesManagementSystem
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
-                dataGridView1.DataSource = AC.dt;
+                dataGridViewOlist.DataSource = AC.dt;
                 dataGridView1_SelectionChanged(this, EventArgs.Empty);
-                if (dataGridView1.CurrentCell == null)
+                if (dataGridViewOlist.CurrentCell == null)
                     MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -455,9 +455,9 @@ namespace SalesManagementSystem
                 AC.da = new OleDbDataAdapter(AC.cmd);
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
-                dataGridView1.DataSource = AC.dt;
+                dataGridViewOlist.DataSource = AC.dt;
                 dataGridView1_SelectionChanged(this, EventArgs.Empty);
-                if (dataGridView1.CurrentCell == null) { 
+                if (dataGridViewOlist.CurrentCell == null) { 
                     MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -476,7 +476,7 @@ namespace SalesManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
+            dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[dataGridViewOlist.Rows.Count - 1].Cells[0];
             dataGridView1_SelectionChanged(this, EventArgs.Empty);
         }
     }
