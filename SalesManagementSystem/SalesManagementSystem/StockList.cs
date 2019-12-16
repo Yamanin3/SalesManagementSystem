@@ -31,7 +31,7 @@ namespace SalesManagementSystem
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242);
             RefreshLoad();
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewSTlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;
         }
 
@@ -44,49 +44,49 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridViewSTlist.DataSource = AC.dt;
+            dataGridViewSTlist.Columns[0].Visible = false;
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dataGridViewSTlist.SelectedRows.Count <= 0)
             {
                 buttonSet.Enabled = false;
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "0";
-                textBox4.Text = "";
+                textBoxPID.Text = "";
+                textBoxPname.Text = "";
+                textBoxStstock.Text = "0";
+                textBoxStpoint.Text = "";
             }
             else
             {
                 buttonSet.Enabled = true;
                 // datagridview1の最上段にカーソルを当てる
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[1];
+                dataGridViewSTlist.CurrentCell = dataGridViewSTlist.Rows[0].Cells[1];
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewSTlist_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.CurrentCell == null)
+                if (dataGridViewSTlist.CurrentCell == null)
                 {
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox4.Text = "";
+                    textBoxPID.Text = "";
+                    textBoxPname.Text = "";
+                    textBoxStstock.Text = "";
+                    textBoxStpoint.Text = "";
                     buttonSet.Enabled = false;
-                    textBox4.Enabled = false;
+                    textBoxStpoint.Enabled = false;
                 }
                 else
                 {
                     buttonSet.Enabled = true;
-                    textBox4.Enabled = true;
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
-                        textBox3.Text = "0";
+                    textBoxStpoint.Enabled = true;
+                    textBoxPID.Text = dataGridViewSTlist.CurrentRow.Cells[1].Value.ToString();
+                    textBoxPname.Text = dataGridViewSTlist.CurrentRow.Cells[2].Value.ToString();
+                    if (dataGridViewSTlist.CurrentRow.Cells[3].Value.ToString() == "")
+                        textBoxStstock.Text = "0";
                     else
-                        textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                        textBoxStstock.Text = dataGridViewSTlist.CurrentRow.Cells[3].Value.ToString();
+                    textBoxStpoint.Text = dataGridViewSTlist.CurrentRow.Cells[4].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -97,19 +97,19 @@ namespace SalesManagementSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewSTlist.SelectedRows.Count <= 0 || dataGridViewSTlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
-                if (string.IsNullOrEmpty(textBox4.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxStpoint.Text.Trim()))
                 {
                     MessageBox.Show("発注点を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    textBox4.Focus();
-                    textBox4.SelectAll();
+                    textBoxStpoint.Focus();
+                    textBoxStpoint.SelectAll();
                 }
-                else if (textBox4.Text == "0")
+                else if (textBoxStpoint.Text == "0")
                 {
                     MessageBox.Show("発注点に\"0\"は設定できません", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    textBox4.Focus();
-                    textBox4.SelectAll();
+                    textBoxStpoint.Focus();
+                    textBoxStpoint.SelectAll();
                 }
                 else
                 {
@@ -128,9 +128,9 @@ namespace SalesManagementSystem
                         {
                             AC.sql = "insert into 在庫テーブル(商品ID, 在庫数, 発注点) Values(?, ?, ?)";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox4.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBoxPID.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxStstock.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxStpoint.Text);
 
 
                             AC.cmd.CommandText = AC.sql;
@@ -147,7 +147,7 @@ namespace SalesManagementSystem
             }
             else
             {
-                if (string.IsNullOrEmpty(textBox4.Text.Trim()))
+                if (string.IsNullOrEmpty(textBoxStpoint.Text.Trim()))
                     MessageBox.Show("発注点を入力してください", "データ入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                     try
@@ -163,12 +163,12 @@ namespace SalesManagementSystem
 
                         if (result == DialogResult.Yes)
                         {
-                            var id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                            var id = int.Parse(dataGridViewSTlist.CurrentRow.Cells[0].Value.ToString());
                             AC.sql = "update 在庫テーブル set 商品ID = ?, 在庫数 = ?, 発注点 = ? where 在庫ID = @id;";
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBox1.Text;
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox3.Text);
-                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBox4.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = textBoxPID.Text;
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxStstock.Text);
+                            AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = int.Parse(textBoxStpoint.Text);
                             AC.cmd.Parameters.Add("@id", OleDbType.Integer).Value = id;
 
                             AC.cmd.CommandText = AC.sql;
@@ -199,9 +199,9 @@ namespace SalesManagementSystem
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox4.Text) && int.TryParse(textBox4.Text, out I) != true)
+            if (!string.IsNullOrEmpty(textBoxStpoint.Text) && int.TryParse(textBoxStpoint.Text, out I) != true)
             {
-                textBox4.ResetText();
+                textBoxStpoint.ResetText();
                 MessageBox.Show("数字しか入力できません", "入力制限", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -215,9 +215,9 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            if (dataGridView1.CurrentCell == null)
+            dataGridViewSTlist.DataSource = AC.dt;
+            dataGridViewSTlist_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridViewSTlist.CurrentCell == null)
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -225,5 +225,6 @@ namespace SalesManagementSystem
         {
             if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
+
     }
 }

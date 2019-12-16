@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockListForm));
             this.SearchTextbox = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBoxSTlist = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSTlist = new System.Windows.Forms.DataGridView();
+            this.groupBoxSToperation = new System.Windows.Forms.GroupBox();
+            this.labelStpoint = new System.Windows.Forms.Label();
+            this.textBoxStpoint = new System.Windows.Forms.TextBox();
+            this.labelStstock = new System.Windows.Forms.Label();
+            this.textBoxStstock = new System.Windows.Forms.TextBox();
+            this.labelPname = new System.Windows.Forms.Label();
+            this.textBoxPname = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelPid = new System.Windows.Forms.Label();
+            this.textBoxPID = new System.Windows.Forms.TextBox();
             this.buttonSet = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -50,9 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxSTlist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSTlist)).BeginInit();
+            this.groupBoxSToperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,112 +69,112 @@
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
             // 
-            // groupBox2
+            // groupBoxSTlist
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(277, 100);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(597, 348);
-            this.groupBox2.TabIndex = 42;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "在庫リスト";
+            this.groupBoxSTlist.Controls.Add(this.dataGridViewSTlist);
+            this.groupBoxSTlist.Location = new System.Drawing.Point(277, 100);
+            this.groupBoxSTlist.Name = "groupBoxSTlist";
+            this.groupBoxSTlist.Size = new System.Drawing.Size(597, 348);
+            this.groupBoxSTlist.TabIndex = 42;
+            this.groupBoxSTlist.TabStop = false;
+            this.groupBoxSTlist.Text = "在庫一覧";
             // 
-            // dataGridView1
+            // dataGridViewSTlist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewSTlist.AllowUserToAddRows = false;
+            this.dataGridViewSTlist.AllowUserToDeleteRows = false;
+            this.dataGridViewSTlist.AllowUserToOrderColumns = true;
+            this.dataGridViewSTlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 330);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewSTlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSTlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewSTlist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewSTlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewSTlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSTlist.Location = new System.Drawing.Point(3, 15);
+            this.dataGridViewSTlist.MultiSelect = false;
+            this.dataGridViewSTlist.Name = "dataGridViewSTlist";
+            this.dataGridViewSTlist.ReadOnly = true;
+            this.dataGridViewSTlist.RowTemplate.Height = 21;
+            this.dataGridViewSTlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSTlist.Size = new System.Drawing.Size(591, 330);
+            this.dataGridViewSTlist.TabIndex = 0;
+            this.dataGridViewSTlist.TabStop = false;
+            this.dataGridViewSTlist.SelectionChanged += new System.EventHandler(this.dataGridViewSTlist_SelectionChanged);
             // 
-            // groupBox1
+            // groupBoxSToperation
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.buttonRefresh);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.buttonSet);
-            this.groupBox1.Location = new System.Drawing.Point(12, 100);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 268);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "発注点操作";
+            this.groupBoxSToperation.Controls.Add(this.labelStpoint);
+            this.groupBoxSToperation.Controls.Add(this.textBoxStpoint);
+            this.groupBoxSToperation.Controls.Add(this.labelStstock);
+            this.groupBoxSToperation.Controls.Add(this.textBoxStstock);
+            this.groupBoxSToperation.Controls.Add(this.labelPname);
+            this.groupBoxSToperation.Controls.Add(this.textBoxPname);
+            this.groupBoxSToperation.Controls.Add(this.buttonRefresh);
+            this.groupBoxSToperation.Controls.Add(this.labelPid);
+            this.groupBoxSToperation.Controls.Add(this.textBoxPID);
+            this.groupBoxSToperation.Controls.Add(this.buttonSet);
+            this.groupBoxSToperation.Location = new System.Drawing.Point(12, 100);
+            this.groupBoxSToperation.Name = "groupBoxSToperation";
+            this.groupBoxSToperation.Size = new System.Drawing.Size(238, 268);
+            this.groupBoxSToperation.TabIndex = 0;
+            this.groupBoxSToperation.TabStop = false;
+            this.groupBoxSToperation.Text = "発注点操作";
             // 
-            // label5
+            // labelStpoint
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 12);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "発注点:";
+            this.labelStpoint.AutoSize = true;
+            this.labelStpoint.Location = new System.Drawing.Point(32, 123);
+            this.labelStpoint.Name = "labelStpoint";
+            this.labelStpoint.Size = new System.Drawing.Size(43, 12);
+            this.labelStpoint.TabIndex = 37;
+            this.labelStpoint.Text = "発注点:";
             // 
-            // textBox4
+            // textBoxStpoint
             // 
-            this.textBox4.Location = new System.Drawing.Point(107, 120);
-            this.textBox4.MaxLength = 4;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 19);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxStpoint.Location = new System.Drawing.Point(107, 120);
+            this.textBoxStpoint.MaxLength = 4;
+            this.textBoxStpoint.Name = "textBoxStpoint";
+            this.textBoxStpoint.Size = new System.Drawing.Size(100, 19);
+            this.textBoxStpoint.TabIndex = 3;
+            this.textBoxStpoint.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label4
+            // labelStstock
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 12);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "在庫数:";
+            this.labelStstock.AutoSize = true;
+            this.labelStstock.Location = new System.Drawing.Point(32, 98);
+            this.labelStstock.Name = "labelStstock";
+            this.labelStstock.Size = new System.Drawing.Size(43, 12);
+            this.labelStstock.TabIndex = 35;
+            this.labelStstock.Text = "在庫数:";
             // 
-            // textBox3
+            // textBoxStstock
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(107, 95);
-            this.textBox3.MaxLength = 4;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 19);
-            this.textBox3.TabIndex = 2;
+            this.textBoxStstock.Enabled = false;
+            this.textBoxStstock.Location = new System.Drawing.Point(107, 95);
+            this.textBoxStstock.MaxLength = 4;
+            this.textBoxStstock.Name = "textBoxStstock";
+            this.textBoxStstock.Size = new System.Drawing.Size(100, 19);
+            this.textBoxStstock.TabIndex = 2;
             // 
-            // label3
+            // labelPname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "商品名:";
+            this.labelPname.AutoSize = true;
+            this.labelPname.Location = new System.Drawing.Point(32, 73);
+            this.labelPname.Name = "labelPname";
+            this.labelPname.Size = new System.Drawing.Size(43, 12);
+            this.labelPname.TabIndex = 33;
+            this.labelPname.Text = "商品名:";
             // 
-            // textBox2
+            // textBoxPname
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(107, 70);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 19);
-            this.textBox2.TabIndex = 1;
+            this.textBoxPname.Enabled = false;
+            this.textBoxPname.Location = new System.Drawing.Point(107, 70);
+            this.textBoxPname.MaxLength = 50;
+            this.textBoxPname.Name = "textBoxPname";
+            this.textBoxPname.Size = new System.Drawing.Size(100, 19);
+            this.textBoxPname.TabIndex = 1;
             // 
             // buttonRefresh
             // 
@@ -191,23 +191,23 @@
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
+            // labelPid
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 12);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "商品ID:";
+            this.labelPid.AutoSize = true;
+            this.labelPid.Location = new System.Drawing.Point(32, 48);
+            this.labelPid.Name = "labelPid";
+            this.labelPid.Size = new System.Drawing.Size(42, 12);
+            this.labelPid.TabIndex = 31;
+            this.labelPid.Text = "商品ID:";
             // 
-            // textBox1
+            // textBoxPID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(107, 45);
-            this.textBox1.MaxLength = 4;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
-            this.textBox1.TabIndex = 0;
+            this.textBoxPID.Enabled = false;
+            this.textBoxPID.Location = new System.Drawing.Point(107, 45);
+            this.textBoxPID.MaxLength = 4;
+            this.textBoxPID.Name = "textBoxPID";
+            this.textBoxPID.Size = new System.Drawing.Size(100, 19);
+            this.textBoxPID.TabIndex = 0;
             // 
             // buttonSet
             // 
@@ -319,8 +319,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxSToperation);
+            this.Controls.Add(this.groupBoxSTlist);
             this.Controls.Add(this.SearchTextbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -328,10 +328,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "在庫一覧";
             this.Load += new System.EventHandler(this.StockListForm_Load);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxSTlist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSTlist)).EndInit();
+            this.groupBoxSToperation.ResumeLayout(false);
+            this.groupBoxSToperation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -344,18 +344,18 @@
 
         #endregion
         private System.Windows.Forms.TextBox SearchTextbox;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBoxSTlist;
+        private System.Windows.Forms.DataGridView dataGridViewSTlist;
+        private System.Windows.Forms.GroupBox groupBoxSToperation;
+        private System.Windows.Forms.Label labelPid;
+        private System.Windows.Forms.TextBox textBoxPID;
         private System.Windows.Forms.Button buttonSet;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label labelStstock;
+        private System.Windows.Forms.TextBox textBoxStstock;
+        private System.Windows.Forms.Label labelPname;
+        private System.Windows.Forms.TextBox textBoxPname;
+        private System.Windows.Forms.Label labelStpoint;
+        private System.Windows.Forms.TextBox textBoxStpoint;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonSearch;
