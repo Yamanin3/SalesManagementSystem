@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderingListForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOrderinglist = new System.Windows.Forms.DataGridView();
             this.buttonToOrdered = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -38,32 +38,32 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderinglist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewOrderinglist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 105);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(668, 224);
-            this.dataGridView1.TabIndex = 32;
-            this.dataGridView1.TabStop = false;
+            this.dataGridViewOrderinglist.AllowUserToAddRows = false;
+            this.dataGridViewOrderinglist.AllowUserToDeleteRows = false;
+            this.dataGridViewOrderinglist.AllowUserToOrderColumns = true;
+            this.dataGridViewOrderinglist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOrderinglist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewOrderinglist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewOrderinglist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewOrderinglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrderinglist.Location = new System.Drawing.Point(14, 105);
+            this.dataGridViewOrderinglist.MultiSelect = false;
+            this.dataGridViewOrderinglist.Name = "dataGridViewOrderinglist";
+            this.dataGridViewOrderinglist.ReadOnly = true;
+            this.dataGridViewOrderinglist.RowTemplate.Height = 21;
+            this.dataGridViewOrderinglist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewOrderinglist.Size = new System.Drawing.Size(668, 224);
+            this.dataGridViewOrderinglist.TabIndex = 32;
+            this.dataGridViewOrderinglist.TabStop = false;
             // 
             // buttonToOrdered
             // 
@@ -171,14 +171,14 @@
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonToOrdered);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewOrderinglist);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderingListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "発注リスト";
             this.Load += new System.EventHandler(this.OrderingListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderinglist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -189,7 +189,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOrderinglist;
         private System.Windows.Forms.Button buttonToOrdered;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;

@@ -37,7 +37,7 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
+            dataGridViewOrderinglist.DataSource = AC.dt;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -54,8 +54,8 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            if (dataGridView1.CurrentCell == null)
+            dataGridViewOrderinglist.DataSource = AC.dt;
+            if (dataGridViewOrderinglist.CurrentCell == null)
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
