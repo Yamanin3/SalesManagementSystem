@@ -414,6 +414,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap header_Employee1 {
+            get {
+                object obj = ResourceManager.GetObject("header_Employee1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap header_keychain1 {
             get {
                 object obj = ResourceManager.GetObject("header_keychain1", resourceCulture);
@@ -484,6 +494,16 @@ namespace SalesManagementSystem.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap header_Menu1 {
+            get {
+                object obj = ResourceManager.GetObject("header_Menu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap header_MenuText {
             get {
                 object obj = ResourceManager.GetObject("header_MenuText", resourceCulture);
@@ -517,6 +537,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap header_Order {
             get {
                 object obj = ResourceManager.GetObject("header_Order", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_Order1 {
+            get {
+                object obj = ResourceManager.GetObject("header_Order1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -617,6 +647,16 @@ namespace SalesManagementSystem.Properties {
         internal static System.Drawing.Bitmap header_Ship {
             get {
                 object obj = ResourceManager.GetObject("header_Ship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap header_ship1 {
+            get {
+                object obj = ResourceManager.GetObject("header_ship1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

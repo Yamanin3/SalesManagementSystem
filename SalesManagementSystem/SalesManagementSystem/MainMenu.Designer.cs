@@ -53,8 +53,8 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::SalesManagementSystem.Properties.Resources.header_Menuuu;
-            this.pictureBox4.Location = new System.Drawing.Point(504, -1);
+            this.pictureBox4.Image = global::SalesManagementSystem.Properties.Resources.header_Menu1;
+            this.pictureBox4.Location = new System.Drawing.Point(500, -1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(214, 64);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

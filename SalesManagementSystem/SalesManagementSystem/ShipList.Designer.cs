@@ -386,7 +386,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::SalesManagementSystem.Properties.Resources.header_Ship;
+            this.pictureBox5.Image = global::SalesManagementSystem.Properties.Resources.header_ship1;
             this.pictureBox5.Location = new System.Drawing.Point(673, 0);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(214, 64);
