@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipListForm));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSlist = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSlist = new System.Windows.Forms.DataGridView();
+            this.groupBoxSoperation = new System.Windows.Forms.GroupBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonOid = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelCphone = new System.Windows.Forms.Label();
+            this.labelCaddress = new System.Windows.Forms.Label();
             this.textBoxCphone = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelCpost = new System.Windows.Forms.Label();
             this.textBoxCaddress = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelChurigana = new System.Windows.Forms.Label();
             this.textBoxCpost = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelCname = new System.Windows.Forms.Label();
             this.textBoxChurigana = new System.Windows.Forms.TextBox();
             this.textBoxCname = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelOcurrency = new System.Windows.Forms.Label();
             this.textBoxOcurrency = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelOquantity = new System.Windows.Forms.Label();
             this.textBoxSquantity = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPname = new System.Windows.Forms.Label();
+            this.labelOid = new System.Windows.Forms.Label();
+            this.labelSid = new System.Windows.Forms.Label();
             this.textBoxPname = new System.Windows.Forms.TextBox();
             this.textBoxOID = new System.Windows.Forms.TextBox();
             this.textBoxSID = new System.Windows.Forms.TextBox();
@@ -64,9 +64,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxSlist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSlist)).BeginInit();
+            this.groupBoxSoperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,70 +74,70 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // groupBoxSlist
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(277, 88);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(597, 408);
-            this.groupBox2.TabIndex = 40;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "出荷済み一覧";
+            this.groupBoxSlist.Controls.Add(this.dataGridViewSlist);
+            this.groupBoxSlist.Location = new System.Drawing.Point(277, 88);
+            this.groupBoxSlist.Name = "groupBoxSlist";
+            this.groupBoxSlist.Size = new System.Drawing.Size(597, 408);
+            this.groupBoxSlist.TabIndex = 40;
+            this.groupBoxSlist.TabStop = false;
+            this.groupBoxSlist.Text = "出荷済み一覧";
             // 
-            // dataGridView1
+            // dataGridViewSlist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 390);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewSlist.AllowUserToAddRows = false;
+            this.dataGridViewSlist.AllowUserToDeleteRows = false;
+            this.dataGridViewSlist.AllowUserToOrderColumns = true;
+            this.dataGridViewSlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewSlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridViewSlist.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewSlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewSlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSlist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSlist.Location = new System.Drawing.Point(3, 15);
+            this.dataGridViewSlist.MultiSelect = false;
+            this.dataGridViewSlist.Name = "dataGridViewSlist";
+            this.dataGridViewSlist.ReadOnly = true;
+            this.dataGridViewSlist.RowTemplate.Height = 21;
+            this.dataGridViewSlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSlist.Size = new System.Drawing.Size(591, 390);
+            this.dataGridViewSlist.TabIndex = 0;
+            this.dataGridViewSlist.TabStop = false;
+            this.dataGridViewSlist.SelectionChanged += new System.EventHandler(this.dataGridViewSlist_SelectionChanged);
             // 
-            // groupBox1
+            // groupBoxSoperation
             // 
-            this.groupBox1.Controls.Add(this.buttonRefresh);
-            this.groupBox1.Controls.Add(this.buttonNew);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBoxCphone);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxCaddress);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBoxCpost);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxChurigana);
-            this.groupBox1.Controls.Add(this.textBoxCname);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxOcurrency);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxSquantity);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxPname);
-            this.groupBox1.Controls.Add(this.textBoxOID);
-            this.groupBox1.Controls.Add(this.textBoxSID);
-            this.groupBox1.Location = new System.Drawing.Point(12, 88);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 408);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "出荷操作";
+            this.groupBoxSoperation.Controls.Add(this.buttonRefresh);
+            this.groupBoxSoperation.Controls.Add(this.buttonNew);
+            this.groupBoxSoperation.Controls.Add(this.buttonOid);
+            this.groupBoxSoperation.Controls.Add(this.buttonAdd);
+            this.groupBoxSoperation.Controls.Add(this.labelCphone);
+            this.groupBoxSoperation.Controls.Add(this.labelCaddress);
+            this.groupBoxSoperation.Controls.Add(this.textBoxCphone);
+            this.groupBoxSoperation.Controls.Add(this.labelCpost);
+            this.groupBoxSoperation.Controls.Add(this.textBoxCaddress);
+            this.groupBoxSoperation.Controls.Add(this.labelChurigana);
+            this.groupBoxSoperation.Controls.Add(this.textBoxCpost);
+            this.groupBoxSoperation.Controls.Add(this.labelCname);
+            this.groupBoxSoperation.Controls.Add(this.textBoxChurigana);
+            this.groupBoxSoperation.Controls.Add(this.textBoxCname);
+            this.groupBoxSoperation.Controls.Add(this.labelOcurrency);
+            this.groupBoxSoperation.Controls.Add(this.textBoxOcurrency);
+            this.groupBoxSoperation.Controls.Add(this.labelOquantity);
+            this.groupBoxSoperation.Controls.Add(this.textBoxSquantity);
+            this.groupBoxSoperation.Controls.Add(this.labelPname);
+            this.groupBoxSoperation.Controls.Add(this.labelOid);
+            this.groupBoxSoperation.Controls.Add(this.labelSid);
+            this.groupBoxSoperation.Controls.Add(this.textBoxPname);
+            this.groupBoxSoperation.Controls.Add(this.textBoxOID);
+            this.groupBoxSoperation.Controls.Add(this.textBoxSID);
+            this.groupBoxSoperation.Location = new System.Drawing.Point(12, 88);
+            this.groupBoxSoperation.Name = "groupBoxSoperation";
+            this.groupBoxSoperation.Size = new System.Drawing.Size(260, 408);
+            this.groupBoxSoperation.TabIndex = 0;
+            this.groupBoxSoperation.TabStop = false;
+            this.groupBoxSoperation.Text = "出荷操作";
             // 
             // buttonRefresh
             // 
@@ -169,15 +169,15 @@
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
-            // button3
+            // buttonOid
             // 
-            this.button3.Location = new System.Drawing.Point(224, 57);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 19);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonOid.Location = new System.Drawing.Point(224, 57);
+            this.buttonOid.Name = "buttonOid";
+            this.buttonOid.Size = new System.Drawing.Size(22, 19);
+            this.buttonOid.TabIndex = 0;
+            this.buttonOid.Text = "...";
+            this.buttonOid.UseVisualStyleBackColor = true;
+            this.buttonOid.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonAdd
             // 
@@ -194,57 +194,59 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // label11
+            // labelCphone
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(33, 260);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 12);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "電話番号:";
+            this.labelCphone.AutoSize = true;
+            this.labelCphone.Location = new System.Drawing.Point(33, 260);
+            this.labelCphone.Name = "labelCphone";
+            this.labelCphone.Size = new System.Drawing.Size(55, 12);
+            this.labelCphone.TabIndex = 26;
+            this.labelCphone.Text = "電話番号:";
             // 
-            // label10
+            // labelCaddress
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 235);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 12);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "住所:";
+            this.labelCaddress.AutoSize = true;
+            this.labelCaddress.Location = new System.Drawing.Point(33, 235);
+            this.labelCaddress.Name = "labelCaddress";
+            this.labelCaddress.Size = new System.Drawing.Size(31, 12);
+            this.labelCaddress.TabIndex = 24;
+            this.labelCaddress.Text = "住所:";
             // 
             // textBoxCphone
             // 
             this.textBoxCphone.Enabled = false;
             this.textBoxCphone.Location = new System.Drawing.Point(118, 257);
+            this.textBoxCphone.MaxLength = 12;
             this.textBoxCphone.Name = "textBoxCphone";
             this.textBoxCphone.Size = new System.Drawing.Size(100, 19);
             this.textBoxCphone.TabIndex = 9;
             // 
-            // label9
+            // labelCpost
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 210);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 12);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "郵便番号:";
+            this.labelCpost.AutoSize = true;
+            this.labelCpost.Location = new System.Drawing.Point(33, 210);
+            this.labelCpost.Name = "labelCpost";
+            this.labelCpost.Size = new System.Drawing.Size(55, 12);
+            this.labelCpost.TabIndex = 22;
+            this.labelCpost.Text = "郵便番号:";
             // 
             // textBoxCaddress
             // 
             this.textBoxCaddress.Enabled = false;
             this.textBoxCaddress.Location = new System.Drawing.Point(118, 232);
+            this.textBoxCaddress.MaxLength = 50;
             this.textBoxCaddress.Name = "textBoxCaddress";
             this.textBoxCaddress.Size = new System.Drawing.Size(100, 19);
             this.textBoxCaddress.TabIndex = 8;
             // 
-            // label8
+            // labelChurigana
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 185);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 12);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "ふりがな:";
+            this.labelChurigana.AutoSize = true;
+            this.labelChurigana.Location = new System.Drawing.Point(33, 185);
+            this.labelChurigana.Name = "labelChurigana";
+            this.labelChurigana.Size = new System.Drawing.Size(45, 12);
+            this.labelChurigana.TabIndex = 20;
+            this.labelChurigana.Text = "ふりがな:";
             // 
             // textBoxCpost
             // 
@@ -255,14 +257,14 @@
             this.textBoxCpost.Size = new System.Drawing.Size(100, 19);
             this.textBoxCpost.TabIndex = 7;
             // 
-            // label7
+            // labelCname
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 12);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "顧客名:";
+            this.labelCname.AutoSize = true;
+            this.labelCname.Location = new System.Drawing.Point(33, 160);
+            this.labelCname.Name = "labelCname";
+            this.labelCname.Size = new System.Drawing.Size(43, 12);
+            this.labelCname.TabIndex = 18;
+            this.labelCname.Text = "顧客名:";
             // 
             // textBoxChurigana
             // 
@@ -282,14 +284,14 @@
             this.textBoxCname.Size = new System.Drawing.Size(100, 19);
             this.textBoxCname.TabIndex = 5;
             // 
-            // label5
+            // labelOcurrency
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 12);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "合計価格:";
+            this.labelOcurrency.AutoSize = true;
+            this.labelOcurrency.Location = new System.Drawing.Point(33, 135);
+            this.labelOcurrency.Name = "labelOcurrency";
+            this.labelOcurrency.Size = new System.Drawing.Size(55, 12);
+            this.labelOcurrency.TabIndex = 14;
+            this.labelOcurrency.Text = "合計価格:";
             // 
             // textBoxOcurrency
             // 
@@ -300,14 +302,14 @@
             this.textBoxOcurrency.Size = new System.Drawing.Size(100, 19);
             this.textBoxOcurrency.TabIndex = 4;
             // 
-            // label4
+            // labelOquantity
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 12);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "数量:";
+            this.labelOquantity.AutoSize = true;
+            this.labelOquantity.Location = new System.Drawing.Point(33, 110);
+            this.labelOquantity.Name = "labelOquantity";
+            this.labelOquantity.Size = new System.Drawing.Size(31, 12);
+            this.labelOquantity.TabIndex = 12;
+            this.labelOquantity.Text = "数量:";
             // 
             // textBoxSquantity
             // 
@@ -318,32 +320,32 @@
             this.textBoxSquantity.Size = new System.Drawing.Size(100, 19);
             this.textBoxSquantity.TabIndex = 3;
             // 
-            // label3
+            // labelPname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "商品名:";
+            this.labelPname.AutoSize = true;
+            this.labelPname.Location = new System.Drawing.Point(33, 85);
+            this.labelPname.Name = "labelPname";
+            this.labelPname.Size = new System.Drawing.Size(43, 12);
+            this.labelPname.TabIndex = 10;
+            this.labelPname.Text = "商品名:";
             // 
-            // label2
+            // labelOid
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 12);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "注文ID:";
+            this.labelOid.AutoSize = true;
+            this.labelOid.Location = new System.Drawing.Point(33, 60);
+            this.labelOid.Name = "labelOid";
+            this.labelOid.Size = new System.Drawing.Size(42, 12);
+            this.labelOid.TabIndex = 9;
+            this.labelOid.Text = "注文ID:";
             // 
-            // label1
+            // labelSid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 12);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "出荷ID:";
+            this.labelSid.AutoSize = true;
+            this.labelSid.Location = new System.Drawing.Point(33, 35);
+            this.labelSid.Name = "labelSid";
+            this.labelSid.Size = new System.Drawing.Size(42, 12);
+            this.labelSid.TabIndex = 8;
+            this.labelSid.Text = "出荷ID:";
             // 
             // textBoxPname
             // 
@@ -477,18 +479,18 @@
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxSlist);
+            this.Controls.Add(this.groupBoxSoperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShipListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出荷管理";
             this.Load += new System.EventHandler(this.ShipListForm_Load);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxSlist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSlist)).EndInit();
+            this.groupBoxSoperation.ResumeLayout(false);
+            this.groupBoxSoperation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -500,31 +502,31 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBoxSlist;
+        private System.Windows.Forms.DataGridView dataGridViewSlist;
+        private System.Windows.Forms.GroupBox groupBoxSoperation;
+        private System.Windows.Forms.Label labelCname;
         private System.Windows.Forms.TextBox textBoxChurigana;
         private System.Windows.Forms.TextBox textBoxCname;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelOcurrency;
         private System.Windows.Forms.TextBox textBoxOcurrency;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelOquantity;
         private System.Windows.Forms.TextBox textBoxSquantity;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPname;
+        private System.Windows.Forms.Label labelOid;
+        private System.Windows.Forms.Label labelSid;
         private System.Windows.Forms.TextBox textBoxPname;
         private System.Windows.Forms.TextBox textBoxOID;
         private System.Windows.Forms.TextBox textBoxSID;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelCphone;
+        private System.Windows.Forms.Label labelCaddress;
         private System.Windows.Forms.TextBox textBoxCphone;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelCpost;
         private System.Windows.Forms.TextBox textBoxCaddress;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelChurigana;
         private System.Windows.Forms.TextBox textBoxCpost;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonOid;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button buttonSearch;

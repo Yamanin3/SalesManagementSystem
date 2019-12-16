@@ -34,7 +34,7 @@ namespace SalesManagementSystem
             buttonClose.BackColor = Color.FromArgb(191, 205, 219);
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;
         }
 
@@ -48,10 +48,10 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
+            dataGridViewSlist.DataSource = AC.dt;
 
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dataGridViewSlist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
                 textBoxSID.Text = "";
@@ -69,15 +69,15 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = true;
                 // datagridview1の最上段にカーソルを当てる
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                dataGridViewSlist.CurrentCell = dataGridViewSlist.Rows[0].Cells[0];
             }
 
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewSlist_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            if (dataGridViewSlist.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
                 textBoxSID.Text = "";
@@ -91,41 +91,41 @@ namespace SalesManagementSystem
                 textBoxCaddress.Text = "";
                 textBoxCphone.Text = "";
             }
-            else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            else if (dataGridViewSlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBoxSID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxOID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBoxSquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxCname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBoxCpost.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBoxCphone.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBoxSID.Text = dataGridViewSlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxOID.Text = dataGridViewSlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridViewSlist.CurrentRow.Cells[2].Value.ToString();
+                textBoxSquantity.Text = dataGridViewSlist.CurrentRow.Cells[3].Value.ToString();
+                textBoxOcurrency.Text = dataGridViewSlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxCname.Text = dataGridViewSlist.CurrentRow.Cells[5].Value.ToString();
+                textBoxChurigana.Text = dataGridViewSlist.CurrentRow.Cells[6].Value.ToString();
+                textBoxCpost.Text = dataGridViewSlist.CurrentRow.Cells[7].Value.ToString();
+                textBoxCaddress.Text = dataGridViewSlist.CurrentRow.Cells[8].Value.ToString();
+                textBoxCphone.Text = dataGridViewSlist.CurrentRow.Cells[9].Value.ToString();
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBoxSID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxOID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBoxSquantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBoxOcurrency.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxCname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBoxChurigana.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textBoxCpost.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textBoxCaddress.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textBoxCphone.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textBoxSID.Text = dataGridViewSlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxOID.Text = dataGridViewSlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPname.Text = dataGridViewSlist.CurrentRow.Cells[2].Value.ToString();
+                textBoxSquantity.Text = dataGridViewSlist.CurrentRow.Cells[3].Value.ToString();
+                textBoxOcurrency.Text = dataGridViewSlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxCname.Text = dataGridViewSlist.CurrentRow.Cells[5].Value.ToString();
+                textBoxChurigana.Text = dataGridViewSlist.CurrentRow.Cells[6].Value.ToString();
+                textBoxCpost.Text = dataGridViewSlist.CurrentRow.Cells[7].Value.ToString();
+                textBoxCaddress.Text = dataGridViewSlist.CurrentRow.Cells[8].Value.ToString();
+                textBoxCphone.Text = dataGridViewSlist.CurrentRow.Cells[9].Value.ToString();
             }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewSlist.SelectedRows.Count <= 0 || dataGridViewSlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if (string.IsNullOrEmpty(textBoxOID.Text.Trim()) || string.IsNullOrEmpty(textBoxPname.Text.Trim()) ||
                     string.IsNullOrEmpty(textBoxSquantity.Text.Trim()) || string.IsNullOrEmpty(textBoxOcurrency.Text.Trim()) ||
@@ -292,9 +292,9 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            if (dataGridView1.CurrentCell == null)
+            dataGridViewSlist.DataSource = AC.dt;
+            dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridViewSlist.CurrentCell == null)
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -311,10 +311,10 @@ namespace SalesManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell =
-                dataGridView1.Rows[dataGridView1.Rows.Count - 1]
+            dataGridViewSlist.CurrentCell =
+                dataGridViewSlist.Rows[dataGridViewSlist.Rows.Count - 1]
                     .Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }

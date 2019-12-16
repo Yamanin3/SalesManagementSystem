@@ -103,7 +103,7 @@
             this.dataGridViewOlist.Size = new System.Drawing.Size(665, 333);
             this.dataGridViewOlist.TabIndex = 0;
             this.dataGridViewOlist.TabStop = false;
-            this.dataGridViewOlist.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewOlist.SelectionChanged += new System.EventHandler(this.dataGridViewOlist_SelectionChanged);
             // 
             // groupBoxODoperation
             // 

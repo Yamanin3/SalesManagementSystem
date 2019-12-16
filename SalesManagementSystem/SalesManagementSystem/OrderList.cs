@@ -90,11 +90,11 @@ namespace SalesManagementSystem
             buttonClose.BackColor = Color.FromArgb(191, 205, 219);
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewOlist_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewOlist.CurrentCell == null)
             {
@@ -442,7 +442,7 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
                 dataGridViewOlist.DataSource = AC.dt;
-                dataGridView1_SelectionChanged(this, EventArgs.Empty);
+                dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
                 if (dataGridViewOlist.CurrentCell == null)
                     MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -456,7 +456,7 @@ namespace SalesManagementSystem
                 AC.dt = new DataTable();
                 AC.da.Fill(AC.dt);
                 dataGridViewOlist.DataSource = AC.dt;
-                dataGridView1_SelectionChanged(this, EventArgs.Empty);
+                dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
                 if (dataGridViewOlist.CurrentCell == null) { 
                     MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -477,7 +477,7 @@ namespace SalesManagementSystem
         {
             AC.dt.Rows.Add();
             dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[dataGridViewOlist.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }
