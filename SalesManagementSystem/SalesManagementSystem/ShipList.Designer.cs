@@ -171,6 +171,7 @@
             // 
             // buttonOid
             // 
+            this.buttonOid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonOid.Location = new System.Drawing.Point(224, 57);
             this.buttonOid.Name = "buttonOid";
             this.buttonOid.Size = new System.Drawing.Size(22, 19);

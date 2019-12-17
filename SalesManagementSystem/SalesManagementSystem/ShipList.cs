@@ -33,6 +33,7 @@ namespace SalesManagementSystem
             buttonRefresh.BackColor = Color.FromArgb(191, 205, 219);
             buttonClose.BackColor = Color.FromArgb(191, 205, 219);
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
+            buttonOid.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
             dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;

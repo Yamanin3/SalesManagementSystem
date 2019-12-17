@@ -207,6 +207,7 @@
             // 
             // buttonPname
             // 
+            this.buttonPname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPname.Location = new System.Drawing.Point(243, 78);
             this.buttonPname.Name = "buttonPname";
             this.buttonPname.Size = new System.Drawing.Size(22, 19);
@@ -217,6 +218,7 @@
             // 
             // buttonCname
             // 
+            this.buttonCname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCname.Location = new System.Drawing.Point(243, 53);
             this.buttonCname.Name = "buttonCname";
             this.buttonCname.Size = new System.Drawing.Size(22, 19);

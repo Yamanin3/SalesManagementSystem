@@ -176,6 +176,7 @@
             // 
             // buttonPmaker
             // 
+            this.buttonPmaker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPmaker.Location = new System.Drawing.Point(208, 204);
             this.buttonPmaker.Name = "buttonPmaker";
             this.buttonPmaker.Size = new System.Drawing.Size(22, 19);
