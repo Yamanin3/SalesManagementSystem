@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHeader4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHeader3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHeader2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHeader1 = new System.Windows.Forms.PictureBox();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonStock = new System.Windows.Forms.Button();
@@ -44,55 +44,55 @@
             this.buttonEmployee = new System.Windows.Forms.Button();
             this.buttonSales = new System.Windows.Forms.Button();
             this.buttonCustomer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox4
+            // pictureBoxHeader4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::SalesManagementSystem.Properties.Resources.header_Menu1;
-            this.pictureBox4.Location = new System.Drawing.Point(500, -1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(214, 64);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxHeader4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHeader4.Image = global::SalesManagementSystem.Properties.Resources.header_Menu1;
+            this.pictureBoxHeader4.Location = new System.Drawing.Point(500, -1);
+            this.pictureBoxHeader4.Name = "pictureBoxHeader4";
+            this.pictureBoxHeader4.Size = new System.Drawing.Size(214, 64);
+            this.pictureBoxHeader4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHeader4.TabIndex = 18;
+            this.pictureBoxHeader4.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBoxHeader3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::SalesManagementSystem.Properties.Resources.header_back;
-            this.pictureBox3.Location = new System.Drawing.Point(296, -1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(214, 64);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxHeader3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHeader3.Image = global::SalesManagementSystem.Properties.Resources.header_back;
+            this.pictureBoxHeader3.Location = new System.Drawing.Point(296, -1);
+            this.pictureBoxHeader3.Name = "pictureBoxHeader3";
+            this.pictureBoxHeader3.Size = new System.Drawing.Size(214, 64);
+            this.pictureBoxHeader3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHeader3.TabIndex = 17;
+            this.pictureBoxHeader3.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBoxHeader2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::SalesManagementSystem.Properties.Resources.header_back;
-            this.pictureBox2.Location = new System.Drawing.Point(153, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(214, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxHeader2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHeader2.Image = global::SalesManagementSystem.Properties.Resources.header_back;
+            this.pictureBoxHeader2.Location = new System.Drawing.Point(153, -1);
+            this.pictureBoxHeader2.Name = "pictureBoxHeader2";
+            this.pictureBoxHeader2.Size = new System.Drawing.Size(214, 64);
+            this.pictureBoxHeader2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHeader2.TabIndex = 14;
+            this.pictureBoxHeader2.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxHeader1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::SalesManagementSystem.Properties.Resources.header_MenuuuText;
-            this.pictureBox1.Location = new System.Drawing.Point(-60, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxHeader1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHeader1.Image = global::SalesManagementSystem.Properties.Resources.header_MenuuuText;
+            this.pictureBoxHeader1.Location = new System.Drawing.Point(-60, -1);
+            this.pictureBoxHeader1.Name = "pictureBoxHeader1";
+            this.pictureBoxHeader1.Size = new System.Drawing.Size(214, 64);
+            this.pictureBoxHeader1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHeader1.TabIndex = 13;
+            this.pictureBoxHeader1.TabStop = false;
             // 
             // buttonLogout
             // 
@@ -246,10 +246,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 408);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxHeader4);
+            this.Controls.Add(this.pictureBoxHeader3);
+            this.Controls.Add(this.pictureBoxHeader2);
+            this.Controls.Add(this.pictureBoxHeader1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonStock);
@@ -268,10 +268,10 @@
             this.Text = "メインメニュー";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenuForm_FormClosed);
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,9 +288,9 @@
         private System.Windows.Forms.Button buttonSales;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBoxHeader1;
+        private System.Windows.Forms.PictureBox pictureBoxHeader2;
+        private System.Windows.Forms.PictureBox pictureBoxHeader3;
+        private System.Windows.Forms.PictureBox pictureBoxHeader4;
     }
 }
