@@ -32,7 +32,7 @@ namespace SalesManagementSystem
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242);
             RefreshLoad();
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewLlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;
         }
 
@@ -45,9 +45,9 @@ namespace SalesManagementSystem
             AC.dt = new DataTable();
 
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
+            dataGridViewLlist.DataSource = AC.dt;
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dataGridViewLlist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
                 textBoxLID.Text = "";
@@ -59,13 +59,13 @@ namespace SalesManagementSystem
             }
             else
             {
-                dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                dataGridViewLlist.CurrentCell = dataGridViewLlist.Rows[0].Cells[0];
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewLlist_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            if (dataGridViewLlist.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
                 textBoxLID.Text = "";
@@ -75,33 +75,33 @@ namespace SalesManagementSystem
                 textBoxLquantity.Text = "";
                 textBoxMname.Text = "";
             }
-            else if (dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            else if (dataGridViewLlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
-                textBoxLID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxRID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBoxLquantity.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxMname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxLID.Text = dataGridViewLlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxRID.Text = dataGridViewLlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPID.Text = dataGridViewLlist.CurrentRow.Cells[2].Value.ToString();
+                textBoxPname.Text = dataGridViewLlist.CurrentRow.Cells[3].Value.ToString();
+                textBoxLquantity.Text = dataGridViewLlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxMname.Text = dataGridViewLlist.CurrentRow.Cells[5].Value.ToString();
             }
             else
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
-                textBoxLID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBoxRID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBoxPID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBoxPname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBoxLquantity.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBoxMname.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBoxLID.Text = dataGridViewLlist.CurrentRow.Cells[0].Value.ToString();
+                textBoxRID.Text = dataGridViewLlist.CurrentRow.Cells[1].Value.ToString();
+                textBoxPID.Text = dataGridViewLlist.CurrentRow.Cells[2].Value.ToString();
+                textBoxPname.Text = dataGridViewLlist.CurrentRow.Cells[3].Value.ToString();
+                textBoxLquantity.Text = dataGridViewLlist.CurrentRow.Cells[4].Value.ToString();
+                textBoxMname.Text = dataGridViewLlist.CurrentRow.Cells[5].Value.ToString();
             }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.CurrentRow.Cells[0].Value.ToString() == "")
+            if (dataGridViewLlist.SelectedRows.Count <= 0 || dataGridViewLlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 if (string.IsNullOrEmpty(textBoxRID.Text.Trim()) || string.IsNullOrEmpty(textBoxPID.Text.Trim()) ||
                     string.IsNullOrEmpty(textBoxPname.Text.Trim()) || string.IsNullOrEmpty(textBoxLquantity.Text.Trim()) ||
@@ -246,9 +246,9 @@ namespace SalesManagementSystem
             AC.da = new OleDbDataAdapter(AC.cmd);
             AC.dt = new DataTable();
             AC.da.Fill(AC.dt);
-            dataGridView1.DataSource = AC.dt;
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
-            if (dataGridView1.CurrentCell == null)
+            dataGridViewLlist.DataSource = AC.dt;
+            dataGridViewLlist_SelectionChanged(this, EventArgs.Empty);
+            if (dataGridViewLlist.CurrentCell == null)
                 MessageBox.Show("該当するデータがありません", "データの検索", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -265,8 +265,8 @@ namespace SalesManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             AC.dt.Rows.Add();
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-            dataGridView1_SelectionChanged(this, EventArgs.Empty);
+            dataGridViewLlist.CurrentCell = dataGridViewLlist.Rows[dataGridViewLlist.Rows.Count - 1].Cells[0];
+            dataGridViewLlist_SelectionChanged(this, EventArgs.Empty);
         }
     }
 }
