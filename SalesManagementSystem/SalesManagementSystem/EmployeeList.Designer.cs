@@ -310,7 +310,6 @@
             this.comboBoxEsex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEsex.FormattingEnabled = true;
             this.comboBoxEsex.Items.AddRange(new object[] {
-            "---",
             "男",
             "女",
             "不明"});

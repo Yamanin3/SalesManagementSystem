@@ -91,6 +91,7 @@ namespace SalesManagementSystem
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             buttonCname.BackColor = Color.FromArgb(191, 205, 219);
             buttonPname.BackColor = Color.FromArgb(191, 205, 219);
+            comboBoxOquantity.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
             dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
             MaximizeBox = false;

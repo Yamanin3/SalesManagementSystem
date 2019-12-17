@@ -35,6 +35,7 @@ namespace SalesManagementSystem
             buttonClose.BackColor = Color.FromArgb(191, 205, 219);
             buttonSearch.BackColor = Color.FromArgb(191, 205, 219);
             buttonPmaker.BackColor = Color.FromArgb(191, 205, 219);
+            comboBoxPmagazine.BackColor = Color.FromArgb(191, 205, 219);
             BackColor = Color.FromArgb(215, 228, 242); RefreshLoad();
             MaximizeBox = false;
         }
