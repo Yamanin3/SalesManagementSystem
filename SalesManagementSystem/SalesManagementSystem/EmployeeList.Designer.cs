@@ -409,6 +409,8 @@
             this.dataGridViewElist.Size = new System.Drawing.Size(676, 399);
             this.dataGridViewElist.TabIndex = 0;
             this.dataGridViewElist.TabStop = false;
+            this.dataGridViewElist.VirtualMode = true;
+            this.dataGridViewElist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewElist_CellValueNeeded);
             this.dataGridViewElist.SelectionChanged += new System.EventHandler(this.dataGridViewElist_SelectionChanged);
             // 
             // 社員マスタBindingSource1

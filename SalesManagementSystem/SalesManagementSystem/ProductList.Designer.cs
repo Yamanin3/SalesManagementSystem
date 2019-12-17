@@ -388,6 +388,8 @@
             this.dataGridViewPlist.Size = new System.Drawing.Size(591, 330);
             this.dataGridViewPlist.TabIndex = 0;
             this.dataGridViewPlist.TabStop = false;
+            this.dataGridViewPlist.VirtualMode = true;
+            this.dataGridViewPlist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewPlist_CellValueNeeded);
             this.dataGridViewPlist.SelectionChanged += new System.EventHandler(this.dataGridViewPlist_SelectionChanged);
             // 
             // sMSdatabaseDataSet

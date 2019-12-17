@@ -401,5 +401,9 @@ namespace SalesManagementSystem
             RefreshLoad();
         }
 
+        private void dataGridViewClist_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }

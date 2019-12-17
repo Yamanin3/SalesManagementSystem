@@ -97,5 +97,10 @@ namespace SalesManagementSystem
         {
             if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
+
+        private void dataGridView1_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }

@@ -226,5 +226,9 @@ namespace SalesManagementSystem
             if (e.KeyCode == Keys.Enter) buttonSearch.PerformClick();
         }
 
+        private void dataGridViewSTlist_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }

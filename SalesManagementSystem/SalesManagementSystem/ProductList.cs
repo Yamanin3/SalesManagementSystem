@@ -390,5 +390,9 @@ namespace SalesManagementSystem
             dataGridViewPlist_SelectionChanged(this, EventArgs.Empty);
         }
 
+        private void dataGridViewPlist_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }

@@ -63,6 +63,8 @@
             this.dataGridViewOrderedlist.Size = new System.Drawing.Size(668, 224);
             this.dataGridViewOrderedlist.TabIndex = 39;
             this.dataGridViewOrderedlist.TabStop = false;
+            this.dataGridViewOrderedlist.VirtualMode = true;
+            this.dataGridViewOrderedlist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewOrderedlist_CellValueNeeded);
             // 
             // SearchTextbox
             // 

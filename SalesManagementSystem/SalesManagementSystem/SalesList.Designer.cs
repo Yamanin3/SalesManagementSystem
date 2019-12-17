@@ -72,6 +72,8 @@
             this.dataGridViewSalist.Size = new System.Drawing.Size(668, 224);
             this.dataGridViewSalist.TabIndex = 57;
             this.dataGridViewSalist.TabStop = false;
+            this.dataGridViewSalist.VirtualMode = true;
+            this.dataGridViewSalist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewSalist_CellValueNeeded);
             // 
             // pictureBoxHeader4
             // 

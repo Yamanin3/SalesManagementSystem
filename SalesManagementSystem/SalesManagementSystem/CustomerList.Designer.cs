@@ -366,6 +366,8 @@
             this.dataGridViewClist.Size = new System.Drawing.Size(662, 353);
             this.dataGridViewClist.TabIndex = 0;
             this.dataGridViewClist.TabStop = false;
+            this.dataGridViewClist.VirtualMode = true;
+            this.dataGridViewClist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewClist_CellValueNeeded);
             this.dataGridViewClist.SelectionChanged += new System.EventHandler(this.dataGridViewClist_SelectionChanged);
             // 
             // 顧客マスタBindingSource1

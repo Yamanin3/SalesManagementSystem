@@ -292,6 +292,8 @@
             this.dataGridViewLlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLlist.Size = new System.Drawing.Size(570, 317);
             this.dataGridViewLlist.TabIndex = 0;
+            this.dataGridViewLlist.VirtualMode = true;
+            this.dataGridViewLlist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewLlist_CellValueNeeded);
             this.dataGridViewLlist.SelectionChanged += new System.EventHandler(this.dataGridViewLlist_SelectionChanged);
             // 
             // pictureBoxHeader5

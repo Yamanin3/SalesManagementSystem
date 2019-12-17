@@ -317,5 +317,10 @@ namespace SalesManagementSystem
                     .Cells[0];
             dataGridViewSlist_SelectionChanged(this, EventArgs.Empty);
         }
+
+        private void dataGridViewSlist_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }

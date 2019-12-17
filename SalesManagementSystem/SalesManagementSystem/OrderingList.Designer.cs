@@ -64,6 +64,8 @@
             this.dataGridViewOrderinglist.Size = new System.Drawing.Size(668, 224);
             this.dataGridViewOrderinglist.TabIndex = 32;
             this.dataGridViewOrderinglist.TabStop = false;
+            this.dataGridViewOrderinglist.VirtualMode = true;
+            this.dataGridViewOrderinglist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewOrderinglist_CellValueNeeded);
             // 
             // buttonToOrdered
             // 

@@ -104,6 +104,8 @@
             this.dataGridViewSlist.Size = new System.Drawing.Size(591, 390);
             this.dataGridViewSlist.TabIndex = 0;
             this.dataGridViewSlist.TabStop = false;
+            this.dataGridViewSlist.VirtualMode = true;
+            this.dataGridViewSlist.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridViewSlist_CellValueNeeded);
             this.dataGridViewSlist.SelectionChanged += new System.EventHandler(this.dataGridViewSlist_SelectionChanged);
             // 
             // groupBoxSoperation

@@ -269,5 +269,10 @@ namespace SalesManagementSystem
             dataGridViewLlist.CurrentCell = dataGridViewLlist.Rows[dataGridViewLlist.Rows.Count - 1].Cells[0];
             dataGridViewLlist_SelectionChanged(this, EventArgs.Empty);
         }
+
+        private void dataGridViewLlist_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = AC.dt.Rows[e.RowIndex][e.ColumnIndex];
+        }
     }
 }
