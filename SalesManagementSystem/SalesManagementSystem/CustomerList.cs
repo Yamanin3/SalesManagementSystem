@@ -45,6 +45,7 @@ namespace SalesManagementSystem
                 if (dataGridViewClist.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
+                    buttonRemove.Enabled = false;
                     textBoxCID.Text = "";
                     textBoxCname.Text = "";
                     textBoxChurigana.Text = "";
@@ -54,11 +55,28 @@ namespace SalesManagementSystem
                     textBoxCaddress.Text = "";
                     textBoxCphone.Text = "";
                     textBoxCmail.Text = "";
+                    textBoxCname.Enabled = false;
+                    textBoxChurigana.Enabled = false;
+                    comboBoxCsex.Enabled = false;
+                    dateTimePickerCbirth.Enabled = false;
+                    textBoxCpost.Enabled = false;
+                    textBoxCaddress.Enabled = false;
+                    textBoxCphone.Enabled = false;
+                    textBoxCmail.Enabled = false;
                 }
                 else if (dataGridViewClist.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
+                    buttonRemove.Enabled = false;
                     buttonAdd.Text = "追加";
+                    textBoxCname.Enabled = true;
+                    textBoxChurigana.Enabled = true;
+                    comboBoxCsex.Enabled = true;
+                    dateTimePickerCbirth.Enabled = true;
+                    textBoxCpost.Enabled = true;
+                    textBoxCaddress.Enabled = true;
+                    textBoxCphone.Enabled = true;
+                    textBoxCmail.Enabled = true;
                     textBoxCID.Text = dataGridViewClist.CurrentRow.Cells[0].Value.ToString();
                     textBoxCname.Text = dataGridViewClist.CurrentRow.Cells[1].Value.ToString();
                     textBoxChurigana.Text = dataGridViewClist.CurrentRow.Cells[2].Value.ToString();
@@ -72,7 +90,16 @@ namespace SalesManagementSystem
                 else
                 {
                     buttonAdd.Enabled = true;
+                    buttonRemove.Enabled = true;
                     buttonAdd.Text = "編集";
+                    textBoxCname.Enabled = true;
+                    textBoxChurigana.Enabled = true;
+                    comboBoxCsex.Enabled = true;
+                    dateTimePickerCbirth.Enabled = true;
+                    textBoxCpost.Enabled = true;
+                    textBoxCaddress.Enabled = true;
+                    textBoxCphone.Enabled = true;
+                    textBoxCmail.Enabled = true;
                     textBoxCID.Text = dataGridViewClist.CurrentRow.Cells[0].Value.ToString();
                     textBoxCname.Text = dataGridViewClist.CurrentRow.Cells[1].Value.ToString();
                     textBoxChurigana.Text = dataGridViewClist.CurrentRow.Cells[2].Value.ToString();
@@ -323,6 +350,8 @@ namespace SalesManagementSystem
 
             AC.da.Fill(AC.dt);
             dataGridViewClist.DataSource = AC.dt;
+
+            dataGridViewClist_SelectionChanged(this, EventArgs.Empty);
 
             if (dataGridViewClist.SelectedRows.Count <= 0)
             {
