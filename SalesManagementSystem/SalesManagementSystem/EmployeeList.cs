@@ -44,6 +44,8 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridViewElist.DataSource = AC.dt;
 
+            dataGridViewElist_SelectionChanged(this, EventArgs.Empty);
+
             if (dataGridViewElist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
@@ -80,6 +82,7 @@ namespace SalesManagementSystem
                 if (dataGridViewElist.CurrentCell == null)
                 {
                     buttonAdd.Enabled = false;
+                    buttonRemove.Enabled = false;
                     textBoxEID.Text = "";
                     textBoxEname.Text = "";
                     textBoxEhurigana.Text = "";
@@ -91,11 +94,31 @@ namespace SalesManagementSystem
                     textBoxEmail.Text = "";
                     dateTimePickerEjoin.Text = "";
                     textBoxEpass.Text = "";
+                    textBoxEname.Enabled = false;
+                    textBoxEhurigana.Enabled = false;
+                    comboBoxEsex.Enabled = false;
+                    dateTimePickerEbirth.Enabled = false;
+                    textBoxEpost.Enabled = false;
+                    textBoxEaddress.Enabled = false;
+                    textBoxEphone.Enabled = false;
+                    textBoxEmail.Enabled = false;
+                    dateTimePickerEjoin.Enabled = false;
+                    textBoxEpass.Enabled = false;
                 }
                 else if (dataGridViewElist.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
+                    buttonRemove.Enabled = false;
+                    textBoxEname.Enabled = true;
+                    textBoxEhurigana.Enabled = true;
+                    comboBoxEsex.Enabled = true;
+                    dateTimePickerEbirth.Enabled = true;
+                    textBoxEpost.Enabled = true;
+                    textBoxEaddress.Enabled = true;
+                    textBoxEphone.Enabled = true;
+                    textBoxEmail.Enabled = true;
+                    dateTimePickerEjoin.Enabled = true;
                     textBoxEpass.Enabled = true;
                     textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
                     textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
@@ -114,6 +137,17 @@ namespace SalesManagementSystem
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
                     textBoxEpass.Enabled = false;
+                    buttonRemove.Enabled = true;
+                    textBoxEname.Enabled = true;
+                    textBoxEhurigana.Enabled = true;
+                    comboBoxEsex.Enabled = true;
+                    dateTimePickerEbirth.Enabled = true;
+                    textBoxEpost.Enabled = true;
+                    textBoxEaddress.Enabled = true;
+                    textBoxEphone.Enabled = true;
+                    textBoxEmail.Enabled = true;
+                    dateTimePickerEjoin.Enabled = true;
+                    textBoxEpass.Enabled = true;
                     textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
                     textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
                     textBoxEhurigana.Text = dataGridViewElist.CurrentRow.Cells[2].Value.ToString();
