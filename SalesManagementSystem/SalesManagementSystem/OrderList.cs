@@ -166,7 +166,7 @@ namespace SalesManagementSystem
                         if (result == DialogResult.Yes)
                         {
                             AC.cmd.Parameters.Clear();
-                            AC.cmd.CommandText = "select 在庫数, 発注点 from 在庫テーブル where 商品ID = @id and ステータス = 0";
+                            AC.cmd.CommandText = "select 在庫数, 発注点 from 在庫テーブル where 商品ID = @id";
                             AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
                             AC.rd = AC.cmd.ExecuteReader();
 
