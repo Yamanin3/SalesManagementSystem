@@ -81,6 +81,7 @@ namespace SalesManagementSystem
             if (dataGridViewSlist.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
+                buttonOid.Enabled = false;
                 textBoxSID.Text = "";
                 textBoxOID.Text = "";
                 textBoxPname.Text = "";
@@ -96,6 +97,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
+                buttonOid.Enabled = true;
                 textBoxSID.Text = dataGridViewSlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxOID.Text = dataGridViewSlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPname.Text = dataGridViewSlist.CurrentRow.Cells[2].Value.ToString();
@@ -111,6 +113,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
+                buttonOid.Enabled = false;
                 textBoxSID.Text = dataGridViewSlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxOID.Text = dataGridViewSlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPname.Text = dataGridViewSlist.CurrentRow.Cells[2].Value.ToString();

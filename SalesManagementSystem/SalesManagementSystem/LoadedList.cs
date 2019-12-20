@@ -62,6 +62,7 @@ namespace SalesManagementSystem
             {
                 dataGridViewLlist.CurrentCell = dataGridViewLlist.Rows[0].Cells[0];
             }
+            dataGridViewLlist_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void dataGridViewLlist_SelectionChanged(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace SalesManagementSystem
             if (dataGridViewLlist.CurrentCell == null)
             {
                 buttonAdd.Enabled = false;
+                buttonOid.Enabled = false;
                 textBoxLID.Text = "";
                 textBoxRID.Text = "";
                 textBoxPID.Text = "";
@@ -80,6 +82,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
+                buttonOid.Enabled = true;
                 textBoxLID.Text = dataGridViewLlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxRID.Text = dataGridViewLlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPID.Text = dataGridViewLlist.CurrentRow.Cells[2].Value.ToString();
@@ -91,6 +94,7 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
+                buttonOid.Enabled = false;
                 textBoxLID.Text = dataGridViewLlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxRID.Text = dataGridViewLlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPID.Text = dataGridViewLlist.CurrentRow.Cells[2].Value.ToString();
