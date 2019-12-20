@@ -44,8 +44,6 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridViewElist.DataSource = AC.dt;
 
-            dataGridViewElist_SelectionChanged(this, EventArgs.Empty);
-
             if (dataGridViewElist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
@@ -66,6 +64,7 @@ namespace SalesManagementSystem
                 buttonAdd.Enabled = true;
                 dataGridViewElist.CurrentCell = dataGridViewElist.Rows[0].Cells[0];
             }
+            dataGridViewElist_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,7 +117,7 @@ namespace SalesManagementSystem
                     textBoxEaddress.Enabled = true;
                     textBoxEphone.Enabled = true;
                     textBoxEmail.Enabled = true;
-                    dateTimePickerEjoin.Enabled = true;
+                    dateTimePickerEjoin.Enabled = false;
                     textBoxEpass.Enabled = true;
                     textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
                     textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
@@ -146,8 +145,8 @@ namespace SalesManagementSystem
                     textBoxEaddress.Enabled = true;
                     textBoxEphone.Enabled = true;
                     textBoxEmail.Enabled = true;
-                    dateTimePickerEjoin.Enabled = true;
-                    textBoxEpass.Enabled = true;
+                    dateTimePickerEjoin.Enabled = false;
+                    textBoxEpass.Enabled = false;
                     textBoxEID.Text = dataGridViewElist.CurrentRow.Cells[0].Value.ToString();
                     textBoxEname.Text = dataGridViewElist.CurrentRow.Cells[1].Value.ToString();
                     textBoxEhurigana.Text = dataGridViewElist.CurrentRow.Cells[2].Value.ToString();

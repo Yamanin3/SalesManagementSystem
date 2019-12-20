@@ -351,8 +351,6 @@ namespace SalesManagementSystem
             AC.da.Fill(AC.dt);
             dataGridViewClist.DataSource = AC.dt;
 
-            dataGridViewClist_SelectionChanged(this, EventArgs.Empty);
-
             if (dataGridViewClist.SelectedRows.Count <= 0)
             {
                 buttonAdd.Enabled = false;
@@ -371,6 +369,7 @@ namespace SalesManagementSystem
                 buttonAdd.Enabled = true;
                 dataGridViewClist.CurrentCell = dataGridViewClist.Rows[0].Cells[0];
             }
+            dataGridViewClist_SelectionChanged(this, EventArgs.Empty);
 
         }
 

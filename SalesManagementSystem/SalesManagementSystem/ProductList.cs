@@ -70,6 +70,7 @@ namespace SalesManagementSystem
                 // datagridview1の最上段にカーソルを当てる
                 dataGridViewPlist.CurrentCell = dataGridViewPlist.Rows[0].Cells[0];
             }
+            dataGridViewPlist_SelectionChanged(this, EventArgs.Empty);
         }
 
         private void dataGridViewPlist_SelectionChanged(object sender, EventArgs e)
@@ -88,11 +89,30 @@ namespace SalesManagementSystem
                     textBoxMname.Text = "";
                     textBoxPcurrency.Text = "";
                     comboBoxPmagazine.Text = "";
+                    textBoxPname.Enabled = false;
+                    textBoxPweight.Enabled = false;
+                    textBoxPcaliber.Enabled = false;
+                    textBoxPlength.Enabled = false;
+                    textBoxPcapa.Enabled = false;
+                    textBoxPcurrency.Enabled = false;
+                    comboBoxPmagazine.Enabled = false;
+                    buttonPmaker.Enabled = false;
+                    buttonRemove.Enabled = false;
+
                 }
                 else if (dataGridViewPlist.CurrentRow.Cells[0].Value.ToString() == "")
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "追加";
+                    textBoxPname.Enabled = true;
+                    textBoxPweight.Enabled = true;
+                    textBoxPcaliber.Enabled = true;
+                    textBoxPlength.Enabled = true;
+                    textBoxPcapa.Enabled = true;
+                    textBoxPcurrency.Enabled = true;
+                    comboBoxPmagazine.Enabled = true;
+                    buttonPmaker.Enabled = true;
+                    buttonRemove.Enabled = false;
                     textBoxPid.Text = dataGridViewPlist.CurrentRow.Cells[0].Value.ToString();
                     textBoxPname.Text = dataGridViewPlist.CurrentRow.Cells[1].Value.ToString();
                     textBoxPweight.Text = dataGridViewPlist.CurrentRow.Cells[2].Value.ToString();
@@ -108,6 +128,15 @@ namespace SalesManagementSystem
                 {
                     buttonAdd.Enabled = true;
                     buttonAdd.Text = "編集";
+                    textBoxPname.Enabled = true;
+                    textBoxPweight.Enabled = true;
+                    textBoxPcaliber.Enabled = true;
+                    textBoxPlength.Enabled = true;
+                    textBoxPcapa.Enabled = true;
+                    textBoxPcurrency.Enabled = true;
+                    comboBoxPmagazine.Enabled = true;
+                    buttonPmaker.Enabled = true;
+                    buttonRemove.Enabled = true;
                     textBoxPid.Text = dataGridViewPlist.CurrentRow.Cells[0].Value.ToString();
                     textBoxPname.Text = dataGridViewPlist.CurrentRow.Cells[1].Value.ToString();
                     textBoxPweight.Text = dataGridViewPlist.CurrentRow.Cells[2].Value.ToString();

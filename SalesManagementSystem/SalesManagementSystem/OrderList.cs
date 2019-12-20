@@ -50,6 +50,7 @@ namespace SalesManagementSystem
                     // datagridview1の最上段にカーソルを当てる
                     dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[0].Cells[0];
                 }
+                dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
             }
             else
             {
@@ -78,6 +79,7 @@ namespace SalesManagementSystem
                     // datagridview1の最上段にカーソルを当てる
                     dataGridViewOlist.CurrentCell = dataGridViewOlist.Rows[0].Cells[0];
                 }
+                dataGridViewOlist_SelectionChanged(this, EventArgs.Empty);
             }
         }
 
@@ -110,11 +112,20 @@ namespace SalesManagementSystem
                 textBoxPcurrency.Text = "";
                 textBoxOcurrency.Text = "";
                 textBoxEname.Text = "";
+                comboBoxOquantity.Enabled = false;
+                buttonRemove.Enabled = false;
+                buttonCname.Enabled = false;
+                buttonPname.Enabled = false;
+
             }
             else if (dataGridViewOlist.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 buttonAdd.Enabled = true;
                 buttonAdd.Text = "追加";
+                comboBoxOquantity.Enabled = true;
+                buttonRemove.Enabled = false;
+                buttonCname.Enabled = true;
+                buttonPname.Enabled = true;
                 textBoxOID.Text = dataGridViewOlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxCname.Text = dataGridViewOlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPname.Text = dataGridViewOlist.CurrentRow.Cells[2].Value.ToString();
@@ -128,6 +139,10 @@ namespace SalesManagementSystem
             {
                 buttonAdd.Enabled = false;
                 buttonAdd.Text = "編集";
+                comboBoxOquantity.Enabled = true;
+                buttonRemove.Enabled = true;
+                buttonCname.Enabled = true;
+                buttonPname.Enabled = true;
                 textBoxOID.Text = dataGridViewOlist.CurrentRow.Cells[0].Value.ToString();
                 textBoxCname.Text = dataGridViewOlist.CurrentRow.Cells[1].Value.ToString();
                 textBoxPname.Text = dataGridViewOlist.CurrentRow.Cells[2].Value.ToString();
