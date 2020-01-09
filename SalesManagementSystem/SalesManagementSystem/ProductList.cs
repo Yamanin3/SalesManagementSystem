@@ -206,7 +206,7 @@ namespace SalesManagementSystem
                                 AC.cmd.Parameters.Clear();
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = PID;
                                 AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 0;
-                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 40;
+                                AC.cmd.Parameters.Add("?", OleDbType.Integer).Value = 50;
                                 AC.cmd.CommandText = AC.sql;
                                 AC.cmd.ExecuteNonQuery();
                                 RefreshLoad();
