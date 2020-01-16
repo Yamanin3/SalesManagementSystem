@@ -16,6 +16,7 @@ namespace SalesManagementSystem
         private readonly int order_quantity = 50;
         private int PID;
         private int stock;
+        private int cmbtxt;
 
         public OrderListForm()
         {
@@ -214,7 +215,6 @@ namespace SalesManagementSystem
                                 var rows = AC.cmd.ExecuteNonQuery();
                                 if (rows >= 1)
                                 {
-                                    RefreshLoad();
                                     dstock = stock - int.Parse(comboBoxOquantity.Text);
                                     AC.sql = "update 在庫テーブル set 在庫数 = ? where 商品ID = @id;";
                                     AC.cmd.Parameters.Clear();
@@ -225,6 +225,11 @@ namespace SalesManagementSystem
                                     if (row >= 1) RefreshLoad();
                                 }
                             }
+                            else if(stock == 0)
+                            {
+                                MessageBox.Show("在庫数不足のため注文できません、再入荷までしばらくお待ちください。", "在庫不足", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                            }
                             else
                             {
                                 MessageBox.Show("在庫数不足のため注文できません、再入荷までしばらくお待ちください。", "在庫不足", MessageBoxButtons.OK,
@@ -234,7 +239,7 @@ namespace SalesManagementSystem
                             if (stock <= order_point)
                             {
                                 AC.cmd.Parameters.Clear();
-                                AC.cmd.CommandText = "select count(*) from 発注テーブル where 商品ID = @id";
+                                AC.cmd.CommandText = "select count(*) from 発注テーブル where 商品ID = @id and ステータス = 0";
                                 AC.cmd.Parameters.Add("@id", OleDbType.BigInt).Value = PID;
                                 AC.rd = AC.cmd.ExecuteReader();
 
